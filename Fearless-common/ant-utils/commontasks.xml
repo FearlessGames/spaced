@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+
+<project name="CommonTasks">
+	<property name="base.dir" value="${baseDir}"/>
+	<property name="build.dir" value="${base.dir}/build"/>
+	<property name="build.dir.classes" value="${build.dir}/classes"/>
+	<property name="build.dir.test" value="${build.dir}/test"/>
+
+	<property name="reports.dir" value="${build.dir}/reports"/>
+	<property name="coverage.dir" value="${reports.dir}/coverage"/>
+	<property name="out.instr.dir" value="${build.dir}/outinstr"/>
+
+	<property name="fearless.libs" location="${fearless.commons}/libs"/>
+	<property name="cobertura.dir" location="${fearless.libs}/testing"/>
+	<property name="cobertura.jar.location" location="${cobertura.dir}/cobertura.jar"/>
+	<property name="cobertura.coverage.file" value="${coverage.dir}/coverage.ser"/>
+	<path id="cobertura.classpath">
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
+	<property name="junit.dir" value="${fearless.libs}/testing"/>
+	<path id="junit.lib">
+		<fileset dir="${junit.dir}">
+			<include name="junit**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="build.classpath">
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<path refid="buildlib.classpath"/>
+	</path>
+
+
+	<path id="test.build.classpath">
+		<path refid="build.classpath"/>
+		<pathelement location="${build.dir.classes}"/>
+		<pathelement location="${build.dir.test}"/>
+		<path refid="junit.lib"/>
+		<path refid="testlib.classpath"/>
+	</path>
+
+	<!-- The findbugs task. Requires  ${fearless.commons}, ${scr.dir} and build.classpath -->
+	<property name="findbugs.home" location="${fearless.commons}/ci-libs/findbugs"/>
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"
+				classpath="${findbugs.home}/findbugs-ant.jar"/>
+
+	<target name="findbugs" depends="compile" description="Runs findbugs on the source">
+		<mkdir dir="${reports.dir}/findbugs/"/>
+		<findbugs home="${findbugs.home}"
+					 output="xml"
+					 outputFile="${reports.dir}/findbugs/findbugs.xml">
+			<auxClasspath>
+				<path refid="build.classpath"/>
+			</auxClasspath>
+
+			<sourcePath path="${src.dir}"/>
+			<class location="${build.dir.classes}"/>
+		</findbugs>
+	</target>
+
+
+	<target name="init" description="Creates build directories">
+		<echo>===== Creating build directories =====</echo>
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.dir.classes}"/>
+		<mkdir dir="${build.dir.test}"/>
+		<mkdir dir="${out.instr.dir}"/>
+		<mkdir dir="${coverage.dir}"/>
+	</target>
+
+	<target name="clean" description="Removes all build files">
+		<echo>===== Removing build directories =====</echo>
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<echo>===== Compiling sources =====</echo>
+		<javac srcdir="${src.dir}"
+				 destdir="${build.dir}/classes"
+				 debug="on"
+				 deprecation="on"
+				 optimize="on"
+				 source="1.7"
+				 target="1.7"
+				 includeantruntime="false"
+				 encoding="utf-8"
+				>
+			<classpath refid="build.classpath"/>
+		</javac>
+	</target>
+
+	<target name="compile-test" depends="compile">
+		<echo>===== Compiling tests =====</echo>
+		<javac
+				destdir="${build.dir.test}"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="test.build.classpath"
+				encoding="utf-8"
+				>
+			<src path="${src.tests}"/>
+		</javac>
+	</target>
+
+
+	<target name="test"
+			  depends="compile, compile-test, cobertura-instrument, run-test, cobertura-report, write-failed-test"
+			  description="Runs the tests">
+	</target>
+
+	<target name="cobertura-instrument" if="cobertura.enabled">
+		<cobertura-instrument todir="${out.instr.dir}" datafile="${cobertura.coverage.file}">
+			<ignore regex="org.apache.log4j.*"/>
+			<fileset dir="${build.dir}/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</cobertura-instrument>
+		<!-- copy all non-instrumented classes to instr directory -->
+		<copy todir="${out.instr.dir}" overwrite="false">
+			<fileset dir="${build.dir}/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="cobertura-report" if="cobertura.enabled">
+		<cobertura-report srcdir="${src.dir}" destdir="${coverage.dir}" datafile="${cobertura.coverage.file}"/>
+	</target>
+
+	<target name="write-failed-test" if="tests.fail">
+		<touch file="tests.fail"/>
+	</target>
+
+	<target name="run-test">
+		<delete failonerror="false" file="tests.fail"/>
+
+		<echo>===== Running tests =====</echo>
+		<copy toDir="${build.dir.test}" file="${src.tests}/logback-test.xml" failonerror="false"/>
+		<property name="myclasspath" refid="cobertura.classpath"/>
+		<!-- Emit the property to the ant console -->
+		<!--echo message="Classpath = ${myclasspath}"/-->
+
+
+		<junit printsummary="no" logfailedtests="true" haltonfailure="no" failureproperty="tests.fail" fork="true"
+				 forkmode="perBatch" timeout="600000">
+			<sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.coverage.file}"/>
+			<classpath location="${cobertura.jar.location}"/>
+			<classpath>
+				<pathelement location="${out.instr.dir}"/>
+				<pathelement location="${build.dir.test}"/>
+				<pathelement location="${baseDir}/resources"/>
+				<path refid="junit.lib"/>
+				<path refid="test.build.classpath"/>
+			</classpath>
+
+			<formatter type="xml"/>
+			<batchtest fork="yes" todir="${reports.dir}">
+				<fileset dir="${src.tests}">
+					<include name="**/*Test*.java"/>
+					<exclude name="**/AllTests.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+		<junitreport todir="${reports.dir}">
+			<fileset dir="${reports.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${reports.dir}/html"/>
+		</junitreport>
+	</target>
+
+	<target name="check-failures">
+		<available file="tests.fail" property="tests.failed"/>
+		<fail if="tests.failed"/>
+	</target>
+
+	<macrodef name="build-jar">
+		<attribute name="compiled.dir"/>
+		<attribute name="jar.name"/>
+		<sequential>
+			<echo>Building ${build.dir}/@{jar.name}.jar using the files in @{compiled.dir}</echo>
+			<jar destfile="${build.dir}/@{jar.name}.jar" basedir="@{compiled.dir}"/>
+		</sequential>
+	</macrodef>
+
+
+</project>

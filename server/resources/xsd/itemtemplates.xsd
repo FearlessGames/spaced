@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="base.xsd"/>
+
+	<xs:element name="list" type="itemTemplateListType"/>
+
+	<xs:complexType name="itemTemplateListType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="itemType" name="item"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="itemType">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk" minOccurs="1"/>
+			<xs:element type="xs:string" name="name" minOccurs="1"/>
+			<xs:element type="appearanceType" name="appearanceData" minOccurs="1"/>
+			<xs:element type="itemTypesType" name="itemTypes" minOccurs="1"/>
+			<xs:element type="equipAurasType" name="equipAuras" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="spellType" name="spell" minOccurs="0"/>
+			<xs:element type="sellsForType" name="sellsFor" minOccurs="0"/>
+			<xs:element type="xs:int" name="maxStackSize" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="itemTypesType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="itemTypeType" name="itemType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="itemTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HELMET"/>
+			<xs:enumeration value="SHIRT"/>
+			<xs:enumeration value="TROUSERS"/>
+			<xs:enumeration value="JUMPSUIT"/>
+			<xs:enumeration value="SHOES"/>
+			<xs:enumeration value="GLOVES"/>
+			<xs:enumeration value="JETPACK"/>
+			<xs:enumeration value="VEHICLE"/>
+			<xs:enumeration value="SHIELD_GENERATOR"/>
+			<xs:enumeration value="MAIN_HAND_ITEM"/>
+			<xs:enumeration value="OFF_HAND_ITEM"/>
+			<xs:enumeration value="TWO_HAND_ITEM"/>
+			<xs:enumeration value="LEFT_WRIST"/>
+			<xs:enumeration value="RIGHT_WRIST"/>
+			<xs:enumeration value="BAG"/>
+			<xs:enumeration value="TRASH"/>
+			<xs:enumeration value="RESOURCE"/>
+			<xs:enumeration value="CONSUMABLE"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="equipAurasType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element type="auraType" name="modStatAura"/>
+				<xs:element type="referenceType" name="serverAura"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sellsForType">
+		<xs:sequence>
+			<xs:element name="currency" type="referenceType"/>
+			<xs:element name="amount" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

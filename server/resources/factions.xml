@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/factions.xsd">
+	<faction>
+		<pk>961f3ad7-ee02-4bdd-9a1a-9dab4bd442ee</pk>
+		<name>players</name>
+	</faction>
+	<faction>
+		<pk>ace7d63c-176e-4b9f-8af1-9dab4bd44da0</pk>
+		<name>bots</name>
+	</faction>
+	<faction>
+		<pk>67461a05-dc49-48c9-b113-9dab4bd474d8</pk>
+		<name>borgpigs</name>
+	</faction>
+	<faction>
+		<pk>3b289b6f-ebe1-4883-ba17-9dab4bd47f30</pk>
+		<name>crates</name>
+	</faction>
+	<faction>
+		<pk>09f0239e-b9bb-4c01-a3e2-9dab4bd48d12</pk>
+		<name>dcs</name>
+	</faction>
+</list>		

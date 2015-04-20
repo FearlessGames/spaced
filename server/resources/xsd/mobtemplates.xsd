@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="base.xsd"/>
+
+	<xs:element name="list" type="listType"/>
+
+
+	<xs:complexType name="spellBookType">
+		<xs:sequence>
+			<xs:element type="spellType" name="spell" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="mobType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="name"/>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="appearanceType" name="appearance"/>
+			<xs:element type="referenceType" name="creatureType"/>
+			<xs:element type="referenceType" name="faction"/>
+			<xs:element type="brainType" name="brainTemplate"/>
+			<xs:element type="lootType" name="lootTemplate"/>
+			<xs:element type="spellBookType" name="spellBook" minOccurs="0"/>
+			<xs:element type="xs:integer" name="stamina"/>
+			<xs:element type="xs:integer" name="maxShield"/>
+			<xs:element type="xs:double" name="shieldRecovery"/>
+			<xs:element type="xs:double" name="coolRate"/>
+			<xs:element type="transportationModesType" name="transportationModes"/>
+			<xs:group ref="brainParamsGroup" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element type="equipmentType" name="equippedItems" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="mobType" name="mob"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="lootType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="reference"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="brainType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="reference"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="transportationModesType" mixed="true">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:group ref="transportModesGroup"/>
+		</xs:sequence>
+		<xs:attribute name="class"/>
+	</xs:complexType>
+	<xs:group name="transportModesGroup">
+		<xs:choice>
+			<xs:element name="WALK" type="xs:double"/>
+			<xs:element name="RUN" type="xs:double"/>
+			<xs:element name="CHARGE" type="xs:double"/>
+			<xs:element name="FLY" type="xs:double"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="brainParamsGroup">
+		<xs:sequence>
+			<xs:group ref="brainParamGroup"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="brainParamGroup">
+		<xs:choice>
+			<xs:element type="whisperMessageType" name="whisperMessage"/>
+			<xs:element type="xs:string" name="scriptPath"/>
+			<xs:element type="forSaleType" name="itemTypesForSale"/>
+			<xs:element type="xs:boolean" name="moveToTarget"/>
+			<xs:element type="xs:boolean" name="lookAtTarget"/>
+			<xs:element type="xs:integer" name="proximityAggroDistance"/>
+			<xs:element type="xs:integer" name="socialAggroDistance"/>
+		</xs:choice>
+	</xs:group>
+	<xs:complexType name="whisperMessageType">
+		<xs:sequence>
+			<xs:element name="pk" type="uuidType"/>
+			<xs:element name="message" type="xs:string"/>
+			<xs:element name="whisperDistance" type="xs:double"/>
+			<xs:element name="whisperTimeout" type="xs:long"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="forSaleType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="item" type="referenceType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="equipmentType">
+		<xs:sequence>
+			<xs:element type="equipmentElement" name="entry" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="equipmentElement">
+		<xs:sequence>
+			<xs:element name="equipmentSlot" type="slotType"/>
+			<xs:element name="item" type="referenceType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="slotType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MAIN_HAND"/>
+			<xs:enumeration value="OFF_HAND"/>
+			<xs:enumeration value="HEAD"/>
+			<xs:enumeration value="CHEST"/>
+			<xs:enumeration value="LEGS"/>
+			<xs:enumeration value="FEET"/>
+			<xs:enumeration value="BACK"/>
+			<xs:enumeration value="HAND"/>
+			<xs:enumeration value="UTILITY"/>
+			<xs:enumeration value="BAG_SLOT"/>
+			<xs:enumeration value="LEFT_WRIST"/>
+			<xs:enumeration value="RIGHT_WRIST"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

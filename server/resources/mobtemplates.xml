@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/mobtemplates.xsd">
+	<mob>
+		<name>Lt. Kroker</name>
+		<pk>b0340b1a-86fd-48d4-b479-9db86049f3ec</pk>
+		<appearance>
+			<modelName>models/mobs/noob_town_guard.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="whisper-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>4</stamina>
+		<maxShield>4</maxShield>
+		<shieldRecovery>1</shieldRecovery>
+		<coolRate>5</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>6.0</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>fc28c9ae-f9ca-473f-ae7d-9f943f0c3663</pk>
+			<message>Greetings stowaway, you think you could sneak by me? If you could help my dillusioned friend Watto in
+				the town shop downstairs to your right I might let you off the hook.
+			</message>
+			<whisperDistance>10.0</whisperDistance>
+			<whisperTimeout>90000</whisperTimeout>
+		</whisperMessage>
+	</mob>
+
+	<mob>
+		<name>Capt. Wardson</name>
+		<!-- Add titles "Head of Endiku guard" -->
+		<pk>53306911-42c1-45ef-b7e9-9f78148a7637</pk>
+		<appearance>
+			<modelName>/models/mobs/noob_town_guard_mk3_red.xmo</modelName>
+			<portraitName>icon_player</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-aggro-proximitywhisper-roaming-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>25</stamina>
+		<maxShield>200</maxShield>
+		<shieldRecovery>3</shieldRecovery>
+		<coolRate>3</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>6.0</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>914ea204-a4ba-484c-90bb-9f943f0c47dd</pk>
+			<message>$NAME$! Kill all borg pigs for me please!</message>
+			<whisperDistance>10.0</whisperDistance>
+			<whisperTimeout>300000</whisperTimeout>
+		</whisperMessage>
+	</mob>
+
+	<mob>
+		<name>Endiku town guard</name>
+		<pk>c5f95bd2-24bd-46c2-859f-9f78149264b5</pk>
+		<appearance>
+			<modelName>models/mobs/noob_town_guard.xmo</modelName>
+			<portraitName>icon_player</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-aggro-roaming-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>18</stamina>
+		<maxShield>150</maxShield>
+		<shieldRecovery>3</shieldRecovery>
+		<coolRate>3</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>6.0</RUN>
+		</transportationModes>
+	</mob>
+
+	<mob>
+		<name>Endiku town patrol</name>
+		<pk>b73a8e0b-4fb3-4083-8dfe-9f79158da2c3</pk>
+		<appearance>
+			<modelName>models/mobs/noob_town_guard.xmo</modelName>
+			<portraitName>icon_player</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-aggro-patrolling-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>18</stamina>
+		<maxShield>150</maxShield>
+		<shieldRecovery>3</shieldRecovery>
+		<coolRate>3</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>6.0</RUN>
+		</transportationModes>
+	</mob>
+
+	<mob>
+		<name>Wattor</name>
+		<pk>5559ce47-cfe6-411a-9254-9f52d92cfafd</pk>
+		<appearance>
+			<modelName>models/mobs/noob_town_greeter.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="whisper-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>1.5</WALK>
+			<RUN>2.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>ec176547-9f4c-47bd-ae32-9f943f999b8c</pk>
+			<message>Hi $NAME$! Please help me find my lost cousin! He is an inventor working on a prototype jetpack when
+				he crashed in the wilderness. The distress call came close the lake up north. You might need to purchase
+				some of my goods to help you on your journey though. Hoho!
+			</message>
+			<whisperDistance>10.0</whisperDistance>
+			<whisperTimeout>200000</whisperTimeout>
+		</whisperMessage>
+		<itemTypesForSale>
+			<item reference="Bucket of Popplers"/>
+			<item reference="Can of Slurm"/>
+			<item reference="Simple Wrist Computer"/>
+			<item reference="Tri Claw"/>
+			<item reference="Beginners shield generator"/>
+		</itemTypesForSale>
+	</mob>
+
+	<mob>
+		<name>Scott Michaels</name>
+		<pk>00f9e2f2-1e31-4c5e-a1a4-9f944012b0e9</pk>
+		<appearance>
+			<modelName>models/players/player_male.xmo</modelName>
+			<portraitName>icon_manager</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="dcs"/>
+		<brainTemplate reference="scripted-patrolling-brain"/>
+		<lootTemplate reference="scott-michaels-loot"/>
+		<spellBook>
+			<spell>
+				<pk>83181fa4-2402-470c-9749-9d9f39873cc3</pk>
+				<name>Pocket rocket</name>
+				<castTime>1500</castTime>
+				<effects>
+					<projectile>
+						<pk>640d61a3-dca2-4837-9111-9d9f39873cc3</pk>
+						<resourceName>projectiles/lazor_blast</resourceName>
+						<school>PHYSICAL</school>
+						<speed>300.0</speed>
+						<impactEffects>
+							<damageSchoolEffect>
+								<pk>b2aa3559-8cbf-46a9-a09e-9d9f39873cc3</pk>
+								<resourceName>abilities/lazor_blast</resourceName>
+								<school>LIGHT</school>
+								<range>
+									<start>52</start>
+									<end>94</end>
+								</range>
+							</damageSchoolEffect>
+						</impactEffects>
+					</projectile>
+				</effects>
+				<school>LIGHT</school>
+				<targetingType>TARGET</targetingType>
+				<requiresHostileTarget>true</requiresHostileTarget>
+				<cancelOnMove>true</cancelOnMove>
+				<ranges>
+					<start>0</start>
+					<end>42</end>
+				</ranges>
+				<effectResource>abilities/lazor_blast</effectResource>
+				<heatContribution>5</heatContribution>
+			</spell>
+			<spell>
+				<pk>053be621-9bf3-4f56-a763-9d9f39873cc8</pk>
+				<name>Hard blow</name>
+				<castTime>100</castTime>
+				<effects>
+					<damageSchoolEffect>
+						<pk>0b138642-57a3-427e-b5ee-9d9f39873cc8</pk>
+						<resourceName>abilities/melee</resourceName>
+						<school>PHYSICAL</school>
+						<range>
+							<start>120</start>
+							<end>270</end>
+						</range>
+					</damageSchoolEffect>
+				</effects>
+				<school>PHYSICAL</school>
+				<targetingType>TARGET</targetingType>
+				<requiresHostileTarget>true</requiresHostileTarget>
+				<cancelOnMove>false</cancelOnMove>
+				<ranges>
+					<start>0</start>
+					<end>6</end>
+				</ranges>
+				<effectResource>abilities/melee</effectResource>
+				<heatContribution>1</heatContribution>
+			</spell>
+		</spellBook>
+		<stamina>100</stamina>
+		<maxShield>1000</maxShield>
+		<shieldRecovery>1</shieldRecovery>
+		<coolRate>1.5</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>7.0</RUN>
+		</transportationModes>
+		<scriptPath>mobs/ai/scott_michaels.lua</scriptPath>
+	</mob>
+
+	<mob>
+		<name>DCS soldier</name>
+		<pk>3e29f432-5287-4d25-905e-a01608765fb4</pk>
+		<appearance>
+			<modelName>models/mobs/noob_town_guard.xmo</modelName>
+			<portraitName>icon_player</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="dcs"/>
+		<brainTemplate reference="attacking-aggro-roaming-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>18</stamina>
+		<maxShield>150</maxShield>
+		<shieldRecovery>3</shieldRecovery>
+		<coolRate>3</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>2.5</WALK>
+			<RUN>6.0</RUN>
+		</transportationModes>
+	</mob>
+
+	<mob>
+		<name>Small Patrol ship</name>
+		<pk>0167bac7-32d1-4993-8ae6-a02723273013</pk>
+		<appearance>
+			<modelName>/props/vehicles/flying/small/s-11/s-11.xmo</modelName>
+			<portraitName>icon_mysteriouscrate</portraitName>
+		</appearance>
+		<creatureType reference="mechanical"/>
+		<faction reference="dcs"/>
+		<brainTemplate reference="attacking-aggro-patrolling-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Lazor blast"/>
+		</spellBook>
+		<stamina>100</stamina>
+		<maxShield>5000</maxShield>
+		<shieldRecovery>5</shieldRecovery>
+		<coolRate>3</coolRate>
+		<transportationModes class="enum-map">
+			<FLY>10.0</FLY>
+		</transportationModes>
+	</mob>
+
+	<mob>
+		<name>Aron Murphy</name>
+		<pk>a0a15515-a056-4c96-9b0b-a06d8eb7ae7e</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>03a7d38c-91f4-434b-85df-a06d8ed18ddc</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Beginners shield generator"/>
+			<item reference="Improved shield generator"/>
+			<item reference="Powerful shield generator"/>
+			<item reference="Leather Hat"/>
+		</itemTypesForSale>
+		<equippedItems>
+			<entry>
+				<equipmentSlot>HEAD</equipmentSlot>
+				<item reference="Leather Hat"/>
+			</entry>
+			<entry>
+				<equipmentSlot>CHEST</equipmentSlot>
+				<item reference="Black Jacket"/>
+			</entry>
+		</equippedItems>
+	</mob>
+
+	<mob>
+		<name>Melee Weapons</name>
+		<pk>5de94679-635f-4696-af35-a099d3227d62</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>40cea4a5-11ee-433d-bdd1-a099d332c6a1</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="e-Blade"/>
+			<item reference="Tri Claw"/>
+			<item reference="Plasma Halberd"/>
+			<item reference="Combat Knife"/>
+		</itemTypesForSale>
+		<equippedItems>
+			<entry>
+				<equipmentSlot>MAIN_HAND</equipmentSlot>
+				<item reference="e-Blade"/>
+			</entry>
+			<entry>
+				<equipmentSlot>LEFT_WRIST</equipmentSlot>
+				<item reference="Tri Claw"/>
+			</entry>
+		</equippedItems>
+	</mob>
+
+	<mob>
+		<name>Rifle Vendor</name>
+		<pk>20c4fdbf-4885-4410-b99e-a099d324c38d</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>902018fe-4cce-47b1-bd2c-a099d333968f</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Old Rifle"/>
+			<item reference="Mk1 Assault Rifle"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Pistol Vendor</name>
+		<pk>fad6c2e8-31e1-4530-a882-a099d324b7e5</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>1025040e-9bae-49de-9241-a099d333a11d</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Lazor Pistol"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Damage Spells</name>
+		<pk>cea22df0-f22e-4462-b7d6-a099d33fea54</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>d7f3594b-0a32-45be-82d9-a099d33ff7e6</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Learn Volatile Combustion"/>
+			<item reference="Learn Torch"/>
+			<item reference="Learn Lazor Blast"/>
+			<item reference="Learn Overcharge"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Power Devices</name>
+		<pk>a272f436-a51e-4268-a53b-a099d3489ecf</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>27e87410-a2e4-4910-99ec-a099d348bb7e</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Healers Wrist Device"/>
+			<item reference="Plasma Controller"/>
+			<item reference="Rooting Mobility Disruptor"/>
+			<item reference="Protectors Unit"/>
+			<item reference="Buff Support Unit"/>
+			<item reference="Plasma Support Unit"/>
+			<item reference="Omnipotent UberClaw"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Armor Vendor</name>
+		<pk>f0b860b1-e8c9-4ee8-814d-a09ad440dc55</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+
+
+		<whisperMessage>
+			<pk>94556d75-1506-4e8b-8c3b-a09ad440e911</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+
+		<itemTypesForSale>
+			<item reference="Mk5 Boots"/>
+			<item reference="Mk5 Chest"/>
+			<item reference="Mk5 Legs"/>
+			<item reference="Mk5 Helmet"/>
+			<item reference="Mk4 Chest"/>
+			<item reference="Mk4 Helmet"/>
+			<item reference="Mk4 Legs"/>
+			<item reference="Mk3 Helmet"/>
+			<item reference="Mk3 Legs"/>
+			<item reference="Mk3 Chest"/>
+			<item reference="Mk2 Helmet"/>
+			<item reference="Mk2 Boots"/>
+			<item reference="Mk1 Boots"/>
+		</itemTypesForSale>
+		<equippedItems>
+			<entry>
+				<equipmentSlot>HEAD</equipmentSlot>
+				<item reference="Mk4 Helmet"/>
+			</entry>
+			<entry>
+				<equipmentSlot>CHEST</equipmentSlot>
+				<item reference="Mk5 Chest"/>
+			</entry>
+			<entry>
+				<equipmentSlot>LEGS</equipmentSlot>
+				<item reference="Mk5 Legs"/>
+			</entry>
+			<entry>
+				<equipmentSlot>FEET</equipmentSlot>
+				<item reference="Mk5 Boots"/>
+			</entry>
+		</equippedItems>
+	</mob>
+
+	<mob>
+		<name>Healing Spells</name>
+		<pk>52728ea6-1ff0-4166-b1af-a099d341f928</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>76042413-9fe1-4008-bf27-a099d342130b</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Learn Heal"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Buffs Vendor</name>
+		<pk>ba1123d4-0cd5-473e-b59b-a099d342b0e0</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_dummy</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-vendor-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>5.5</RUN>
+		</transportationModes>
+		<whisperMessage>
+			<pk>5731bdd4-8cc8-4751-a1dd-a099d342b7ea</pk>
+			<message>Not used</message>
+			<whisperDistance>5.0</whisperDistance>
+			<whisperTimeout>180000</whisperTimeout>
+		</whisperMessage>
+
+		<itemTypesForSale>
+			<item reference="Learn Shieldfield"/>
+		</itemTypesForSale>
+
+	</mob>
+
+	<mob>
+		<name>Deck Guard</name>
+		<pk>c17e7d6a-e558-45c3-b69d-a098d1c02c80</pk>
+		<appearance>
+			<modelName>models/mobs/human_male_basic.xmo</modelName>
+			<portraitName>icon_player</portraitName>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="null-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Strike"/>
+		</spellBook>
+		<stamina>35</stamina>
+		<maxShield>300</maxShield>
+		<shieldRecovery>4</shieldRecovery>
+
+		<coolRate>1</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>3.5</WALK>
+			<RUN>8.5</RUN>
+		</transportationModes>
+
+		<equippedItems>
+			<entry>
+				<equipmentSlot>HEAD</equipmentSlot>
+				<item reference="Mk2 TN Helmet"/>
+			</entry>
+			<entry>
+				<equipmentSlot>CHEST</equipmentSlot>
+				<item reference="Mk3 TN Chest"/>
+			</entry>
+			<entry>
+				<equipmentSlot>LEGS</equipmentSlot>
+				<item reference="Mk3 TN Legs"/>
+			</entry>
+			<entry>
+				<equipmentSlot>FEET</equipmentSlot>
+				<item reference="Mk2 TN Boots"/>
+			</entry>
+			<entry>
+				<equipmentSlot>MAIN_HAND</equipmentSlot>
+				<item reference="Mk1 Assault Rifle"/>
+			</entry>
+		</equippedItems>
+	</mob>
+
+	<mob>
+		<name>Feral piglet</name>
+		<pk>fb9a34b3-2c80-42a3-955b-a074990d112c</pk>
+		<appearance>
+			<modelName>models/mobs/piglet.xmo</modelName>
+			<portraitName>icon_ezypig</portraitName>
+		</appearance>
+		<creatureType reference="beast"/>
+		<faction reference="borgpigs"/>
+		<brainTemplate reference="attacking-roaming-brain"/>
+		<lootTemplate reference="feral piglet loot"/>
+		<spellBook>
+			<spell reference="Nibble"/>
+		</spellBook>
+		<stamina>6</stamina>
+		<maxShield>0</maxShield>
+		<shieldRecovery>0</shieldRecovery>
+		<coolRate>0.5</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>1.5</WALK>
+			<RUN>3</RUN>
+		</transportationModes>
+	</mob>
+
+	<mob>
+		<name>Sow Mother</name>
+		<pk>ce7cff8d-daee-4a92-a6a5-a09cd7e62ab2</pk>
+		<appearance>
+			<modelName>models/mobs/sow.xmo</modelName>
+			<portraitName>icon_ezypig</portraitName>
+			<scale x="5" y="5" z="5"/>
+		</appearance>
+		<creatureType reference="beast"/>
+		<faction reference="borgpigs"/>
+		<brainTemplate reference="scripted-patrolling-brain"/>
+		<lootTemplate reference="sow mother loot"/>
+		<spellBook>
+			<spell reference="Gnaw"/>
+			<spell reference="Crushing Bite"/>
+		</spellBook>
+		<stamina>120</stamina>
+		<maxShield>0</maxShield>
+		<shieldRecovery>0</shieldRecovery>
+		<coolRate>8</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>1.5</WALK>
+			<RUN>10</RUN>
+			<CHARGE>13</CHARGE>
+		</transportationModes>
+		<proximityAggroDistance>10</proximityAggroDistance>
+		<scriptPath>mobs/ai/sow_mother.lua</scriptPath>
+	</mob>
+
+	<mob>
+		<name>Feral pig</name>
+		<pk>a0c1d14e-6342-4c00-aae5-a0d1293ef1ea</pk>
+		<appearance>
+			<modelName>models/mobs/pig.xmo</modelName>
+			<portraitName>icon_ezypig</portraitName>
+		</appearance>
+		<creatureType reference="beast"/>
+		<faction reference="borgpigs"/>
+		<brainTemplate reference="attacking-aggro-roaming-brain"/>
+		<lootTemplate reference="feral pig loot"/>
+		<spellBook>
+			<spell reference="Nibble"/>
+		</spellBook>
+		<stamina>6</stamina>
+		<maxShield>20</maxShield>
+		<shieldRecovery>2</shieldRecovery>
+		<coolRate>0.8</coolRate>
+		<transportationModes class="enum-map">
+			<WALK>1.5</WALK>
+			<RUN>3</RUN>
+		</transportationModes>
+		<proximityAggroDistance>10</proximityAggroDistance>
+		<socialAggroDistance>3</socialAggroDistance>
+	</mob>
+
+
+
+	<mob>
+		<name>Capt. Mara Wison</name>
+		<pk>df383396-dc87-47eb-a9af-a0759aa0958b</pk>
+		<appearance>
+			<modelName>models/mobs/female_captain.xmo</modelName>
+			<portraitName>icon_mara</portraitName>
+			<scale x="0.87" y="0.87" z="0.87"/>
+		</appearance>
+		<creatureType reference="humanoid"/>
+		<faction reference="players"/>
+		<brainTemplate reference="attacking-aggro-proximitywhisper-brain"/>
+		<lootTemplate reference="empty loot"/>
+		<spellBook>
+			<spell reference="Guard Lazor blast"/>
+		</spellBook>
+		<stamina>10</stamina>
+		<maxShield>200</maxShield>
+		<shieldRecovery>2</shieldRecovery>
+		<coolRate>7</coolRate>
+		<transportationModes class="enum-map">
+			<RUN>5.0</RUN>
+		</transportationModes>
+		<moveToTarget>false</moveToTarget>
+		<proximityAggroDistance>15</proximityAggroDistance>
+		<socialAggroDistance>20</socialAggroDistance>
+		<whisperMessage>
+			<pk>03429504-8bcf-4e7d-b296-a0759ab444c3</pk>
+			<message>OMG! The piglets have escaped from their cages and gone feral. Help me kill them $NAME$, you are our
+				only hope!
+			</message>
+			<whisperDistance>25</whisperDistance>
+			<whisperTimeout>3600000</whisperTimeout>
+		</whisperMessage>
+		<equippedItems>
+			<entry>
+				<equipmentSlot>FEET</equipmentSlot>
+				<item reference="Mk2 Boots"/>
+			</entry>
+			<entry>
+				<equipmentSlot>LEGS</equipmentSlot>
+				<item reference="Mk3 Legs"/>
+			</entry>
+			<entry>
+				<equipmentSlot>CHEST</equipmentSlot>
+				<item reference="Mk4 Chest"/>
+			</entry>
+			<entry>
+				<equipmentSlot>MAIN_HAND</equipmentSlot>
+				<item reference="Lazor Pistol"/>
+			</entry>
+		</equippedItems>
+	</mob>
+</list>

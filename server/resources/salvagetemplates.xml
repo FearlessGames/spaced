@@ -1,0 +1,24 @@
+<list>
+  <takeAll>
+    <pk>07194bb5-5dcb-4391-8016-63df00000000</pk>
+    <name>ML1 Salvage</name>
+    <lootTemplates>
+      <probability>
+        <pk>a9a90633-0cd3-4021-9e55-9db961f82a07</pk>
+        <lootTemplate class="single">
+          <pk>e99ee81e-df7f-4e40-bfe7-63df00000000</pk>
+          <itemTemplate reference="Promethium"/>
+        </lootTemplate>
+        <probability>1.0</probability>
+      </probability>
+      <!--<probability>-->
+        <!--<pk>07a90157-e674-4cb1-b61d-9db961f8224f</pk>-->
+        <!--<lootTemplate class="single">-->
+          <!--<pk>02e34d15-e5c4-4aaf-966f-63df00000000</pk>-->
+          <!--<itemTemplate reference="Mk5 Chest"/>-->
+        <!--</lootTemplate>-->
+        <!--<probability>0.10</probability>-->
+      <!--</probability>-->
+    </lootTemplates>
+  </takeAll>
+</list>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/auras.xsd">
+	<serverAura class="keyAura">
+		<pk>509e2420-8447-45bf-ae51-9e8196df4575</pk>
+		<name>jetpack-equipped</name>
+		<visible>true</visible>
+		<iconPath>/items/icons/jetpack</iconPath>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>16c21cab-f154-4ee6-9cd5-a097d00d92dc</pk>
+		<name>melee-equipped</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>b2ae9ec3-7a46-4485-8181-a097d0279ee9</pk>
+		<name>ranged-equipped</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>804749c6-532e-4a9d-8c2e-a099d34a04b1</pk>
+		<name>healing-enabled</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>3e1ec1e2-8a2c-4599-8c8c-a099d34b20be</pk>
+		<name>plasma-enabled</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>871c7b08-f4ed-46b5-95e4-a099d34b2721</pk>
+		<name>claws-enabled</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>30c78905-546a-49b5-858c-a09ad3521e73</pk>
+		<name>roots-enabled</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>2d717747-fd0b-4631-9414-a09ad352ed63</pk>
+		<name>buffs-enabled</name>
+	</serverAura>
+	<serverAura class="keyAura">
+		<pk>96e98dd0-6d4a-445b-9840-a09ad35a083c</pk>
+		<name>disruption-enabled</name>
+	</serverAura>
+
+	<serverAura class="keyAura">
+		<pk>d58a6464-9530-4d94-ab0c-a0a0de173f04</pk>
+		<name>Pig master</name>
+		<visible>true</visible>
+		<iconPath>/items/icons/snout</iconPath>
+	</serverAura>
+</list>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<creatureType>
+		<pk>311bb940-883c-11df-a4ee-0800200c9a66</pk>
+		<name>humanoid</name>
+	</creatureType>
+	<creatureType>
+		<pk>311bb941-883c-11df-a4ee-0800200c9a66</pk>
+		<name>mechanical</name>
+	</creatureType>
+	<creatureType>
+		<pk>311bb942-883c-11df-a4ee-0800200c9a66</pk>
+		<name>beast</name>
+	</creatureType>
+</list>

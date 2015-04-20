@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/cooldowns.xsd">
+	<cooldown>
+		<pk>22e57ada-9bd9-4ff5-ac8a-9e07d9f4f3f7</pk>
+		<name>melee-cooldown</name>
+		<cooldownTime>0.5</cooldownTime>
+	</cooldown>
+	<cooldown>
+		<pk>e3ad25aa-efc1-4537-a1a3-9e07d9f532e0</pk>
+		<name>missile-cooldown</name>
+		<cooldownTime>1.5</cooldownTime>
+	</cooldown>
+	<cooldown>
+		<pk>7a2cf96e-1314-47f6-bf18-9e07d9f850f8</pk>
+		<name>mental-cooldown</name>
+		<cooldownTime>2.5</cooldownTime>
+	</cooldown>
+	<cooldown>
+		<pk>4fa5731b-54b1-4eda-919d-9eee3f9c349b</pk>
+		<name>dot-cooldown</name>
+		<cooldownTime>10</cooldownTime>
+	</cooldown>
+	<cooldown>
+		<pk>9e58863f-321f-42ad-be23-9f4ed35792e5</pk>
+		<name>on-use-cooldown</name>
+		<cooldownTime>0.5</cooldownTime>
+	</cooldown>
+</list>

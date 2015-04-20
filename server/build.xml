@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+
+<project name="server" default="all" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+	<property name="fearless.commons" location="${baseDir}/../Fearless-common"/>
+
+	<property file="../local.properties"/>
+	<property file="../default.properties"/>
+
+	<import file="${fearless.commons}/ant-utils/commontasks.xml"/>
+
+	<property name="client.lib.dir" value="../newclient/libs/"/>
+
+	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.dir" value="${baseDir}/src"/>
+
+	<property name="wsdl.dir" value="${baseDir}/build/wsdl"/>
+	<property name="gen-src.dir" value="${build.dir}/wsdl-gen-src"/>
+
+
+	<path id="buildlib.classpath">
+		<fileset dir="libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../shared/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../shared/build">
+			<include name="spaced-shared.jar"/>
+		</fileset>
+
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+
+		<fileset dir="../messages/build">
+			<include name="spaced-shared-messages.jar"/>
+			<include name="spaced-server-messages.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../smrt-release">
+			<include name="**/*.jar"/>
+			<exclude name="**/smrt-stubs.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="testlib.classpath">
+		<fileset dir="../shared/build">
+			<include name="spaced-shared-test.jar"/>
+		</fileset>
+		<pathelement location="${baseDir}/resources"/>
+	</path>
+
+
+	<path id="run.classpath">
+		<path refid="buildlib.classpath"/>
+	</path>
+
+	<target name="build" depends="compile, validate-content, package"/>
+
+	<target name="full-test" depends="build, test"/>
+
+	<target name="all" depends="full-test, check-failures"/>
+
+	<target name="run" description="run the server">
+		<copy toDir="${build.dir.classes}" file="${baseDir}/src/logback.xml"/>
+		<java classname="se.spaced.server.Starter" fork="true" spawn="false" args="--auth=FAME">
+			<jvmarg value="-server"/>
+			<jvmarg value="-Xloggc:spacedServer.gclog"/>
+			<jvmarg value="-Dcom.sun.management.jmxremote=true"/>
+			<jvmarg value="-Dcom.sun.management.jmxremote.port=6666"/>
+			<jvmarg value="-Dcom.sun.management.jmxremote.ssl=false"/>
+			<jvmarg value="-Dcom.sun.management.jmxremote.authenticate=false"/>
+
+			<classpath>
+				<path refid="run.classpath"/>
+				<pathelement location="${build.dir.classes}"/>
+				<pathelement location="resources"/>
+				<pathelement location="${baseDir}/../shared/resources"/>
+			</classpath>
+		</java>
+	</target>
+
+
+	<target name="run-alpha" description="run the alpha server">
+		<copy file="${baseDir}/src/logback-alpha.xml" tofile="${build.dir.classes}/logback.xml"/>
+		<java classname="se.spaced.server.Starter" fork="true" spawn="false"
+				args="--auth=FAME --gameServerPort=9433 --webServicePort=9001 --dbMYSQL --dbUser=spaced_alpha --dbPassword=we6eqaCr8puh --dbJdbcUrl=jdbc:mysql://localhost/spaced_alpha_db?autoReconnect=true">
+			<jvmarg value="-server"/>
+			<jvmarg value="-Xloggc:spacedServer.gclog"/>
+
+			<classpath>
+				<path refid="run.classpath"/>
+				<pathelement location="${build.dir.classes}"/>
+				<pathelement location="resources"/>
+				<pathelement location="${baseDir}/../shared/resources"/>
+			</classpath>
+		</java>
+	</target>
+
+
+	<target name="delete-db" description="Deletes the database so it can be repopulated">
+		<delete dir="${basedir}/spaced_db"/>
+		<delete file="${basedir}/spaced_db.h2.db"/>
+		<delete file="${basedir}/spaced_db.lock.db"/>
+	</target>
+
+
+	<import file="${baseDir}/../shared/javancss.xml"/>
+	<target name="javancss">
+		<javancss
+				lib.dir="${baseDir}/../libs/javancss"
+				src.dir="${baseDir}/src"
+				output.dir="${baseDir}/build"
+				/>
+	</target>
+
+	<target name="validate-content">
+		<java classname="se.spaced.server.persistence.migrator.ServerContentPopulator" fork="true" spawn="false"
+				failonerror="true">
+			<classpath>
+				<path refid="run.classpath"/>
+				<pathelement location="${build.dir.classes}"/>
+				<pathelement location="resources"/>
+				<pathelement location="${baseDir}/../shared/resources"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="package" depends="compile">
+		<build-jar compiled.dir="${build.dir.classes}" jar.name="spaced-server"/>
+	</target>
+</project>

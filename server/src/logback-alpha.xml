@@ -1,0 +1,49 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="se.spaced.server">
+		<level value="info"/>
+	</logger>
+
+	<logger name="se.spaced.server.net.mina">
+		<level value="warn"/>
+	</logger>
+
+	<logger name="se.spaced.messages.protocol">
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.server.net.mina.ClientConnectionHandlerImpl">
+		<level value="warn"/>
+	</logger>
+
+	<logger name="se.spaced.server.model.vendor.VendorServiceImpl">
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.server.net.listeners.auth.ClientVendorMessagesAuth">
+		<appender-ref ref="STDOUT"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.server.net.mina">
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.server.net.listeners.auth">
+		<level value="info"/>
+	</logger>
+	<logger name="se.spaced.server.stats">
+		<level value="debug"/>
+	</logger>
+
+
+	<root level="WARN">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>

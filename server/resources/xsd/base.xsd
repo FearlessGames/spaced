@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="uuidType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="referenceType">
+		<xs:attribute type="xs:string" name="reference"/>
+	</xs:complexType>
+	<xs:complexType name="rangeType">
+		<xs:sequence>
+			<xs:element type="xs:integer" name="start"/>
+			<xs:element type="xs:integer" name="end"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="appearanceType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="modelName" maxOccurs="1"/>
+			<xs:element type="xs:string" name="portraitName" maxOccurs="1"/>
+			<xs:element type="pointType" name="scale" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="schoolType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PHYSICAL"/>
+			<xs:enumeration value="FROST"/>
+			<xs:enumeration value="FIRE"/>
+			<xs:enumeration value="LIGHT"/>
+			<xs:enumeration value="ELECTRICITY"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="areaType">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="spawnPointType" name="spawnPoint"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="class"/>
+	</xs:complexType>
+
+	<xs:complexType name="spawnPointType">
+		<xs:sequence>
+			<xs:element type="pointType" name="point"/>
+			<xs:element type="rotationType" name="rotation"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="pathType">
+		<xs:sequence>
+			<xs:element type="pathPointsType" name="pathPoints" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="class"/>
+	</xs:complexType>
+	<xs:complexType name="pathPointsType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="pointType" name="vector3"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="pointType">
+		<xs:attribute type="xs:float" name="x"/>
+		<xs:attribute type="xs:float" name="y"/>
+		<xs:attribute type="xs:float" name="z"/>
+	</xs:complexType>
+	<xs:complexType name="rotationType">
+		<xs:attribute type="xs:float" name="x"/>
+		<xs:attribute type="xs:float" name="y"/>
+		<xs:attribute type="xs:float" name="z"/>
+		<xs:attribute type="xs:float" name="w"/>
+	</xs:complexType>
+
+	<xs:simpleType name="targettingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SELF_ONLY"/>
+			<xs:enumeration value="TARGET"/>
+			<xs:enumeration value="AREA"/>
+			<xs:enumeration value="DIRECTIONAL"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="effectsType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="damageSchoolEffect" type="schoolEffectType"/>
+			<xs:element name="selfDamageSchoolEffect" type="schoolEffectType"/>
+			<xs:element name="interruptEffect" type="interruptEffectType"/>
+			<xs:element name="healEffect" type="schoolEffectType"/>
+			<xs:element name="coolEffect" type="schoolEffectType"/>
+			<xs:element name="recoverEffect" type="schoolEffectType"/>
+			<xs:element name="applyAuraEffect" type="applyAuraEffectType"/>
+			<xs:element name="grantSpellEffect" type="grantSpellEffectType"/>
+
+			<xs:element name="projectile" type="projectileType"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="projectileType">
+		<xs:sequence>
+			<xs:element name="pk" type="uuidType"/>
+			<xs:element name="resourceName" type="xs:string"/>
+			<xs:element name="school" type="schoolType"/>
+			<xs:element name="speed" type="xs:float"/>
+			<xs:element name="impactEffects" type="effectsType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="schoolEffectType">
+		<xs:sequence>
+			<xs:group ref="schoolEffectGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:group name="schoolEffectGroup">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="xs:string" name="resourceName"/>
+			<xs:element type="schoolType" name="school"/>
+			<xs:element type="rangeType" name="range"/>
+		</xs:sequence>
+	</xs:group>
+
+
+	<xs:complexType name="spellType" mixed="true">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk" minOccurs="0"/>
+			<xs:element type="xs:string" name="name" minOccurs="0"/>
+			<xs:element type="xs:integer" name="castTime" minOccurs="0"/>
+			<xs:element type="cooldownListType" name="cooldowns" minOccurs="0"/>
+			<xs:element type="effectsType" name="effects" minOccurs="0"/>
+			<xs:element type="schoolType" name="school" minOccurs="0"/>
+			<xs:element type="targettingType" name="targetingType" minOccurs="0"/>
+			<xs:element type="xs:boolean" name="requiresHostileTarget" minOccurs="0"/>
+			<xs:element type="xs:boolean" name="cancelOnMove" minOccurs="0"/>
+			<xs:element type="rangeType" name="ranges" minOccurs="0"/>
+			<xs:element type="xs:string" name="effectResource" minOccurs="0"/>
+			<xs:element type="xs:byte" name="heatContribution" minOccurs="0"/>
+			<xs:element type="auraList" name="requiredAuras" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute type="xs:string" name="reference" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="cooldownListType">
+		<xs:sequence>
+			<xs:element type="referenceType" name="cooldown"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="interruptEffectType">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="schoolType" name="school"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="applyAuraEffectType">
+		<xs:sequence>
+			<xs:element name="pk" type="uuidType"/>
+			<xs:element name="school" type="schoolType"/>
+			<xs:element name="serverAura" type="auraType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="grantSpellEffectType">
+		<xs:sequence>
+			<xs:element name="pk" type="uuidType"/>
+			<xs:element name="resourceName" type="xs:string"/>
+			<xs:element name="school" type="schoolType"/>
+			<xs:element name="spell" type="spellType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="auraType">
+
+		<xs:sequence>
+			<xs:group ref="auraCommon"/>
+			<xs:group ref="auraGroup" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+
+		<xs:attribute type="xs:string" name="class"/>
+	</xs:complexType>
+
+	<xs:group name="auraCommon">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk" minOccurs="1" maxOccurs="1"/>
+			<xs:element type="xs:string" name="name" minOccurs="0" maxOccurs="1"/>
+			<xs:group ref="visibleAuraGroup" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:integer" name="duration" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:integer" name="extraStacks" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="auraGroup">
+		<xs:choice>
+			<xs:group ref="modStatGroup"/>
+			<xs:group ref="periodicGroup"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="visibleAuraGroup">
+		<xs:sequence>
+			<xs:element type="xs:boolean" name="visible"/>
+			<xs:element type="xs:string" name="iconPath"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="modStatGroup">
+		<xs:sequence>
+			<xs:element name="mods" type="modsListType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="modsListType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element type="modStatType" name="modStat"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="modStatType">
+		<xs:sequence>
+			<xs:element type="xs:float" name="amount"/>
+			<xs:element type="statType" name="statType"/>
+			<xs:element type="operatorType" name="operator"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="statType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STAMINA"/>
+			<xs:enumeration value="SHIELD_CHARGE"/>
+			<xs:enumeration value="SHIELD_EFFICIENCY"/>
+			<xs:enumeration value="COOL_RATE"/>
+			<xs:enumeration value="SPEED"/>
+			<xs:enumeration value="SHIELD_RECOVERY"/>
+			<xs:enumeration value="ATTACK_RATING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="periodicGroup">
+		<xs:sequence>
+			<xs:element type="xs:positiveInteger" name="numberOfTicks"/>
+			<xs:element type="effectRefType" name="spellEffect"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="effectRefType">
+		<xs:group ref="schoolEffectGroup"/>
+		<xs:attribute name="class" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:simpleType name="operatorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="POST_MULTIPLY"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="auraList">
+		<xs:sequence>
+			<xs:element type="referenceType" name="serverAura" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

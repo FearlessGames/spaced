@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/graveyards.xsd">
+	<graveyard>
+		<pk>75b0c526-0519-477d-af90-9e859cb2550c</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>647d836d-f307-423f-8bbb-9e859cb2f648</pk>
+			<spawnPoint>
+				<point x="25.0" y="21.951366782188416" z="-9.300000190734863"/>
+				<rotation x="0.0" y="0.9999968750016276" z="0.0" w="0.002499997395834632"/>
+			</spawnPoint>
+		</area>
+	</graveyard>
+</list>

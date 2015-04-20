@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+
+
+	<takeAll>
+		<pk>9fe998da-9c8f-4a2b-b3bd-9f78148bfe0b</pk>
+		<name>empty loot</name>
+	</takeAll>
+
+	<lootTemplate class="takeAll">
+		<pk>c3e08c7e-1028-41d0-8f19-a074998bb6c2</pk>
+		<name>feral piglet loot</name>
+		<lootTemplates>
+			<probability>
+				<pk>c733ba2c-0ad2-4fe3-977f-a074998d0fd8</pk>
+				<probability>0.25</probability>
+				<lootTemplate class="takeK">
+					<pk>c7e5fb1e-0594-4bdc-acbe-a0749989a716</pk>
+					<name>mk1 lower</name>
+					<k>1</k>
+					<templates>
+						<probability>
+							<pk>0f48fd5f-bd17-4003-84bb-a0749989ba27</pk>
+							<lootTemplate class="single">
+								<pk>cb09978c-b14b-4547-853e-a0749989ba27</pk>
+								<name></name>
+								<itemTemplate reference="Mk1 Boots"/>
+							</lootTemplate>
+							<probability>30.0</probability>
+						</probability>
+						<probability>
+							<pk>fdd0351b-dd1e-4408-a40a-a0749989e614</pk>
+							<lootTemplate class="single">
+								<pk>c3fe9360-bb30-40b3-b873-a0749989e614</pk>
+								<name></name>
+								<itemTemplate reference="Mk1 Legs"/>
+							</lootTemplate>
+							<probability>40.0</probability>
+						</probability>
+						<probability>
+							<pk>a7d1e44a-6ba3-4976-a6d7-a0749989d253</pk>
+							<lootTemplate class="single">
+								<pk>53404b0b-b79b-4a53-85bb-a0749989d253</pk>
+								<name></name>
+								<itemTemplate reference="Mk1 Chest"/>
+							</lootTemplate>
+							<probability>20.0</probability>
+						</probability>
+					</templates>
+				</lootTemplate>
+			</probability>
+			<probability>
+				<pk>bf024db0-5458-46e8-809b-a074998da2f8</pk>
+				<probability>1.0</probability>
+				<lootTemplate class="takeK">
+					<pk>6b1cdddb-a8ac-44fa-982f-a0749998a20a</pk>
+					<name>feral pig misc</name>
+					<k>1</k>
+					<templates>
+						<probability>
+							<pk>d659ce6f-9171-4061-8549-a0749998cd89</pk>
+							<probability>7</probability>
+							<lootTemplate class="takeK">
+								<pk>55e9486e-425c-4fbb-905c-a0749984e40b</pk>
+								<name>pig trash</name>
+								<k>1</k>
+								<templates>
+									<probability>
+										<pk>1d923d7c-82be-4fe7-88de-a0749984f484</pk>
+										<lootTemplate class="single">
+											<pk>0783adbe-1e77-44e9-acd5-a0749984f484</pk>
+											<name></name>
+											<itemTemplate reference="Pig tail"/>
+										</lootTemplate>
+										<probability>52.0</probability>
+									</probability>
+									<probability>
+										<pk>fe33853b-c6e1-4c67-9895-a074998593fc</pk>
+										<lootTemplate class="single">
+											<pk>3e059367-516b-417b-bc11-a074998593fc</pk>
+											<name></name>
+											<itemTemplate reference="Burned bacon"/>
+										</lootTemplate>
+										<probability>1.0</probability>
+									</probability>
+									<probability>
+										<pk>f01f46ae-b8ad-4e58-8297-a07499853e13</pk>
+										<lootTemplate class="single">
+											<pk>76b6c54d-208d-4386-b42d-a07499853e13</pk>
+											<name></name>
+											<itemTemplate reference="Snout"/>
+										</lootTemplate>
+										<probability>47.0</probability>
+									</probability>
+								</templates>
+							</lootTemplate>
+						</probability>
+						<probability>
+							<pk>024d1794-41ae-4425-8a47-a0749998f87d</pk>
+							<probability>3</probability>
+							<lootTemplate class="takeK">
+								<pk>c3b571e9-a26b-4861-89b3-a07499990fce</pk>
+								<name>basic consumables</name>
+								<k>1</k>
+								<templates>
+									<probability>
+										<pk>ebe022bc-aa8e-49d3-88af-a07499993ab8</pk>
+										<lootTemplate class="single">
+											<pk>a755c8d4-f383-4a3c-b7fc-a07499994058</pk>
+											<name></name>
+											<itemTemplate reference="Can of Slurm"/>
+										</lootTemplate>
+										<probability>3</probability>
+									</probability>
+									<probability>
+										<pk>28757793-8a90-46b6-b1e0-a074999953b3</pk>
+										<lootTemplate class="single">
+											<pk>85f04425-06dc-4997-8260-a07499995a3a</pk>
+											<name></name>
+											<itemTemplate reference="Bucket of Popplers"/>
+										</lootTemplate>
+										<probability>5</probability>
+									</probability>
+								</templates>
+							</lootTemplate>
+						</probability>
+					</templates>
+				</lootTemplate>
+			</probability>
+		</lootTemplates>
+	</lootTemplate>
+
+
+	<takeAll>
+		<pk>b53db796-46d8-4095-8a75-9f954015faa2</pk>
+		<name>scott-michaels-loot</name>
+		<lootTemplates/>
+	</takeAll>
+
+
+	<takeAll>
+		<pk>f58ef23e-3c1e-4f33-8833-a09cd7e72bd0</pk>
+		<name>sow mother loot</name>
+		<lootTemplates>
+			<probability>
+				<pk>bc3986f3-a54e-4ff6-b128-a0a0de14a141</pk>
+				<probability>1</probability>
+				<lootTemplate class="single">
+					<pk>bad0480d-fa4e-4afe-915d-a0a0de14c468</pk>
+					<itemTemplate reference="Sow mothers snout"/>
+				</lootTemplate>
+			</probability>
+
+			<probability>
+				<pk>bc3986f3-a54e-4ff6-b128-a030de14a142</pk>
+				<probability>0.2</probability>
+				<lootTemplate reference="feral piglet loot"/>
+			</probability>
+
+		</lootTemplates>
+	</takeAll>
+
+	<takeAll>
+		<pk>76c24f9d-f03e-4479-97e5-a0d12940e4eb</pk>
+		<name>feral pig loot</name>
+		<lootTemplates>
+			<probability>
+				<pk>99269384-148e-4f9e-b4b2-a0d12940f390</pk>
+				<probability>0.1</probability>
+				<lootTemplate class="single">
+					<pk>94fff685-d8d0-4569-a47f-a0d1294115d2</pk>
+					<itemTemplate reference="e-Blade"/>
+				</lootTemplate>
+			</probability>
+
+			<probability>
+				<pk>7e645863-c66c-4e9d-b016-a0d129415380</pk>
+				<probability>1</probability>
+				<lootTemplate reference="feral pig misc"/>
+			</probability>
+
+		</lootTemplates>
+	</takeAll>
+
+
+</list>

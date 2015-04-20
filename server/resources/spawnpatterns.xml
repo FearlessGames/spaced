@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../trunk/server/resources/xsd/spawnpatterns.xsd">
+
+		<spawnpattern name="fearless patrol ship">
+		 <pk>60eba25d-b9c0-4821-88b4-a027232a77c1</pk>
+		 <area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			 <pk>bf5e2ae3-e5c8-4203-86e5-a027232a77c1</pk>
+			 <spawnPoint>
+				 <point x="0.0" y="0.0" z="0.0"/>
+				 <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+			 </spawnPoint>
+		 </area>
+		 <mobspawns>
+			 <mobspawn>
+				 <pk>d3b865e9-b262-41c9-b0eb-a027232a8988</pk>
+				 <mobTemplate reference="Small Patrol ship"/>
+				 <spawnScheduleTemplate>
+					 <pk>d1564fc6-351a-489d-86f0-a027232a8988</pk>
+					 <minCount>0</minCount>
+					 <maxCount>1</maxCount>
+					 <maxWaitTime>180</maxWaitTime>
+				 </spawnScheduleTemplate>
+				 <geometryData class="path">
+					 <pathPoints>
+						 <vector3 x="235.21344109012566" y="-34.53137353855623" z="173.7449919594487"/>
+						 <vector3 x="152.62824758885813" y="-24.98754348392578" z="218.46392476349564"/>
+						 <vector3 x="76.1391602009873" y="-18.084656773898907" z="218.5622129245717"/>
+						 <vector3 x="-49.24489500756677" y="-26.553616565528195" z="159.17530388062218"/>
+						 <vector3 x="-199.68134093598158" y="-14.126475064073256" z="48.67258978750917"/>
+						 <vector3 x="-267.0233161394309" y="-9.790539668816786" z="-101.67604861753092"/>
+						 <vector3 x="-259.8038145739906" y="-4.516600634670715" z="-222.7592354092913"/>
+						 <vector3 x="-173.36177128562346" y="-17.568550159916647" z="-329.0191887177962"/>
+						 <vector3 x="-98.02469673394656" y="-18.766318874827476" z="-355.9059139410975"/>
+						 <vector3 x="-5.309139318795378" y="-19.819715576761027" z="-359.58786826462693"/>
+						 <vector3 x="83.97039084069633" y="-24.67077665441925" z="-309.81016021187753"/>
+						 <vector3 x="166.7694714412666" y="-32.15046807740042" z="-202.83666255649362"/>
+						 <vector3 x="209.27165694209847" y="-34.067141490386426" z="-108.27868245094658"/>
+						 <vector3 x="224.3989588249618" y="-28.72524896207139" z="7.315750406811546"/>
+						 <vector3 x="238.37855156190088" y="-32.79850012572286" z="148.89343236701487"/>
+					 </pathPoints>
+				 </geometryData>
+				 <timePausAtPoints>
+					 <start>0</start>
+					 <end>0</end>
+				 </timePausAtPoints>
+			 </mobspawn>
+		 </mobspawns>
+	 </spawnpattern>
+
+	<spawnpattern name="aron murphy">
+		<pk>2db74bd1-c5a9-4b69-9d7b-a06d8ece6f06</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>c688d9f5-74f1-487b-be6f-a06d8ece9bb3</pk>
+			<spawnPoint>
+				<point x="17.062374114990234" y="21.86102330684662" z="-9.507410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>7f1e7b06-f13b-4f4b-a9b0-a06d8ecec08d</pk>
+				<mobTemplate reference="Aron Murphy"/>
+				<spawnScheduleTemplate>
+					<pk>94757d76-665e-4331-85e3-a06d8ecec08d</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+	<spawnpattern>
+		<name>starting pigs A</name>
+		<pk>d187f720-adb3-4592-a3c0-a07499207851</pk>
+		<area class="se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea">
+			<pk>c6d915ce-9ccb-4dee-92ae-a07499207f66</pk>
+			<polygon>
+				<points>
+					<vector3 x="20.14513397216797" y="21.863087058067322" z="14.241708755493164"/>
+					<vector3 x="27.965469360351562" y="21.915329337120056" z="25.931337356567383"/>
+					<vector3 x="38.855472564697266" y="21.843969702720642" z="34.03722381591797"/>
+					<vector3 x="43.78850555419922" y="21.854923605918884" z="23.684040069580078"/>
+					<vector3 x="46.24406051635742" y="21.876003623008728" z="12.623459815979004"/>
+					<vector3 x="45.29045486450195" y="21.88032376766205" z="3.014721632003784"/>
+					<vector3 x="36.89377212524414" y="21.83868443965912" z="-6.950496196746826"/>
+					<vector3 x="27.37760353088379" y="21.8607257604599" z="-4.08336877822876"/>
+					<vector3 x="20.293243408203125" y="21.83345067501068" z="1.1420336961746216"/>
+				</points>
+			</polygon>
+			<rotation x="0.000" y="-0.628" z="0.000" w="0.778"/>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>0987a6cc-d875-4285-be60-a07499219c22</pk>
+				<mobTemplate reference="Feral piglet"/>
+				<spawnScheduleTemplate>
+					<pk>bef45611-6942-477d-82bd-a0749921b100</pk>
+					<minCount>10</minCount>
+					<maxCount>18</maxCount>
+					<maxWaitTime>30000</maxWaitTime>
+				</spawnScheduleTemplate>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="melee weapons vendor">
+		<pk>cb183d5b-3db1-4315-bc09-a099d330e8ee</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>39f72475-f2a2-4f3e-8741-a099d330ef45</pk>
+			<spawnPoint>
+				<point x="-10.862374114990234" y="21.86102330684662" z="16.207410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>dd204d79-75c2-4fa5-abc0-a099d330f52a</pk>
+				<mobTemplate reference="Melee Weapons"/>
+				<spawnScheduleTemplate>
+					<pk>d1be702a-ad22-407d-b2f5-a099d330fbe7</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="rifle vendor">
+		<pk>27e8a3c6-05c3-4558-bcab-a099d3276cc3</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>747f707e-dcdb-4e52-a7a5-a099d3277359</pk>
+			<spawnPoint>
+				<point x="-13.062374114990234" y="21.86102330684662" z="12.907410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>be9c4d4d-db3c-4798-a7d3-a099d3277c18</pk>
+				<mobTemplate reference="Rifle Vendor"/>
+				<spawnScheduleTemplate>
+					<pk>bfc144ac-30a8-4c16-9224-a099d32783bb</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="pistol vendor">
+		<pk>1d70a993-f8e5-4130-b9d1-a099d327ce94</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>14926562-15aa-4a95-a8ac-a099d327d39f</pk>
+			<spawnPoint>
+				<point x="-15.062374114990234" y="21.86102330684662" z="10.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>524911cd-4483-4fe3-ace4-a099d327d8e4</pk>
+				<mobTemplate reference="Pistol Vendor"/>
+				<spawnScheduleTemplate>
+					<pk>21487e1f-6d27-4925-95ff-a099d327de91</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="damage spells">
+		<pk>def37655-e52b-48b8-bce2-a099d3417d87</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>c00ff3b1-e179-4b84-ad00-a099d344ee65</pk>
+			<spawnPoint>
+				<point x="-6.062374114990234" y="21.86102330684662" z="16.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>a83c48b4-edf5-4c4c-a4b7-a099d344f4eb</pk>
+				<mobTemplate reference="Damage Spells"/>
+				<spawnScheduleTemplate>
+					<pk>0e11b911-aca7-40dc-84f1-a099d344fa0d</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="healing spells">
+		<pk>06b6b814-5d10-41ba-9d45-a099d34447f8</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>8a9b8bf7-26d5-4d6c-bb71-a099d3444e71</pk>
+			<spawnPoint>
+				<point x="0.462374114990234" y="21.86102330684662" z="16.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>7599c6f3-6f6a-4762-ab88-a099d3447741</pk>
+				<mobTemplate reference="Healing Spells"/>
+				<spawnScheduleTemplate>
+					<pk>17555fb8-74d0-451f-bee8-a099d3447d2f</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="buffs vendor">
+		<pk>498a7b72-1547-4453-a155-a099d343959f</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>711f01df-0334-47b4-a369-a099d3439e02</pk>
+			<spawnPoint>
+				<point x="-9.462374114990234" y="21.86102330684662" z="3.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>fa1f4828-809d-49fe-abb7-a099d343db0d</pk>
+				<mobTemplate reference="Buffs Vendor"/>
+				<spawnScheduleTemplate>
+					<pk>07df4152-9c9f-439d-a184-a099d341ce8b</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="power devices">
+		<pk>5470e382-c7d4-43c1-b72d-a099d3493e81</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>fb629602-e64f-4b7d-97b7-a099d349445a</pk>
+			<spawnPoint>
+				<point x="16.462374114990234" y="21.86102330684662" z="0.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>6dc0ba26-11e2-4504-9a50-a099d3495a49</pk>
+				<mobTemplate reference="Power Devices"/>
+				<spawnScheduleTemplate>
+					<pk>1b93b8e4-6f2d-4a8d-ac3a-a099d349613a</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="armor vendor">
+		<pk>402b2640-8076-4658-943a-a09ad4446a6c</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>4ec717e6-e476-4043-bb4b-a09ad444724c</pk>
+			<spawnPoint>
+				<point x="6.462374114990234" y="21.86102330684662" z="-7.007410049438477"/>
+				<rotation x="0.0" y="-0.546260323738577" z="0.0" w="0.8376154599271822"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>183046eb-ba54-4a96-a8fb-a09ad444814a</pk>
+				<mobTemplate reference="Armor Vendor"/>
+				<spawnScheduleTemplate>
+					<pk>97cefd8b-1222-45f8-93a4-a09ad4448f44</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="mara wison">
+		<pk>20fdd9ee-1752-4ba8-843b-a0759ae96c6f</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>6b4c1119-66c9-4831-b89e-a0759ae971f0</pk>
+			<spawnPoint>
+				<point x="10.943" y="21.859" z="12.089"/>
+				<rotation x="0.000" y="0.759" z="0.000" w="0.651"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>67529e4f-fd76-4176-b438-a0759ae97ef0</pk>
+				<mobTemplate reference="Capt. Mara Wison"/>
+				<spawnScheduleTemplate>
+					<pk>faf1ca90-f16e-4169-b474-a0759ae97ef0</pk>
+					<minCount>1</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="deck guard">
+		<pk>a6c9b886-792a-4a41-aecb-a099d31483fc</pk>
+		<area class="se.spaced.server.model.spawn.area.SinglePointSpawnArea">
+			<pk>2b67267d-4417-445d-8067-a099d3148ffa</pk>
+			<spawnPoint>
+				<point x="-3.943" y="21.859" z="-1.089"/>
+				<rotation x="0.000" y="0.759" z="0.000" w="0.651"/>
+			</spawnPoint>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>a89a6191-764a-43ec-bc85-a099d3149944</pk>
+				<mobTemplate reference="Deck Guard"/>
+				<spawnScheduleTemplate>
+					<pk>a159d29f-8302-438d-9098-a099d314a190</pk>
+					<minCount>1</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="sow mother">
+		<pk>8f2ffba8-0147-4cfb-8db5-a09cd7ea6dad</pk>
+		<area class="se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea">
+			<pk>e2c242ef-5475-4b65-982d-a09cd7eace31</pk>
+			<polygon>
+				<points>
+					<vector3 x="-14.156721115112305" y="21.861990332603455" z="23.805932998657227"/>
+					<vector3 x="-21.261232376098633" y="21.883388876914978" z="37.217098236083984"/>
+					<vector3 x="-12.406014442443848" y="21.875202536582947" z="44.22589111328125"/>
+					<vector3 x="-14.156721115112305" y="21.861990332603455" z="23.805932998657227"/>
+				</points>
+			</polygon>
+			<rotation x="1.0" y="2.0" z="3.0" w="4.0"/>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>fdf9ea6a-1360-4d4a-8fbe-a09cd7ea7b8d</pk>
+				<mobTemplate reference="Sow Mother"/>
+				<spawnScheduleTemplate>
+					<pk>186bd03b-e2ef-44f3-a650-a09cd7ea7b8d</pk>
+					<minCount>0</minCount>
+					<maxCount>1</maxCount>
+					<maxWaitTime>60000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<geometryData class="path">
+					<pathPoints>
+						<vector3 x="-14.156721115112305" y="21.861990332603455" z="23.805932998657227"/>
+						<vector3 x="-21.261232376098633" y="21.883388876914978" z="37.217098236083984"/>
+						<vector3 x="-12.406014442443848" y="21.875202536582947" z="44.22589111328125"/>
+					</pathPoints>
+				</geometryData>
+				<timePausAtPoints>
+					<start>0</start>
+					<end>0</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+
+	<spawnpattern name="starting pigs B">
+		<pk>9cf2389f-899b-43a4-a872-a0d32bdd28d3</pk>
+		<area class="se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea">
+			<pk>56ffae20-c205-4d12-b66d-a0d32bdd33f6</pk>
+			<polygon>
+				<points>
+					<vector3 x="29.725873947143555" y="14.06380307674408" z="31.249826431274414"/>
+					<vector3 x="27.96070671081543" y="13.97744882106781" z="2.0535733699798584"/>
+					<vector3 x="51.908905029296875" y="13.9833482503891" z="-2.450021743774414"/>
+					<vector3 x="48.98101043701172" y="13.974698424339294" z="25.51786994934082"/>
+					<vector3 x="29.725873947143555" y="14.06380307674408" z="31.249826431274414"/>
+				</points>
+			</polygon>
+			<rotation x="0.975137" y="0.0" z="-0.221602" w="0.0"/>
+		</area>
+		<mobspawns>
+			<mobspawn>
+				<pk>c8986b32-5c68-44ee-bd27-a0d32bdd5558</pk>
+				<mobTemplate reference="Feral pig"/>
+				<spawnScheduleTemplate>
+					<pk>388ba9d5-058e-4fde-b30a-a0d32bdd5558</pk>
+					<minCount>10</minCount>
+					<maxCount>15</maxCount>
+					<maxWaitTime>20000</maxWaitTime>
+				</spawnScheduleTemplate>
+				<timePausAtPoints>
+					<start>100</start>
+					<end>600</end>
+				</timePausAtPoints>
+			</mobspawn>
+		</mobspawns>
+	</spawnpattern>
+</list>

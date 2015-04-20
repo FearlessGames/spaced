@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="base.xsd"/>
+
+	<xs:element name="list" type="listType"/>
+	<xs:complexType name="listType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="spawnPatternType" name="spawnpattern"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="spawnPatternType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="areaType" name="area"/>
+			<xs:element type="mobSpawnListType" name="mobspawns"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:complexType name="mobSpawnListType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element type="mobSpawnType" name="mobspawn"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="mobSpawnType">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="referenceType" name="mobTemplate"/>
+			<xs:element type="spawnScheduleType" name="spawnScheduleTemplate"/>
+			<xs:element type="pathType" name="geometryData" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="spawnScheduleType">
+		<xs:sequence>
+			<xs:element type="uuidType" name="pk"/>
+			<xs:element type="xs:integer" name="minCount"/>
+			<xs:element type="xs:integer" name="maxCount"/>
+			<xs:element type="xs:integer" name="maxWaitTime"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,2430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/itemtemplates.xsd">
+	<item>
+		<pk>03b6bafe-cd9b-480d-9a23-9daa4a013841</pk>
+		<name>Mk5 Boots</name>
+		<appearanceData>
+			<modelName>/props/gear/feet/boots/mk5/tn_red_mk5.xmo</modelName>
+			<portraitName>/items/icons/boots_mk5_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHOES</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>5a0e080e-76a8-47fc-973e-9e8196d30054</pk>
+				<mods>
+					<modStat>
+						<amount>0.11</amount>
+						<statType>SPEED</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>2.5</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>125.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>210000</amount>
+		</sellsFor>
+		<!--salvageLootTemplate reference="ML1 Salvage"/--> <!-- TODO: solve the problem with circular dependencies -->
+	</item>
+
+	<item>
+		<pk>9921a094-9218-43a3-a160-9e87a078a013</pk>
+		<name>Mk5 TN Boots</name>
+		<appearanceData>
+			<modelName>/props/gear/feet/boots/mk5/tn_blue_mk5.xmo</modelName>
+			<portraitName>/items/icons/boots_mk5_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHOES</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>c7952270-2fd5-4d74-817e-9e87a06f5147</pk>
+				<mods>
+					<modStat>
+						<amount>0.12</amount>
+						<statType>SPEED</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>3.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>165.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>458000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>83215552-ee45-45ca-8552-a095ccb68c5b</pk>
+		<name>Mk1 Boots</name>
+		<appearanceData>
+			<modelName>/props/gear/feet/boots/mk2/tn_blue_mk2.xmo</modelName>
+			<portraitName>/items/icons/boots_mk2_blue.png</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHOES</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>f434df8c-0935-4779-9105-a095ccb7c7a9</pk>
+				<mods>
+					<modStat>
+						<amount>0.04</amount>
+						<statType>SPEED</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>3</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>450</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>497d5987-d78d-4d03-b7c6-a095ccbabd03</pk>
+		<name>Mk1 Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk3/mk3_blue.xmo</modelName>
+			<portraitName>/items/icons/legs_mk3_blue.png</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>200309cd-0c53-4d16-80f8-a095ccc02401</pk>
+				<mods>
+					<modStat>
+						<amount>1</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>10</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>400</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>b4cce9bc-ecda-485b-9fe0-a095ccd75f72</pk>
+		<name>Mk1 Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk2/mk2_blue.xmo</modelName>
+			<portraitName>/items/icons/chest_mk2_blue.png</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>8404e58c-fdd7-4e68-a477-a095ccd7fabc</pk>
+				<mods>
+					<modStat>
+						<amount>15</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>2</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>500</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>6e760c6e-27f8-402f-b75a-9e88a1ffee86</pk>
+		<name>Grey Jacket</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/coat/simple/jacket_grey.xmo</modelName>
+			<portraitName>/items/icons/jacket_grey</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>84abcf43-231d-4ea4-9d77-9e88a1fff412</pk>
+				<mods>
+					<modStat>
+						<amount>1.0</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>50</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>7f181517-b9da-4e36-a960-9e88a2085d8c</pk>
+		<name>Black Jacket</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/coat/simple/jacket_black.xmo</modelName>
+			<portraitName>/items/icons/jacket_black</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>981d66a2-d33a-4e24-ac58-9e88a2086c3c</pk>
+				<mods>
+					<modStat>
+						<amount>2.0</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>20</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>9f4b75e4-650e-4e2b-ab62-9e89a20896a1</pk>
+		<name>Blue Jacket</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/coat/simple/jacket_blue.xmo</modelName>
+			<portraitName>/items/icons/jacket_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>0ed01f26-f5e9-4b58-975e-9e89a2089b6c</pk>
+				<mods>
+					<modStat>
+						<amount>1.0</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>200</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>5a0e11c7-5de6-4a53-8139-9e89a208c227</pk>
+		<name>Red Jacket</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/coat/simple/jacket_red.xmo</modelName>
+			<portraitName>/items/icons/jacket_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>8cfaf5f0-cf29-42ad-8cd5-9e89a208c74b</pk>
+				<mods>
+					<modStat>
+						<amount>2.0</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>225</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>19a2cbec-ae8d-47ee-808d-9db256db70b4</pk>
+		<name>Tri Claw</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/claw/three_prong/three_prong.xmo</modelName>
+			<portraitName>/items/icons/triclaw</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>ec989c9f-d933-4ab0-b1a1-9e82984919fb</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>1.0</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="melee-equipped"/>
+			<serverAura reference="claws-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>31325</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>65e27081-b722-438e-83ce-9db155c930aa</pk>
+		<name>Simple Wrist Computer</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>LEFT_WRIST</itemType>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>7c9d0256-c5b4-4eb7-a495-9e8298496ae9</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>0.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>300</amount>
+		</sellsFor>
+	</item>
+
+
+	<item>
+		<pk>be1e6958-55fe-4e0d-ae00-a099d34bd08d</pk>
+		<name>Healers Wrist Device</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>1894d1d8-453c-45be-8d4e-a099d34c0f26</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>1.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="healing-enabled"/>
+			<serverAura reference="disruption-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2300</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>430ba620-cb5e-4aef-9169-a099d34e3517</pk>
+		<name>Plasma Controller</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>7063051d-a19e-4db1-a8c7-a099d34e3bcc</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>0.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="plasma-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2300</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>5ccbabd8-31fa-4c42-a260-a09ad351e57e</pk>
+		<name>Rooting Mobility Disruptor</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>d21367ad-dfc2-4fa8-a31d-a09ad3525ba0</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>0.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="roots-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1800</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>d51f346f-f4d9-44e5-954c-a09ad353c79a</pk>
+		<name>Protectors Unit</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>c6cc2d3f-dc5c-49eb-a724-a09ad353ec56</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>3.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="roots-enabled"/>
+			<serverAura reference="healing-enabled"/>
+			<serverAura reference="buffs-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>3284300</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>c1cc9f26-6e77-49af-ac79-a09ad354b6ed</pk>
+		<name>Buff Support Unit</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>LEFT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>7a335563-83bf-4ab9-ae31-a09ad354bd4c</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="buffs-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>6284300</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>2680c9c1-ad86-4c94-bc0e-a09ad354e191</pk>
+		<name>Plasma Support Unit</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>LEFT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>6c250e25-a66b-42e2-bf24-a09ad354faa8</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="plasma-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>684100</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>4b26e448-61ff-405e-8317-a09ad356ce13</pk>
+		<name>Omnipotent UberClaw</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/claw/three_prong/three_prong.xmo</modelName>
+			<portraitName>/items/icons/triclaw</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RIGHT_WRIST</itemType>
+			<itemType>LEFT_WRIST</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>3a1dd819-5c27-475e-b774-a09ad3571650</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="healing-enabled"/>
+			<serverAura reference="plasma-enabled"/>
+			<serverAura reference="claws-enabled"/>
+			<serverAura reference="roots-enabled"/>
+			<serverAura reference="buffs-enabled"/>
+			<serverAura reference="disruption-enabled"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>994684100</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>03baa7d6-562c-4abe-b2cf-9daa4a013841</pk>
+		<name>s-11</name>
+		<appearanceData>
+			<modelName>/props/vehicles/flying/small/s-11/s-11.xmo</modelName>
+			<portraitName>/items/icons/s-11</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>VEHICLE</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>3000000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>094099d9-849d-486f-b82c-9daa4a013841</pk>
+		<name>Bag of Gragnar&apos;s human rinds</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/snackbag</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+
+		<spell>
+			<pk>95347c70-f564-4fd6-a525-9dac4d56d47f</pk>
+			<name>Quick Snack</name>
+			<castTime>500</castTime>
+			<effects>
+				<healEffect>
+					<pk>6e1e4172-5b16-4b88-ac39-9dac4d56feaf</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<range>
+						<start>20</start>
+						<end>40</end>
+					</range>
+				</healEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>40</amount>
+		</sellsFor>
+		<maxStackSize>20</maxStackSize>
+	</item>
+	<item>
+		<pk>143a24be-d8ba-4edf-bb31-9daa4a013841</pk>
+		<name>Mk4 Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk4/tn_red_mk4.xmo</modelName>
+			<portraitName>/items/icons/chest_mk4_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>08158a66-ba66-4be7-ae34-9e8196a096de</pk>
+				<mods>
+					<modStat>
+						<amount>2.5</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>82.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>56900</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>a0e7f983-0cec-46ba-ba44-9e87a06f7c19</pk>
+		<name>Mk4 TN Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk4/tn_blue_mk4.xmo</modelName>
+			<portraitName>/items/icons/chest_mk4_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>adc55e50-3229-4bb5-b613-9e87a06f90ce</pk>
+				<mods>
+					<modStat>
+						<amount>2.8</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>98.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>137900</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>1c6a1298-1b15-4284-9450-9daa4a013841</pk>
+		<name>Mk3 Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/tn_mk3/tn_red_mk3.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk3_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>c89cd491-7a28-4476-bafc-9e82984e2f46</pk>
+				<mods>
+					<modStat>
+						<amount>8.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>0.8</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>12700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>eae090c5-1c25-44a9-92d4-9e87a06fce6c</pk>
+		<name>Mk3 TN Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/tn_mk3/tn_blue_mk3.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk3_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>34aeb6d5-ad3e-4024-9094-9e87a06fe06b</pk>
+				<mods>
+					<modStat>
+						<amount>14.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>28900</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>31f926d4-aed7-47bb-a504-9daa4a01383c</pk>
+		<name>Can of Slurm</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/can</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell reference="Cool"/>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>25</amount>
+		</sellsFor>
+		<maxStackSize>20</maxStackSize>
+	</item>
+	<item>
+		<pk>554fabde-d76d-428f-834b-9daa4a013841</pk>
+		<name>Shades</name>
+		<appearanceData>
+			<modelName>/props/gear/head/face/glasses/shades.xmo</modelName>
+			<portraitName>/items/icons/shades</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>64780713-d3a4-4f9a-9f97-9e82984a830d</pk>
+				<mods>
+					<modStat>
+						<amount>2.52</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>22000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>62a05706-7f94-490a-a198-9daa4a013841</pk>
+		<name>Cap</name>
+		<appearanceData>
+			<modelName>/props/gear/head/hats/cap/cap.xmo</modelName>
+			<portraitName>/items/icons/cap</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>5de92af2-902c-441d-9016-9e82984e6ef7</pk>
+				<mods>
+					<modStat>
+						<amount>0.6</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>500</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>667bed23-3e0d-4dc6-80ec-9daa4a013841</pk>
+		<name>Mk2 Boots</name>
+		<appearanceData>
+			<modelName>/props/gear/feet/boots/mk2/tn_red_mk2.xmo</modelName>
+			<portraitName>/items/icons/boots_mk2_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHOES</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>acbf9853-7928-4391-be29-9e8196b38b41</pk>
+				<mods>
+					<modStat>
+						<amount>0.06</amount>
+						<statType>SPEED</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>5.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>5300</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>1d3b7155-74b1-4a7d-8714-9e87a070069e</pk>
+		<name>Mk2 TN Boots</name>
+		<appearanceData>
+			<modelName>/props/gear/feet/boots/mk2/tn_blue_mk2.xmo</modelName>
+			<portraitName>/items/icons/boots_mk2_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHOES</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>fffb17e2-314c-48e9-9a1e-9e87a0701809</pk>
+				<mods>
+					<modStat>
+						<amount>0.07</amount>
+						<statType>SPEED</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>7.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>0.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>44500</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>48aeeb54-416d-4400-a572-9e87a072bd5b</pk>
+		<name>Mk5 Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk5/tn_red_mk5.xmo</modelName>
+			<portraitName>/items/icons/chest_mk5_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>58802ab4-b71e-4bff-815f-9e87a072c4ac</pk>
+				<mods>
+					<modStat>
+						<amount>5.8</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>228.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1280000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>4d8df62b-bb99-42d6-8497-9e87a0771caf</pk>
+		<name>Mk5 TN Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk5/tn_blue_mk5.xmo</modelName>
+			<portraitName>/items/icons/chest_mk5_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>c3b0fdba-695b-4b75-a2b4-9e87a0770f1c</pk>
+				<mods>
+					<modStat>
+						<amount>6.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>258.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>3811000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>2dacfab1-9a0f-4c36-b0d0-9e87a072e0a5</pk>
+		<name>Mk2 Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/mk2/mk2_red.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk2_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>58d93016-ce93-4bb9-a996-9e87a072e50b</pk>
+				<mods>
+					<modStat>
+						<amount>4.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.0</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>5600</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>703ef615-10b5-4f0f-989a-9daa4a013841</pk>
+		<name>Mk2 TN Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/mk2/mk2_blue.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk2_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>43721a89-541d-434d-93db-9e87a0709494</pk>
+				<mods>
+					<modStat>
+						<amount>11.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.3</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>51250</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>77447bce-2d8f-489b-9d95-9daa4a013841</pk>
+		<name>Mk2 Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk2/mk2_red.xmo</modelName>
+			<portraitName>/items/icons/chest_mk2_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>95f1c5e6-434b-488c-bcc0-9e82984b4062</pk>
+				<mods>
+					<modStat>
+						<amount>8.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>0.7</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>7980</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>74474164-2a69-4bca-af88-9e87a050657d</pk>
+		<name>Rusty Chest Armor</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk2/mk2_blue.xmo</modelName>
+			<portraitName>/items/icons/chest_mk2_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>8feebe20-9147-4615-b1f7-9e87a0509b45</pk>
+				<mods>
+					<modStat>
+						<amount>15.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.1</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>6600</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>7d676843-f31a-44ee-bc59-9daa4a013841</pk>
+		<name>Mk5 Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/mk5/tn_red_mk5.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk5_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>4f47460e-4b0e-4af0-b833-9e8196ccb489</pk>
+				<mods>
+					<modStat>
+						<amount>1.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>112.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2115400</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>ce4b4469-3f70-4388-83d6-9e87a06d80a5</pk>
+		<name>Mk5 TN Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/mk5/tn_blue_mk5.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk5_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>26cf0b62-2ff6-4010-9650-9e87a06d8a51</pk>
+				<mods>
+					<modStat>
+						<amount>1.6</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>132.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>221750</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>7e14fc8d-d7ed-4648-90c1-9daa4a013841</pk>
+		<name>Disc-4</name>
+		<appearanceData>
+			<modelName>/props/vehicles/flying/small/disc-4/disc-4.xmo</modelName>
+			<portraitName>/items/icons/disc-4</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>VEHICLE</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1825000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>89d20d43-0cef-48be-8ec3-9daa4a013841</pk>
+		<name>Mk3 Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk3/mk3_red.xmo</modelName>
+			<portraitName>/items/icons/legs_mk3_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>37fb283d-2eb6-4be4-a277-9e82984bae61</pk>
+				<mods>
+					<modStat>
+						<amount>13.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2960</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>36d1db0a-5e6f-4647-89e4-9e87a06dcc24</pk>
+		<name>Mk3 TN Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk3/mk3_blue.xmo</modelName>
+			<portraitName>/items/icons/legs_mk3_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>24e7b295-69e9-48f8-abc6-9e87a06ddd0d</pk>
+				<mods>
+					<modStat>
+						<amount>18.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>5750</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>8deefd37-c35f-4261-993a-9daa4a013841</pk>
+		<name>Beginners Jetpack</name>
+		<appearanceData>
+			<modelName>/props/gear/back/propulsion/jetpack/jetpack_mk1.xmo</modelName>
+			<portraitName>/items/icons/jetpack</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>JETPACK</itemType>
+		</itemTypes>
+		<equipAuras>
+			<serverAura reference="jetpack-equipped"/>
+			<modStatAura>
+				<pk>ecc981ab-1484-4cdf-a1dc-9f4fd4acc3b6</pk>
+				<name>jetpack-heatgeneration</name>
+				<mods>
+					<modStat>
+						<amount>-3.5</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>18000</amount>
+		</sellsFor>
+	</item>
+
+
+	<item>
+		<pk>69814c75-de48-4043-93c4-3849fa3fba4c</pk>
+		<name>Advanced Jetpack</name>
+		<appearanceData>
+			<modelName>/props/gear/back/propulsion/jetpack/jetpack_mk1.xmo</modelName>
+			<portraitName>/items/icons/jetpack</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>JETPACK</itemType>
+		</itemTypes>
+		<equipAuras>
+			<serverAura reference="jetpack-equipped"/>
+			<modStatAura>
+				<pk>9350042c-bdf7-4519-a736-e345c23a5f42</pk>
+				<name>jetpack-heatgeneration</name>
+				<mods>
+					<modStat>
+						<amount>-0.5</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>128000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>9e8c76a0-fad6-49d3-b47c-9daa4a013841</pk>
+		<name>Mk5 Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk5/tn_red_mk5.xmo</modelName>
+			<portraitName>/items/icons/legs_mk5_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>146eaf53-bf3f-4b70-a21d-9e8196ccd6a8</pk>
+				<mods>
+					<modStat>
+						<amount>4.6</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>183.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>285000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>f4e8d5f6-9fb1-4186-8a3a-9e87a06e1058</pk>
+		<name>Mk5 TN Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk5/tn_blue_mk5.xmo</modelName>
+			<portraitName>/items/icons/legs_mk5_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>1d3acb32-0934-4128-a924-9e87a06e246f</pk>
+				<mods>
+					<modStat>
+						<amount>5.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>219.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>412000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>a105150b-4d39-4a23-9370-9daa4a013841</pk>
+		<name>Burned bacon</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/bacon</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TRASH</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2500</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>a949778a-1cd0-4e15-9cf8-9daa4a013841</pk>
+		<name>Snout</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/snout</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TRASH</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>25</amount>
+		</sellsFor>
+		<maxStackSize>5</maxStackSize>
+	</item>
+	<item>
+		<pk>aa5536e9-ab49-423a-8bdc-9daa4a013841</pk>
+		<name>Leather Hat</name>
+		<appearanceData>
+			<modelName>/props/gear/head/hats/leatherbrim/leatherbrim.xmo</modelName>
+			<portraitName>/items/icons/leatherbrim</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>0aabee3c-424c-4442-bc58-9e8196cd1bd2</pk>
+				<mods>
+					<modStat>
+						<amount>2.0</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>4100</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>b9599a46-5313-442a-8c12-9daa4a013841</pk>
+		<name>Mk4 Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/tn_mk4/tn_red_mk4.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk4_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>6b9f1bef-5d0f-4b87-a7dd-9e8196cae477</pk>
+				<mods>
+					<modStat>
+						<amount>0.4</amount>
+						<statType>SHIELD_RECOVERY</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>78.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>54800</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>59876911-aa46-4236-b029-9e87a06e4ad2</pk>
+		<name>Mk4 TN Helmet</name>
+		<appearanceData>
+			<modelName>/props/gear/head/helmets/tn_mk4/tn_blue_mk4.xmo</modelName>
+			<portraitName>/items/icons/helmet_mk4_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>bc0db4a6-0765-403b-a39e-9e87a06e5cbb</pk>
+				<mods>
+					<modStat>
+						<amount>1.7</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>84.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>11200</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>ca094397-7bc5-47a4-a5bd-9daa4a013841</pk>
+		<name>Pig tail</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/pigtail</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TRASH</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>15</amount>
+		</sellsFor>
+		<maxStackSize>10</maxStackSize>
+	</item>
+	<item>
+		<pk>d44cc246-9724-40cc-a0ba-9daa4a01383c</pk>
+		<name>Bucket of Popplers</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/items/icons/bucket</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>a902b38f-3134-454c-affc-9d9f39873cd1</pk>
+			<name>Poppler Snack</name>
+			<castTime>500</castTime>
+			<cooldowns>
+				<cooldown reference="on-use-cooldown"/>
+			</cooldowns>
+			<effects>
+				<healEffect>
+					<pk>cb57742d-576b-4c2e-bc4d-9d9f39873cd1</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<range>
+						<start>60</start>
+						<end>85</end>
+					</range>
+				</healEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>40</amount>
+		</sellsFor>
+		<maxStackSize>20</maxStackSize>
+	</item>
+	<item>
+		<pk>eec15f0b-1ece-4eea-a816-9daa4a013841</pk>
+		<name>Mk3 Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk3/mk3_red.xmo</modelName>
+			<portraitName>/items/icons/chest_mk3_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>81068ad9-27bb-410a-a005-9e8196cd6f2f</pk>
+				<mods>
+					<modStat>
+						<amount>0.2</amount>
+						<statType>SHIELD_RECOVERY</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>22.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>6500</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>08bf4bab-e99f-4795-96ba-9e87a06e8335</pk>
+		<name>Mk3 TN Chest</name>
+		<appearanceData>
+			<modelName>/props/gear/chest/armor/mk3/mk3_blue.xmo</modelName>
+			<portraitName>/items/icons/chest_mk3_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIRT</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>3ed7dda2-6045-4d6d-a0b3-9e87a06ed19a</pk>
+				<mods>
+					<modStat>
+						<amount>32.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.6</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>16000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>fd9852ac-fa57-4cb2-981d-9daa4a013841</pk>
+		<name>Mk4 Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk4/tn_red_mk4.xmo</modelName>
+			<portraitName>/items/icons/legs_mk4_red</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>4bb95897-0127-46f4-af14-9e8196cd8b0a</pk>
+				<mods>
+					<modStat>
+						<amount>1.4</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>88.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>54200</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>78b76df4-0b85-4cf7-8fca-9e87a06ef727</pk>
+		<name>Mk4 TN Legs</name>
+		<appearanceData>
+			<modelName>/props/gear/legs/armor/mk4/tn_blue_mk4.xmo</modelName>
+			<portraitName>/items/icons/legs_mk4_blue</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TROUSERS</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>f619e117-9794-422d-9b6e-9e87a06f0afe</pk>
+				<mods>
+					<modStat>
+						<amount>1.8</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>98.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>116200</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>4054780c-d34a-4d47-879f-9daa4a01384f</pk>
+		<name>Mk1 Assault Rifle</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/rifle/mk1_assault/mk1_assault.xmo</modelName>
+			<portraitName>textures/items/icons/mk1_assault</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TWO_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>345304b8-d663-4e14-a872-9e82985b1b9d</pk>
+				<mods>
+					<modStat>
+						<amount>2.0</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>4.0</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>19000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>48fadcdf-1166-410a-a0d8-9daa4a01384f</pk>
+		<name>Lazor Pistol</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/handgun/lazorpistol/lazorpistol.xmo</modelName>
+			<portraitName>textures/items/icons/lazorpistol</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>OFF_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<serverAura reference="melee-equipped"/>
+			<serverAura reference="ranged-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>4f7a2304-919c-4eca-9f1e-9daa4a01384f</pk>
+		<name>Practice plasma gun</name>
+		<appearanceData>
+			<modelName>plasma_gun</modelName>
+			<portraitName>textures/gui/icons/IconWeaponsPlasmaPistol</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>OFF_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<serverAura reference="melee-equipped"/>
+			<serverAura reference="ranged-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>16000</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>6103f654-e34a-43f7-a013-9daa4a01384f</pk>
+		<name>Combat Knife</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/blades/combatknife/combatknife.xmo</modelName>
+			<portraitName>textures/items/icons/combat_knife</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>OFF_HAND_ITEM</itemType>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>a0cbf321-e63d-46af-aa66-9e82985abe39</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>100.0</amount>
+						<statType>ATTACK_RATING</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>1.3</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="melee-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1100</amount>
+		</sellsFor>
+
+	</item>
+	<item>
+		<pk>2257a591-476c-42bb-a1f9-9f5dea921de3</pk>
+		<name>Rusty Knife</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/blades/combatknife/combatknife.xmo</modelName>
+			<portraitName>textures/items/icons/combat_knife</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>OFF_HAND_ITEM</itemType>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>3758cd13-dcc8-4c22-a79a-9f5dea9235d2</pk>
+				<mods>
+					<modStat>
+						<amount>50.0</amount>
+						<statType>ATTACK_RATING</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>0.5</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="melee-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>100</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>c53ca3c6-6848-462f-97d2-1faa30dddf66</pk>
+		<name>Father&apos;s rusty laser pistol</name>
+		<appearanceData>
+			<modelName>rusty_laser</modelName>
+			<portraitName>textures/gui/icons/IconWeaponsLazorRifle</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TWO_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>af333e5e-046e-42a3-b6a2-9daa4a01384f</pk>
+		<name>Old Rifle</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/rifle/mk1_assault/mk1_assault.xmo</modelName>
+			<portraitName>textures/gui/icons/IconWeaponsLazorRifle</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>TWO_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>c9f3f6ad-3a60-4f27-9cfd-5aba57e531ce</pk>
+				<mods>
+					<modStat>
+						<amount>2.1</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>0.6</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>b23d4a85-84a8-43b6-974a-9daa4a01384f</pk>
+		<name>e-Blade</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/blades/eblade/eblade.xmo</modelName>
+			<portraitName>textures/items/icons/eblade</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>OFF_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>7865aba5-c4c5-49b8-83de-9e82985a83fc</pk>
+				<extraStacks>1</extraStacks>
+				<mods>
+					<modStat>
+						<amount>250.0</amount>
+						<statType>ATTACK_RATING</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="melee-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>23279d17-b9bb-45c8-a57d-9e88a0a49886</pk>
+		<name>Plasma Halberd</name>
+		<appearanceData>
+			<modelName>/props/gear/weapons/polearm/halberd/plasma_halberd.xmo</modelName>
+			<portraitName>textures/items/icons/halberd</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>MAIN_HAND_ITEM</itemType>
+			<itemType>BAG</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>936a304f-c238-4d20-8bfb-9e88a0a49f66</pk>
+				<mods>
+					<modStat>
+						<amount>2000.0</amount>
+						<statType>ATTACK_RATING</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>3.2</amount>
+						<statType>COOL_RATE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+			<serverAura reference="melee-equipped"/>
+		</equipAuras>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>5121700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>32df2b47-7bc8-4bb2-ae16-9e11ea0d71cc</pk>
+		<name>Learn Volatile Combustion</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/volatile_combustion</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>18249c12-0fa2-45fe-a46c-9e11ea102742</pk>
+			<name>Grant Volatile Combustion</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>c1d5ffba-f183-4bcb-950a-9e11ea106910</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Volatile combustion"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1511700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>bd6d2fed-c035-4f04-a456-9eee3f90de23</pk>
+		<name>Learn Torch</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/volatile_combustion</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>d1bb2ce3-5269-46d9-9e8d-9eee3f90e7db</pk>
+			<name>Grant Torch</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>e45dfe6c-b814-4b11-8d92-9eee3f9107a3</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Torch"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>61700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>c0a8dffb-4049-4c5a-a17b-9e82984d98e9</pk>
+		<name>Learn Heal</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/recharge</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>a65d5c82-91a8-4cba-80c6-9e82984da24f</pk>
+			<name>Grant Heal</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>9ad6d24a-a9fe-4531-981d-9e82984da97e</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Heal"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>224800</amount>
+		</sellsFor>
+	</item>
+	<item>
+		<pk>be61f266-d3d6-41d1-91af-9e869e904d3b</pk>
+		<name>Learn Shieldfield</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/shieldfield</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>920932c1-36fa-4cf7-a13b-9e869e905475</pk>
+			<name>Grant Shieldfield</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>9fe62fc5-1f15-426e-9fb9-9e869e9059d2</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Shieldfield"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>17700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>3e8239c1-d3c8-477e-816e-9e869e92483a</pk>
+		<name>Learn Lazor Blast</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/lazor_blast</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>e2c88370-417e-4612-be49-9e869e925abf</pk>
+			<name>Grant Lazor Blast</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>7af9aaa3-9e2b-45ce-98ff-9e869e926d19</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Lazor blast"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>12700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>28d8ec66-05a2-42bd-b5e4-a099d323cbd2</pk>
+		<name>Learn Lazor pulse</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/lazor_pulse</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>cd27aa80-20e2-4fc1-809b-a099d323d36e</pk>
+			<name>Grant Lazor pulse</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>d4c5f028-59d1-4324-b717-a099d323de57</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Lazor pulse"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+	</item>
+
+
+	<item>
+		<pk>569e7a19-e49f-41f5-9cee-9e87a0520085</pk>
+		<name>Learn Overcharge</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>textures/gui/abilityicons/overcharge</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>CONSUMABLE</itemType>
+		</itemTypes>
+		<spell>
+			<pk>8fd35630-0817-4198-ac37-9e87a052065b</pk>
+			<name>Grant Overcharge</name>
+			<effects>
+				<grantSpellEffect>
+					<pk>5aa8b1d1-17a1-4ac2-a72b-9e87a0520bd1</pk>
+					<resourceName>abilities/snack</resourceName>
+					<school>PHYSICAL</school>
+					<spell reference="Overcharge"/>
+				</grantSpellEffect>
+			</effects>
+			<school>PHYSICAL</school>
+			<targetingType>SELF_ONLY</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>30</end>
+			</ranges>
+			<effectResource>abilities/snack</effectResource>
+			<heatContribution>0</heatContribution>
+		</spell>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>321700</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>cc42fdaf-b597-4390-abc8-9f2ea16f8a76</pk>
+		<name>Improved shield generator</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>/items/icons/IconShieldGen</portraitName>
+		</appearanceData>
+
+		<itemTypes>
+			<itemType>SHIELD_GENERATOR</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>a1ddf7a3-50fc-4342-9efc-9f2ea171cf97</pk>
+				<name>Simple Shield</name>
+				<visible>true</visible>
+				<iconPath>textures/gui/abilityicons/shieldfield</iconPath>
+				<mods>
+					<modStat>
+						<amount>0.85</amount>
+						<statType>SHIELD_EFFICIENCY</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>80</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<spell reference="Recharge"/>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>18000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>00ed30d0-afcb-4990-80ec-62d78ea2587f</pk>
+		<name>Powerful shield generator</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>/textures/gui/icons/IconTechPathPowerField</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIELD_GENERATOR</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>61dec522-8b0b-490e-90be-f5aac1991e4a</pk>
+				<name>Simple Shield</name>
+				<visible>true</visible>
+				<iconPath>textures/gui/abilityicons/shieldfield</iconPath>
+				<mods>
+					<modStat>
+						<amount>1.45</amount>
+						<statType>SHIELD_EFFICIENCY</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>580</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<spell reference="Recharge"/>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>2638000</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>a7bcf40d-eb87-4faf-929d-9f56df81b113</pk>
+		<name>Beginners shield generator</name>
+		<appearanceData>
+			<modelName></modelName>
+			<portraitName>/items/icons/IconShieldGen</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>SHIELD_GENERATOR</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>e2f751aa-b1ab-461a-8ea4-9f56df81c6fe</pk>
+				<name>Simple Shield</name>
+				<visible>true</visible>
+				<iconPath>textures/gui/abilityicons/shieldfield</iconPath>
+				<mods>
+					<modStat>
+						<amount>0.8</amount>
+						<statType>SHIELD_EFFICIENCY</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>40</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<spell reference="Recharge"/>
+		<sellsFor>
+			<currency reference="Network credits"/>
+			<amount>1250</amount>
+		</sellsFor>
+	</item>
+
+	<item>
+		<pk>569e7a19-e49f-41f5-9cee-9e87a0520084</pk>
+		<name>Promethium</name>
+		<appearanceData>
+			<modelName/>
+			<portraitName>textures/gui/abilityicons/shieldfield</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>RESOURCE</itemType>
+		</itemTypes>
+	</item>
+
+	<item>
+		<pk>bee21fe4-0543-46e1-9a52-9f50d65ee89b</pk>
+		<name>GM Survival kit</name>
+		<appearanceData>
+			<modelName>/props/gear/wrist/computer/simple_left/simple_left.xmo</modelName>
+			<portraitName>/items/icons/wrist_comp</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>JETPACK</itemType>
+		</itemTypes>
+		<equipAuras>
+			<modStatAura>
+				<pk>f0793134-f58e-4e26-ba26-9f50d65f8f43</pk>
+				<name>GM POWA</name>
+				<visible>true</visible>
+				<iconPath>textures/gui/abilityicons/shieldfield</iconPath>
+				<mods>
+					<modStat>
+						<amount>9000</amount>
+						<statType>STAMINA</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>5</amount>
+						<statType>SHIELD_EFFICIENCY</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+		<spell>
+			<pk>64c0532f-510e-48a6-b3a6-9f50d66f941c</pk>
+			<name>GM Heal</name>
+			<castTime>2500</castTime>
+			<cooldowns>
+				<cooldown reference="mental-cooldown"/>
+			</cooldowns>
+			<effects>
+				<healEffect>
+					<pk>ab606b24-088c-4620-82f0-9f50d66fbcfa</pk>
+					<resourceName>abilities/heal</resourceName>
+					<school>ELECTRICITY</school>
+					<range>
+						<start>6000</start>
+						<end>8000</end>
+					</range>
+				</healEffect>
+			</effects>
+			<school>ELECTRICITY</school>
+			<targetingType>TARGET</targetingType>
+			<requiresHostileTarget>false</requiresHostileTarget>
+			<cancelOnMove>false</cancelOnMove>
+			<ranges>
+				<start>0</start>
+				<end>100</end>
+			</ranges>
+			<effectResource>abilities/heal</effectResource>
+			<heatContribution>10</heatContribution>
+		</spell>
+	</item>
+	<item>
+		<pk>b251cda4-43a8-46f3-85fb-a0a0de15926e</pk>
+		<name>Sow mothers snout</name>
+		<appearanceData>
+			<modelName>/props/gear/head/hats/cap/cap.xmo</modelName>
+			<portraitName>textures/items/icons/snout</portraitName>
+		</appearanceData>
+		<itemTypes>
+			<itemType>HELMET</itemType>
+		</itemTypes>
+		<equipAuras>
+			<serverAura reference="Pig master"/>
+			<modStatAura>
+				<pk>c5bebd1a-e944-490c-84b3-a0a0de1821ab</pk>
+				<mods>
+					<modStat>
+						<amount>130</amount>
+						<statType>SHIELD_CHARGE</statType>
+						<operator>ADD</operator>
+					</modStat>
+					<modStat>
+						<amount>5</amount>
+						<statType>SHIELD_RECOVERY</statType>
+						<operator>ADD</operator>
+					</modStat>
+				</mods>
+			</modStatAura>
+		</equipAuras>
+	</item>
+</list>

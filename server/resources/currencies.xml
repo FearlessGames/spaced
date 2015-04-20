@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/currency.xsd">
+	<currency>
+		<pk>f3578cef-d61e-44fe-a057-9f43c250aee4</pk>
+		<name>NONE</name>
+	</currency>
+	<currency>
+		<pk>5a107f32-8740-43fa-9827-9eca0716a515</pk>
+		<name>Network credits</name>
+	</currency>
+	<currency>
+		<pk>0edd6213-56d0-479f-a437-9eca07172c42</pk>
+		<name>Republican dollars</name>
+	</currency>
+</list>		

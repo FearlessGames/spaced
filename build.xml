@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+
+<project name="spaced" basedir="." default="all">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+	<property name="reports.dir" value="${basedir}/reports"/>
+	<property name="coverage.dir" value="${basedir}/coverage"/>
+	<target name="all" depends="full-build"/>
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="server/libs/ant-contrib-0.6.jar"/>
+		</classpath>
+	</taskdef>
+
+	<property name="findbugs.home" location="Fearless-common/ci-libs/findbugs"/>
+
+	<path id="findbugs.lib">
+		<fileset dir="${findbugs.home}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<taskdef name="convertXmlToText"
+				classname="edu.umd.cs.findbugs.anttask.ConvertXmlToTextTask"
+				classpathref="findbugs.lib"/>
+	<taskdef name="unionBugs"
+				classname="edu.umd.cs.findbugs.anttask.UnionBugs"
+				classpathref="findbugs.lib"/>
+
+
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml">
+		<classpath>
+			<pathelement location="Fearless-common/libs/testing/svnant.jar"/>
+			<pathelement location="Fearless-common/libs/testing/svnClientAdapter.jar"/>
+		</classpath>
+	</typedef>
+
+	<property name="fearless.libs" location="${baseDir}/Fearless-common/libs"/>
+	<property name="cobertura.dir" location="${fearless.libs}/testing"/>
+	<property name="cobertura.jar.location" location="${cobertura.dir}/cobertura.jar"/>
+	<property name="cobertura.coverage.file" value="${coverage.dir}/coverage.ser"/>
+	<path id="cobertura.classpath">
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
+
+	<property file="local.properties"/>
+	<property file="default.properties"/>
+
+
+	<property name="findbugs.output.dir" value="${reports.dir}/findbugs"/>
+
+	<target name="full-build" depends="build, test, make-reports, check-failures"
+			  description="Builds, runs tests, creates reports"/>
+	<target name="ci-build" depends="build, test, make-reports, check-failures, checkstyle"
+			  description="Builds a complete continuous integration build"/>
+
+	<target name="check-failures">
+		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="check-failures" inheritAll="false"/>
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="check-failures" inheritAll="false"/>
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="check-failures"
+			  inheritAll="false"/>
+	</target>
+
+	<target name="clean" description="Clean everything">
+		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/Spacedit/build.xml" dir="${basedir}/Spacedit/" target="clean" inheritAll="false"/>
+	</target>
+
+	<target name="build" description="Compile everything">
+		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="build" inheritAll="false"/>
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/Spacedit/build.xml" dir="${basedir}/Spacedit/" target="compile" inheritAll="false"/>
+	</target>
+
+
+	<target name="test" description="Run all tests" depends="build">
+		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="all" inheritAll="false"/>
+		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="all" inheritAll="false"/>
+		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="full-build" inheritAll="false"/>
+		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="test" inheritAll="false"/>
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="full-test" inheritAll="false"/>
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="all" inheritAll="false"/>
+		<ant antfile="${basedir}/communication/build.xml" dir="${basedir}/communication/" target="all" inheritAll="false"/>
+
+		<ant antfile="${basedir}/Spacedit/build.xml" dir="${basedir}/Spacedit/" target="all" inheritAll="false"/>
+	</target>
+
+	<target name="findbugs" description="Runs all findbugs" depends="build">
+		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="findbugs" inheritAll="false"/>
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="findbugs" inheritAll="false"/>
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="findbugs" inheritAll="false"/>
+
+		<mkdir dir="${findbugs.output.dir}"/>
+		<unionBugs to="${findbugs.output.dir}/findbugs.xml">
+			<fileset dir="server/build/reports/findbugs">
+				<include name="**/*.xml"/>
+			</fileset>
+			<fileset dir="newclient/build/reports/findbugs">
+				<include name="**/*.xml"/>
+			</fileset>
+			<fileset dir="shared/build/reports/findbugs">
+				<include name="**/*.xml"/>
+			</fileset>
+		</unionBugs>
+
+		<convertXmlToText home="${findbugs.home}"
+								input="${findbugs.output.dir}/findbugs.xml"
+								output="${findbugs.output.dir}/findbugs.html"/>
+	</target>
+
+
+	<target name="make-reports" description="Generate reports"
+			  depends="test, report-setup, junit-reports, cobertura-reports">
+	</target>
+
+	<target name="report-setup">
+		<delete dir="${reports.dir}"/>
+		<mkdir dir="${reports.dir}"/>
+	</target>
+
+
+	<target name="junit-reports">
+		<junitreport todir="${reports.dir}">
+			<fileset dir="server/build/reports">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<fileset dir="shared/build/reports">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<fileset dir="newclient/build/reports">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<fileset dir="Spacedit/reports">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${reports.dir}/html"/>
+		</junitreport>
+	</target>
+
+	<target name="cobertura-reports" if="cobertura.enabled">
+		<!-- merge coverage -->
+		<delete dir="${coverage.dir}"/>
+		<mkdir dir="${coverage.dir}"/>
+		<cobertura-merge datafile="${cobertura.coverage.file}">
+			<fileset dir="shared/build/reports/coverage" includes="*.ser"/>
+			<fileset dir="server/build/reports/coverage" includes="*.ser"/>
+			<fileset dir="newclient/build/reports/coverage" includes="*.ser"/>
+		</cobertura-merge>
+		<cobertura-report destdir="${coverage.dir}/xml" datafile="${cobertura.coverage.file}" format="xml">
+			<fileset dir="shared/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="server/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="newclient/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="messages/src-protocol">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="messages/src-shared">
+				<include name="**/*.java"/>
+			</fileset>
+		</cobertura-report>
+		<cobertura-report destdir="${coverage.dir}/html" datafile="${cobertura.coverage.file}" format="html">
+			<fileset dir="shared/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="server/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="newclient/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="messages/src-protocol">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="messages/src-shared">
+				<include name="**/*.java"/>
+			</fileset>
+		</cobertura-report>
+	</target>
+
+	<target name="run-server" description="start the server">
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="run" inheritAll="false"/>
+	</target>
+
+	<target name="run-alpha-server" description="start the alpha server">
+		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="run-alpha" inheritAll="false"/>
+	</target>
+
+	<target name="run-ardor" description="Start the ardor client">
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="run-ardor" inheritAll="false"/>
+	</target>
+
+	<target name="run-bots" description="Start the bots">
+		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="run-bots" inheritAll="false"/>
+	</target>
+
+	<target name="notify_fail">
+		<svn javahl="false" svnkit="false">
+			<info target=".">
+			</info>
+		</svn>
+		<trycatch property="errormessage">
+			<try>
+				<antcall target="clean"/>
+				<antcall target="ci-build"/>
+				<exec executable="wget" spawn="false">
+					<arg value="http://localhost:8090/?type=success&amp;author=${svn.info.author}&amp;revision=${svn.info.rev}&amp;message="/>
+				</exec>
+			</try>
+			<catch>
+				<propertyregex property="errormessage" override="true" input="${errormessage}" regexp="[\n\r\t]"
+									global="true" replace=" "/>
+
+				<exec executable="wget" spawn="false">
+					<arg value="http://localhost:8090/?type=failed&amp;author=${svn.info.author}&amp;revision=${svn.info.rev}&amp;message=${errormessage}"/>
+				</exec>
+				<fail message="${errormessage}"/>
+			</catch>
+		</trycatch>
+	</target>
+
+	<property name="checkstyle.home" value="Fearless-common/ci-libs/checkstyle"/>
+	<property name="checkstyle.report.dir" value="${reports.dir}/checkstyle"/>
+	<path id="checkstyle.task.path">
+		<fileset dir="${checkstyle.home}/">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<path id="checkstyle.run.path">
+		<path refid="checkstyle.task.path"/>
+		<fileset dir="${basedir}/shared/build/">
+			<include name="spaced-shared.jar"/>
+		</fileset>
+		<fileset dir="${basedir}/server/build/">
+			<include name="spaced-server.jar"/>
+		</fileset>
+		<fileset dir="${basedir}/server/libs/hibernate">
+			<include name="**/*.jar"/>
+		</fileset>
+
+	</path>
+	<taskdef resource="checkstyletask.properties" classpathref="checkstyle.task.path"/>
+
+
+	<target name="checkstyle" description="Runs checkstyle on the source">
+		<mkdir dir="${checkstyle.report.dir}"/>
+		<checkstyle config="${checkstyle.home}/docs/spaced_checks.xml" failOnViolation="false">
+			<classpath refid="checkstyle.run.path"/>
+			<fileset dir="${basedir}/server/src" includes="**/*.java"/>
+			<fileset dir="${basedir}/shared/src" includes="**/*.java"/>
+			<fileset dir="${basedir}/newclient/src" includes="**/*.java"/>
+			<formatter type="xml" toFile="${checkstyle.report.dir}/checkstyle_errors.xml"/>
+		</checkstyle>
+		<xslt in="${checkstyle.report.dir}/checkstyle_errors.xml" out="${checkstyle.report.dir}/checkstyle_errors.html"
+				style="${checkstyle.home}/docs/checkstyle-noframes-severity-sorted.xsl"/>
+	</target>
+
+	<target name="setup-intellij-inner2" if="installed.${dir}">
+		<echo>${user.home}/${dir} exists! Copying settings</echo>
+		<copy todir="${user.home}/${dir}">
+			<fileset dir="${basedir}/intellij-goodies"/>
+		</copy>
+		<unzip src="${baseDir}/uuid-gen/uuid-gen.zip" dest="${user.home}/${dir}/config/plugins"/>
+	</target>
+
+	<macrodef name="setup_intellij_inner">
+		<attribute name="dir"/>
+		<sequential>
+			<available file="${user.home}/@{dir}" type="dir" property="installed.@{dir}"/>
+			<antcall target="setup-intellij-inner2">
+				<param name="dir" value="@{dir}"/>
+			</antcall>
+		</sequential>
+	</macrodef>
+
+	<target name="setup-intellij" description="Sets the up for IntelliJ">
+		<setup_intellij_inner dir=".IdeaIC90"/>
+		<setup_intellij_inner dir=".IntelliJIdea70"/>
+		<setup_intellij_inner dir=".IntelliJIdea80"/>
+		<setup_intellij_inner dir=".IntelliJIdea8x"/>
+		<setup_intellij_inner dir=".IntelliJIdea90"/>
+		<setup_intellij_inner dir=".IntelliJIdea10"/>
+		<setup_intellij_inner dir=".IntelliJIdea11"/>
+	</target>
+
+	<target name="graphviz" description="Generate pictures from all dependency files">
+		<exec executable="dot">
+			<arg value="-Tsvg"/>
+			<arg value="-oclient-dep.svg"/>
+			<arg value="newclient/ArdorRealGame.dependency.dot"/>
+		</exec>
+		<exec executable="dot">
+			<arg value="-Tsvg"/>
+			<arg value="-oserver-dep.svg"/>
+			<arg value="server/Starter.dependency.dot"/>
+		</exec>
+	</target>
+
+	<target name="kill-zombie-server">
+		<exec executable="bash">
+			<arg value="server/zombie.sh"/>
+		</exec>
+	</target>
+</project>

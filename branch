@@ -1,0 +1,117 @@
+#!/bin/bash
+
+ERROR='\033[1;31m'
+REPO='\033[1;32m'
+CBRANCH='\033[1;33m'
+COMMAND='\033[1;34m'
+EXECUTE='\033[1;35m'
+ENDCOL='\033[0m'
+
+FULLURL=`svn info | grep -E "^URL: "| cut -d " " -f 2`
+if [ "$FULLURL" == "" ]; then exit 1; fi
+TRUNKURL=$(echo $FULLURL | grep -E -o "^.*/trunk")
+BRANCHURL=$(echo $FULLURL | grep -E -o "^.*/branches/[^/]+")
+
+set -e
+
+function error() {
+	echo -e "${ERROR}$1${ENDCOL}"
+	exit 1
+}
+
+function execute() {
+	echo -e ">"${EXECUTE} "$@" ${ENDCOL}
+	"$@"
+}
+
+if [ "$TRUNKURL" != "" ]; then
+	if [ "$FULLURL" != "$TRUNKURL" ]; then
+		error "Please stand in the project root.\n  Expected $TRUNKURL\n   but was $FULLURL"
+	fi
+	BRANCH="trunk"
+	BASEURL=$(echo $TRUNKURL | sed "s/\\/trunk//")
+elif [ "$BRANCHURL" != "" ]; then
+	if [ "$FULLURL" != "$BRANCHURL" ]; then
+		error "Please stand in the project root.\n  Expected $BRANCHURL\n   but was $FULLURL"
+	fi
+	BRANCH=$(echo $FULLURL | grep -E -o "[^/]+$")
+	BASEURL=$(echo $BRANCHURL | sed "s/\\/branches\\/$BRANCH//")
+else
+	error "Could not determine trunk or branch from $FULLURL"
+fi
+
+function sync() {
+	if [ "$BRANCH" == "trunk" ]; then error "Must be on a branch to sync or reintegrate!";	fi
+	set +e
+	CLEAN=`svn status|grep -v "^\\?"`
+	set -e
+	if [ "$CLEAN" != "" ]; then error "Working copy is not clean. Revert or commit first!"; fi
+
+	execute svn up
+	execute svn merge $BASEURL/trunk .
+
+	UPDATED_FILES=`svn status|grep -E -v "^\\?"|cut -b 9-`
+	if [ "$UPDATED_FILES" == "" ]; then
+		echo "Nothing changed, skipping sync."
+	elif [ "$UPDATED_FILES" == "." ]; then
+		echo "Only trivial changes merge - reverting merge"
+		execute svn revert -R .
+	else
+		execute svn commit -m "Merged trunk to branch $BRANCH"
+	fi
+
+}
+
+case $1 in
+switch)
+	if [ "$2" == "" ]; then error "Missing parameter to switch: branch"; fi
+	execute svn switch $BASEURL/branches/$2
+;;
+trunk)
+	execute svn switch $BASEURL/trunk/
+;;
+list)	
+	echo -e "> ${EXECUTE}svn list $BASEURL/branches${ENDCOL}"
+	echo "Available branches:"
+	BRANCHES=`svn list $BASEURL/branches | grep -E -o "^[-\.a-zA-Z_0-9]*"`
+	for b in $BRANCHES; do
+		echo -e "  ${CBRANCH}$b${ENDCOL}"
+	done
+;;
+reintegrate|reint)
+	sync
+	execute svn switch $BASEURL/trunk
+	execute svn merge --reintegrate $BASEURL/branches/$BRANCH .
+	execute svn commit -m "Reintegrated $BRANCH"
+	execute svn delete $BASEURL/branches/$BRANCH -m "Deleting reintegrated $BRANCH"
+;;
+sync)
+	sync
+;;
+create)
+	if [ "$2" == "" ]; then	error "Missing parameter to create: branch"; fi
+	FROM=$BASEURL/trunk
+	TO=$BASEURL/branches/$2
+	execute svn copy $FROM $TO -m "Creating branch $2 from trunk"
+	execute svn switch $BASEURL/branches/$2
+;;
+delete)
+	if [ "$2" == "" ]; then error "Missing argument to delete: branch"; fi
+	if [ "$BRANCH" == "$2" ]; then error "Can not delete active branch. Switch first!"; fi
+	execute svn delete $BASEURL/branches/$2 -m "Deleting branch $2"
+;;
+*)
+	echo -e "Repository: ${REPO}$BASEURL${ENDCOL}"
+	echo -e "Active branch: ${CBRANCH}$BRANCH${ENDCOL}"
+	echo "Usage: ./branch <command> [option]"
+	echo "Commands:"
+	echo -e "    ${COMMAND}switch${ENDCOL} ${CBRANCH}<branch>${ENDCOL}       -- switches to the branch"
+	echo -e "    ${COMMAND}trunk${ENDCOL}                 -- switches to trunk"
+	echo -e "    ${COMMAND}list${ENDCOL}                  -- list available branches"
+	echo -e "    ${COMMAND}reintegrate${ENDCOL} or ${COMMAND}reint${ENDCOL}  -- reintegrate active branch to trunk"
+	echo -e "    ${COMMAND}sync${ENDCOL}                  -- syncs current branch with trunk"
+	echo -e "    ${COMMAND}create${ENDCOL} ${CBRANCH}<branch>${ENDCOL}       -- creates a new branch from trunk and switches to it"
+	echo -e "    ${COMMAND}delete${ENDCOL} ${CBRANCH}<branch>${ENDCOL}       -- deletes a branch without reintegrating it"
+;;
+esac
+

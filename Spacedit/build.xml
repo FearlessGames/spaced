@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+
+<project name="SpacEdit" default="all" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<property file="${baseDir}/../local.properties"/>
+	<property file="${baseDir}/../default.properties"/>
+
+	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="build.dir" value="${baseDir}/build"/>
+	<property name="reports.dir" value="${baseDir}/reports"/>
+	<property name="coverage.dir" value="${reports.dir}/coverage"/>
+	<property name="src.dir" value="${baseDir}/src"/>
+
+	<property name="junit.dir" location="${baseDir}/../Fearless-common/libs/testing"/>
+	<property name="out.instr.dir" value="${baseDir}/outinstr"/>
+
+	<path id="buildlib.classpath">
+		<fileset dir="${baseDir}/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../Fearless-common/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+
+		<fileset dir="${baseDir}/../ArdorTech/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../shared/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../shared/build/">
+			<include name="spaced-shared.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../messages/build">
+			<include name="spaced-shared-messages.jar"/>
+			<include name="spaced-client-messages.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="junit.lib">
+		<fileset dir="${junit.dir}">
+			<include name="junit**/*.jar"/>
+		</fileset>
+	</path>
+
+
+	<path id="source.classpath">
+		<pathelement location="${src.dir}"/>
+	</path>
+
+	<path id="compiled.classpath">
+		<pathelement location="${build.dir}/main"/>
+	</path>
+
+	<path id="run.classpath">
+		<path refid="buildlib.classpath"/>
+		<path refid="compiled.classpath"/>
+	</path>
+
+	<path id="test.compile.classpath">
+		<path refid="buildlib.classpath"/>
+		<path refid="compiled.classpath"/>
+		<pathelement location="${build.dir}/test"/>
+		<path refid="junit.lib"/>
+
+		<fileset dir="${baseDir}/../shared/build">
+			<include name="spaced-shared-test.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="test" depends="compile, compile-test" description="Runs the tests">
+		<mkdir dir="${reports.dir}"/>
+
+		<delete dir="${out.instr.dir}"/>
+		<mkdir dir="${out.instr.dir}"/>
+		<delete dir="${coverage.dir}"/>
+		<mkdir dir="${coverage.dir}"/>
+
+		<!-- copy all non-instrumented classes to instr directory -->
+		<copy todir="${out.instr.dir}" overwrite="false">
+			<fileset dir="${build.dir}/main">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="${build.dir}/test">
+				<include name="**/*.class"/>
+			</fileset>
+		</copy>
+
+		<junit printsummary="no" logfailedtests="true" haltonfailure="yes" fork="true" forkmode="perBatch">
+			<classpath>
+				<path refid="buildlib.classpath"/>
+				<pathelement location="${out.instr.dir}"/>
+				<path refid="junit.lib"/>
+				<fileset dir="${baseDir}/../shared/build">
+					<include name="spaced-shared-test.jar"/>
+				</fileset>
+			</classpath>
+
+			<formatter type="xml"/>
+			<batchtest fork="yes" todir="${reports.dir}">
+				<fileset dir="${src.tests}">
+					<include name="**/*Test.java"/>
+					<include name="**/Test*.java"/>
+					<exclude name="**/AllTests.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+		<junitreport todir="${reports.dir}">
+			<fileset dir="${reports.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${reports.dir}/html"/>
+		</junitreport>
+
+	</target>
+
+	<target name="compile-test">
+		<mkdir dir="${build.dir}/test"/>
+		<javac
+				destdir="${build.dir}/test"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="test.compile.classpath"
+				>
+			<src path="${src.tests}"/>
+		</javac>
+	</target>
+
+	<target name="full-test" depends="test"/>
+
+	<property name="ardor.path" value="${baseDir}/../shared/libs/ardor3d/dependencies/lwjgl/native/win+linux/"/>
+
+	<target name="all" depends="compile, test"/>
+
+	<target name="compile" description="Compile client">
+		<echo>${build.dir}/main</echo>
+		<mkdir dir="${build.dir}/main"/>
+		<javac
+				destdir="${build.dir}/main"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				classpathref="buildlib.classpath"
+				includeantruntime="false"
+				>
+			<src path="${src.dir}"/>
+		</javac>
+	</target>
+
+	<target name="build-webstart">
+		<mkdir dir="webstart"/>
+		<delete verbose="true">
+			<fileset dir="webstart">
+				<include name="spaced*.jar"/>
+			</fileset>
+		</delete>
+		<jar destfile="webstart/spaced-resources.jar">
+			<fileset dir="resources">
+				<include name="**"/>
+			</fileset>
+		</jar>
+		<jar destfile="webstart/spaced.jar" manifest="MANIFEST.MF">
+			<fileset dir="build">
+				<include name="**/*"/>
+			</fileset>
+			<fileset dir="conf">
+				<include name="*"/>
+			</fileset>
+			<fileset dir="webstart">
+				<include name="spaced-resources.jar"/>
+			</fileset>
+		</jar>
+		<jar destfile="webstart/spaced-native-windows.jar">
+			<fileset dir="libs/ode">
+				<include name="*.dll"/>
+			</fileset>
+			<fileset dir="../shared/libs/">
+				<include name="*.dll"/>
+			</fileset>
+			<fileset dir="../shared/libs/jme">
+				<include name="*.dll"/>
+			</fileset>
+		</jar>
+		<jar destfile="webstart/spaced-native-other.jar">
+			<fileset dir="libs/ode">
+				<include name="*.jnilib"/>
+			</fileset>
+			<fileset dir="../shared/libs/jme">
+				<include name="*.dylib"/>
+				<include name="*.jnilib"/>
+			</fileset>
+		</jar>
+		<signjar destDir="webstart" alias="spaced" keystore="spaced.keystore" storepass="spaced">
+			<path>
+				<fileset dir="../shared/libs/" includes="**/*.jar"/>
+				<fileset dir="libs" includes="**/*.jar"/>
+				<fileset dir="webstart">
+					<include name="spaced.jar"/>
+					<include name="spaced-native-windows.jar"/>
+					<include name="spaced-native-other.jar"/>
+				</fileset>
+			</path>
+			<flattenmapper/>
+		</signjar>
+		<copy todir="webstart">
+			<fileset dir="libs/ode">
+				<include name="*.dll"/>
+			</fileset>
+			<fileset dir="../shared/libs/">
+				<include name="*.dll"/>
+			</fileset>
+			<fileset dir="../shared/libs/jme">
+				<include name="*.dll"/>
+			</fileset>
+			<fileset dir=".">
+				<include name="*.jnlp"/>
+				<include name="login.properties"/>
+				<include name="properties.cfg"/>
+			</fileset>
+		</copy>
+	</target>
+
+
+	<target name="run" depends="compile" description="Starts the SpacEdit program">
+		<java classname="se.spaced.spacedit.launcher.SpacEditLauncher" fork="true" dir="../newclient/">
+			<jvmarg value="-Djava.library.path=${ardor.path}"/>
+			<classpath>
+				<path refid="buildlib.classpath"/>
+				<pathelement location="${build.dir}/main"/>
+				<pathelement location="resources"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="clean" description="cleans everything">
+		<delete dir="${build.dir}"/>
+		<delete dir="${out.instr.dir}"/>
+		<delete dir="${reports.dir}"/>
+		<delete dir="${coverage.dir}"/>
+	</target>
+</project>

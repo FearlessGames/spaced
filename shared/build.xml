@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<project name="shared" default="all" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+	<property name="fearless.commons" location="${baseDir}/../Fearless-common"/>
+
+	<property file="../local.properties"/>
+	<property file="../default.properties"/>
+
+	<import file="${fearless.commons}/ant-utils/commontasks.xml"/>
+
+
+	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.dir" value="${baseDir}/src"/>
+
+	<path id="buildlib.classpath">
+		<fileset dir="libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../smrt-release">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/build">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<path id="testlib.classpath"/>
+
+	<target name="build" depends="compile"/>
+
+
+	<target name="all" depends="full-build, check-failures"/>
+	<target name="full-build" depends="test, package"/>
+
+	<target name="package" depends="compile, compile-test">
+		<build-jar compiled.dir="${build.dir.classes}" jar.name="spaced-shared"/>
+		<build-jar compiled.dir="${build.dir.test}" jar.name="spaced-shared-test"/>
+	</target>
+
+</project>

@@ -1,0 +1,24 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Southwater Beach</name>
+  <shape class="Sphere" radius="190.0">
+    <center x="2260.0" y="4.0" z="2750.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="2244.7369522226413" y="3.4933868354047206" z="2717.5527281198883"/>
+      <rotation x="0.0" y="-0.48887208186052816" z="-0.0" w="0.8723554823449859"/>
+      <scale x="0.4" y="0.4" z="0.4"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2306.571067132939" y="2.911521413696221" z="2721.441830982779"/>
+      <rotation x="0.0" y="0.9936785463792966" z="0.0" w="-0.11226284543662705"/>
+      <scale x="0.6" y="0.5" z="0.6"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

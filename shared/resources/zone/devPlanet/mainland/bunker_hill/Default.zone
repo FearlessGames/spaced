@@ -1,0 +1,12 @@
+<se.spaced.shared.resources.zone.Zone>
+	<name>NAME</name>
+	<shape class="Sphere" radius="200.0">
+		<center>
+            <double>1726.0</double>
+            <double>300.0</double>
+            <double>1982.0</double>
+		</center>
+	</shape>
+  <props>	
+  </props>
+</se.spaced.shared.resources.zone.Zone>

@@ -1,0 +1,312 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Bunker Hill Gate</name>
+  <shape class="Sphere" radius="115.0">
+    <center x="1870.0" y="54.0" z="1938.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1796.8947699391224" y="54.77922174452337" z="1965.3615812268765"/>
+      <rotation x="-0.014966930569322355" y="-0.04570424349117568" z="-0.016410633207319704" w="0.9987080675722848"/>
+      <scale x="1.3250000000000002" y="1.25" z="0.9750000000000001"/>
+      <xmoFile>static/xmo/props/nature/rocks/walls/rock_wall_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1792.2327603087335" y="46.11350301373783" z="1917.7417854420162"/>
+      <rotation x="0.08300449395935779" y="-0.9474271818218801" z="0.2021152051675573" w="0.2337550704641029"/>
+      <scale x="1.2540000000000002" y="1.1770000000000003" z="1.287"/>
+      <xmoFile>static/xmo/props/nature/rocks/walls/rock_wall_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1792.1959317549863" y="37.512720196095145" z="1900.830546962693"/>
+      <rotation x="0.0" y="0.7751014646631849" z="0.0" w="0.6318367823077299"/>
+      <scale x="4.109999999999999" y="4.109999999999999" z="4.109999999999999"/>
+      <xmoFile>static/xmo/props/nature/rocks/plain/rock_plain_4m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1801.7361431440008" y="54.02424384119126" z="1928.717535175747"/>
+      <rotation x="0.0" y="-0.6077505841133298" z="0.0" w="0.7941279667093374"/>
+      <scale x="4.02" y="4.02" z="4.02"/>
+      <xmoFile>static/xmo/props/nature/rocks/plain/rock_plain_3m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1803.1019192050082" y="54.597066528805264" z="1966.0557204313277"/>
+      <rotation x="-0.18948422544412938" y="0.07521540154420982" z="-0.06459751447356128" w="0.9768651558952339"/>
+      <scale x="3.52" y="3.52" z="3.52"/>
+      <xmoFile>static/xmo/props/nature/rocks/plain/rock_plain_3m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1803.2408552790944" y="53.93266995527386" z="1958.255163232074"/>
+      <rotation x="-0.04068912057496445" y="-0.4743635787231658" z="-0.021955554526017766" w="0.8791140678394597"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1793.1871665926235" y="53.67559353513208" z="1934.9629552398214"/>
+      <rotation x="-0.020998538451570552" y="0.9499237394205193" z="-0.08769858494893346" w="0.2991870800455633"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1799.1892875330193" y="54.194239285810994" z="1937.2219440657436"/>
+      <rotation x="0.0" y="-0.7066963570446646" z="0.0" w="0.7075169672451678"/>
+      <scale x="2.2399999999999998" y="2.2399999999999998" z="2.2399999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_small.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1803.6429613700607" y="54.31411939818685" z="1935.3040652550885"/>
+      <rotation x="0.0" y="-0.886542683166229" z="0.0" w="0.46264681013103687"/>
+      <scale x="1.6499999999999997" y="1.6499999999999997" z="1.6499999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_small.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1800.9748592599844" y="54.28445932008074" z="1936.5276668965582"/>
+      <rotation x="0.0" y="-0.8359260506910029" z="0.0" w="0.5488420881967261"/>
+      <scale x="1.2099999999999995" y="1.2099999999999995" z="1.2099999999999995"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_small.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1808.1477601117447" y="50.16410786011744" z="1918.6663302056668"/>
+      <rotation x="0.0" y="-0.7737996550218996" z="0.0" w="0.6334304175582267"/>
+      <scale x="2.2399999999999998" y="2.2399999999999998" z="2.2399999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1801.2080394835257" y="48.50014807201612" z="1918.8651108857175"/>
+      <rotation x="0.0" y="-0.09218682883627298" z="0.0" w="0.9957417278537202"/>
+      <scale x="2.04" y="2.04" z="2.04"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1809.040162206769" y="52.961429457587116" z="1956.3790168432338"/>
+      <rotation x="0.0" y="-0.8480623709042708" z="0.0" w="0.5298964191766417"/>
+      <scale x="2.6799999999999997" y="2.6799999999999997" z="2.6799999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1812.663578998783" y="51.66520876046647" z="1961.5612674474166"/>
+      <rotation x="0.0" y="-0.7985111584837884" z="0.0" w="0.6019800077883636"/>
+      <scale x="2.04" y="2.04" z="2.04"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1834.089552191744" y="54.67831356681822" z="1919.105799637184"/>
+      <rotation x="0.0" y="-0.2278002193192552" z="0.0" w="0.9737078925828316"/>
+      <scale x="0.31" y="0.31" z="0.31"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1837.7369422977602" y="54.73227656070134" z="1921.6412057344764"/>
+      <rotation x="0.0" y="-0.8956176998923185" z="0.0" w="0.44482461222328157"/>
+      <scale x="1.1500000000000001" y="1.1500000000000001" z="1.1500000000000001"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1834.666822766418" y="54.91552458272625" z="1923.0061203574674"/>
+      <rotation x="0.0" y="0.9134874651825172" z="0.0" w="0.4068668712913596"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1799.7575203883837" y="61.05899516260282" z="1960.9961038878419"/>
+      <rotation x="-0.09313001282444604" y="0.6600312358485103" z="0.10456153715396074" w="0.738073474231128"/>
+      <scale x="5.3" y="5.3" z="5.3"/>
+      <xmoFile>static/xmo/props/signs/dungeons/keepout.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1820.29089716706" y="34.32535551747347" z="2035.8748242143138"/>
+      <rotation x="0.0" y="0.999800006666579" z="0.0" w="0.019998666693274932"/>
+      <scale x="1.316061919504644" y="1.069969040247678" z="1.069969040247678"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1834.0501577043062" y="35.778204518842045" z="2034.978410995058"/>
+      <rotation x="0.0" y="-0.9956265021272529" z="0.0" w="0.09342306065341478"/>
+      <scale x="1.2100000000000002" y="1.1" z="1.1"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1847.1635596504427" y="38.05795265508874" z="2034.717658568977"/>
+      <rotation x="0.0" y="0.99704369291054" z="0.0" w="0.07683667371322653"/>
+      <scale x="1.1770000000000003" y="1.1" z="1.1"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1859.6041309994778" y="37.99925526322346" z="2036.3954045803725"/>
+      <rotation x="0.0" y="-0.04827755350419531" z="0.0" w="0.9988339590881209"/>
+      <scale x="1.1550000000000002" y="1.1" z="1.1"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1870.8550850079394" y="36.09326521017982" z="2034.9381256016109"/>
+      <rotation x="0.0" y="0.18964083129791856" z="0.0" w="0.9818535303723435"/>
+      <scale x="1.0" y="1.1" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1880.158836040253" y="35.01811268457112" z="2029.331572790734"/>
+      <rotation x="0.0" y="0.35052271872006496" z="0.0" w="0.9365542288949926"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1887.5997357728934" y="33.491811349329026" z="2020.7235891308237"/>
+      <rotation x="0.0" y="0.4778066416920241" z="0.0" w="0.878465032403106"/>
+      <scale x="1.11" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1894.8859877975099" y="32.04111454490331" z="2011.7011210302685"/>
+      <rotation x="0.0" y="0.3878485909884033" z="0.0" w="0.9217230985867232"/>
+      <scale x="1.03" y="0.9500000000000001" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1910.7838232739841" y="32.404621818281356" z="1997.4377813741485"/>
+      <rotation x="0.0" y="-0.9563140908996438" z="0.0" w="0.2923411697773472"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1920.0807639205939" y="32.85495465928557" z="1990.5381633218574"/>
+      <rotation x="0.0" y="-0.9418312846417232" z="0.0" w="0.33608604741958803"/>
+      <scale x="1.11" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1928.6876818625126" y="33.396473214814286" z="1982.4225030454975"/>
+      <rotation x="0.0" y="-0.9171208228165699" z="0.0" w="0.3986093279845039"/>
+      <scale x="1.03" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1937.5487817591015" y="33.87714122992509" z="1975.3904361593134"/>
+      <rotation x="0.0" y="-0.96504866931659" z="0.0" w="0.2620707268091557"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1938.0696606653155" y="34.549177476354025" z="1957.4467667061308"/>
+      <rotation x="0.0" y="-0.6319911489045329" z="0.0" w="0.7749756045878661"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1937.4646209538992" y="36.31039636752581" z="1946.6141130865694"/>
+      <rotation x="0.0" y="-0.7438170666308912" z="0.0" w="0.6683832518762094"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1938.251460927531" y="38.023142708742185" z="1935.8489200185586"/>
+      <rotation x="0.0" y="-0.7149780101365554" z="0.0" w="0.6991469409367188"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1938.2810811434695" y="39.965574608511716" z="1924.8272797422433"/>
+      <rotation x="0.0" y="-0.6882634842617791" z="0.0" w="0.7254608026846356"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1934.6659475097147" y="41.42556790710259" z="1914.8479748022912"/>
+      <rotation x="0.0" y="-0.45653136247291176" z="0.0" w="0.8897073198971822"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1927.5390731866012" y="44.245744453148234" z="1906.7614883724443"/>
+      <rotation x="0.0" y="-0.3788690814885662" z="0.0" w="0.9254502791031026"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1919.4770199214227" y="47.09813160784705" z="1899.2463258246069"/>
+      <rotation x="0.0" y="-0.34673945209521695" z="-0.0" w="0.9379614876745787"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1912.3963069925462" y="49.242266001821285" z="1891.5682322662462"/>
+      <rotation x="0.0" y="-0.4354234273392694" z="0.0" w="0.9002257710841897"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1906.007506406072" y="50.84079590786459" z="1882.3301212200188"/>
+      <rotation x="0.0" y="-0.49174498942064676" z="0.0" w="0.8707392637177263"/>
+      <scale x="1.05" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1899.0187817065637" y="52.60805970151867" z="1873.267221194926"/>
+      <rotation x="0.0" y="-0.38858246073827407" z="0.0" w="0.9214139521445222"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1891.7431410010304" y="52.763986951020485" z="1864.974752567866"/>
+      <rotation x="0.0" y="-0.435529645438801" z="0.0" w="0.9001743875183033"/>
+      <scale x="1.04" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1883.9953773740865" y="53.09878079447418" z="1856.646394096827"/>
+      <rotation x="0.0" y="-0.35843657670172124" z="0.0" w="0.9335540801058883"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1874.0162910637991" y="53.15545862068453" z="1852.8580715395067"/>
+      <rotation x="0.0" y="-0.00409264216590086" z="0.0" w="0.9999916251049815"/>
+      <scale x="1.04" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1862.6149031002835" y="52.58693992217948" z="1852.5187026563422"/>
+      <rotation x="0.0" y="0.9995186930860195" z="0.0" w="0.031022285080498015"/>
+      <scale x="1.0260000000000002" y="0.9500000000000001" z="0.9500000000000001"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1849.747395589431" y="51.32977161714609" z="1852.0906963613338"/>
+      <rotation x="0.0" y="-0.015348327534307583" z="0.0" w="0.9998822074834115"/>
+      <scale x="1.2180000000000002" y="1.05" z="1.05"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1836.5056143531904" y="50.25553840346734" z="1852.3579373094353"/>
+      <rotation x="0.0" y="0.031769612950635594" z="0.0" w="0.9994952184442739"/>
+      <scale x="1.1655000000000002" y="1.05" z="1.05"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1824.5470295673535" y="49.24558017879701" z="1852.5710847848513"/>
+      <rotation x="0.0" y="-0.015655564764253855" z="0.0" w="0.9998774441359862"/>
+      <scale x="1.05" y="1.05" z="1.05"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1813.3897115148395" y="48.55045059944098" z="1852.1739167860298"/>
+      <rotation x="0.0" y="-0.01579566987747885" z="0.0" w="0.9998752406241099"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1801.4677408939126" y="48.251547630582934" z="1854.2651655922514"/>
+      <rotation x="0.0" y="0.1704009919506054" z="0.0" w="0.9853748027741778"/>
+      <scale x="1.2075000000000002" y="1.1500000000000001" z="1.1500000000000001"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1940.7852294629704" y="34.00455433876161" z="1967.7147022439894"/>
+      <rotation x="0.0" y="-0.5827097442014822" z="0.0" w="0.812680351683639"/>
+      <scale x="0.92" y="1.0" z="1.0"/>
+      <xmoFile>props/world/walls/fence_10x5/fence_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

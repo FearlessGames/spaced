@@ -1,0 +1,90 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Eastmost</name>
+  <shape class="Sphere" radius="410.0">
+    <center x="1950.0" y="10.0" z="3600.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1801.688799189446" y="41.23110762395706" z="3366.9664874385307"/>
+      <rotation x="0.0" y="0.9968017063026228" z="0.0" w="0.07991469396913237"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1571.8166599976382" y="12.356785494165166" z="3455.0771272551665"/>
+      <rotation x="0.0" y="0.8244352886772403" z="0.0" w="0.5659562304486766"/>
+      <scale x="0.8" y="0.8" z="0.8"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1912.807425036811" y="30.597516671405344" z="3839.6381555450425"/>
+      <rotation x="0.0" y="-0.5458380508325121" z="-0.0" w="0.8378906982795333"/>
+      <scale x="0.7000000000000001" y="0.7000000000000001" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1550.1701578277355" y="15.551021083030406" z="3535.810231295267"/>
+      <rotation x="0.0" y="-0.4393625865040216" z="-0.0" w="0.8983098115797782"/>
+      <scale x="0.7000000000000001" y="0.7000000000000001" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1795.5234560736546" y="40.89237770434241" z="3366.6488980215554"/>
+      <rotation x="0.0" y="0.7535978126198096" z="0.0" w="0.6573357869571976"/>
+      <scale x="3.7199999999999998" y="3.7199999999999998" z="3.7199999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1888.599472512849" y="35.636960903218494" z="3428.131284188441"/>
+      <rotation x="0.0" y="0.7777123163012366" z="0.0" w="0.6286203568715901"/>
+      <scale x="3.7199999999999998" y="3.7199999999999998" z="3.7199999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1919.1683394927488" y="29.354345508432402" z="3838.958890642022"/>
+      <rotation x="0.0" y="-0.3861753090031992" z="-0.0" w="0.9224254065865075"/>
+      <scale x="3.7199999999999998" y="3.7199999999999998" z="3.7199999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1553.3916625373417" y="15.872240643393098" z="3537.9888153788756"/>
+      <rotation x="0.0" y="-0.13943318038572777" z="-0.0" w="0.9902314821331026"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1901.0146880055067" y="39.04932424937783" z="3438.2480471950294"/>
+      <rotation x="0.0" y="0.9947741672785329" z="0.0" w="0.10209973611768969"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1903.2638418821032" y="35.67188466826221" z="3835.224852126426"/>
+      <rotation x="0.0" y="0.006925657069810842" z="0.0" w="0.9999760173494919"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1907.4104187937362" y="32.66872688596334" z="3833.791077839993"/>
+      <rotation x="0.0" y="-0.2745044208850503" z="-0.0" w="0.9615858375176722"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1573.9870553601254" y="21.22747435183439" z="3751.3255156708583"/>
+      <rotation x="0.0" y="0.8922971113394282" z="0.0" w="-0.4514486295198071"/>
+      <scale x="1.44" y="1.44" z="1.44"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1791.9262026941012" y="37.65334121253852" z="3436.760390231892"/>
+      <rotation x="0.0" y="0.8718665774525947" z="0.0" w="-0.4897434748121705"/>
+      <scale x="1.44" y="1.44" z="1.44"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

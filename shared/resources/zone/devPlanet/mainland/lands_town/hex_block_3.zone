@@ -1,0 +1,36 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Hex block 3</name>
+  <shape class="Sphere" radius="33.0">
+    <center x="462.0" y="61.0" z="2992.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="464.9475279125802" y="84.78724719754719" z="2992.745437785143"/>
+      <rotation x="0.0" y="0.9298414180166726" z="0.0" w="-0.36796051057245727"/>
+      <scale x="0.9500000000000001" y="0.9500000000000001" z="0.9500000000000001"/>
+      <xmoFile>static/xmo/props/tech/antenna_hang.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="483.4542236328125" y="38.03579330444336" z="2982.2734375"/>
+      <rotation x="0.0" y="0.9276515362870683" z="0.0" w="-0.3734469536952231"/>
+      <scale x="0.8530565442014814" y="0.8530565442014814" z="0.8530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="453.987548828125" y="38.03579330444336" z="3013.14306640625"/>
+      <rotation x="0.0" y="0.7745595062295595" z="0.0" w="0.6325010445125138"/>
+      <scale x="1.2530565442014814" y="1.2530565442014814" z="1.2530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="458.35699462890625" y="38.03579330444336" z="3014.055419921875"/>
+      <rotation x="0.0" y="0.8927977578742808" z="0.0" w="0.4504577266899272"/>
+      <scale x="1.1030565442014815" y="1.5442791618820741" z="1.1030565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

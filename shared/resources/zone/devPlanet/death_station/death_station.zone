@@ -1,0 +1,11 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>The Death Station</name>
+  <shape class="Sphere" radius="1600.0">
+    <center x="-270.0" y="5450.0" z="320.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

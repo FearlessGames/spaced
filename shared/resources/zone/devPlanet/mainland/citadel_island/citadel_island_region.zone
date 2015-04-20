@@ -1,0 +1,14 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Citadel Island</name>
+  <shape class="Sphere" radius="895.0">
+    <center x="380.0" y="14.0" z="525.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/citadel_island/cyborg_citadel/citadel_gates.zone</string>
+    <string>zone/devPlanet/mainland/citadel_island/cyborg_citadel/citadel_grounds.zone</string>
+  </subzoneFiles>
+</se.spaced.shared.resources.zone.Zone>

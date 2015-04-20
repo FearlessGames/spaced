@@ -1,0 +1,73 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Land&apos;s Tower</name>
+  <shape class="Sphere" radius="31.0">
+    <center x="408.0" y="5.0" z="2805.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="399.41650390625" y="11.632806777954102" z="2786.330078125"/>
+      <rotation x="0.0" y="-0.2996649976977158" z="0.0" w="0.9540444901338873"/>
+      <scale x="0.65" y="0.65" z="0.65"/>
+      <xmoFile>static/xmo/props/interior/black_board.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="399.31199340820314" y="12.932376670837405" z="2786.013330078125"/>
+      <rotation x="0.01803246361606293" y="-0.2906652422646212" z="-0.05923564225355374" w="0.9548191901517238"/>
+      <scale x="0.36000000000000004" y="0.36000000000000004" z="0.36000000000000004"/>
+      <xmoFile>static/xmo/props/signs/town/disco55.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="398.8119934082031" y="14.432376670837403" z="2785.713330078125"/>
+      <rotation x="0.0" y="-0.2912240594539119" z="0.0" w="0.9566548736065607"/>
+      <scale x="0.4100000000000001" y="0.4100000000000001" z="0.4100000000000001"/>
+      <xmoFile>static/xmo/props/signs/town/dcs_big.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="400.41199340820316" y="14.432376670837403" z="2786.813330078125"/>
+      <rotation x="0.022595810187544658" y="-0.290346141987084" z="-0.07422598249450031" w="0.9537709634487258"/>
+      <scale x="1.1" y="1.1" z="1.1"/>
+      <xmoFile>static/xmo/props/signs/town/tn_small.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="423.97955932617185" y="17.09745616912842" z="2826.85556640625"/>
+      <rotation x="0.26229950757916165" y="0.6844986618626459" z="-0.614165523674781" w="0.29233757842819064"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="423.97955932617185" y="15.397456169128418" z="2826.85556640625"/>
+      <rotation x="0.26660740007212413" y="0.6753123441783151" z="-0.6242523098578489" w="0.2884142605078874"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="423.97955932617185" y="13.697456169128419" z="2826.85556640625"/>
+      <rotation x="0.26660740007212413" y="0.6753123441783151" z="-0.6242523098578489" w="0.2884142605078874"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="432.18663330078124" y="13.416848182678224" z="2815.98798828125"/>
+      <rotation x="0.693623265416425" y="-0.20349775870921777" z="0.16347760374927986" w="0.6713795505865323"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="432.28663330078126" y="16.716848182678223" z="2816.08798828125"/>
+      <rotation x="0.6775201521882607" y="-0.18485023845429932" z="0.1819691861906466" w="0.6882470835385346"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="432.28663330078126" y="15.116848182678225" z="2816.08798828125"/>
+      <rotation x="0.6775201521882607" y="-0.18485023845429932" z="0.1819691861906466" w="0.6882470835385346"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/lands_tower.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>25.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

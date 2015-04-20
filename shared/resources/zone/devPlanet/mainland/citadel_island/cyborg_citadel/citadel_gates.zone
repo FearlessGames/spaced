@@ -1,0 +1,11 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Citadel Gates</name>
+  <shape class="Sphere" radius="95.0">
+    <center x="370.0" y="24.0" z="700.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

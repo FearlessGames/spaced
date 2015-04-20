@@ -1,0 +1,55 @@
+<se.spaced.shared.model.xmo.XmoRoot>
+	<name>The player robot</name>
+	<size>
+		<double>1.0</double>
+		<double>1.0</double>
+		<double>1.0</double>
+	</size>
+	<extendedMeshObjects>
+	
+
+		<se.spaced.shared.model.xmo.ExtendedMeshObject>
+			<xmoMaterialFile>materials/add.material</xmoMaterialFile> 
+			<colladaFile>static/collada/props/interior/light_tube_red_emissive.DAE</colladaFile>		
+		  <textureFile>textures/props/buildings/glass_lights.png</textureFile>	
+			<position>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+			</position>
+			<rotation>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>1.0</double>
+			</rotation>
+			<scale>
+				<double>1.0</double>
+				<double>1.0</double>
+				<double>1.0</double>
+			</scale>
+		</se.spaced.shared.model.xmo.ExtendedMeshObject>		
+
+		<se.spaced.shared.model.xmo.ExtendedMeshObject>
+			<xmoMaterialFile>materials/lights.material</xmoMaterialFile> 
+			<colladaFile>static/collada/props/interior/light_tube_red_lights.DAE</colladaFile>		
+		  <textureFile>textures/props/buildings/glass_lights.png</textureFile>	
+			<position>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+			</position>
+			<rotation>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>1.0</double>
+			</rotation>
+			<scale>
+				<double>1.0</double>
+				<double>1.0</double>
+				<double>1.0</double>
+			</scale>
+		</se.spaced.shared.model.xmo.ExtendedMeshObject>		
+	</extendedMeshObjects>		
+</se.spaced.shared.model.xmo.XmoRoot>

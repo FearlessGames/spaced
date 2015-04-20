@@ -1,0 +1,19 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Bunker Hill Mountain</name>
+  <shape class="Sphere" radius="159.0">
+    <center x="1446.0" y="105.0" z="1962.0"/>
+  </shape>
+  <props/>
+  <environmentDayCycleSettingsFile>environment/bunkerhillmountain.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>20.0</envOuterFadeDistance>
+  <envInnerFadeDistance>20.0</envInnerFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/bunker_hill/bunker_hill_mountain/BunkerHillEastPerch.zone</string>
+    <string>zone/devPlanet/mainland/bunker_hill/bunker_hill_mountain/BunkerHillEntranceHallway.zone</string>
+    <string>zone/devPlanet/mainland/bunker_hill/bunker_hill_mountain/BunkerHillRepairShop.zone</string>
+    <string>zone/devPlanet/mainland/bunker_hill/bunker_hill_mountain/BunkerHillSecurityTunnel.zone</string>
+    <string>zone/devPlanet/mainland/bunker_hill/bunker_hill_mountain/BunkerHillSouthEastTunnel.zone</string>
+  </subzoneFiles>
+</se.spaced.shared.resources.zone.Zone>

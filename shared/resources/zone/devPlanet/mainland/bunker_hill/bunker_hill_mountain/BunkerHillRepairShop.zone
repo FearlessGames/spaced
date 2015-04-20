@@ -1,0 +1,24 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Repair Shop</name>
+  <shape class="Sphere" radius="30.0">
+    <center x="1356.0" y="95.0" z="2030.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1606.6197509765625" y="111.903489" z="1962.1705322265625"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/bunker_repair_shop.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1366.6708984375" y="64.50503540039062" z="2025.6239013671875"/>
+      <rotation x="0.0" y="-0.7014208148415298" z="-0.0" w="0.7127473889864798"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/table3m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

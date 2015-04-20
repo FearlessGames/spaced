@@ -1,0 +1,48 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Flattle</name>
+  <shape class="Sphere" radius="190.0">
+    <center x="1920.0" y="4.0" z="3120.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1983.304353595385" y="8.632763836414824" z="3034.8303736458447"/>
+      <rotation x="0.0" y="0.6997953857826535" z="0.0" w="0.7143433474438655"/>
+      <scale x="0.55" y="0.55" z="0.55"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1939.891623517105" y="8.91978763462771" z="3198.507710170156"/>
+      <rotation x="0.0" y="0.5892344612144552" z="0.0" w="0.807962096708324"/>
+      <scale x="0.55" y="0.55" z="0.55"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1840.2929034377394" y="3.607776403427124" z="3055.671455165117"/>
+      <rotation x="0.0" y="-0.8034540634157099" z="0.0" w="0.5953667508190097"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1826.0219490284353" y="2.242362491223929" z="3163.131140553971"/>
+      <rotation x="0.0" y="-0.13448030069364864" z="-0.0" w="0.9909162672624493"/>
+      <scale x="0.5" y="0.5" z="0.5"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1938.2120115402183" y="8.016917961018436" z="3204.4168871906713"/>
+      <rotation x="0.0" y="0.9347699760452945" z="0.0" w="0.35525355998818564"/>
+      <scale x="3.7199999999999998" y="3.7199999999999998" z="3.7199999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1824.9948183096144" y="1.7176056679772387" z="3169.8121101412057"/>
+      <rotation x="0.0" y="0.9996028205242996" z="0.0" w="0.02818157553908071"/>
+      <scale x="3.7199999999999998" y="3.7199999999999998" z="3.7199999999999998"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

@@ -1,0 +1,77 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Southwater</name>
+  <shape class="Sphere" radius="700.0">
+    <center x="2284.0" y="10.0" z="2850.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="2244.7369522226413" y="3.4933868354047206" z="2717.5527281198883"/>
+      <rotation x="0.0" y="-0.48887208186052816" z="-0.0" w="0.8723554823449859"/>
+      <scale x="0.4" y="0.4" z="0.4"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2306.571067132939" y="2.911521413696221" z="2721.441830982779"/>
+      <rotation x="0.0" y="0.9936785463792966" z="0.0" w="-0.11226284543662705"/>
+      <scale x="0.6" y="0.5" z="0.6"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2769.813431982182" y="23.889985160080812" z="2883.9124257529684"/>
+      <rotation x="0.0" y="-0.9130889403122981" z="0.0" w="0.40776045305959335"/>
+      <scale x="1.01" y="1.01" z="1.01"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2519.3071076570723" y="11.279587077969381" z="2860.0747599321357"/>
+      <rotation x="0.0" y="-0.10221017493316535" z="0.0" w="0.994762826074704"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2637.796033086489" y="18.18333703615525" z="2913.720897423132"/>
+      <rotation x="0.0" y="0.8979596505911878" z="0.0" w="0.4400777952932322"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2582.436695815525" y="15.964732337783602" z="2755.750926846591"/>
+      <rotation x="0.0" y="-0.30510947185924275" z="0.0" w="0.9523172844077619"/>
+      <scale x="1.1500000000000001" y="1.1500000000000001" z="1.1500000000000001"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2507.516373222798" y="23.9709687019415" z="2664.831319294915"/>
+      <rotation x="0.0" y="0.5592811267710976" z="0.0" w="0.8289780583571869"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2454.2885433641122" y="11.06297522454014" z="2536.2948541746814"/>
+      <rotation x="0.0" y="0.7767101559058606" z="0.0" w="0.6298581853978671"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2363.384509967201" y="8.251147218142307" z="2431.4113149625878"/>
+      <rotation x="0.0" y="0.17913879827069476" z="0.0" w="0.9838238109306622"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1898.7117612110592" y="39.39309118766806" z="3430.019205215195"/>
+      <rotation x="0.0" y="0.9912640198205843" z="0.0" w="0.1318925434174966"/>
+      <scale x="0.532709972836094" y="0.5439745979541231" z="0.5105877110680347"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/southwater.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>50.0</envOuterFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/southwater/SouthwaterBeach.zone</string>
+    <string>zone/devPlanet/mainland/southwater/BaysWatch.zone</string>
+    <string>zone/devPlanet/mainland/southwater/Flattle.zone</string>
+  </subzoneFiles>
+</se.spaced.client.resources.zone.Zone>

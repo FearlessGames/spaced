@@ -1,0 +1,11 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>East Perch</name>
+  <shape class="Sphere" radius="30.0">
+    <center x="1558.0" y="170.0" z="1950.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

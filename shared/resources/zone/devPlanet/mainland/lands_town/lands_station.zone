@@ -1,0 +1,42 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Land&apos;s Station</name>
+  <shape class="Sphere" radius="90.0">
+    <center x="661.0" y="92.0" z="3121.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="656.9733353631156" y="55.18106837272644" z="3107.8627649254995"/>
+      <rotation x="0.0" y="-0.9063327345655614" z="0.0" w="0.42256475746909117"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/stations/station_runway_100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="631.8385656371898" y="70.9136459077341" z="3066.8251582251787"/>
+      <rotation x="-0.03940435263664784" y="-0.9023614246540728" z="-0.08450383850144959" w="0.4207734040645629"/>
+      <scale x="6.09" y="6.09" z="6.09"/>
+      <xmoFile>static/xmo/props/signs/town/tn_big.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="676.329401078678" y="52.61518631956778" z="3021.8699900258753"/>
+      <rotation x="0.0" y="-0.4210715793945901" z="0.0" w="0.9070274113973322"/>
+      <scale x="0.4259418169505227" y="0.4224448362461544" z="0.4259418169505227"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.902524923381" y="46.61980146293155" z="3052.95651712168"/>
+      <rotation x="0.0" y="0.12726495304591642" z="0.0" w="0.9918687573092625"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="572.4806518554688" y="52.54489593505859" z="3079.8615234375"/>
+      <rotation x="0.0" y="-0.9103808936131975" z="0.0" w="0.4137712273032481"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/stations/mast_medium.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

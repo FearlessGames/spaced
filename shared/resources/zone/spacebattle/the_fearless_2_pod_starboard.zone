@@ -1,0 +1,12 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Starboard Pod</name>
+  <shape class="Sphere" radius="80.0">
+    <center x="-114.0" y="-40.0" z="36.0"/>
+  </shape>
+  <props/>
+  <environmentDayCycleSettingsFile>environment/the_fearless.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+  <envInnerFadeDistance>15.0</envInnerFadeDistance>
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

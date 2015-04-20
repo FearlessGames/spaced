@@ -1,0 +1,73 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>East Tower</name>
+  <shape class="Sphere" radius="25.0">
+    <center x="2984.0" y="9.0" z="2464.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="3001.831934156129" y="9.67673764903634" z="2460.941801723146"/>
+      <rotation x="0.0" y="-0.817232635410683" z="0.0" w="0.5763079208372117"/>
+      <scale x="0.31" y="0.3968" z="0.31"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2982.4031894708696" y="8.9350547653749" z="2457.044828532917"/>
+      <rotation x="0.0" y="0.6639803640640451" z="0.0" w="0.7477500091189422"/>
+      <scale x="0.7530565442014812" y="0.7530565442014812" z="0.7530565442014812"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2977.3148493291305" y="9.50021378335785" z="2460.9822715118476"/>
+      <rotation x="0.0" y="0.4337309602094512" z="0.0" w="0.9010424263905599"/>
+      <scale x="1.1030565442014812" y="1.1030565442014812" z="1.1030565442014812"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2984.2650912239164" y="9.134277579021244" z="2457.078026859798"/>
+      <rotation x="0.0" y="0.9990025980298415" z="0.0" w="0.044652089868528304"/>
+      <scale x="1.1030565442014812" y="1.1030565442014812" z="1.1030565442014812"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2990.4981806063124" y="9.819631068591065" z="2459.076017897678"/>
+      <rotation x="0.0" y="-0.1656041754488321" z="-0.0" w="0.986192302278776"/>
+      <scale x="0.6030565442014811" y="0.6030565442014811" z="0.6030565442014811"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2985.072399839984" y="9.986982132530585" z="2467.1100047639165"/>
+      <rotation x="0.0" y="0.9919557399766292" z="0.0" w="-0.1265851884203594"/>
+      <scale x="0.6030565442014811" y="0.6030565442014811" z="0.6030565442014811"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3000.8538324031356" y="9.631273295723133" z="2460.135051355558"/>
+      <rotation x="0.0" y="0.3548204729115642" z="0.0" w="0.9349344533189555"/>
+      <scale x="0.6030565442014811" y="0.6030565442014811" z="0.6030565442014811"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2980.51767578125" y="25.196003341674803" z="2458.984228515625"/>
+      <rotation x="0.0" y="0.3795609314419868" z="0.0" w="0.9251667413622754"/>
+      <scale x="0.618" y="0.63" z="0.6"/>
+      <xmoFile>props/world/signs/factions/dcs/simple_full.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2986.364501953125" y="25.210489654541014" z="2458.817138671875"/>
+      <rotation x="0.0" y="-0.3855430736157407" z="0.0" w="0.9226898386711146"/>
+      <scale x="0.6" y="0.6" z="0.6"/>
+      <xmoFile>props/world/signs/factions/dcs/simple_full.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2980.439453125" y="25.159521865844727" z="2464.788427734375"/>
+      <rotation x="0.0" y="0.9280727102094294" z="0.0" w="0.3723990394248145"/>
+      <scale x="0.618" y="0.6" z="0.6"/>
+      <xmoFile>props/world/signs/factions/dcs/simple_full.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/default.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>0.3</envMaxWeight>
+  <envOuterFadeDistance>10.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

@@ -1,0 +1,11 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Land&apos;s Harbor</name>
+  <shape class="Sphere" radius="95.0">
+    <center x="224.0" y="4.0" z="2955.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

@@ -1,0 +1,32 @@
+<se.spaced.shared.model.xmo.XmoRoot>
+	<name>The player robot</name>
+	<size>
+		<double>1.0</double>
+		<double>1.0</double>
+		<double>1.0</double>
+	</size>
+	<extendedMeshObjects>
+		<se.spaced.shared.model.xmo.ExtendedMeshObject>
+			<xmoMaterialFile>materials/default_holed.material</xmoMaterialFile> 
+			<colladaFile>static/collada/props/leisure/parasol.DAE</colladaFile>
+			<physicsFile>static/collada/props/leisure/parasol.DAE</physicsFile>			
+			<textureFile>textures/props/leisure/leisure.png</textureFile>	
+			<position>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+			</position>
+			<rotation>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>0.0</double>
+				<double>1.0</double>
+			</rotation>
+			<scale>
+				<double>1.0</double>
+				<double>1.0</double>
+				<double>1.0</double>
+			</scale>
+		</se.spaced.shared.model.xmo.ExtendedMeshObject>		
+	</extendedMeshObjects>
+</se.spaced.shared.model.xmo.XmoRoot>

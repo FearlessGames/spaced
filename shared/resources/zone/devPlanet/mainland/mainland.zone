@@ -1,0 +1,92 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Mainland</name>
+  <shape class="Sphere" radius="4000.0">
+    <center x="2000.0" y="0.0" z="2000.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1606.6197509765625" y="111.903489" z="1962.1705322265625"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/bunker_dungeon.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1606.6197509765625" y="111.903489" z="1962.1705322265625"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/bunker_dungeon_east_perch.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1309.3165847698933" y="154.5420740198596" z="1949.0800854914066"/>
+      <rotation x="0.0" y="0.9950173605630431" z="0.0" w="0.09970181632325016"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/bunker_dungeon_east_perch_windows.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1434.2432748194485" y="1.0000000000000018" z="2035.5957140709843"/>
+      <rotation x="5.879827737232407E-18" y="8.332327557411625E-4" z="-4.8992667695009E-21" w="0.9999996528615271"/>
+      <scale x="1.587420395193699" y="1.0196344966371946" z="1.587420395193699"/>
+      <xmoFile>static/xmo/sky/horizongrad.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1540.443669876834" y="641.2228615097101" z="1897.149577275488"/>
+      <rotation x="0.0" y="-0.4016302868553155" z="0.0" w="0.915801895979975"/>
+      <scale x="1.4000000000000001" y="0.7000000000000001" z="1.4000000000000001"/>
+      <xmoFile>static/xmo/sky/cloudplane.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="534.6585937083751" y="7.224549873524218" z="500.12763498644205"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/cyborg_citadel/main_citadel.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2727.2727176195735" y="221.0780758857727" z="1922.9503292857867"/>
+      <rotation x="0.0" y="-0.4961889127063606" z="-0.0" w="0.868214583445406"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/stations/hexagonal_peak_tower.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="91.25320944807932" y="0.29211967976589587" z="1873.9193701246543"/>
+      <rotation x="0.0" y="0.48311036211360736" z="0.0" w="0.8755594657237503"/>
+      <scale x="1.4430565442014813" y="1.4430565442014813" z="1.4430565442014813"/>
+      <xmoFile>props/world/buildings/industrial/deepwater_rig/deepwater_rig.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-801.57220179139" y="-49.69361996628472" z="2703.907342960143"/>
+      <rotation x="2.759462876122034E-4" y="0.3064885543188351" z="2.8281921115837964E-6" w="0.9518743036332046"/>
+      <scale x="1.5506623590762256" y="1.290245805477491" z="1.605551352885999"/>
+      <xmoFile>props/world/buildings/industrial/deepwater_rig/deepwater_rig.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1566.6607356625489" y="67.80802990893693" z="2545.773711855485"/>
+      <rotation x="0.0" y="0.9035806678868858" z="0.0" w="0.428417992877388"/>
+      <scale x="0.8" y="0.8" z="0.8"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2593.5002779128577" y="1308.2435765975583" z="1372.9349143727586"/>
+      <rotation x="0.3648767843376197" y="0.0" z="0.9310558158625283" w="0.0"/>
+      <scale x="3.9848" y="3.5745999999999998" z="5.859999999999999"/>
+      <xmoFile>static/xmo/moln.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/default.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/south_hill/SouthHillRegion.zone</string>
+    <string>zone/devPlanet/mainland/bunker_hill/BunkerHillRegion.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/LandsTownRegion.zone</string>
+    <string>zone/devPlanet/mainland/upshore_lake/UpshoreLake.zone</string>
+    <string>zone/devPlanet/mainland/southwater/Southwater.zone</string>
+    <string>zone/devPlanet/mainland/settlers_landing/SettlersLanding.zone</string>
+    <string>zone/devPlanet/mainland/inlands/inlands_region.zone</string>
+    <string>zone/devPlanet/mainland/citadel_island/citadel_island_region.zone</string>
+    <string>zone/devPlanet/mainland/islets/islets.zone</string>
+    <string>zone/devPlanet/mainland/deepwater/deepwater.zone</string>
+    <string>zone/devPlanet/mainland/deepwater/deepwater2.zone</string>
+    <string>zone/devPlanet/mainland/deepwater/deepwater3.zone</string>
+  </subzoneFiles>
+</se.spaced.client.resources.zone.Zone>

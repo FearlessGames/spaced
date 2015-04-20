@@ -1,0 +1,25 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Bunker Hill Entrance</name>
+  <shape class="Sphere" radius="47.0">
+    <center x="1603.0" y="103.0" z="1955.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1606.6197509765625" y="111.903489" z="1962.1705322265625"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dungeons/bunker_hill_entrance_interior.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1599.7801966904422" y="111.50993001525939" z="1996.723162324951"/>
+      <rotation x="0.0" y="-0.8872783945800304" z="0.0" w="0.4612342685788687"/>
+      <scale x="3.1799999999999997" y="3.1799999999999997" z="3.1799999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/bunkerentrance.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>32.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

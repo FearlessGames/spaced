@@ -1,0 +1,40 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Islets</name>
+  <shape class="Sphere" radius="800.0">
+    <center x="1450.0" y="10.0" z="3710.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1562.843954859764" y="10.030469455354762" z="3364.7969086002754"/>
+      <rotation x="0.0" y="-0.44913443325233315" z="-0.0" w="0.8934641911498779"/>
+      <scale x="1.05" y="1.05" z="1.05"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1598.8639023399576" y="7.258104558648512" z="3343.808902991393"/>
+      <rotation x="0.0" y="0.8744028271356183" z="0.0" w="0.48520067590352584"/>
+      <scale x="0.5" y="0.5" z="0.5"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1562.8663625509942" y="9.21433557302413" z="3359.3742741446126"/>
+      <rotation x="0.0" y="0.3194139917078943" z="0.0" w="0.9476152710363153"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1602.3626981777097" y="6.450738453912038" z="3334.26448681921"/>
+      <rotation x="0.0" y="0.18003139341058635" z="0.0" w="0.9836608650274965"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/islets/eastmost.zone</string>
+    <string>zone/devPlanet/mainland/islets/westmost.zone</string>
+    <string>zone/devPlanet/mainland/islets/midlets.zone</string>
+  </subzoneFiles>
+</se.spaced.client.resources.zone.Zone>

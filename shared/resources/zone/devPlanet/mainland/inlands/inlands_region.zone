@@ -1,0 +1,45 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Inland Region</name>
+  <shape class="Sphere" radius="695.0">
+    <center x="2440.0" y="14.0" z="1950.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="2927.064026704591" y="45.976292326858115" z="1710.0268902451294"/>
+      <rotation x="-0.010115976697087482" y="-0.6439501102161345" z="0.012016107214826592" w="0.7649062267595254"/>
+      <scale x="1.7913333333333332" y="1.7913333333333332" z="1.7913333333333332"/>
+      <xmoFile>props/world/walls/fence_10x5/solid_metal_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2920.122791394368" y="45.37602617399452" z="1691.6930308632086"/>
+      <rotation x="0.0" y="-0.4947090394046711" z="0.0" w="0.8690586667948876"/>
+      <scale x="1.7913333333333332" y="1.7913333333333332" z="1.7913333333333332"/>
+      <xmoFile>props/world/walls/fence_10x5/solid_metal_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2908.5177871228366" y="44.42509155710323" z="1675.961649085015"/>
+      <rotation x="-0.006174388679349636" y="-0.3930414620003218" z="0.014442878576327629" w="0.9193865831800655"/>
+      <scale x="1.7913333333333332" y="1.7913333333333332" z="1.7913333333333332"/>
+      <xmoFile>props/world/walls/fence_10x5/solid_metal_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2893.58892303974" y="44.15506089787689" z="1669.963082266745"/>
+      <rotation x="0.0" y="0.07827284037393677" z="0.0" w="0.9969319748407091"/>
+      <scale x="1.5259771555555555" y="1.7913333333333334" z="1.7913333333333334"/>
+      <xmoFile>props/world/walls/fence_10x5/solid_metal_10x5.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2876.8522116618733" y="46.203386383347464" z="1671.7016815641991"/>
+      <rotation x="0.0" y="0.05746832034197622" z="0.0" w="0.998347330420166"/>
+      <scale x="1.55846" y="1.7913333333333332" z="1.7913333333333332"/>
+      <xmoFile>props/world/walls/fence_10x5/solid_metal_10x5_slanted.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/inlands/observatory_peak.zone</string>
+    <string>zone/devPlanet/mainland/inlands/the_hill_pocket.zone</string>
+  </subzoneFiles>
+</se.spaced.client.resources.zone.Zone>

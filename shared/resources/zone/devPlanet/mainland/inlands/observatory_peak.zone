@@ -1,0 +1,44 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Peak Observatory</name>
+  <shape class="Sphere" radius="115.0">
+    <center x="2724.0" y="243.0" z="1923.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="2711.95556640625" y="263.8922912597656" z="1907.6627197265625"/>
+      <rotation x="0.0" y="-0.8858377041853729" z="0.0" w="0.4639952174792195"/>
+      <scale x="1.3" y="1.3" z="1.3"/>
+      <xmoFile>static/xmo/props/buildings/stations/mast_medium.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2727.635498046875" y="268.33319091796875" z="1924.0987548828125"/>
+      <rotation x="0.0" y="0.2457528908767266" z="0.0" w="0.9693325108680363"/>
+      <scale x="1.94" y="1.94" z="1.94"/>
+      <xmoFile>static/xmo/props/tech/disc_radio.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2717.4755859375" y="248.22213745117188" z="1891.4810546875"/>
+      <rotation x="0.0" y="-0.9690534308507723" z="0.0" w="0.24685106472597568"/>
+      <scale x="0.5" y="0.5" z="0.5"/>
+      <xmoFile>static/xmo/props/tech/disc_radio.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2736.77783203125" y="249.22213745117188" z="1887.7878662109374"/>
+      <rotation x="0.0" y="0.9997814493942306" z="0.0" w="0.02090582328375345"/>
+      <scale x="0.7000000000000001" y="0.7000000000000001" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/tech/antenna_hang.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2754.7447265625" y="263.321923828125" z="1918.1711181640626"/>
+      <rotation x="0.0" y="0.8598056727813691" z="0.0" w="0.5106213911039933"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/tech/antenna_hang.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/mountain_peak.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+  <envInnerFadeDistance>15.0</envInnerFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

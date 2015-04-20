@@ -1,0 +1,12 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>The Storm</name>
+  <shape class="Sphere" radius="1000.0">
+    <center x="800.0" y="600.0" z="-3100.0"/>
+  </shape>
+  <props/>
+  <environmentDayCycleSettingsFile>environment/outerspace.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>1000.0</envOuterFadeDistance>
+  <envInnerFadeDistance>215.0</envInnerFadeDistance>
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

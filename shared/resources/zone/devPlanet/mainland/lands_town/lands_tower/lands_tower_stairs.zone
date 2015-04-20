@@ -1,0 +1,19 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Tower Stairs</name>
+  <shape class="Sphere" radius="32.0">
+    <center x="408.0" y="35.0" z="2805.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="398.4530090332031" y="40.40742874145508" z="2821.822119140625"/>
+      <rotation x="-0.003856018055553632" y="0.9692790676335751" z="0.015226652353339561" w="0.24546154328173928"/>
+      <scale x="0.55" y="0.55" z="0.55"/>
+      <xmoFile>static/xmo/props/signs/town/disco55.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/lands_tower.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>10.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.client.resources.zone.Zone>

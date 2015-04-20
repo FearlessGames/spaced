@@ -1,0 +1,24 @@
+<se.spaced.client.model.Zone>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location>
+        <double>2414.941774136909</double>
+        <double>7.90916425463567</double>
+        <double>783.494688681012</double>
+      </location>
+      <rotation>
+        <double>0.0</double>
+        <double>0.032142214620457125</double>
+        <double>0.0</double>
+        <double>0.9994833055330603</double>
+      </rotation>
+      <scale>
+        <double>0.7</double>
+        <double>0.6</double>
+        <double>0.7</double>
+      </scale>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+
+  </props>
+</se.spaced.client.model.Zone>

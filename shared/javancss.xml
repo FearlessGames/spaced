@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Javancss" basedir="." default="all">
+	<macrodef name="javancss">
+
+		<attribute name="lib.dir" />
+		<attribute name="src.dir" />
+		<attribute name="output.dir" />
+
+		<sequential>
+			<mkdir dir="@{output.dir}"/>
+
+		    <taskdef name="javancss"
+               classname="javancss.JavancssAntTask"
+               classpath="@{lib.dir}/javancss.jar:@{lib.dir}/ccl.jar"/>
+
+	      <javancss srcdir="@{src.dir}"
+                includes="**/*.java"
+                ccnPerFuncMax="100"
+                generateReport="yes"
+                outputfile="@{output.dir}/complexity.txt"
+                />
+		</sequential>
+	</macrodef>
+</project>
+

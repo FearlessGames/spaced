@@ -1,0 +1,61 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Center Tower</name>
+  <shape class="Sphere" radius="25.0">
+    <center x="3294.0" y="24.0" z="2284.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="3292.762261517447" y="23.868486483610866" z="2282.7934774020373"/>
+      <rotation x="0.0" y="0.965830631236523" z="0.0" w="0.2591740568908462"/>
+      <scale x="0.6030565442014811" y="0.6030565442014811" z="0.6030565442014811"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3296.3520603652582" y="23.943605452550912" z="2289.383552367135"/>
+      <rotation x="0.0" y="0.9908564497524145" z="0.0" w="-0.13492033198907014"/>
+      <scale x="0.6030565442014811" y="0.6030565442014811" z="0.6030565442014811"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3292.0428338451775" y="13.193091115902803" z="2302.880664998182"/>
+      <rotation x="0.0" y="0.9775301176621486" z="0.0" w="0.2107957994444527"/>
+      <scale x="2.250209371411555" y="2.143056544201481" z="2.143056544201481"/>
+      <xmoFile>props/world/signs/posts/metal_post/metal_post.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3291.8428338451777" y="15.093091115902803" z="2303.380664998182"/>
+      <rotation x="0.0" y="0.9775301176621486" z="0.0" w="0.2107957994444527"/>
+      <scale x="2.143056544201481" y="2.143056544201481" z="2.143056544201481"/>
+      <xmoFile>props/world/signs/functions/guard_tower/guard_tower_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3297.170800972032" y="39.172995926046525" z="2279.901696667802"/>
+      <rotation x="-0.01558517245953824" y="0.12445204731150306" z="0.0019550489867692076" w="0.9921012892355505"/>
+      <scale x="2.0500000000000003" y="2.0250000000000004" z="2.5"/>
+      <xmoFile>static/xmo/props/signs/town/dcs_big.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3297.4280367614033" y="39.14912038201993" z="2279.505672245389"/>
+      <rotation x="-0.002198480999575876" y="-0.9900342415438805" z="-0.015552700679583604" w="0.13994813594149413"/>
+      <scale x="2.2800000000000002" y="2.0064" z="2.2800000000000002"/>
+      <xmoFile>static/xmo/props/signs/town/dcs_big.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3294.555078125" y="39.23870697021484" z="2284.4482421875"/>
+      <rotation x="0.0" y="0.7939664537505997" z="0.0" w="0.6079615697712292"/>
+      <scale x="0.62" y="0.62" z="0.62"/>
+      <xmoFile>props/world/signs/factions/dcs/simple_full.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3302.38251953125" y="39.1387222290039" z="2282.48916015625"/>
+      <rotation x="0.0" y="-0.6078072654344548" z="0.0" w="0.7940845849688118"/>
+      <scale x="0.62" y="0.62" z="0.62"/>
+      <xmoFile>props/world/signs/factions/dcs/simple_full.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/default.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>0.3</envMaxWeight>
+  <envOuterFadeDistance>10.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

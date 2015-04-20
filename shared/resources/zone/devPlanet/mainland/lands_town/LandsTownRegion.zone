@@ -1,0 +1,746 @@
+<se.spaced.client.resources.zone.Zone>
+  <name>Lands Town</name>
+  <shape class="Sphere" radius="500.0">
+    <center x="470.0" y="10.0" z="2880.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="674.0716993320011" y="7.833994798424243" z="2657.901621419621"/>
+      <rotation x="0.0" y="0.9471409764664425" z="0.0" w="0.3208176595796963"/>
+      <scale x="0.4" y="0.4" z="0.4"/>
+      <xmoFile>static/xmo/props/buildings/ht_sign.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="302.36363471720136" y="13.296698590102125" z="2957.4238746018536"/>
+      <rotation x="0.0" y="0.8819054747561575" z="0.0" w="-0.47142627588533575"/>
+      <scale x="0.7" y="0.7" z="0.7"/>
+      <xmoFile>static/xmo/props/buildings/crane140m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="411.3789933696562" y="52.34121102658969" z="3081.8542360523397"/>
+      <rotation x="0.0" y="0.9393727128473789" z="0.0" w="0.34289780745545145"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/tower500m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="562.1012559129165" y="17.470253220987473" z="2645.5243188631807"/>
+      <rotation x="0.0" y="0.8373344009738803" z="0.0" w="0.5466910470692866"/>
+      <scale x="0.6" y="0.6" z="0.6"/>
+      <xmoFile>static/xmo/props/buildings/radar200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="407.8879760742188" y="10.601423645019532" z="2806.7291503906254"/>
+      <rotation x="0.0" y="0.4407226791385763" z="0.0" w="0.8976433145146883"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/bdoct11s.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="402.0415523393926" y="49.90255025014261" z="3002.3040043094948"/>
+      <rotation x="0.0" y="0.9810476695495773" z="0.0" w="0.19376653496242177"/>
+      <scale x="0.6" y="0.6" z="0.6"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="830.915283203125" y="11.252721786499023" z="2230.35498046875"/>
+      <rotation x="0.0" y="-0.10311272721517388" z="-0.0" w="0.994669676569186"/>
+      <scale x="1.2" y="0.8" z="1.2"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="883.7862367630811" y="1.348958451341559" z="2048.270455182846"/>
+      <rotation x="0.0" y="-0.8378300943856015" z="0.0" w="0.5459310697714631"/>
+      <scale x="0.8" y="0.8" z="0.7"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="681.1222724278807" y="-8.456888029287967" z="2308.5466032797285"/>
+      <rotation x="0.0" y="-0.7418307534023274" z="0.0" w="0.6705871556379046"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1001.8468449825548" y="13.309607590542356" z="2211.248954257043"/>
+      <rotation x="0.0" y="0.2554337668888129" z="0.0" w="0.9668265566961799"/>
+      <scale x="0.8" y="0.7" z="0.8"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.3553584826974" y="9.97597454481172" z="2404.9420528529004"/>
+      <rotation x="0.0" y="-0.34449769317101564" z="-0.0" w="0.9387871640578863"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="856.6638758220716" y="14.157101932673925" z="2355.7060749399047"/>
+      <rotation x="0.0" y="0.049183821914171436" z="0.0" w="0.998789743470524"/>
+      <scale x="2.0" y="2.0" z="2.0"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="582.2741395801963" y="0.531533710601963" z="2737.442888201144"/>
+      <rotation x="0.0" y="0.3382869665273178" z="0.0" w="0.9992667852951664"/>
+      <scale x="0.4" y="0.4" z="0.4"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="279.7353545619195" y="24.110706853211354" z="2815.8793393253914"/>
+      <rotation x="0.0" y="-0.8158535163363438" z="0.0" w="0.5782586271571079"/>
+      <scale x="0.3" y="0.3" z="0.3"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1090.2161056509854" y="2.642204643969563" z="2719.4709075136075"/>
+      <rotation x="0.0" y="0.9810476695495773" z="0.0" w="-0.1937665349624215"/>
+      <scale x="0.6" y="0.5" z="0.6"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="962.5796911681484" y="6.158548873253409" z="2796.698908983887"/>
+      <rotation x="0.0" y="-0.7155345328235204" z="0.0" w="0.6985773631724882"/>
+      <scale x="3.4" y="2.5" z="3.7"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1121.2977278276555" y="15.227295161833894" z="3042.7523771717347"/>
+      <rotation x="0.0" y="-0.589788025031098" z="-0.0" w="0.8075581004051144"/>
+      <scale x="0.6" y="0.6" z="0.6"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="977.2592832978032" y="12.037288088159414" z="2981.005071771338"/>
+      <rotation x="0.0" y="0.4713283641737406" z="0.0" w="0.8819578068849474"/>
+      <scale x="1.3" y="1.0" z="1.3"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="361.11039613292627" y="8.810048456519496" z="2760.840217551265"/>
+      <rotation x="0.0" y="0.9723545440067524" z="0.0" w="-0.23350940184373967"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="405.62871664482805" y="-6.551342067124352" z="2620.5452919537943"/>
+      <rotation x="0.0" y="-0.0069256570699873805" z="0.0" w="0.9999760173494907"/>
+      <scale x="0.5" y="0.4" z="0.5"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="752.2581841315291" y="15.228016753904434" z="3123.4222316796677"/>
+      <rotation x="0.13579564535443614" y="0.9120638971989907" z="-0.17939172636252265" w="0.3428083993160538"/>
+      <scale x="0.19544542124542127" y="0.2155860805860806" z="0.20780183150183157"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="552.9729042232593" y="0.397325876428113" z="2926.98514614128"/>
+      <rotation x="0.0" y="-0.6049665642155292" z="0.0" w="0.7962508751525853"/>
+      <scale x="0.6895" y="0.591" z="0.6895"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1057.2457015308414" y="24.388457279790174" z="2866.251957330093"/>
+      <rotation x="0.0" y="0.9942294960277172" z="0.0" w="0.10727399138874143"/>
+      <scale x="0.9" y="0.7" z="0.9"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="436.7681662043632" y="20.69831693172455" z="2887.976302626838"/>
+      <rotation x="0.0" y="0.9889062630540185" z="0.0" w="0.14854091319409704"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/dcs/dcs_lands_center.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="293.1220666772128" y="9.092581642960283" z="2740.3476480885893"/>
+      <rotation x="0.0" y="-0.5883215848303838" z="0.0" w="0.8086270542238032"/>
+      <scale x="0.4666666666666666" y="0.364" z="0.4666666666666666"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="365.77514824471046" y="1.460130922050098" z="2681.878980929773"/>
+      <rotation x="0.0" y="0.41552359082010965" z="0.0" w="0.9095824016942952"/>
+      <scale x="0.36666666666666664" y="0.36666666666666664" z="0.36666666666666664"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="421.74290416601116" y="2.6481333983587376" z="2741.724561713173"/>
+      <rotation x="-0.09897932749773408" y="-0.9814505672541328" z="0.07614616458169206" w="0.14546352939529197"/>
+      <scale x="0.7066666666666667" y="0.636" z="0.7066666666666667"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="264.75966818658145" y="15.412583350276407" z="2696.7685239775037"/>
+      <rotation x="0.0" y="0.8732952913034003" z="0.0" w="0.4871912706394783"/>
+      <scale x="0.5066666666666666" y="0.5066666666666666" z="0.5066666666666666"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="474.0653628552249" y="16.215096723199274" z="2823.9636498455516"/>
+      <rotation x="0.0" y="-0.42645898242764385" z="0.0" w="0.9045069022991359"/>
+      <scale x="0.5066666666666666" y="0.5066666666666666" z="0.5066666666666666"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="392.8140898555753" y="21.090602951843778" z="2912.0983375043465"/>
+      <rotation x="0.0" y="-0.9917386407106002" z="0.0" w="0.12827497231140214"/>
+      <scale x="0.8566666666666666" y="0.8566666666666666" z="0.8566666666666666"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="838.89681765445" y="17.343464769650183" z="2674.3278238520597"/>
+      <rotation x="0.0" y="0.9224682739361207" z="0.0" w="0.38607289930959177"/>
+      <scale x="0.4666666666666666" y="0.4666666666666666" z="0.4666666666666666"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="806.3882222331864" y="16.88423288596192" z="2694.6493528783385"/>
+      <rotation x="0.0" y="-0.9981321808534377" z="0.0" w="0.06109132135385871"/>
+      <scale x="0.4666666666666666" y="0.4666666666666666" z="0.4666666666666666"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="484.21163057576024" y="40.68262743820682" z="2941.9370221463814"/>
+      <rotation x="0.0033148920750493208" y="0.9312086363564783" z="-0.09824507197534765" w="0.3509806161288652"/>
+      <scale x="0.21000000000000002" y="0.15750000000000003" z="0.21000000000000002"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="544.89616205487" y="25.013232877172637" z="3159.9783628786045"/>
+      <rotation x="0.0" y="0.8163778613169709" z="0.0" w="0.5775181274657347"/>
+      <scale x="0.21000000000000002" y="0.18900000000000003" z="0.21000000000000002"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="711.1101833076543" y="46.986985944530126" z="3161.9600173905055"/>
+      <rotation x="-0.15724135123177005" y="-0.985337555126152" z="-0.05348789352776143" w="0.03903978953308404"/>
+      <scale x="0.9500000000000001" y="0.9500000000000001" z="0.9500000000000001"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="331.338708532176" y="15.992432112991992" z="2935.1917019855036"/>
+      <rotation x="0.0" y="-0.09723510390274498" z="0.0" w="0.995261440310546"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="334.43853564097736" y="4.398767060206865" z="2688.349044137904"/>
+      <rotation x="0.0" y="0.07005359463456926" z="0.0" w="0.9975432290777054"/>
+      <scale x="0.7000000000000001" y="0.553" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/nature/acorn40m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="553.5350294951373" y="7.573545575141907" z="2856.0059195593167"/>
+      <rotation x="0.0" y="-0.9794892693887801" z="0.0" w="0.20149633036915018"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/buildings/civilian/settler_house_60m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="497.253328599755" y="11.299615502357483" z="2792.939940643237"/>
+      <rotation x="0.0" y="-0.23009981420560435" z="0.0" w="0.9731670337113493"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/cylinder_house_50m_2floor.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="648.7566176846269" y="5.953827261924744" z="2727.053818217815"/>
+      <rotation x="0.0" y="-0.9141054869816428" z="0.0" w="0.40547645883584127"/>
+      <scale x="0.9030565442014814" y="0.9030565442014814" z="0.9030565442014814"/>
+      <xmoFile>static/xmo/props/buildings/civilian/hexagon_glass_3store.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="467.4706840230717" y="38.035791516304016" z="2994.7174207502926"/>
+      <rotation x="0.0" y="0.39356683265661246" z="0.0" w="0.9192960068621217"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/hexagon_glass_3store.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="324.47097949607377" y="11.444879174232483" z="2872.1341163337443"/>
+      <rotation x="0.0" y="0.8711305773042244" z="0.0" w="0.49105144056973193"/>
+      <scale x="1.25" y="1.25" z="1.25"/>
+      <xmoFile>static/xmo/props/buildings/civilian/hexagon_glass_3store.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="661.9873015671095" y="5.895721793174744" z="2965.92698147166"/>
+      <rotation x="0.0" y="-0.784776370533083" z="0.0" w="0.6197790317951403"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/cylinder_house_50m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="609.9952413375019" y="10.996740039261425" z="2794.0759368072513"/>
+      <rotation x="0.0" y="-0.9420425804598465" z="0.0" w="0.3354933331685652"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/stations/mast_medium.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="674.9099441604521" y="7.557342976971228" z="2648.80859564221"/>
+      <rotation x="0.0" y="-0.336592902170284" z="0.0" w="0.9416502632127206"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="639.5241279928024" y="8.956745485373403" z="2679.9923186444744"/>
+      <rotation x="0.0" y="0.7812736280306412" z="0.0" w="0.624188687933256"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="605.6648655787504" y="7.68948391379098" z="2713.960830332412"/>
+      <rotation x="0.0" y="0.9848841099275738" z="0.0" w="0.1732145779435748"/>
+      <scale x="1.54" y="1.54" z="1.54"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="596.3518313890935" y="5.696720855047431" z="2745.9625871845487"/>
+      <rotation x="0.0" y="-0.9473606126800539" z="0.0" w="0.3201685017962779"/>
+      <scale x="1.6400000000000001" y="1.6400000000000001" z="1.6400000000000001"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="569.1923260874897" y="6.161287479961089" z="2789.4705405699146"/>
+      <rotation x="0.0" y="0.962671188564935" z="0.0" w="0.27067357223595984"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="534.6573854536456" y="7.37069914560675" z="2807.559100469256"/>
+      <rotation x="0.0" y="0.8657783591867414" z="0.0" w="0.5004276498794943"/>
+      <scale x="1.6400000000000003" y="1.6400000000000003" z="1.6400000000000003"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="507.28116667116404" y="10.881144732403499" z="2845.5829523439584"/>
+      <rotation x="0.0" y="-0.9960946152049315" z="0.0" w="0.08829222819557535"/>
+      <scale x="1.6400000000000001" y="1.6400000000000001" z="1.6400000000000001"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="456.99492724679175" y="16.22560615779753" z="2827.934485753158"/>
+      <rotation x="0.0" y="-0.9381988904326036" z="0.0" w="0.3460965789935399"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="502.71493572814177" y="12.914161684120927" z="2884.731324146062"/>
+      <rotation x="0.0" y="0.9906857188220758" z="0.0" w="0.13616830219249765"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="522.3542913742194" y="16.368836460085163" z="2923.7177992658853"/>
+      <rotation x="0.0" y="-0.949735209539455" z="0.0" w="0.3130543591152307"/>
+      <scale x="1.6400000000000001" y="1.6400000000000001" z="1.6400000000000001"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="549.6018995609528" y="17.324364649844682" z="2960.415491672271"/>
+      <rotation x="0.0" y="-0.9399176386555153" z="0.0" w="0.34140127788899777"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="562.2674503034889" y="24.755028185944496" z="3002.3741150196497"/>
+      <rotation x="0.0" y="-0.9998305895823599" z="0.0" w="0.018406306946005598"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="547.4562887272216" y="26.529495505165613" z="3040.841495061844"/>
+      <rotation x="0.0" y="0.9370917088237111" z="0.0" w="0.34908326979942406"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="495.9244762828595" y="36.48357846639175" z="3014.0958680752183"/>
+      <rotation x="0.0" y="-0.8686094366407607" z="0.0" w="0.49549737292807156"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="502.53350890563274" y="23.427118431208925" z="3050.4468806341865"/>
+      <rotation x="0.0" y="0.9613057929779582" z="0.0" w="0.2754835247106785"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="587.1479806999987" y="13.03771564464546" z="2979.834293070577"/>
+      <rotation x="0.0" y="0.3350927532652829" z="0.0" w="0.9421851446022126"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="623.7545297835118" y="5.895721793174744" z="2956.210989309718"/>
+      <rotation x="0.0" y="0.113955585222996" z="0.0" w="0.9934858451918097"/>
+      <scale x="1.69" y="1.69" z="1.69"/>
+      <xmoFile>static/xmo/props/street/lamp_circle_8m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="503.67266845703125" y="48.21492080688476" z="2777.879150390625"/>
+      <rotation x="0.0" y="0.9764352465892959" z="0.0" w="0.2158105864365806"/>
+      <scale x="0.9500000000000001" y="0.9500000000000001" z="0.9500000000000001"/>
+      <xmoFile>static/xmo/props/tech/antenna_hang.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="662.6366187268503" y="5.953827261924744" z="2704.751469198248"/>
+      <rotation x="0.0" y="0.020553650659747853" z="0.0" w="0.999788751409295"/>
+      <scale x="0.8500000000000002" y="0.8500000000000002" z="0.8500000000000002"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="472.17138671875" y="15.514208221435547" z="2824.245849609375"/>
+      <rotation x="-0.08290774843141789" y="0.8928187472302145" z="0.027658050839637845" w="0.4418552048669966"/>
+      <scale x="1.3530565442014815" y="1.3530565442014815" z="1.3530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="503.02484130859375" y="12.87149715423584" z="2883.333251953125"/>
+      <rotation x="0.0" y="0.14528035387989718" z="0.0" w="0.9893905289502886"/>
+      <scale x="0.8530565442014814" y="0.8530565442014814" z="0.8530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="517.8233032226562" y="18.173538208007812" z="2945.966796875"/>
+      <rotation x="0.0" y="-0.202787442946694" z="-0.0" w="0.9792227800572969"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="549.905029296875" y="16.872756958007812" z="2958.95654296875"/>
+      <rotation x="0.0" y="0.336592902182602" z="0.0" w="0.9416502632083174"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="546.840087890625" y="26.334787368774414" z="3039.3837890625"/>
+      <rotation x="0.0" y="0.06574886330264908" z="0.0" w="0.9978362024773453"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="625.2778930664062" y="49.72739028930664" z="3020.35205078125"/>
+      <rotation x="0.0" y="-0.6967067093471226" z="-0.0" w="0.7173560908995643"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="548.850341796875" y="26.92417335510254" z="3041.033203125"/>
+      <rotation x="0.0" y="-0.6038292614781784" z="-0.0" w="0.7971136825966029"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="564.15234375" y="25.204341888427734" z="3003.624755859375"/>
+      <rotation x="0.0" y="-0.7785731816203754" z="0.0" w="0.6275538230793644"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="511.7289733886719" y="23.27730369567871" z="2992.375"/>
+      <rotation x="0.0" y="-0.5521068205322979" z="0.0" w="0.8337733857120393"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="517.742919921875" y="18.796184539794922" z="2950.1455078125"/>
+      <rotation x="0.0" y="0.9997668877129292" z="0.0" w="0.021590975726060554"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="606.56591796875" y="10.311474800109863" z="2793.941162109375"/>
+      <rotation x="0.0" y="0.6865284102456819" z="0.0" w="0.7271029789001946"/>
+      <scale x="0.7530565442014814" y="0.7530565442014814" z="0.7530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="608.5230102539062" y="9.754068374633789" z="2791.936767578125"/>
+      <rotation x="0.0" y="0.026700499648350657" z="0.0" w="0.9996434781053337"/>
+      <scale x="0.7530565442014814" y="0.7530565442014814" z="0.7530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="609.0484008789062" y="11.961132049560547" z="2797.3681640625"/>
+      <rotation x="0.0" y="0.762199229341573" z="0.0" w="0.6473425173670521"/>
+      <scale x="1.2030565442014813" y="1.2030565442014813" z="1.2030565442014813"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="474.7713317871094" y="15.664285659790039" z="2826.090576171875"/>
+      <rotation x="0.0" y="0.9923949724300686" z="0.0" w="-0.12309434875543021"/>
+      <scale x="0.8030565442014814" y="0.8030565442014814" z="0.8030565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="504.0643615722656" y="12.984861373901367" z="2885.518798828125"/>
+      <rotation x="0.0" y="-0.3521703281988991" z="-0.0" w="0.9359359272601302"/>
+      <scale x="0.8030565442014814" y="0.8030565442014814" z="0.8030565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="546.5291748046875" y="11.90382194519043" z="2923.673828125"/>
+      <rotation x="0.0" y="0.24751152601413978" z="0.0" w="0.9688849490471777"/>
+      <scale x="1.1030565442014815" y="1.1030565442014815" z="1.1030565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="551.970458984375" y="11.203168869018555" z="2932.899169921875"/>
+      <rotation x="0.0" y="0.9901201337963667" z="0.0" w="0.14022168395460488"/>
+      <scale x="1.1030565442014815" y="1.1030565442014815" z="1.1030565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="562.64306640625" y="24.02501678466797" z="3000.645751953125"/>
+      <rotation x="0.0" y="-0.06144290795385282" z="0.0" w="0.9981105996141784"/>
+      <scale x="0.9030565442014814" y="0.9030565442014814" z="0.9030565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="501.00146484375" y="23.779285430908203" z="3050.323486328125"/>
+      <rotation x="0.0" y="0.5777899972976692" z="0.0" w="0.8161854685197227"/>
+      <scale x="0.9030565442014814" y="0.9030565442014814" z="0.9030565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="496.9088439941406" y="36.100101470947266" z="3012.857177734375"/>
+      <rotation x="0.0" y="-0.5609842574271655" z="-0.0" w="0.8278264690856968"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="511.073974609375" y="22.984439849853516" z="2988.329345703125"/>
+      <rotation x="0.0" y="-0.23826041451822366" z="-0.0" w="0.9712013050205424"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="511.8224792480469" y="21.354429244995117" z="2984.245849609375"/>
+      <rotation x="0.0" y="-0.8108331849671573" z="0.0" w="0.5852773241430217"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="511.3663635253906" y="20.958463668823242" z="2980.388427734375"/>
+      <rotation x="0.0" y="-0.17467362505705736" z="0.0" w="0.9846263883877105"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="548.545166015625" y="12.527392387390137" z="2931.278076171875"/>
+      <rotation x="0.0" y="0.941992549646814" z="0.0" w="0.3356337831772824"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="582.389892578125" y="7.545838356018066" z="2742.4248046875"/>
+      <rotation x="0.0" y="0.9780771768903863" z="0.0" w="0.208242733477382"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="585.0311889648438" y="8.145536422729492" z="2740.3955078125"/>
+      <rotation x="0.0" y="-0.8601554033573262" z="0.0" w="0.5100320402437437"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="583.1961669921875" y="11.573080062866211" z="2736.17138671875"/>
+      <rotation x="0.0" y="-0.7153794036061359" z="0.0" w="0.6987362226878819"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="585.8563232421875" y="9.79349422454834" z="2736.72412109375"/>
+      <rotation x="0.0" y="-0.7510605502504003" z="0.0" w="0.6602333298596536"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="587.82568359375" y="8.207732200622559" z="2738.316650390625"/>
+      <rotation x="0.0" y="-0.7984202725729913" z="0.0" w="0.6021005467066698"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="580.55908203125" y="10.053979873657227" z="2733.07958984375"/>
+      <rotation x="0.0" y="0.32435809818726974" z="0.0" w="0.9459343656619829"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="579.7613525390625" y="8.975457191467285" z="2730.4677734375"/>
+      <rotation x="0.0" y="0.09021025507453248" z="0.0" w="0.9959227429270746"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="584.2828979492188" y="8.960874557495117" z="2731.55029296875"/>
+      <rotation x="0.0" y="-0.25917405689010575" z="-0.0" w="0.9658306312367219"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="586.900390625" y="9.033005714416504" z="2733.216796875"/>
+      <rotation x="0.0" y="-0.5766864566684728" z="-0.0" w="0.816965562735151"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.2809448242188" y="8.115514755249023" z="2734.447509765625"/>
+      <rotation x="0.0" y="-0.6534755649085878" z="-0.0" w="0.7569476111775517"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="591.8599243164062" y="7.496366500854492" z="2737.853759765625"/>
+      <rotation x="0.0" y="-0.8344681549539307" z="0.0" w="0.5510561662551131"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.1304931640625" y="7.434640884399414" z="2740.947021484375"/>
+      <rotation x="0.0" y="0.9542576426363362" z="0.0" w="-0.2989855372257039"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="587.6140747070312" y="7.769414901733398" z="2742.5703125"/>
+      <rotation x="0.0" y="0.9923676161926317" z="0.0" w="-0.12331469633484073"/>
+      <scale x="1.1530565442014815" y="1.1530565442014815" z="1.1530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.677978515625" y="8.167481422424316" z="2728.91845703125"/>
+      <rotation x="0.0" y="-0.592909345210896" z="-0.0" w="0.8052692148353785"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="590.677978515625" y="8.167481422424316" z="2728.91845703125"/>
+      <rotation x="0.0" y="-0.592909345210896" z="-0.0" w="0.8052692148353785"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="596.8236083984375" y="5.844459056854248" z="2744.6474609375"/>
+      <rotation x="0.0" y="-0.6207248938598253" z="0.0" w="0.7840284472789929"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="595.1417846679688" y="6.7603044509887695" z="2738.936279296875"/>
+      <rotation x="0.0" y="-0.762487099615615" z="0.0" w="0.6470034180124302"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="578.61279296875" y="5.867241859436035" z="2743.76953125"/>
+      <rotation x="0.0" y="0.9195468100382083" z="0.0" w="0.3929804882542584"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="586.18310546875" y="7.256300926208496" z="2745.910400390625"/>
+      <rotation x="0.0" y="0.9691912182005705" z="0.0" w="0.24630952592803682"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="610.7235717773438" y="9.981451034545898" z="2790.56103515625"/>
+      <rotation x="0.0" y="-0.17131765437930105" z="0.0" w="0.9852158450298972"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="612.517333984375" y="11.25642204284668" z="2793.199951171875"/>
+      <rotation x="0.0" y="-0.1069619279365666" z="-0.0" w="0.9942631170731884"/>
+      <scale x="0.9530565442014814" y="0.9530565442014814" z="0.9530565442014814"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="534.3812255859375" y="3.386183738708496" z="2787.43798828125"/>
+      <rotation x="0.0" y="-0.45035860585089543" z="-0.0" w="0.8928477620154724"/>
+      <scale x="1.3530565442014815" y="1.3530565442014815" z="1.3530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_5m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="531.5857543945312" y="6.172367572784424" z="2799.668212890625"/>
+      <rotation x="0.0" y="-0.3023593987751383" z="-0.0" w="0.9531939959800088"/>
+      <scale x="1.3530565442014815" y="1.3530565442014815" z="1.3530565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="534.2412109375" y="3.3374457359313965" z="2784.38623046875"/>
+      <rotation x="0.0" y="-0.4481250814010829" z="-0.0" w="0.8939708672094817"/>
+      <scale x="1.5930565442014815" y="1.5930565442014815" z="1.5930565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="532.8487548828125" y="3.295225143432617" z="2778.9443359375"/>
+      <rotation x="0.0" y="3.0120421686076677E-4" z="0.0" w="0.9999999546380088"/>
+      <scale x="0.9030565442014815" y="0.9030565442014815" z="0.9030565442014815"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="536.8424471303737" y="3.2298177580133256" z="2779.391388190913"/>
+      <rotation x="0.0" y="-0.365962594982232" z="-0.0" w="0.930629560606083"/>
+      <scale x="1.5930565442014817" y="1.5930565442014817" z="1.5930565442014817"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="530.0776432106486" y="2.7748021110188574" z="2775.157036183619"/>
+      <rotation x="0.0" y="0.07276868355421423" z="0.0" w="0.9973488450355706"/>
+      <scale x="0.9530565442014816" y="0.9530565442014816" z="0.9530565442014816"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="682.3437044941137" y="2.3850196734941846" z="2881.80700503029"/>
+      <rotation x="-0.043256409387807025" y="0.9958406327012436" z="-0.04893920472878442" w="0.06352378726568043"/>
+      <scale x="0.4130565442014816" y="0.4130565442014816" z="0.4130565442014816"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="682.4935339045405" y="0.8259437672475656" z="2876.92190808903"/>
+      <rotation x="0.0" y="-0.16885408196453863" z="-0.0" w="0.9856410599218728"/>
+      <scale x="0.8030565442014815" y="0.8030565442014815" z="0.8030565442014815"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="678.4893465543472" y="1.3567751008521327" z="2881.6197606897426"/>
+      <rotation x="0.0" y="0.8179468619019211" z="0.0" w="0.5752937780862919"/>
+      <scale x="0.8030565442014816" y="0.8030565442014816" z="0.8030565442014816"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="586.4294459810986" y="8.679301366831737" z="2404.678994975206"/>
+      <rotation x="0.0" y="0.8425098907924338" z="0.0" w="0.5386808739104455"/>
+      <scale x="2.1399999999999997" y="2.1399999999999997" z="2.1399999999999997"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="508.75738525390625" y="11.226024985313416" z="2817.611572265625"/>
+      <rotation x="0.0" y="-0.40604456940092354" z="0.0" w="-0.9138532746891184"/>
+      <scale x="1.79" y="1.79" z="1.79"/>
+      <xmoFile>props/machines/insurance/insurance.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="512.6505737304688" y="11.288744330406189" z="2815.067626953125"/>
+      <rotation x="0.0" y="0.056994461476055545" z="0.0" w="0.9983744945465376"/>
+      <scale x="1.79" y="1.79" z="1.79"/>
+      <xmoFile>props/machines/insurance/insurance.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/town.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>150.0</envOuterFadeDistance>
+  <envInnerFadeDistance>150.0</envInnerFadeDistance>
+
+  <subzoneFiles>
+    <string>zone/devPlanet/mainland/lands_town/lands_station.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_store.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_harbor.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_tower.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_tower/lands_tower_outer_view.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_dcs_bunker.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_home.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/lands_beach.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/hex_block_1.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/hex_block_2.zone</string>
+    <string>zone/devPlanet/mainland/lands_town/hex_block_3.zone</string>
+  </subzoneFiles>
+</se.spaced.client.resources.zone.Zone>

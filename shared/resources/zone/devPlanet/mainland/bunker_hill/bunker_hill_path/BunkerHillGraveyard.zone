@@ -1,0 +1,74 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Bunker Graveyard</name>
+  <shape class="Sphere" radius="25.0">
+    <center x="1693.0" y="111.0" z="2048.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="1713.453179779389" y="128.29347512860414" z="2052.9976528087454"/>
+      <rotation x="-0.024570572169880126" y="-0.8461956999789502" z="-0.039165519158484895" w="0.530862681330517"/>
+      <scale x="1.9908333333333332" y="1.9908333333333332" z="1.9908333333333332"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_cross_big.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1687.4714611690626" y="114.22804593889839" z="2065.085163253779"/>
+      <rotation x="0.0" y="-0.9434382959175367" z="0.0" w="0.33154815909037205"/>
+      <scale x="2.2808333333333333" y="2.2808333333333333" z="2.2808333333333333"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_cross.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1692.1714611690627" y="116.02804593889839" z="2059.585163253779"/>
+      <rotation x="0.0" y="-0.9419826679040285" z="0.0" w="0.3356615160670181"/>
+      <scale x="2.2808333333333333" y="2.2808333333333333" z="2.2808333333333333"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_cross.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1695.38747227001" y="115.0553037621092" z="2054.6262058858624"/>
+      <rotation x="0.0" y="-0.8460531225373191" z="0.0" w="0.5330985967387762"/>
+      <scale x="2.2808333333333333" y="2.2808333333333333" z="2.2808333333333333"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_cross.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1686.6265980771427" y="111.9405348405765" z="2048.6813021719245"/>
+      <rotation x="0.08170967709520378" y="-0.7484821673078806" z="0.09389176196857103" w="0.6513695655505656"/>
+      <scale x="1.5908333333333335" y="1.5908333333333335" z="1.5908333333333335"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_rip.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1685.1265980771427" y="111.1405348405765" z="2045.1813021719247"/>
+      <rotation x="0.09050061400456955" y="-0.6705310722078335" z="0.1943584978012135" w="0.7102270724219578"/>
+      <scale x="1.4908333333333335" y="1.4908333333333335" z="1.4908333333333335"/>
+      <xmoFile>static/xmo/props/signs/grave_stone_rip.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1699.2739943621243" y="115.02890363507453" z="2051.4193379657745"/>
+      <rotation x="0.0" y="-0.05918824956218921" z="0.0" w="0.9982468387697325"/>
+      <scale x="1.5908333333333335" y="1.5908333333333335" z="1.5908333333333335"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1699.9739943621244" y="114.02890363507453" z="2045.1193379657743"/>
+      <rotation x="0.0" y="-0.05918824956218921" z="0.0" w="0.9982468387697325"/>
+      <scale x="2.2408333333333332" y="2.2408333333333332" z="2.2408333333333332"/>
+      <xmoFile>static/xmo/props/nature/shrubs/common_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1694.7695431080808" y="113.78460659517043" z="2036.7274810953727"/>
+      <rotation x="0.0" y="0.9530874312548809" z="0.0" w="0.3026951409982869"/>
+      <scale x="0.7508333333333335" y="0.7508333333333335" z="0.7508333333333335"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1692.5050546176726" y="113.37928414540482" z="2037.247329837199"/>
+      <rotation x="0.0" y="0.8653143234470765" z="0.0" w="0.5012296096973207"/>
+      <scale x="0.7508333333333335" y="0.7508333333333335" z="0.7508333333333335"/>
+      <xmoFile>static/xmo/props/nature/shrubs/leafy_shrub_cluster.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/graveyard.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>10.0</envOuterFadeDistance>
+  <envInnerFadeDistance>5.0</envInnerFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

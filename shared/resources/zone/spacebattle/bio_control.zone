@@ -1,0 +1,67 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Bio Station Zigma</name>
+  <shape class="Sphere" radius="300.0">
+    <center x="605.0" y="-155.0" z="-540.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="614.8163940429688" y="-155.33933413028717" z="-556.7252197265625"/>
+      <rotation x="0.0" y="-0.25888313390527545" z="0.0" w="0.9659086514673029"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/bdoct11s.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="629.7001708984375" y="-175.41874086856842" z="-367.1595947265625"/>
+      <rotation x="0.0" y="-0.862964804443367" z="0.0" w="0.5052640362147511"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/cylinder_house_50m_2floor.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="497.69232177734375" y="-175.25357973575592" z="-805.9749145507812"/>
+      <rotation x="0.0" y="-0.9961217196996387" z="0.0" w="0.08798590536349794"/>
+      <scale x="0.31" y="0.31" z="0.31"/>
+      <xmoFile>static/xmo/props/nature/testtree100m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="776.9754638671875" y="-175.3775726556778" z="-388.87322998046875"/>
+      <rotation x="0.0" y="0.9963599724767931" z="0.0" w="0.08524555851212748"/>
+      <scale x="1.35" y="1.35" z="1.35"/>
+      <xmoFile>static/xmo/props/nature/trees/tree_wide_200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="537.6978515625" y="-155.37113344669342" z="-520.0264892578125"/>
+      <rotation x="0.0" y="0.4958376741442518" z="0.0" w="0.8684152237836569"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/settler_house_60m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="624.9092651367188" y="-155.37131655216217" z="-474.69798583984374"/>
+      <rotation x="0.0" y="-0.7845920193281857" z="0.0" w="0.6200123895588862"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/settler_house_60m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="582.5372924804688" y="-155.30637514591217" z="-632.9376831054688"/>
+      <rotation x="0.0" y="0.013836187725178185" z="0.0" w="0.9999042753730147"/>
+      <scale x="1.1000000000000005" y="1.1000000000000005" z="1.1000000000000005"/>
+      <xmoFile>static/xmo/props/nature/testtree30m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="641.5811767578125" y="-155.2867523431778" z="-663.224365234375"/>
+      <rotation x="0.0" y="-0.7808564143496299" z="0.0" w="0.6247105411060704"/>
+      <scale x="0.21000000000000046" y="0.21000000000000046" z="0.21000000000000046"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="701.9180297851562" y="-155.30776369571686" z="-565.4605102539062"/>
+      <rotation x="0.0" y="-0.24560442556788414" z="0.0" w="0.9693701388744496"/>
+      <scale x="0.21000000000000046" y="0.21000000000000046" z="0.21000000000000046"/>
+      <xmoFile>static/xmo/props/nature/testtree200m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/forest.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>20.0</envOuterFadeDistance>
+  <envInnerFadeDistance>20.0</envInnerFadeDistance>
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

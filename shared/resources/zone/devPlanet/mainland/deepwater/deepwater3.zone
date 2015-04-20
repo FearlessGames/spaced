@@ -1,0 +1,11 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Deepwater 3</name>
+  <shape class="Sphere" radius="400.0">
+    <center x="-800.0" y="80.0" z="2720.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

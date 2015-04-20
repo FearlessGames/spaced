@@ -1,0 +1,415 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Panorama Bar</name>
+  <shape class="Sphere" radius="27.0">
+    <center x="3.0" y="54.0" z="4.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="5.346166419982911" y="33.735681891441345" z="0.5796019554138194"/>
+      <rotation x="0.0" y="0.9135154527256967" z="0.0" w="0.406804028533845"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/machines/insurance/insurance.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-5.0013792514801025" y="33.73881757259369" z="9.098101806640626"/>
+      <rotation x="0.0" y="0.8130869620457566" z="0.0" w="0.5821422439156969"/>
+      <scale x="0.64" y="1.0" z="0.68"/>
+      <xmoFile>static/xmo/props/interior/disco_bar.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2.8985586166381836" y="33.73533475399017" z="13.173425674438477"/>
+      <rotation x="0.0" y="-0.596297991857336" z="0.0" w="0.8027631686287734"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_table_round.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.98741283416748" y="33.73458707332611" z="12.720404624938965"/>
+      <rotation x="0.0" y="-0.2582644683816566" z="0.0" w="0.9660742540672225"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_table_round.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="12.320163917541505" y="33.736563086509705" z="2.082169532775879"/>
+      <rotation x="0.0" y="0.26368648676549195" z="0.0" w="0.9646084369822153"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_table_round.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-10.617628479003907" y="33.74753797054291" z="8.519648933410645"/>
+      <rotation x="0.0" y="-0.985293881125579" z="0.0" w="0.17086827621443754"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_bar_rack.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-13.080028915405274" y="33.763552069664" z="6.8835126876831065"/>
+      <rotation x="0.0" y="-0.5693938544717196" z="0.0" w="0.8220648627023528"/>
+      <scale x="0.74" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_bar_rack.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3.2722551822662354" y="33.72886884212494" z="15.0459623336792"/>
+      <rotation x="0.0" y="-0.8549212475220329" z="0.0" w="0.5187578052765771"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-2.4568119049072266" y="33.73786389827728" z="12.135950088500977"/>
+      <rotation x="0.0" y="-0.8360514155172413" z="0.0" w="0.5486511009846033"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-1.534630537033081" y="33.73523938655853" z="10.318192481994629"/>
+      <rotation x="0.0" y="-0.8016965795537555" z="0.0" w="0.597731205753731"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="0.8194272518157959" y="33.733335852622986" z="13.375786018371583"/>
+      <rotation x="0.0" y="0.7946395541168262" z="0.0" w="0.6070815258538279"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.764970779418945" y="33.73202359676361" z="12.58375358581543"/>
+      <rotation x="0.0" y="-0.7399437740744935" z="0.0" w="0.6726687232274107"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="11.301864624023438" y="33.716368079185486" z="0.4398021399974823"/>
+      <rotation x="0.0" y="0.2995253285557349" z="0.0" w="0.9540883489245527"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_sofa_3.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="13.053627014160156" y="33.73003613948822" z="3.806597948074341"/>
+      <rotation x="0.0" y="-0.9771657495806619" z="0.0" w="0.21247846442984158"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_sofa_3.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="12.394984245300293" y="34.56400907039642" z="2.032081127166748"/>
+      <rotation x="0.0" y="0.9512941495385562" z="0.0" w="0.3082846753468538"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.00629940032959" y="34.5617812871933" z="12.761551475524904"/>
+      <rotation x="0.0" y="0.4391009635164227" z="0.0" w="0.8984377239625178"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2.954188823699951" y="34.560293555259705" z="13.249817848205566"/>
+      <rotation x="0.0" y="-0.16433217242983658" z="0.0" w="0.9864050573189955"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-4.86098051071167" y="34.77539670467377" z="12.177289962768555"/>
+      <rotation x="0.0" y="-0.5880617308507115" z="0.0" w="0.80881604874586"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-3.250385046005249" y="34.77753293514252" z="6.525521278381348"/>
+      <rotation x="0.0" y="-0.1261702720146981" z="0.0" w="0.9920085999928314"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-8.204744069521464" y="36.06056128496032" z="7.520435440950341"/>
+      <rotation x="0.0" y="0.10399302165572315" z="0.0" w="0.9945780268269113"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-13.03849658438286" y="36.07115066665042" z="4.833020271581002"/>
+      <rotation x="0.0" y="-0.7712602056720174" z="0.0" w="0.6365199880182536"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="8.183194732666017" y="33.73465573787689" z="13.831975364685059"/>
+      <rotation x="0.0" y="0.807187487145441" z="0.0" w="0.590295147020394"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.57198715209961" y="33.73464047908783" z="10.822192001342774"/>
+      <rotation x="0.0" y="0.05444842555939125" z="0.0" w="0.9985165842158574"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_stool_high.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.518582820892334" y="39.541991400718686" z="9.150803756713868"/>
+      <rotation x="-0.6637993795939305" y="-0.255855778400634" z="-0.6528669970998313" w="0.2601401322509995"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_light_5_colors.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.304023742675781" y="39.40652234554291" z="-3.2917190074920644"/>
+      <rotation x="-0.01695015578753276" y="0.3205616524047334" z="0.9470586056240066" w="0.005737311202815201"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_light_5_colors.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.496478843688964" y="38.06783673763275" z="2.532601404190064"/>
+      <rotation x="0.14834910449651872" y="-0.6355861166596063" z="0.7503701078278562" w="0.10472598905264016"/>
+      <scale x="0.87" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_blue.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.475609683990477" y="36.94915158748627" z="2.567808008193971"/>
+      <rotation x="0.1438161303980587" y="-0.6126774784334734" z="0.7714490881348142" w="0.0938591097000878"/>
+      <scale x="0.8300000000000001" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_blue.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.652886486053466" y="35.56856153011322" z="2.181877374649048"/>
+      <rotation x="0.0" y="0.155477292668376" z="0.0" w="0.9878394664440737"/>
+      <scale x="0.8300000000000001" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_blue.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.652886486053466" y="34.46856153011322" z="2.181877374649048"/>
+      <rotation x="0.0" y="-0.9868712847460167" z="0.0" w="0.16150872219092835"/>
+      <scale x="0.8400000000000001" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/light_tube_blue.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="12.06234073638916" y="33.73482358455658" z="12.774833679199219"/>
+      <rotation x="0.0" y="0.011333661135929055" z="0.0" w="0.9999357720000102"/>
+      <scale x="1.59" y="1.59" z="1.59"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-4.631714820861816" y="33.73843610286713" z="13.307289123535156"/>
+      <rotation x="0.0" y="-0.7052059003518806" z="0.0" w="0.709002565657483"/>
+      <scale x="1.84" y="1.84" z="1.84"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-5.729578971862793" y="34.77576673030853" z="12.219090461730957"/>
+      <rotation x="0.0" y="-0.32665995560389793" z="0.0" w="0.9451419329417458"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/flowers/flower_pot_red_2.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="13.303597450256348" y="34.56395947933197" z="1.7429077625274658"/>
+      <rotation x="0.0" y="0.4804091602857332" z="0.0" w="0.877044490726415"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/flowers/flower_pot_red_2.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.15056037902832" y="34.56229627132416" z="13.731111526489258"/>
+      <rotation x="0.0" y="0.07809812290916218" z="0.0" w="0.996945677155012"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/nature/flowers/flower_pot_white_2.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="8.230527877807619" y="33.768125891685486" z="-9.469295120239256"/>
+      <rotation x="0.0" y="0.42186171925608335" z="0.0" w="0.9066601843173117"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_sofa_3.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.811178398132325" y="33.7548850774765" z="-7.429180431365966"/>
+      <rotation x="0.0" y="-0.9065745134890972" z="0.0" w="0.42204579312203433"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/interior/disco_sofa_3.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.342812538146973" y="33.75563657283783" z="-8.112465858459473"/>
+      <rotation x="0.0" y="0.9585179341570617" z="0.0" w="0.2850322260715075"/>
+      <scale x="0.56" y="1.0" z="0.55"/>
+      <xmoFile>static/xmo/props/interior/disco_table_round.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="12.022844886779787" y="33.76736295223236" z="-9.186498832702636"/>
+      <rotation x="0.0" y="0.32102738662024327" z="0.0" w="0.9470699113791847"/>
+      <scale x="1.49" y="1.8923" z="1.49"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.722844886779786" y="33.76736295223236" z="-11.186498832702636"/>
+      <rotation x="0.0" y="0.1706406219515568" z="0.0" w="0.9853333335171331"/>
+      <scale x="1.3559" y="1.49" z="1.3261"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.422844886779785" y="33.76736295223236" z="-10.686498832702636"/>
+      <rotation x="0.0" y="0.9422041305524637" z="0.0" w="0.33503936540334506"/>
+      <scale x="1.05" y="1.05" z="1.05"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.430492401123047" y="34.57708966732025" z="-8.2544527053833"/>
+      <rotation x="0.0" y="0.9457395310100937" z="0.0" w="0.3249257445706759"/>
+      <scale x="1.05" y="1.05" z="1.05"/>
+      <xmoFile>static/xmo/props/interior/lamp_table.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.960264778137208" y="35.572188544273374" z="-10.29645938873291"/>
+      <rotation x="0.26509316840801617" y="0.576323317058279" z="-0.7386084124961662" w="0.22811106783370869"/>
+      <scale x="0.686" y="0.7000000000000001" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="11.060264778137208" y="36.27218854427338" z="-10.396459388732909"/>
+      <rotation x="0.21857429969758152" y="0.7033180385654583" z="-0.631051184658345" w="0.24360503788191218"/>
+      <scale x="0.7000000000000001" y="0.7000000000000001" z="0.7000000000000001"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="11.060264778137208" y="36.97218854427338" z="-10.396459388732909"/>
+      <rotation x="0.19490851828110461" y="0.7590930696086785" z="-0.5627251306831235" w="0.26292357914648956"/>
+      <scale x="0.6953333333333335" y="0.6953333333333335" z="0.6953333333333335"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.838570499420166" y="38.36684873104096" z="-6.089439201354979"/>
+      <rotation x="0.3510536371404748" y="-0.5630100922668729" z="0.7018390975124938" w="0.25923514626481353"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.538570499420167" y="37.16684873104096" z="-6.489439201354978"/>
+      <rotation x="0.0" y="-0.9065804499705494" z="0.0" w="0.4220330410420449"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.538570499420167" y="36.16684873104096" z="-6.589439201354978"/>
+      <rotation x="0.0" y="-0.8967723002336468" z="0.0" w="0.4424923067508113"/>
+      <scale x="0.9" y="0.9" z="0.9"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.738570499420167" y="35.26684873104095" z="-6.289439201354979"/>
+      <rotation x="0.0" y="-0.8967723002336468" z="0.0" w="0.4424923067508113"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.938570499420168" y="34.466848731040955" z="-6.189439201354979"/>
+      <rotation x="0.3637416729387999" y="-0.549185188999652" z="0.695389061687601" w="0.2872658636809073"/>
+      <scale x="0.85" y="0.85" z="0.85"/>
+      <xmoFile>static/xmo/props/interior/light_tube_red.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.756455421447754" y="33.74302899837494" z="-4.581589698791504"/>
+      <rotation x="0.0" y="0.9233996936016501" z="0.0" w="0.38383981796626954"/>
+      <scale x="1.49" y="1.49" z="1.49"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="12.144270896911621" y="33.7407363653183" z="-2.579313039779663"/>
+      <rotation x="0.0" y="0.9619482487785553" z="0.0" w="0.2732317087599292"/>
+      <scale x="1.35" y="1.35" z="1.35"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="15.257500648498535" y="33.737417578697205" z="4.477547645568848"/>
+      <rotation x="0.0" y="0.9356913256688233" z="0.0" w="0.352819703344527"/>
+      <scale x="1.35" y="1.35" z="1.35"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="9.607545852661133" y="33.73126828670502" z="0.1955123394727707"/>
+      <rotation x="0.0" y="0.5828665214976563" z="0.0" w="0.8125679160028548"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.4050686836242665" y="35.94200284481049" z="8.90198440551758"/>
+      <rotation x="0.0" y="-0.6937840578861545" z="0.0" w="0.7201830885427823"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-5.505728721618652" y="33.87895047664642" z="2.280754327774048"/>
+      <rotation x="0.0" y="-0.999445972999558" z="0.0" w="0.03328283423879193"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-9.060009956359863" y="33.91184079647064" z="3.468282461166382"/>
+      <rotation x="0.0" y="-0.867426880062801" z="0.0" w="0.4975646769461388"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="14.653708457946777" y="33.736624121665955" z="5.582633972167969"/>
+      <rotation x="0.0" y="0.8493657647410954" z="0.0" w="0.5278046965362985"/>
+      <scale x="1.4900000000000002" y="1.4900000000000002" z="1.4900000000000002"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="15.375855445861816" y="33.73634946346283" z="6.472613334655762"/>
+      <rotation x="0.0" y="0.6833070495338134" z="0.0" w="0.7301311362059522"/>
+      <scale x="1.2000000000000002" y="1.2000000000000002" z="1.2000000000000002"/>
+      <xmoFile>static/xmo/props/nature/flowers/plant_pot_plain.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="2.3893695354461677" y="39.7657607793808" z="6.540581130981446"/>
+      <rotation x="0.9872562780231602" y="0.010846155920911319" z="-0.07717440944391052" w="0.13874982137855138"/>
+      <scale x="1.2000000000000002" y="1.2000000000000002" z="1.2000000000000002"/>
+      <xmoFile>static/xmo/props/interior/disco_light_5_colors.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="5.774265193939209" y="39.63446500301361" z="3.444505977630616"/>
+      <rotation x="0.8008970671244343" y="0.046208131945784804" z="-0.5937540069390471" w="0.06232877070331425"/>
+      <scale x="1.2000000000000002" y="1.2000000000000002" z="1.2000000000000002"/>
+      <xmoFile>static/xmo/props/interior/disco_light_5_colors.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="7.957616996765138" y="34.6528457403183" z="-10.15089931488037"/>
+      <rotation x="0.0" y="0.42217175240419996" z="0.0" w="0.9065158638832347"/>
+      <scale x="1.2500000000000002" y="1.2500000000000002" z="1.2500000000000002"/>
+      <xmoFile>static/xmo/props/tech/screen_blue_galaxy.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="10.930557250976562" y="33.74170529842377" z="-4.060385036468505"/>
+      <rotation x="0.05474072054418451" y="-0.053887538648631814" z="-0.7105329775388428" w="0.6994587010842613"/>
+      <scale x="1.2500000000000002" y="1.2500000000000002" z="1.2500000000000002"/>
+      <xmoFile>static/xmo/props/leisure/disco_speaker.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-7.971261119842529" y="33.74139630794525" z="9.415243530273438"/>
+      <rotation x="-0.4473283757818013" y="0.4473283757818013" z="-0.5476288197496693" w="0.5476288197496693"/>
+      <scale x="1.2500000000000002" y="1.2500000000000002" z="1.2500000000000002"/>
+      <xmoFile>static/xmo/props/leisure/disco_speaker.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="1.273080825805664" y="39.534545111656186" z="15.358741760253906"/>
+      <rotation x="0.9245340725145792" y="-0.04311152296684305" z="0.11000764069393205" w="0.3623209410675032"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/leisure/disco_speaker.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="14.042428016662598" y="39.52698438167572" z="7.282212257385254"/>
+      <rotation x="0.7155084058895367" y="0.2405686234240936" z="-0.5865669135715997" w="0.29345138341527416"/>
+      <scale x="1.3500000000000003" y="1.3500000000000003" z="1.3500000000000003"/>
+      <xmoFile>static/xmo/props/leisure/disco_speaker.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="3.8842828273773193" y="33.744959235191345" z="-3.509639263153076"/>
+      <rotation x="0.0" y="-0.6554864339234627" z="0.0" w="0.7552069484203002"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/leisure/slot_vegas.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="4.037217617034912" y="33.737966895103455" z="-1.7121506929397583"/>
+      <rotation x="0.0" y="-0.6505333628390645" z="0.0" w="0.7594776782982486"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/leisure/slot_vegas.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/tower_bar.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>12.0</envOuterFadeDistance>
+  <envInnerFadeDistance>3.0</envInnerFadeDistance>
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

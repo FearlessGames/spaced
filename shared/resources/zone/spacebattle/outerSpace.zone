@@ -1,0 +1,35 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>outerSpace</name>
+  <shape class="Sphere" radius="120000.0">
+    <center x="0.0" y="0.0" z="0.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="800.0" y="600.0" z="-3100.0"/>
+      <rotation x="2.4920011842825406E-4" y="0.30648853373904417" z="-8.023851233349423E-5" w="0.9518743142598046"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>/props/world/buildings/the_storm.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="142.922503505349" y="196.71409166958568" z="1196.5156693493009"/>
+      <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/stations/medium/alpha_station/alpha_station.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="-1278.4442048381227" y="-244.5316605795751" z="227.92950722957343"/>
+      <rotation x="0.0" y="0.8764899181701263" z="0.0" w="0.48142021493298903"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>props/stations/medium/alpha_station/alpha_station_abandoned.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/outerspace.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+  <envInnerFadeDistance>15.0</envInnerFadeDistance>
+  <subzoneFiles>
+    <string>zone/spacebattle/ship.zone</string>
+    <string>zone/spacebattle/the_storm.zone</string>
+    <string>zone/spacebattle/bio_station.zone</string>
+  </subzoneFiles>
+</se.spaced.shared.resources.zone.Zone>

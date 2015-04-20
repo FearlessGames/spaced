@@ -1,0 +1,30 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Deepwater 1</name>
+  <shape class="Sphere" radius="400.0">
+    <center x="100.0" y="80.0" z="1850.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="42.218849182128906" y="175.6145233154297" z="1962.301123046875"/>
+      <rotation x="0.0" y="0.11417524825486126" z="0.0" w="0.9934606246278416"/>
+      <scale x="0.648851847118405" y="0.637994210468375" z="0.648851847118405"/>
+      <xmoFile>static/xmo/props/buildings/crane140m.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="201.59228515625" y="221.1268768310547" z="1849.06123046875"/>
+      <rotation x="0.0" y="0.9990377980077542" z="0.0" w="0.043857475438262926"/>
+      <scale x="2.933056544201481" y="2.933056544201481" z="2.933056544201481"/>
+      <xmoFile>static/xmo/props/buildings/stations/mast_medium.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+    <se.spaced.client.model.Prop>
+      <location x="145.2227020263672" y="166.7145233154297" z="1955.6195068359375"/>
+      <rotation x="0.0" y="-0.7822667530889866" z="0.0" w="0.6229435985798508"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>static/xmo/props/buildings/civilian/hexagon_glass_3store.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

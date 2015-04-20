@@ -1,0 +1,24 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>The Fearless 2</name>
+  <shape class="Sphere" radius="300.0">
+    <center x="0.0" y="0.0" z="0.0"/>
+  </shape>
+  <props>
+    <se.spaced.client.model.Prop>
+      <location x="0.0" y="-20.0" z="0.0"/>
+      <rotation x="2.4920011842825406E-4" y="0.30648853373904417" z="-8.023851233349423E-5" w="0.9518743142598046"/>
+      <scale x="1.0" y="1.0" z="1.0"/>
+      <xmoFile>/props/world/buildings/fearless/ship.xmo</xmoFile>
+    </se.spaced.client.model.Prop>
+  </props>
+  <environmentDayCycleSettingsFile>environment/the_fearless.env</environmentDayCycleSettingsFile>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+  <envInnerFadeDistance>215.0</envInnerFadeDistance>
+  <subzoneFiles>
+    <string>zone/spacebattle/the_fearless_2_front.zone</string>
+    <string>zone/spacebattle/the_fearless_2_center.zone</string>
+    <string>zone/spacebattle/the_fearless_2_pod_starboard.zone</string>
+    <string>zone/spacebattle/the_fearless_2_pod_port.zone</string>
+  </subzoneFiles>
+</se.spaced.shared.resources.zone.Zone>

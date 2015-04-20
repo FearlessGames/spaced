@@ -1,0 +1,11 @@
+<se.spaced.shared.resources.zone.Zone>
+  <name>Citadel Grounds</name>
+  <shape class="Sphere" radius="155.0">
+    <center x="520.0" y="24.0" z="440.0"/>
+  </shape>
+  <props/>
+  <envMaxWeight>1.0</envMaxWeight>
+  <envOuterFadeDistance>100.0</envOuterFadeDistance>
+
+  <subzoneFiles/>
+</se.spaced.shared.resources.zone.Zone>

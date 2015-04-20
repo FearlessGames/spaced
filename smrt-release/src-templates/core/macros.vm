@@ -1,0 +1,9 @@
+#macro (classRef $class)${importManager.register($class)}#end
+
+#macro (parameterList $method)#foreach($parameter in $method.Parameters)final #classRef($parameter.Type) ${parameter.Name}#if( $velocityHasNext ), #end#end#end
+
+#macro (capitalize $name)${name.substring(0,1).toUpperCase()}${name.substring(1)}#end
+
+#macro (camelCase $name)${name.substring(0,1).toLowerCase()}${name.substring(1)}#end
+
+#macro (fileName $name)${_fileName.clear()}${_fileName.append($name)}#end

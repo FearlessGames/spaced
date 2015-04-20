@@ -1,0 +1,9 @@
+#set($filename = "${name}RequiredReadCodec.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public interface ${name}RequiredReadCodec extends #classRef("se.smrt.core.remote.DefaultReadCodec") {
+#foreach($type in $types)
+	#classRef($type) read#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.InputStream") input) throws #classRef("java.io.IOException");
+#end
+}

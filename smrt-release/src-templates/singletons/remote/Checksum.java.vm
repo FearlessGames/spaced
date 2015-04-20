@@ -1,0 +1,82 @@
+#set($filename = "${name}Checksum.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}Checksum {
+	private static final String SMRT_VERSION = "1.0";
+	private static final String PROTOCOL_VERSION = "${protocol.Version}";
+
+    /* Source for checksum:
+$checksum.Source
+    */
+
+    private static final byte[] CHECKSUM = new byte[]{
+#foreach($byte in $checksum.Bytes)
+        $byte,
+#end
+    };
+
+	public static final ${name}Checksum INSTANCE = new ${name}Checksum(SMRT_VERSION, PROTOCOL_VERSION, CHECKSUM);
+
+	private final String smrtVersion;
+	private final String protocolVersion;
+	private final byte[] checksum;
+
+	public ${name}Checksum(String smrtVersion, String protocolVersion, byte[] checksum) {
+		this.smrtVersion = smrtVersion;
+		this.protocolVersion = protocolVersion;
+		this.checksum = #classRef("java.util.Arrays").copyOf(checksum, checksum.length);
+	}
+
+	public String toString() {
+		return "Checksum{smrtVersion=" + smrtVersion +
+				",protocolVersion=" + protocolVersion +
+				",checksum=" + checksumString();
+	}
+
+	public byte[] getChecksum() {
+		return #classRef("java.util.Arrays").copyOf(checksum, checksum.length);
+	}
+
+	public String getSmrtVersion() {
+		return smrtVersion;
+	}
+
+	public String getProtocolVersion() {
+		return protocolVersion;
+	}
+
+	public String checksumString() {
+		#classRef("java.lang.StringBuilder") builder = new #classRef("java.lang.StringBuilder")();
+		for (int i = 0; i < checksum.length; i++) {
+			int value = checksum[i];
+			if (value < 0) {
+				value += 256;
+			}
+			builder.append(String.format("%02x", value));
+		}
+		return builder.toString();
+	}
+
+	public int hashCode() {
+		return toString().hashCode();
+	}
+
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		}
+		if (o == null) {
+			return false;
+		}
+		if (!(o instanceof ${name}Checksum)) {
+			return false;
+		}
+		${name}Checksum other = (${name}Checksum) o;
+		return toString().equals(o.toString());
+	}
+
+	public void sendVersion(#classRef("se.smrt.core.remote.RemoteProtocol") receiver) {
+		receiver.sendVersion(getSmrtVersion(), getProtocolVersion(), getChecksum());
+	}
+}

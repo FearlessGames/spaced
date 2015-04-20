@@ -1,0 +1,54 @@
+#set($filename = "${name}OutgoingMessageHandler.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}OutgoingMessageHandler<T extends #classRef("java.io.OutputStream")> implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end, #classRef("se.smrt.core.remote.RemoteProtocol") {
+	private final #classRef("${myPackage}.${name}RequiredWriteCodec") codec;
+	private final T output;
+	private final #classRef("se.smrt.core.remote.ExceptionListener") errorHandler;
+
+	public ${name}OutgoingMessageHandler(#classRef("${myPackage}.${name}RequiredWriteCodec") codec, T output, #classRef("se.smrt.core.remote.ExceptionListener") errorHandler) {
+		this.codec = codec;
+		this.output = output;
+		this.errorHandler = errorHandler;
+	}
+
+	@Override
+	public void sendVersion(String smrtVersion, String protocolVersion, byte[] checksum) {
+		try {
+			codec.writeInt(output, ${name}MessageId.SMRTBUILTIN_SENDVERSION);
+			codec.writeStringAsAscii(output, smrtVersion);
+			codec.writeStringAsAscii(output, protocolVersion);
+			codec.writeByteArray(output, checksum);
+		} catch (#classRef("java.io.IOException") e) {
+			errorHandler.onException(e);
+		}
+	}
+
+	public T getOutputStream() {
+		return output;
+	}
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		try {
+			codec.writeInt(output, ${name}MessageId.${pm.Protocol.Type.SimpleName.toUpperCase()}_${pm.Method.Name.toUpperCase()});
+#foreach($parameter in $pm.Method.Parameters)
+			codec.write#capitalize(${parameter.Type.DescriptionWithGenerics})(output, $parameter.Name);
+#end
+		} catch (#classRef("java.io.IOException") e) {
+			errorHandler.onException(e);
+		}
+	}
+#end
+
+}
+

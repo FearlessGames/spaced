@@ -1,0 +1,56 @@
+#set($filename = "${name}AbstractRequiredWriteCodecImpl.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public abstract class ${name}AbstractRequiredWriteCodecImpl extends #classRef("se.smrt.core.remote.DefaultCodecImpl") implements #classRef("${myPackage}.${name}RequiredWriteCodec") {
+
+#foreach($type in $types)
+#if($type.FullName == "java.util.List" && $type.GenericParameters.size() > 0)#set($t = $type.GenericParameters.get(0))
+
+	@Override
+	public void write#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.OutputStream") output, #classRef($type) #camelCase($type.DescriptionWithGenerics)) throws #classRef("java.io.IOException") {
+		int size = #camelCase($type.DescriptionWithGenerics).size();
+		writeInt(output, size);
+		for (int i = 0; i < size; i++) {
+			write#capitalize($t.SimpleName)(output, #camelCase($type.DescriptionWithGenerics).get(i));
+		}
+	}
+#end
+#if($type.isArray())#set($t = $type.ArrayComponent)
+
+	@Override
+	public void write#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.OutputStream") output, #classRef($type) #camelCase($type.DescriptionWithGenerics)) throws #classRef("java.io.IOException") {
+		int size = #camelCase($type.DescriptionWithGenerics).length;
+		writeInt(output, size);
+		for (int i = 0; i < size; i++) {
+			write#capitalize($t.SimpleName)(output, #camelCase($type.DescriptionWithGenerics)[i]);
+		}
+	}
+#end
+
+#if($type.FullName == "java.util.Map" && $type.GenericParameters.size() >= 2)#set($t1 = $type.GenericParameters.get(0))#set($t2 = $type.GenericParameters.get(1))
+
+	@Override
+	public void write#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.OutputStream") output, #classRef($type) #camelCase($type.DescriptionWithGenerics)) throws #classRef("java.io.IOException") {
+		int size = #camelCase($type.DescriptionWithGenerics).size();
+		writeInt(output, size);
+		for (#classRef("java.util.Map.Entry<$t1.FullNameWithGenericsAndWildcards, $t2.FullNameWithGenericsAndWildcards>") entry : #camelCase($type.DescriptionWithGenerics).entrySet()) {
+			write#capitalize($t1.SimpleName)(output, entry.getKey());
+			write#capitalize($t2.SimpleName)(output, entry.getValue());
+		}
+	}
+#end
+#if($type.FullName == "java.util.Collection" && $type.GenericParameters.size() > 0)#set($t = $type.GenericParameters.get(0))
+
+	@Override
+	public void write#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.OutputStream") output, #classRef($type) #camelCase($type.DescriptionWithGenerics)) throws #classRef("java.io.IOException") {
+		int size = #camelCase($type.DescriptionWithGenerics).size();
+		writeInt(output, size);
+		for (#classRef($t) element : #camelCase($type.DescriptionWithGenerics)) {
+			write#capitalize($t.SimpleName)(output, element);
+		}
+	}
+#end
+
+#end
+}

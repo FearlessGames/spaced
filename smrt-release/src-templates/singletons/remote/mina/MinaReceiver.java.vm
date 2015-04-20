@@ -1,0 +1,51 @@
+#set($filename = "${name}MinaReceiver.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}MinaReceiver<T extends #classRef("java.io.ByteArrayOutputStream")> extends #classRef("${packageBase}.remote.${name}OutgoingMessageHandler<T>") {
+	private final #classRef("org.apache.mina.core.session.IoSession") ioSession;
+	private final #classRef("java.io.ByteArrayOutputStream") byteArrayOutputStream;
+
+	private final #classRef("java.util.concurrent.locks.ReentrantLock") lock = new #classRef("java.util.concurrent.locks.ReentrantLock")();
+
+	public ${name}MinaReceiver(#classRef("${packageBase}.remote.${name}RequiredWriteCodec") codec, T output, #classRef("se.smrt.core.remote.ExceptionListener") errorHandler, #classRef("org.apache.mina.core.session.IoSession") ioSession) {
+		super(codec, output, errorHandler);
+		this.ioSession = ioSession;
+		this.byteArrayOutputStream = getOutputStream();
+	}
+
+	@Override
+	public void sendVersion(String smrtVersion, String protocolVersion, byte[] checksum) {
+		lock.lock();
+		try {
+			super.sendVersion(smrtVersion, protocolVersion, checksum);
+			ioSession.write(byteArrayOutputStream.toByteArray());
+			byteArrayOutputStream.reset();
+		} finally {
+			lock.unlock();
+		}
+	}
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		lock.lock();
+		try {
+			super.${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+			ioSession.write(byteArrayOutputStream.toByteArray());
+			byteArrayOutputStream.reset();
+		} finally {
+			lock.unlock();
+		}
+	}
+#end
+
+}
+

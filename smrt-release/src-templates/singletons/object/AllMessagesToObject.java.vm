@@ -1,0 +1,42 @@
+#set($filename = "${name}AllMessagesToObject.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}AllMessagesToObject implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end {
+	private final #classRef("java.util.Queue")<MessageObject> queue;
+
+	public ${name}AllMessagesToObject(#classRef("java.util.Queue")<MessageObject> queue) {
+		this.queue = queue;
+	}
+
+	public MessageObject popMessage() {
+		if (queue.isEmpty()) {
+			return null;
+		}
+		return queue.remove();
+	}
+
+	private void add(MessageObject message) {
+		queue.add(message);
+	}
+
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		add(new MessageObject() {
+			@Override
+			public void invoke(#classRef($protocol) receiver) {
+				receiver.${pm.Chain}${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+			}
+		});
+	}
+#end
+}

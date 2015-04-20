@@ -1,0 +1,44 @@
+#set($filename = "${name}LogDecorator.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}LogDecorator implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end {
+
+	protected final #classRef("org.slf4j.Logger") log = #classRef("org.slf4j.LoggerFactory").getLogger(getClass());
+	protected final #classRef($protocol) delegate;
+	protected final String prefix;
+
+	public ${name}LogDecorator(#classRef($protocol) delegate, String prefix) {
+		this.delegate = delegate;
+		this.prefix = prefix;
+	}
+
+	public ${name}LogDecorator(#classRef($protocol) delegate) {
+		this(delegate, "");
+	}
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		if (log.isDebugEnabled()) {
+			long t1 = System.nanoTime();
+			try {
+				delegate.${pm.Chain}${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+			} finally {
+				long t2 = System.nanoTime();
+				String timeMillis = String.format("%.3f", (t2 - t1) * 0.000001);
+				log.debug(prefix + "${pm.Method.Name}(#foreach($parameter in $pm.Method.Parameters)$parameter.Name=" + $parameter.Name + "#if( $velocityHasNext ), #end#end) call took " + timeMillis + " ms");
+			}
+		} else {
+			delegate.${pm.Chain}${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+		}
+	}
+#end
+}

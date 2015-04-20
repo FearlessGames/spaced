@@ -1,0 +1,57 @@
+#set($filename = "${name}MultiDispatcher.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}MultiDispatcher implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end {
+
+	private final #classRef("java.util.Collection<$protocol.Type.FullNameWithGenerics>") receivers;
+
+	public ${name}MultiDispatcher(#classRef("java.util.Collection<$protocol.Type.FullNameWithGenerics>") receivers) {
+		this.receivers = receivers;
+	}
+
+	public ${name}MultiDispatcher() {
+		this(new #classRef("java.util.ArrayList<$protocol.Type.FullNameWithGenerics>")());
+	}
+
+	public ${name}MultiDispatcher(#classRef("java.lang.Iterable<$protocol.Type.FullNameWithGenerics>") receivers) {
+		this();
+		for (#classRef($protocol.Type) receiver : receivers) {
+			add(receiver);
+		}
+	}
+
+	public ${name}MultiDispatcher(#classRef($protocol.Type)... receivers) {
+		this(new #classRef("java.util.ArrayList<$protocol.Type.FullNameWithGenerics>")(#classRef("java.util.Arrays").asList(receivers)));
+	}
+
+	public ${name}MultiDispatcher add(#classRef($protocol.Type) receiver) {
+		receivers.add(receiver);
+		return this;
+	}
+
+#foreach($p in $subprotocols)
+	public ${name}MultiDispatcher add(#classRef($p.Type) receiver) {
+		receivers.add(#classRef("${p.Type.Package}.adapter.${name}Adapters").create${p.Type.SimpleName}(receiver));
+		return this;
+	}
+
+#end
+
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		for (#classRef($protocol.Type) receiver : receivers) {
+			receiver.${pm.Chain}${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+		}
+	}
+#end
+}

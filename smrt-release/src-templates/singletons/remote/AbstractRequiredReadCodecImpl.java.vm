@@ -1,0 +1,60 @@
+#set($filename = "${name}AbstractRequiredReadCodecImpl.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public abstract class ${name}AbstractRequiredReadCodecImpl extends #classRef("se.smrt.core.remote.DefaultCodecImpl") implements #classRef("${myPackage}.${name}RequiredReadCodec") {
+
+#foreach($type in $types)
+#if($type.FullName == "java.util.List" && $type.GenericParameters.size() > 0)#set($t = $type.GenericParameters.get(0))
+	@Override
+	public #classRef($type) read#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.InputStream") input) throws #classRef("java.io.IOException") {
+		#classRef("java.util.List<$t.FullNameWithGenerics>") list = new #classRef("java.util.ArrayList<$t.FullNameWithGenerics>")();
+		int size = readInt(input);
+		for (int i = 0; i < size; i++) {
+			list.add(read#capitalize($t.SimpleName)(input));
+		}
+		return list;
+	}
+#end
+
+#if($type.isArray())#set($t = $type.ArrayComponent)
+	@Override
+	public #classRef($type) read#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.InputStream") input) throws #classRef("java.io.IOException") {
+		int size = readInt(input);
+		#classRef($type) list = new #classRef($t)[size];
+		for (int i = 0; i < size; i++) {
+			list[i] = read#capitalize($t.SimpleName)(input);
+		}
+		return list;
+	}
+#end
+
+#if($type.FullName == "java.util.Map" && $type.GenericParameters.size() >= 2)#set($t1 = $type.GenericParameters.get(0))#set($t2 = $type.GenericParameters.get(1))
+	@Override
+	public #classRef($type) read#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.InputStream") input) throws #classRef("java.io.IOException") {
+		#classRef("java.util.Map<$t1.FullNameWithGenerics,$t2.FullNameWithGenerics>") map = new #classRef("java.util.HashMap<$t1.FullNameWithGenerics,$t2.FullNameWithGenerics>")();
+		int size = readInt(input);
+		for (int i = 0; i < size; i++) {
+			map.put(read#capitalize($t1.SimpleName)(input), read#capitalize($t2.SimpleName)(input));
+		}
+		return map;
+	}
+#end
+
+#if($type.FullName == "java.util.Collection" && $type.GenericParameters.size() > 0)#set($t = $type.GenericParameters.get(0))
+	@Override
+	public #classRef($type) read#capitalize($type.DescriptionWithGenerics)(#classRef("java.io.InputStream") input) throws #classRef("java.io.IOException") {
+		#classRef("java.util.Collection<$t.FullNameWithGenerics>") list = getDefaultCollection();
+		int size = readInt(input);
+		for (int i = 0; i < size; i++) {
+			list.add(read#capitalize($t.SimpleName)(input));
+		}
+		return list;
+	}
+#end
+#end
+
+	public <T> #classRef("java.util.Collection<T>") getDefaultCollection() {
+		return new #classRef("java.util.ArrayList<T>")();
+	}
+}

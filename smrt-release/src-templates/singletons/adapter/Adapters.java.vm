@@ -1,0 +1,32 @@
+#set($filename = "${name}Adapters.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}Adapters {
+#foreach($p in $subprotocols)
+	public static #classRef($protocol) create${p.Type.SimpleName}(#classRef($p) receiver) {
+		return new ${p.Type.SimpleName}Adapter(receiver);
+	}
+	public static class ${p.Type.SimpleName}Adapter implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end {
+		private final #classRef($p) receiver;
+		public ${p.Type.SimpleName}Adapter(#classRef($p) receiver) {
+			this.receiver = receiver;
+		}
+#foreach($pm in $allsubprotocols)
+		@Override
+		public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+#if ($pm.Protocol == $p)
+			return receiver;
+#else
+			return this;
+#end
+		}
+#end
+#foreach($pm in $allmethods)
+		@Override public void ${pm.Method.Name}(#parameterList($pm.Method)) { }
+#end
+	}
+
+#end
+}
+

@@ -1,0 +1,7 @@
+package ${myPackage};
+
+@@IMPORTS@@
+
+public interface MessageObject {
+	void invoke(#classRef($protocol) receiver);
+}

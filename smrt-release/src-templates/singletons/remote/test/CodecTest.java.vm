@@ -1,0 +1,78 @@
+#set($filename = "${name}CodecTest.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}CodecTest {
+ 	private final #classRef("${packageBase}.remote.${name}RequiredReadCodec") readCodec;
+ 	private final #classRef("${packageBase}.remote.${name}RequiredWriteCodec") writeCodec;
+	private final #classRef("${myPackage}.${name}ObjectFactory") objFactory;
+	public ${name}CodecTest(#classRef("${packageBase}.remote.${name}RequiredReadCodec") readCodec, #classRef("${packageBase}.remote.${name}RequiredWriteCodec") writeCodec, #classRef("${name}ObjectFactory") objFactory) {
+		this.readCodec = readCodec;
+		this.writeCodec = writeCodec;
+		this.objFactory = objFactory;
+	}
+
+	public final void testAll() throws #classRef("java.io.IOException") {
+#foreach($type in $types)
+		test#capitalize($type.DescriptionWithGenerics)();
+		System.out.println("test#capitalize($type.DescriptionWithGenerics)() passed.");
+#end
+	}
+
+#foreach($type in $types)
+	public void test#capitalize($type.DescriptionWithGenerics)() throws #classRef("java.io.IOException") {
+		boolean hasRun = false;
+      for (#classRef($type) inputObj : objFactory.create#capitalize($type.DescriptionWithGenerics)List()) {
+      	hasRun = true;
+			if (inputObj == null) {
+				throw new #classRef("java.lang.RuntimeException")("fail");
+			}
+
+			#classRef("java.io.PipedInputStream") is = new #classRef("java.io.PipedInputStream")();
+			#classRef("java.io.PipedOutputStream") os = new #classRef("java.io.PipedOutputStream")(is);
+			writeCodec.writeString(os, "PRE");
+			writeCodec.write#capitalize($type.DescriptionWithGenerics)(os, inputObj);
+			writeCodec.writeString(os, "POST");
+
+			String pre = readCodec.readString(is);
+			if (pre == null) {
+				throw new #classRef("java.lang.RuntimeException")("PRE decoded to null");
+			}
+			if (!pre.equals("PRE")) {
+				throw new #classRef("java.lang.RuntimeException")("PRE decoded to " + pre);
+			}
+			#classRef($type) outputObj = readCodec.read#capitalize($type.DescriptionWithGenerics)(is);
+			if (outputObj == null) {
+				throw new #classRef("java.lang.RuntimeException")("read object was null");
+			}
+			if (!equals#capitalize($type.DescriptionWithGenerics)(inputObj, outputObj)) {
+				throw new #classRef("java.lang.RuntimeException")("input object != output object");
+			}
+			if (!equals#capitalize($type.DescriptionWithGenerics)(outputObj, inputObj)) {
+				throw new #classRef("java.lang.RuntimeException")("output object != input object");
+			}
+			String post = readCodec.readString(is);
+			if (post == null) {
+				throw new #classRef("java.lang.RuntimeException")("POST decoded to null");
+			}
+			if (!post.equals("POST")) {
+				throw new #classRef("java.lang.RuntimeException")("POST decoded to " + post);
+			}
+      }
+      if (!hasRun) {
+				throw new #classRef("java.lang.RuntimeException")("No test cases supplied for type: #capitalize($type.DescriptionWithGenerics)");
+      }
+	}
+#end
+
+#foreach($type in $types)
+	public boolean equals#capitalize($type.DescriptionWithGenerics)(#classRef($type) a, #classRef($type) b) {
+#if($type.Array)
+		return #classRef("java.util.Arrays").equals(a, b);
+#else
+		return a.equals(b);
+#end
+	}
+#end
+
+}

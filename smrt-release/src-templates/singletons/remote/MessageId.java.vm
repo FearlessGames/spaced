@@ -1,0 +1,12 @@
+#set($filename = "${name}MessageId.java")package ${myPackage};
+
+public class ${name}MessageId {
+
+    public static final int SMRTBUILTIN_SENDVERSION = 1;
+
+#set($idCount = 100)
+#foreach($pm in $allmethods)
+	public static final int ${pm.Protocol.Type.SimpleName.toUpperCase()}_${pm.Method.Name.toUpperCase()} = $idCount;
+#set($idCount = $idCount + 1)
+#end
+}

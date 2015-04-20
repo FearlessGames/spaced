@@ -1,0 +1,26 @@
+#set($filename = "${name}DelegateReceiver.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}DelegateReceiver implements #classRef($protocol)#foreach($p in $subprotocols), #classRef($p)#end {
+	private final #classRef($protocol) receiver;
+
+	public ${name}DelegateReceiver(#classRef($protocol) receiver) {
+		this.receiver = receiver;
+	}
+
+
+#foreach($pm in $allsubprotocols)
+	@Override
+	public #classRef($pm.Method.ReturnType) ${pm.Method.Name}() {
+		return this;
+	}
+#end
+
+#foreach($pm in $allmethods)
+	@Override
+	public void ${pm.Method.Name}(#parameterList($pm.Method)) {
+		receiver.${pm.Chain}${pm.Method.Name}($pm.Method.ParameterListWithoutTypes);
+	}
+#end
+}

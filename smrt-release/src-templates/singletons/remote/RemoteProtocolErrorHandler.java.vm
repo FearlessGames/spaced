@@ -1,0 +1,8 @@
+#set($filename = "${name}RemoteProtocolErrorHandler.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public interface ${name}RemoteProtocolErrorHandler {
+	void versionMismatch(${name}Checksum expected, ${name}Checksum actual);
+}
+

@@ -1,0 +1,20 @@
+#set($filename = "${name}VersionReceiver.java")package ${myPackage};
+
+@@IMPORTS@@
+
+public class ${name}VersionReceiver extends #classRef("${packageBase}.${name}DelegateReceiver") implements #classRef("se.smrt.core.remote.RemoteProtocol") {
+	protected final ${name}RemoteProtocolErrorHandler errorHandler;
+	public ${name}VersionReceiver(#classRef($protocol.Type) receiver, ${name}RemoteProtocolErrorHandler errorHandler) {
+		super(receiver);
+		this.errorHandler = errorHandler;
+	}
+
+	@Override
+	public void sendVersion(String smrtVersion, String protocolVersion, byte[] checksum) {
+		${name}Checksum checksumObj = new ${name}Checksum(smrtVersion, protocolVersion, checksum);
+		if (!checksumObj.equals(${name}Checksum.INSTANCE)) {
+			errorHandler.versionMismatch(${name}Checksum.INSTANCE, checksumObj);
+		}
+	}
+}
+

@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+
+<project name="ArdorTech" default="all" basedir=".">
+
+	<property name="ardor.path" value="${basedir}/lib/ardor3d/dependencies/lwjgl/native/win+linux"/>
+
+	<property name="src.dir" value="${basedir}/src"/>
+	<!-- src -->
+	<property name="build.dir" value="${basedir}/build"/>
+	<!-- build -->
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<!-- build/classes-->
+
+	<property name="example.base.src.dir" value="${basedir}/example-base"/>
+	<!-- example-base -->
+	<property name="example.base.classes.dir" value="${build.dir}/example-base-classes"/>
+	<!-- build/example-base-classes -->
+
+	<property name="example.src.dir" value="${basedir}/example"/>
+	<!-- example -->
+	<property name="example.classes.dir" value="${build.dir}/example-classes"/>
+	<!-- build/example-classes -->
+
+	<property name="test.src.dir" value="${basedir}/test"/>
+	<!-- test -->
+	<property name="test.classes.dir" value="${build.dir}/test-classes"/>
+	<!-- build/test-classes -->
+	<property name="test.reports.dir" value="${build.dir}/test-reports"/>
+	<!-- build/test-reports -->
+
+	<path id="build.classpath">
+		<fileset dir="${basedir}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../Fearless-common/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="example.base.build.classpath">
+		<path refid="build.classpath"/>
+		<pathelement path="${classes.dir}"/>
+	</path>
+
+	<path id="example.build.classpath">
+		<path refid="build.classpath"/>
+		<pathelement path="${classes.dir}"/>
+		<pathelement path="${example.base.classes.dir}"/>
+	</path>
+
+	<path id="example.run.classpath">
+		<path refid="example.build.classpath"/>
+		<pathelement path="${example.classes.dir}"/>
+	</path>
+
+	<path id="test.build.classpath">
+		<path refid="build.classpath"/>
+		<pathelement path="${classes.dir}"/>
+		<pathelement path="${test.classes.dir}"/>
+	</path>
+
+	<path id="test.run.classpath">
+		<path refid="test.build.classpath"/>
+		<pathelement path="${test.classes.dir}"/>
+	</path>
+
+	<target name="all" depends="compile, compile-example-base, compile-example, test, package"
+			  description="Compile, test and package"/>
+
+	<target name="clean" description="Clean the build directory">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" description="Compile">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+		<javac
+				destdir="${classes.dir}"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="build.classpath">
+			<src path="${src.dir}"/>
+		</javac>
+	</target>
+
+	<target name="compile-example-base" description="Compile example base">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${example.base.classes.dir}"/>
+		<javac
+				destdir="${example.base.classes.dir}"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="example.base.build.classpath"
+				srcdir="${example.base.src.dir}">
+		</javac>
+	</target>
+
+	<target name="compile-example" description="Compile examples">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${example.classes.dir}"/>
+		<javac
+				destdir="${example.classes.dir}"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="example.build.classpath"
+				srcdir="${example.src.dir}">
+		</javac>
+	</target>
+
+	<target name="compile-test" description="Compile tests">
+		<mkdir dir="${test.classes.dir}"/>
+		<javac
+				destdir="${test.classes.dir}"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="test.build.classpath">
+			<src path="${test.src.dir}"/>
+		</javac>
+	</target>
+
+	<target name="package" depends="compile, compile-example-base" description="Create the ArdorTech jar files">
+		<jar destfile="${build.dir}/ArdorTech.jar">
+			<fileset dir="${classes.dir}">
+				<include name="**/*"/>
+			</fileset>
+		</jar>
+		<jar destfile="${build.dir}/ArdorTechExample.jar">
+			<fileset dir="${example.base.classes.dir}">
+				<include name="**/*"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="test" depends="compile, compile-test" description="Run unit tests">
+		<mkdir dir="${test.reports.dir}"/>
+		<junit printsummary="no" logfailedtests="true" haltonfailure="yes" showoutput="true">
+			<classpath>
+				<path refid="test.run.classpath"/>
+			</classpath>
+
+			<formatter type="plain"/>
+
+			<batchtest fork="yes" todir="${test.reports.dir}">
+				<fileset dir="${test.src.dir}">
+					<include name="**/**Test**.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="run-example" description="Start example">
+		<java classname="se.ardortech.example.box.BoxLauncher" fork="true">
+			<jvmarg value="-Djava.library.path=${ardor.path}"/>
+			<classpath>
+				<path refid="example.run.classpath"/>
+				<pathelement location="resources"/>
+			</classpath>
+		</java>
+	</target>
+</project>

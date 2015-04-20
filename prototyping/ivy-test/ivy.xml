@@ -1,0 +1,23 @@
+<ivy-module version="2.0">
+    <info organisation="se.fearlessgames" module="test-ivy"/>
+	<configurations defaultconfmapping="runtime->runtime">
+        <conf name="runtime"/>
+        <conf name="test"/>
+	</configurations>
+    <dependencies>
+		<dependency org="junit" name="junit" rev="4.+" conf="test->*">
+			<artifact name="junit" type="jar" ext="jar"/>
+		</dependency>
+		<dependency org="org.mockito" name="mockito-all" rev="latest.integration" conf="test->*">
+			<artifact name="mockito-all" type="jar" ext="jar"/>
+		</dependency>
+		<dependency org="org.slf4j" name="log4j-over-slf4j" rev="latest.integration" conf="runtime->*"/>
+		<dependency org="org.slf4j" name="jcl-over-slf4j" rev="latest.integration" conf="runtime->*"/>
+		<dependency org="org.slf4j" name="jul-to-slf4j" rev="latest.integration" conf="runtime->*"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="latest.integration" conf="runtime"/>
+		<dependency org="com.google.inject.extensions" name="guice-multibindings" rev="2.0" conf="runtime->*"/>
+		<dependency org="com.google.inject.extensions" name="guice-throwing-providers" rev="2.0" conf="runtime->*"/>
+		<dependency org="com.google.inject.extensions" name="guice-assisted-inject" rev="2.0" conf="runtime->*"/>
+		
+    </dependencies>
+</ivy-module>

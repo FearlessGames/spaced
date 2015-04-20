@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<project name="cooldown" default="all" basedir=".">
+
+	<target name="compile">
+		<javac
+				destdir="."
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				>
+			<src path="."/>
+		</javac>
+	</target>
+
+	<target name="run" description="run the prototype">
+		<java classname="Cooldown" fork="true" spawn="true">
+		</java>
+	</target>
+
+	<target name="run2" description="run the prototype">
+		<java classname="Cooldown2" fork="true" spawn="true">
+		</java>
+	</target>
+
+	<target name="all" depends="compile, run"/>
+
+</project>

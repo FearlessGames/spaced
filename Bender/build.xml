@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<project name="Bender" default="all" basedir=".">
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<property name="build.dir" location="${baseDir}/build"/>
+	<property name="src.dir" value="${baseDir}/src"/>
+
+	<path id="buildlib.classpath">
+		<fileset dir="libs">
+			<include name="**/*.jar"/>
+		</fileset>
+
+		<fileset dir="../Fearless-common/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+
+	</path>
+
+	<path id="run.classpath">
+		<path refid="buildlib.classpath"/>
+	</path>
+
+	<target name="build" depends="compile"/>
+
+	<target name="clean" description="Removes all generated files">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="all" depends="build"/>
+
+	<target name="compile">
+		<mkdir dir="${build.dir}/main"/>
+		<javac
+				destdir="${build.dir}/main"
+				debug="on"
+				deprecation="on"
+				optimize="on"
+				includeantruntime="false"
+				classpathref="buildlib.classpath"
+				>
+			<src path="src"/>
+		</javac>
+	</target>
+
+	<target name="run" description="Do the Bender">
+		<java classname="se.fearless.bender.Bender" fork="true" spawn="false">
+			<arg value="#sr-mmo-dev"/>
+			<jvmarg value="-server"/>
+			<jvmarg value="-Xloggc:Bender.gclog"/>
+
+			<classpath>
+				<path refid="run.classpath"/>
+				<pathelement location="${build.dir}/main"/>
+			</classpath>
+		</java>
+	</target>
+</project>

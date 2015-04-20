@@ -1,0 +1,14 @@
+<project name="ClientDeployer" basedir="." default="none">
+	<target name="deploy-resources" description="Deploy client resoruces to www">
+		<ant antfile="${basedir}/deploy-resources.xml" dir="${basedir}" target="deploy" inheritAll="false"/>
+	</target>
+
+	<target name="deploy-webstart" description="Build client webstart">
+		<ant antfile="${basedir}/deploy-webstart.xml" dir="${basedir}" target="dist" inheritAll="false"/>
+	</target>
+
+	<target name="none">
+		<echo>Use deploy-resources or deploy-webstart</echo>
+	</target>
+
+</project>

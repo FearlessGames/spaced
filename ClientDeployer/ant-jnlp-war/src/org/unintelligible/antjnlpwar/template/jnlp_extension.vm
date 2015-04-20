@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+		spec="${task.warTask.jnlpVersion}+"
+	#if($task.codebase)
+		codebase="${task.warTask.codebase}"
+	#else
+		codebase="$$codebase"
+	#end
+		href="${task.jnlpName}">
+##
+	 ##INFORMATION
+	 ##
+
+	<information>
+		<title>${task.name} extension</title>
+		#if($task.vendor)
+			<vendor>${task.vendor}</vendor>
+		#end
+
+	</information>
+##
+	 ##RESOURCES
+	 ##
+
+	<resources>
+	##Jar and Nativelib
+ 	 #foreach($jar in $task.jars)
+		<jar href="extension/${jar}"/>
+	#end
+	</resources>
+	<component-desc/>
+
+</jnlp> 

@@ -1,0 +1,66 @@
+<html>
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+	<title>${task.title}</title>
+	#if( $task.attemptJavaDetection )
+		<script type="text/javascript">
+			var javawsInstalled = 0;
+			var javaws142Installed = 0;
+			var javaws150Installed = 0;
+			isIE = "false";
+			if (navigator.mimeTypes && navigator.mimeTypes.length) {
+				x = navigator.mimeTypes['application/x-java-jnlp-file'];
+				if (x) {
+					javawsInstalled = 1;
+					javaws142Installed = 1;
+					javaws150Installed = 1;
+				}
+			}
+			else {
+				isIE = "true";
+			}
+		</script>
+		<script type="text/VBScript">
+			on error resume next
+			If isIE = "true" Then
+			If Not(IsObject(CreateObject("JavaWebStart.isInstalled"))) Then
+			javawsInstalled = 0
+			Else
+			javawsInstalled = 1
+			End If
+			If Not(IsObject(CreateObject("JavaWebStart.isInstalled.1.4.2.0"))) Then
+			javaws142Installed = 0
+			Else
+			javaws142Installed = 1
+			End If
+			If Not(IsObject(CreateObject("JavaWebStart.isInstalled.1.5.0.0"))) Then
+			javaws150Installed = 0
+			Else
+			javaws150Installed = 1
+			End If
+			End If
+		</script>
+		<script type="text/javascript">
+			/*
+										*Note that the logic below always launches the JNLP application
+										*if the browser is Gecko based. This is because it is not possible
+										*to detect MIME type application/x-java-jnlp-file on Gecko-based browsers.
+										*/
+			if (javawsInstalled || (navigator.userAgent.indexOf("Gecko") != -1)) {
+				//forward to launch application
+				document.location = './application/launch.jnlp';
+			} else {
+				document.write('<p>This application requires Java to be installed.</p>');
+				document.write('<p>To install Java, please <a target="_blank" href="http://java.sun.com/PluginBrowserCheck?pass=${task.applicationContext}/download.html&fail=http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&host=www.java.com:80">click here</a></p>');
+				document.write('<p>Once Java is installed, please <a href="./index.html">click here</a> to launch the application.</p>');
+			}
+		</script>
+	#else
+	##launch the JNLP file without attempting Java detection
+ 				document.location='./application/launch.jnlp';
+	#end
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<project name="deploy client resources" default="deploy" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<path id="libs">
+		<fileset dir="${baseDir}/../ArdorTech/lib/">
+			<include name="ardor3d/*.jar"/>
+			<include name="ardor3d/dependencies/jdom/*.jar"/>
+		</fileset>
+
+		<fileset dir="${baseDir}/../ArdorTech/build/">
+			<include name="ArdorTech.jar"/>
+		</fileset>
+
+		<fileset dir="${baseDir}/../Fearless-common/libs/">
+			<include name="*/**"/>
+		</fileset>
+
+
+	</path>
+
+	<path id="build.classpath">
+		<path refid="libs"/>
+	</path>
+
+	<path id="run.classpath">
+		<path path="build"/>
+
+		<path refid="libs"/>
+	</path>
+
+	<target name="build">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build" classpathref="build.classpath"/>
+		<copy todir="build" file="src/logback.xml"/>
+	</target>
+
+	<target name="declare" depends="build">
+		<taskdef name="deployer" classname="se.spaced.client.deployer.ResourceDeployTask" classpathref="run.classpath"/>
+	</target>
+
+	<property name="target.dir" location="/spaced/www-root/client/resources"/>
+
+	<property name="spaced" location="${baseDir}/../"/>
+
+	<target name="deploy" depends="declare">
+
+
+		<delete dir="${target.dir}"/>
+		<mkdir dir="${target.dir}"/>
+
+		<deployer targetPath="${target.dir}">
+			<resource path="${spaced}/ArdorGui/resources"/>
+			<resource path="${spaced}/ArdorTech/resources"/>
+			<resource path="${spaced}/newclient/resources"/>
+			<resource path="${spaced}/shared/resources"/>
+
+		</deployer>
+	</target>
+</project>

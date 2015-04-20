@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp
+		spec="${task.jnlpVersion}+"
+	#if($task.codebase)
+		codebase="${task.codebase}"
+	#else
+		codebase="$$codebase"
+	#end
+		href="launch.jnlp">
+##
+	 ##INFORMATION
+	 ##
+
+	<information>
+		<title>${task.title}</title>
+		<vendor>${task.vendor}</vendor>
+		#if( $task.homepage )
+			<homepage href="docs/help.html"/>
+		#end
+		#foreach( $description in $task.descriptions )
+			<description #if( $description.kind ) kind="${description.kind}" #end>${description.text}</description>
+		#end
+		#foreach( $icon in $task.icons )
+		##NEED ICON HREF
+
+			<icon #if( $icon.kind ) kind="${icon.kind}" #end href="icon/${icon.file.name}"/>
+		#end
+		#if( $task.offlineAllowed )
+			<offline-allowed/>
+		#end
+	##NEED ASSOCIATIONS
+	  #if( $task.association)
+		<association mime-type="${task.association.mimetype}" extensions="${task.association.extensions}"/>
+	#end
+		#if( $task.shortcut )
+			<shortcut online="${task.shortcut.online}">
+				#if($task.shortcut.desktop)
+					<desktop/>
+				#end
+				#if($task.shortcut.menu)
+					<menu #if( $task.shortcut.submenu ) submenu="${task.shortcut.submenu}" #end/>
+				#end
+			</shortcut>
+		#end
+
+	</information>
+##
+	 ##SECURITY
+	 ##
+	 #if( $task.isAllpermissions() )
+	<security>
+		<all-permissions/>
+	</security>
+#end
+##
+	 ##RESOURCES
+	 ##
+
+<resources>
+	#foreach($j2se in $task.j2ses )
+		<j2se version="${j2se.minVersion}+" href="http://java.sun.com/products/autodl/j2se"
+				#if( $j2se.args )java-vm-args="${j2se.args}" #end/>
+	#end
+	#foreach($j2se in $task.j2ses )
+		#foreach($property in  $j2se.properties )
+			<property name="${property.name}" value="${property.value}"/>
+		#end
+	#end
+##Jar and Nativelib
+	 #set($applicationJarFound = false )
+	#foreach($jar in $task.expandedLibs)
+		#if($jar.equals(${task.application.jar.name}))
+			#set($applicationJarFound = true )
+			<jar href="${jar}" main="true"/>
+		#else
+			<jar href="${jar}"/>
+		#end
+	#end
+	#if(! $applicationJarFound )
+		<jar href="${task.application.jar.name}" main="true"/>
+	#end
+	#foreach($extension in $task.expandedExtensions)
+		<extension name="${extension.name}" href="${extension.jnlpName}"></extension>
+		#end
+
+	</resources>
+
+	#foreach($jar in $task.expandedNativeLibs)
+		<resources #if($jar.os) os="${jar.os}" #end #if($jar.arch) arch="${jar.arch}" #end>
+			<nativelib href="nativelib/${jar.name}"/>
+		</resources>
+	#end
+###if ( $task.application.mainclassargs )
+
+	<application-desc main-class="${task.application.mainclass}">
+		#foreach($arg in $task.application.mainclassargs)
+			<argument>$arg</argument>
+		#end
+	</application-desc>
+###else
+	  ##    <application-desc main-class="${task.application.mainclass}"/>
+	 ###end
+	 #if($task.installermainclass)
+	<installer-desc main-class="${task.installermainclass}"/>
+#end
+</jnlp> 

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<antlib>
+	<typedef name="description" classname="org.unintelligible.antjnlpwar.datatype.Description"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="application" classname="org.unintelligible.antjnlpwar.datatype.Application"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="icon" classname="org.unintelligible.antjnlpwar.datatype.Icon"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="j2se" classname="org.unintelligible.antjnlpwar.datatype.J2se"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="j2seProperty" classname="org.unintelligible.antjnlpwar.datatype.J2seProperty"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="shortcut" classname="org.unintelligible.antjnlpwar.datatype.Shortcut"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="association" classname="org.unintelligible.antjnlpwar.datatype.Association"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="nativelib" classname="org.unintelligible.antjnlpwar.datatype.NativeLib"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<typedef name="extension" classname="org.unintelligible.antjnlpwar.datatype.Extension"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+	<taskdef name="jnlpwar" classname="org.unintelligible.antjnlpwar.task.JnlpWar"
+				uri="jw:/org.unintelligible.antjnlpwar"/>
+</antlib>

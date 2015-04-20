@@ -1,0 +1,148 @@
+<project name="build client webstart" default="dist" xmlns:jw="org.unintelligible.antjnlpwar">
+	<typedef resource="org/unintelligible/antjnlpwar/antjnlpwar.xml" format="xml" uri="org.unintelligible.antjnlpwar">
+		<classpath>
+			<pathelement location="libs/ant-jnlp-war-0.9.jar"/>
+			<pathelement location="libs/Pack200Task.jar"/>
+			<pathelement location="libs/velocity-1.4.jar"/>
+			<pathelement location="libs/logkit-1.0.1.jar"/>
+			<pathelement location="libs/commons-collections.jar"/>
+
+		</classpath>
+	</typedef>
+
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<property name="spacedBase" location="${baseDir}/../"/>
+	<property name="deployDir" location="${baseDir}/deploy"/>
+	<property name="deployLibsDir" location="${deployDir}/jars"/>
+	<property name="deployNativeLibsDir" location="${deployDir}/nativeJars"/>
+	<property name="deployClassesDir" location="${deployDir}/classes"/>
+
+	<target name="copyLibs">
+		<copy todir="${deployLibsDir}" flatten="true">
+
+			<fileset dir="${spacedBase}/Fearless-common/libs">
+				<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/ArdorTech/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+
+
+			<fileset dir="${spacedBase}/shared/libs">
+				<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/newclient/libs">
+				<include name="**/*.jar"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/smrt-release/lib">
+				<include name="smrt-runtime.jar"/>
+			</fileset>
+
+		</copy>
+
+	</target>
+
+	<target name="makeNativeJars">
+		<jar destfile="${deployNativeLibsDir}/windows-lwjgl.jar"
+			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win32"/>
+		<jar destfile="${deployNativeLibsDir}/linux-lwjgl.jar"
+			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/linux"/>
+		<jar destfile="${deployNativeLibsDir}/macosx-lwjgl.jar"
+			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/macosx"/>
+	</target>
+
+	<target name="jarClient">
+		<copy todir="${deployClassesDir}">
+
+			<fileset dir="${spacedBase}/ArdorTech/build/classes">
+				<include name="**/*"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/ArdorGui/build/classes">
+				<include name="**/*"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/shared/build/classes">
+				<include name="**/*"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/newclient/build/classes">
+				<include name="**/*"/>
+			</fileset>
+
+			<fileset dir="${spacedBase}/messages/build/generated-protocol-classes">
+				<include name="**/*"/>
+			</fileset>
+
+		</copy>
+
+		<copy file="${spacedBase}/newclient/src/logback-webstart.xml" tofile="${deployClassesDir}/logback.xml"/>
+
+		<jar destfile="${deployDir}/Spaced.jar" basedir="${deployClassesDir}"/>
+
+	</target>
+
+	<target name="removeOld">
+		<delete dir="${deployDir}"/>
+	</target>
+
+	<target name="dist" depends="removeOld, copyLibs, jarClient, makeNativeJars">
+
+		<!--
+		Read more at http://ant-jnlp-war.sourceforge.net/
+		-->
+
+		<jw:jnlpwar
+				tofile="./deploy/Spaced.war"
+				codebase="http://flexo.fearlessgames.se/Spaced"
+				title="Spaced Alpha"
+				vendor="FearlessGames"
+				pack200="false"
+				allpermissions="true"
+				signstorepass="O1W3Oj0d53JPD5r"
+				keystorepath="./spaced.keys"
+				signalias="SpacedAlpha"
+				>
+
+			<jw:description>This is the alpha release of Spaced</jw:description>
+
+
+			<jw:icon file="${baseDir}/spaced.png"/>
+			<jw:icon kind="splash" file="${spacedBase}/newclient/resources/splash.png"/>
+
+			<jw:shortcut desktop="true" online="true"/>
+
+			<!-- TODO: figure out the correct j2se params needed since it will also start the client/installer-->
+
+			<jw:j2se minVersion="1.7" args="-Xmx512M">
+				<!--<jw:j2seProperty name="MyApplicationProperty" value="myApplicationPropertyValue"/>-->
+			</jw:j2se>
+
+			<jw:lib dir="./deploy/jars/">
+				<include name="**/*.jar"/>
+			</jw:lib>
+
+			<jw:nativeLib os="Windows" dir="${deployNativeLibsDir}">
+				<include name="windows-lwjgl.jar"/>
+			</jw:nativeLib>
+
+			<jw:nativeLib os="Linux" dir="${deployNativeLibsDir}">
+				<include name="linux-lwjgl.jar"/>
+			</jw:nativeLib>
+
+			<jw:nativeLib os="Mac OS X" dir="${deployNativeLibsDir}">
+				<include name="macosx-lwjgl.jar"/>
+			</jw:nativeLib>
+
+			<jw:application mainclass=" se.spaced.client.launcher.installer.Installer"
+								 jar="./deploy/Spaced.jar"
+								 arguments="--server=localhost:http://localhost:9000/InformationService --server=spaced-dev:http://spaced-alpha.fearlessgames.se:9000/InformationService --server=spaced-alpha:http://spaced-alpha.fearlessgames.se:9001/InformationService"/>
+		</jw:jnlpwar>
+	</target>
+
+
+</project>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<project name="codeswarm" basedir="." default="all">
+
+	<path id="run.classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="all" depends="clean, getlog, convertlog, run, video, video-to-divx">
+	
+	</target>
+
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+	
+	<target name="getlog">
+		<mkdir dir="build" />
+		<exec executable="svn" output="build/activity.log">
+			<arg value="log" />
+			<arg value="-v" />
+			<arg value=".." />
+		</exec>
+	</target>
+
+	<target name="convertlog">
+		<exec executable="python">
+			<arg value="convert_logs.py" />
+			<arg value="-s" />
+			<arg value="build/activity.log" />
+			<arg value="-o" />
+			<arg value="build/activity.xml" />
+		</exec>
+	</target>
+
+	<target name="run">
+		<mkdir dir="build/frames" />
+		<java classpathref="run.classpath" classname="code_swarm" fork="true">
+			<jvmarg value="-Xmx1000m" />
+			<arg value="spaced.config" />
+		</java>
+	</target>
+	
+	<target name="video">
+		<exec executable="mencoder" dir="build/frames">
+			<arg value="mf://*png" />
+			<arg value="-mf" />
+			<arg value="fps=24:type=png" />
+			<arg value="-ovc" />
+			<arg value="lavc" />
+			<arg value="-oac" />
+			<arg value="copy" />
+			<arg value="-o" />
+			<arg value="../movie-uncompressed.avi" />
+			
+		</exec>  
+	</target>
+	
+	
+	<target name="video-to-divx">
+		<exec executable="mencoder">
+			<arg value="build/movie-uncompressed.avi" />
+			<arg value="-ovc" />
+			<arg value="xvid" />
+			<arg value="-oac" />
+			<arg value="mp3lame" />
+			<arg value="-xvidencopts" />
+			<arg value="bitrate=200" />
+			<arg value="-o" />
+			<arg value="build/movie-divx.avi" />			
+		</exec>  
+	</target>
+</project>

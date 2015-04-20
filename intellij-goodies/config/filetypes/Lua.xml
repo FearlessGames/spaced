@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filetype binary="false" default_extension="" description="Lua source code" name="Lua">
+  <highlighting>
+    <options>
+      <option name="LINE_COMMENT" value="--" />
+      <option name="COMMENT_START" value="--[[" />
+      <option name="COMMENT_END" value="]]" />
+      <option name="HEX_PREFIX" value="0x" />
+      <option name="NUM_POSTFIXES" value="" />
+      <option name="HAS_BRACKETS" value="true" />
+      <option name="HAS_BRACES" value="true" />
+      <option name="HAS_PARENS" value="true" />
+      <option name="HAS_STRING_ESCAPES" value="true" />
+    </options>
+    <keywords ignore_case="false">
+      <keyword name="and" />
+      <keyword name="break" />
+      <keyword name="do" />
+      <keyword name="else" />
+      <keyword name="elseif" />
+      <keyword name="end" />
+      <keyword name="false" />
+      <keyword name="for" />
+      <keyword name="function" />
+      <keyword name="if" />
+      <keyword name="in" />
+      <keyword name="local" />
+      <keyword name="nil" />
+      <keyword name="not" />
+      <keyword name="or" />
+      <keyword name="repeat" />
+      <keyword name="return" />
+      <keyword name="then" />
+      <keyword name="true" />
+      <keyword name="until" />
+      <keyword name="while" />
+    </keywords>
+    <keywords2>
+      <keyword name="abs" />
+      <keyword name="acos" />
+      <keyword name="asin" />
+      <keyword name="assert" />
+      <keyword name="atan" />
+      <keyword name="atan2" />
+      <keyword name="byte" />
+      <keyword name="ceil" />
+      <keyword name="char" />
+      <keyword name="clock" />
+      <keyword name="concat" />
+      <keyword name="cos" />
+      <keyword name="cosh" />
+      <keyword name="create" />
+      <keyword name="date" />
+      <keyword name="deg" />
+      <keyword name="difftime" />
+      <keyword name="dostring" />
+      <keyword name="error" />
+      <keyword name="exp" />
+      <keyword name="find" />
+      <keyword name="floor" />
+      <keyword name="fmod" />
+      <keyword name="format" />
+      <keyword name="frexp" />
+      <keyword name="getfenv" />
+      <keyword name="getmetatable" />
+      <keyword name="gmatch" />
+      <keyword name="gsub" />
+      <keyword name="insert" />
+      <keyword name="ipairs" />
+      <keyword name="ldexp" />
+      <keyword name="len" />
+      <keyword name="loadstring" />
+      <keyword name="log" />
+      <keyword name="log10" />
+      <keyword name="lower" />
+      <keyword name="match" />
+      <keyword name="max" />
+      <keyword name="maxn" />
+      <keyword name="min" />
+      <keyword name="modf" />
+      <keyword name="next" />
+      <keyword name="pairs" />
+      <keyword name="pcall" />
+      <keyword name="pow" />
+      <keyword name="print" />
+      <keyword name="rad" />
+      <keyword name="random" />
+      <keyword name="randomseed" />
+      <keyword name="rawequal" />
+      <keyword name="rawget" />
+      <keyword name="rawset" />
+      <keyword name="remove" />
+      <keyword name="rep" />
+      <keyword name="require" />
+      <keyword name="resume" />
+      <keyword name="reverse" />
+      <keyword name="running" />
+      <keyword name="select" />
+      <keyword name="setfenv" />
+      <keyword name="setmetatable" />
+      <keyword name="sin" />
+      <keyword name="sinh" />
+      <keyword name="sort" />
+      <keyword name="sqrt" />
+      <keyword name="status" />
+      <keyword name="sub" />
+      <keyword name="tan" />
+      <keyword name="tanh" />
+      <keyword name="time" />
+      <keyword name="tonumber" />
+      <keyword name="tostring" />
+      <keyword name="type" />
+      <keyword name="unpack" />
+      <keyword name="upper" />
+      <keyword name="wrap" />
+      <keyword name="yield" />
+    </keywords2>
+    <keywords3>
+      <keyword name="_G" />
+      <keyword name="coroutine" />
+      <keyword name="math" />
+      <keyword name="os" />
+      <keyword name="string" />
+      <keyword name="table" />
+    </keywords3>
+    <keywords4>
+      <keyword name="__add" />
+      <keyword name="__call" />
+      <keyword name="__concat" />
+      <keyword name="__div" />
+      <keyword name="__index" />
+      <keyword name="__len" />
+      <keyword name="__metatable" />
+      <keyword name="__mod" />
+      <keyword name="__mode" />
+      <keyword name="__mul" />
+      <keyword name="__newindex" />
+      <keyword name="__pow" />
+      <keyword name="__sub" />
+      <keyword name="__tostring" />
+    </keywords4>
+  </highlighting>
+  <extensionMap>
+    <mapping ext="lua" />
+  </extensionMap>
+</filetype>
+

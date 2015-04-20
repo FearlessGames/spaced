@@ -1,0 +1,45 @@
+IMPORTANT!
+For all these operations, stand in the root directory of the project!
+
+TIP:
+You can use some of the commands as is if you first run this:
+BRANCH=<your branch name>
+
+Getting a list of our branches
+==============================
+Visit with a web browser:
+https://svn.fearlessgames.se/svn/branches/
+
+See which branch is current in your working copy
+======================================================
+svn info
+You should see something like:
+URL: https://svn.fearlessgames.se/svn/trunk
+or
+URL: https://svn.fearlessgames.se/svn/branches/$BRANCH
+
+Creating a branch
+=================
+svn copy https://svn.fearlessgames.se/svn/trunk https://svn.fearlessgames.se/svn/branches/$BRANCH
+
+Note that you are still working on trunk! Usually you want to do a switch as well. See below.
+
+Switching branch
+================
+svn switch https://svn.fearlessgames.se/svn/branches/$BRANCH
+
+Syncing branch with trunk
+=========================
+You should have the branch checked out in your working copy.
+
+svn merge https://svn.fearlessgames.se/svn/trunk .
+svn commit -m "Merged trunk to branches/$BRANCH"
+
+Merging branch back with trunk
+==============================
+IMPORTANT! The branch must be recently synced with trunk first!
+You should have the trunk checked out in your working copy.
+svn merge --reintegrate https://svn.fearlessgames.se/svn/branches/$BRANCH
+svn commit -m "Reintegrated branches/$BRANCH"
+svn delete -m "Deleting reintegrated branches/$BRANCH" https://svn.fearlessgames.se/svn/branches/$BRANCH
+

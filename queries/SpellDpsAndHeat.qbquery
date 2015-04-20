@@ -1,0 +1,1 @@
+﻿SELECT s.name, (e.highDamage - e.lowDamage) / (s.castTime / 1000) as dps, (s.heatContribution * 1000 / s.castTime) as heatPerSecondCasting FROM Spell s, Spell_spelleffect ss, DamageSchoolEffect e where s.pk = ss.spell_pk and ss.spelleffects_pk = e.pk order by dps desc;

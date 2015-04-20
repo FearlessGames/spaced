@@ -1,0 +1,24 @@
+<idea-plugin version="2">
+  <name>UUIDgen</name>
+  <description>Generates a UUID at the caret</description>
+  <version>1.0</version>
+  <vendor>Fearless games</vendor>
+  <idea-version since-build="8000"/>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <action id="se.fearless.uuidgen.InsertUUIDAction"
+                class="se.fearless.uuidgen.InsertUUIDAction" text="UUID"
+                description="Adds a UUID at the caret position">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U" second-keystroke="ctrl alt U"/>
+        </action>
+  </actions>
+
+</idea-plugin>

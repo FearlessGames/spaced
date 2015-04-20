@@ -1,0 +1,9 @@
+1) Client request a Salts object from the server by username.
+2) Server forwards this to fame
+3) The Salts object contains the user unique bcrypt salt and a onetime UUID based salt. 
+4) The client uses the bcrypt algorithm to hash username+password with the user unique salt.
+5) The client then hashes the result with a sha256hex(bcrypthash+onetime salt) and sends to the server.
+6) The server forwards to fame that does authentication and authorization.
+7a) If it matches, fame returns a uuid
+7b) If not, fame return unauthorized
+8) The Server responds success/fail to the client

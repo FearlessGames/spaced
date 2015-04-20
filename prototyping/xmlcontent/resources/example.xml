@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="content.xsd">
+
+	<effect name="Light punch">
+		<damage-effect>
+			<min>10.0</min>
+			<max>20.0</max>
+		</damage-effect>
+	</effect>
+
+	<spell name="Epic punch">
+		<spell-def>
+			<cancel-on-move>false</cancel-on-move>
+			<targetting-type>TARGET</targetting-type>
+			<effects>
+				<cool-effect>
+					<min>10</min>
+					<max>20</max>
+				</cool-effect>
+				<effect-ref name="Light punch" />
+			</effects>
+		</spell-def>
+	</spell>
+
+	<spell name="Epic missile">
+		<spell-def>
+			<cancel-on-move>false</cancel-on-move>
+			<targetting-type>TARGET</targetting-type>
+			<effects>
+				<projectile-effect>
+					<speed>10.0</speed>
+					<impact-effects>
+						<effect-ref name="Light missile" />
+						<effect-ref name="Light missile 2" />
+					</impact-effects>
+				</projectile-effect>
+				<cool-effect>
+					<min>10</min>
+					<max>20</max>
+				</cool-effect>
+			</effects>
+		</spell-def>
+	</spell>
+
+</content>

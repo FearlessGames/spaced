@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" version="1.0">
+
+	<xs:complexType name="effect_base" abstract="true">
+	</xs:complexType>
+	<xs:element name="effect_base" type="effect_base" abstract="true" />
+
+	<xs:complexType name="effect-ref">
+		<xs:complexContent>
+			<xs:extension base="effect_base">
+				<xs:attribute name="name" type="xs:string" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="effect-ref" type="effect-ref" substitutionGroup="effect_base" />
+
+	<xs:complexType name="effect_def" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="effect_base">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="effect_def" type="effect_def" substitutionGroup="effect_base" />
+
+	<xs:complexType name="effect_top">
+		<xs:all>
+			<xs:element ref="effect_def" />
+		</xs:all>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="effect_ranged" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="effect_def">
+				<xs:sequence>
+					<xs:element name="min" type="xs:double" />
+					<xs:element name="max" type="xs:double" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="projectile-effect">
+		<xs:complexContent>
+			<xs:extension base="effect_def">
+				<xs:all>
+					<xs:element name="speed" type="xs:double" />
+					<xs:element name="impact-effects">
+						<xs:complexType>
+							<xs:sequence maxOccurs="unbounded">
+								<xs:element ref="effect_base" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="projectile-effect" type="projectile-effect" substitutionGroup="effect_def" />
+
+	<xs:complexType name="damage-effect">
+		<xs:complexContent>
+			<xs:extension base="effect_ranged">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="damage-effect" type="damage-effect" substitutionGroup="effect_def" />
+
+	<xs:complexType name="cool-effect">
+		<xs:complexContent>
+			<xs:extension base="effect_ranged">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="cool-effect" type="cool-effect" substitutionGroup="effect_def" />
+
+
+
+	<xs:complexType name="spell_base" abstract="true">
+	</xs:complexType>
+	<xs:element name="spell_base" type="spell_base" abstract="true" />
+
+	<xs:complexType name="spell-ref">
+		<xs:complexContent>
+			<xs:extension base="spell_base">
+				<xs:attribute name="name" type="xs:string" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="spell-ref" type="spell-ref" substitutionGroup="spell_base" />
+
+	<xs:simpleType name="targetting-type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SELF_ONLY"/>
+			<xs:enumeration value="TARGET"/>
+			<xs:enumeration value="AREA"/>
+			<xs:enumeration value="DIRECTIONAL"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="spell_def">
+		<xs:complexContent>
+			<xs:extension base="spell_base">
+				<xs:all>
+					<xs:element name="targetting-type" type="targetting-type" />
+					<xs:element name="cancel-on-move" type="xs:boolean" />
+					<xs:element name="effects">
+						<xs:complexType>
+							<xs:sequence maxOccurs="unbounded">
+								<xs:element ref="effect_base" />
+							</xs:sequence>							
+						</xs:complexType>
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="spell-def" type="spell_def" substitutionGroup="spell_base" />
+
+	<xs:complexType name="spell_top">
+		<xs:all>
+			<xs:element ref="spell-def" />
+		</xs:all>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+
+	<xs:complexType name="item" abstract="true">
+	</xs:complexType>
+	<xs:element name="item" type="item" abstract="true" />
+
+	<xs:complexType name="itemref">
+		<xs:complexContent>
+			<xs:extension base="item">
+				<xs:attribute name="reference" type="xs:string" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="itemref" type="itemref" substitutionGroup="item" />
+
+	<xs:complexType name="itemdef">
+		<xs:complexContent>
+			<xs:extension base="item">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="consumable" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="reference" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="itemdef" type="itemdef" substitutionGroup="item" />
+
+	<xs:complexType name="loot-template" abstract="true">
+	</xs:complexType>
+	<xs:element name="loot-template" type="loot-template" abstract="true"/>
+
+	<xs:complexType name="simple-loot-template">
+		<xs:complexContent>
+			<xs:extension base="loot-template">
+				<xs:all>
+					<xs:element ref="item" />
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="simple-loot-template" type="simple-loot-template" substitutionGroup="loot-template" />
+
+
+	<xs:element name="content">
+		<xs:complexType>
+        <xs:sequence maxOccurs="unbounded">
+			  <xs:choice>
+				  <xs:element name="effect" type="effect_top" />
+				  <xs:element name="spell" type="spell_top" />
+			  </xs:choice>
+        </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+

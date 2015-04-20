@@ -1,0 +1,111 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SMRT" class="ch.qos.logback.core.FileAppender">
+		<File>smrt.log</File>
+		<Append>false</Append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LUALOG" class="ch.qos.logback.core.FileAppender">
+		<File>lua.log</File>
+		<Append>false</Append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="SYSINFO" class="ch.qos.logback.core.FileAppender">
+		<File>system.info</File>
+		<Append>false</Append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="org.apache.cxf">
+		<level value="error"/>
+	</logger>
+
+	<logger name="ch.qos.logback">
+		<level value="error"/>
+	</logger>
+
+	<logger name="se.spaced.messages.protocol" additivity="false">
+		<appender-ref ref="SMRT"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.client.net.smrt" additivity="false">
+		<appender-ref ref="SMRT"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.client.launcher.modules.smrt" additivity="false">
+		<appender-ref ref="SMRT"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.client.ardor">
+		<level value="warn"/>
+	</logger>
+
+	<logger name="LUA" additivity="false">
+		<appender-ref ref="LUALOG"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.fearlessgames.common.lua.LuaRuntimeErrorLogger" additivity="false">
+		<appender-ref ref="LUALOG"/>
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.client.resources">
+		<level value="debug"/>
+	</logger>
+
+	<logger name="se.spaced.client.resources.dae">
+		<level value="error"/>
+	</logger>
+
+	<logger name="org.apache.mina">
+		<level value="error"/>
+	</logger>
+
+	<logger name="se.spaced.client.net.messagelisteners.SceneLoadListener">
+		<level value="info"/>
+	</logger>
+
+	<logger name="com.ardor3d.extension.model.collada.jdom">
+		<level value="error"/>
+	</logger>
+
+	<logger name="SystemInfo">
+		<appender-ref ref="SYSINFO"/>
+		<level value="info"/>
+	</logger>
+
+	<logger name="se.spaced.client.view">
+		<level value="info"/>
+	</logger>
+
+	<logger name="se.spaced.client.net.messagelisteners.ServerItemMessagesImpl">
+		<level value="info"/>
+	</logger>
+
+	<logger name="se.spaced.client.model.item.ClientInventory">
+		<level value="info"/>
+	</logger>
+
+	<root level="warn">
+		<appender-ref ref="STDOUT"/>
+	</root>
+
+</configuration>

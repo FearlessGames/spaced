@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2009-12-10T23:55:34Z</created>
+    <modified>2009-12-10T23:55:34Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Map__1-image" name="Map__1">
+      <init_from>civ1024.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="_01___Default" name="_01___Default">
+      <instance_effect url="#_01___Default-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="_01___Default-fx" name="_01___Default">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.588235  0.588235 0.588235 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Map__1-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.000000  0.000000 0.000000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">2.000000</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <color sid="transparent">1.000000  1.000000 1.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Box02-lib" name="Box02Mesh">
+      <mesh>
+        <source id="Box02-lib-Position">
+          <float_array id="Box02-lib-Position-array" count="72">
+-0.578466 -0.029283 0.012987
+0.563688 -0.024598 0.007787
+-0.722332 0.053033 -0.041838
+0.707130 0.058897 -0.048346
+-0.581441 -0.029048 0.450112
+0.567701 -0.024914 0.450874
+-0.726056 0.053327 0.505246
+0.712153 0.058501 0.506199
+-1.293478 0.027095 3.916342
+-0.209469 0.036365 4.242944
+-1.449087 0.110337 3.924961
+-0.092395 0.121938 4.333720
+-1.136581 0.014724 3.502456
+-0.053132 0.024038 3.829629
+-1.252723 0.094853 3.406962
+0.103269 0.106510 3.816435
+-0.403074 0.330043 3.924297
+-5.509224 -2.840539 8.974970
+5.637579 -5.011116 3.046174
+3.267938 -5.146782 10.440784
+0.232039 0.281406 0.275126
+-2.893082 -3.040888 -6.056604
+5.683688 -5.014647 2.781241
+5.720998 -5.335723 -4.738286
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-Position-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box02-lib-Normal0">
+          <float_array id="Box02-lib-Normal0-array" count="216">
+-0.001502 -0.556152 -0.831079
+-0.001502 -0.556152 -0.831079
+-0.001502 -0.556155 -0.831077
+-0.001502 -0.556155 -0.831077
+-0.001502 -0.556155 -0.831077
+-0.001502 -0.556152 -0.831079
+0.001443 -0.554463 0.832207
+0.001443 -0.554464 0.832206
+0.001443 -0.554464 0.832207
+0.001443 -0.554464 0.832207
+0.001443 -0.554463 0.832207
+0.001443 -0.554463 0.832207
+0.003714 -0.999993 0.000255
+0.004099 -0.999991 -0.000751
+0.003982 -0.999992 -0.000445
+0.003982 -0.999992 -0.000445
+0.003597 -0.999993 0.000561
+0.003714 -0.999993 0.000255
+0.501544 -0.865117 -0.005161
+0.501544 -0.865117 -0.005161
+0.501544 -0.865117 -0.005161
+0.501544 -0.865117 -0.005161
+0.501543 -0.865117 -0.005161
+0.501544 -0.865117 -0.005161
+-0.495786 -0.868440 -0.002909
+-0.495786 -0.868440 -0.002909
+-0.495786 -0.868440 -0.002909
+-0.495786 -0.868440 -0.002909
+-0.495786 -0.868440 -0.002909
+-0.495786 -0.868440 -0.002909
+-0.239975 -0.532640 0.811608
+-0.239976 -0.532638 0.811609
+-0.239975 -0.532640 0.811607
+-0.239976 -0.532638 0.811609
+-0.239975 -0.532640 0.811608
+-0.239976 -0.532638 0.811609
+0.240086 -0.579842 -0.778551
+0.240086 -0.579845 -0.778549
+0.240086 -0.579846 -0.778549
+0.240086 -0.579845 -0.778549
+0.240086 -0.579842 -0.778551
+0.240086 -0.579842 -0.778551
+-0.000386 -0.999558 0.029715
+-0.000389 -0.999559 0.029680
+-0.000390 -0.999560 0.029664
+-0.000389 -0.999559 0.029680
+-0.000386 -0.999558 0.029715
+-0.000385 -0.999558 0.029731
+0.470059 -0.858875 0.203417
+0.470059 -0.858875 0.203417
+0.470059 -0.858875 0.203417
+0.470059 -0.858875 0.203417
+0.470059 -0.858875 0.203417
+0.470059 -0.858875 0.203417
+-0.472707 -0.867790 -0.153256
+-0.472708 -0.867790 -0.153257
+-0.472707 -0.867791 -0.153256
+-0.472708 -0.867790 -0.153257
+-0.472707 -0.867790 -0.153256
+-0.472708 -0.867790 -0.153257
+0.663515 0.713303 0.225714
+0.379297 0.802415 0.460721
+0.425091 0.796512 0.429962
+0.106729 0.789958 0.603801
+0.425091 0.796512 0.429962
+0.379297 0.802415 0.460721
+0.702871 0.710810 -0.026863
+0.538825 0.789298 -0.294410
+0.505008 0.794496 -0.337258
+0.292455 0.779804 -0.553513
+0.505008 0.794496 -0.337258
+0.538825 0.789298 -0.294410
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-Normal0-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box02-lib-UV0">
+          <float_array id="Box02-lib-UV0-array" count="64">
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.509703 0.861268
+0.518122 0.861268
+0.509703 0.869245
+0.518122 0.869245
+0.521292 0.859412
+0.521609 0.829278
+0.554000 0.859685
+0.554317 0.829550
+0.521292 0.859412
+0.521609 0.829278
+0.554000 0.859685
+0.554317 0.829550
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-UV0-array" count="32" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box02-lib-Vertex">
+          <input semantic="POSITION" source="#Box02-lib-Position"/>
+        </vertices>
+        <polygons material="_01___Default" count="24">
+          <input semantic="VERTEX" offset="0" source="#Box02-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Box02-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Box02-lib-UV0"/>
+          <p>0 0 9 2 1 11 3 2 10</p>
+          <p>3 3 10 1 4 8 0 5 9</p>
+          <p>4 6 8 5 7 9 7 8 11</p>
+          <p>7 9 11 6 10 10 4 11 8</p>
+          <p>0 12 4 1 13 5 5 14 7</p>
+          <p>5 15 7 4 16 6 0 17 4</p>
+          <p>1 18 0 3 19 1 7 20 3</p>
+          <p>7 21 3 5 22 2 1 23 0</p>
+          <p>2 24 0 0 25 1 4 26 3</p>
+          <p>4 27 3 6 28 2 2 29 0</p>
+          <p>8 30 21 11 31 22 10 32 23</p>
+          <p>11 33 22 8 34 21 9 35 20</p>
+          <p>12 36 20 15 37 23 13 38 21</p>
+          <p>15 39 23 12 40 20 14 41 22</p>
+          <p>8 42 16 13 43 19 9 44 17</p>
+          <p>13 45 19 8 46 16 12 47 18</p>
+          <p>9 48 12 15 49 15 11 50 13</p>
+          <p>15 51 15 9 52 12 13 53 14</p>
+          <p>10 54 12 12 55 15 8 56 13</p>
+          <p>12 57 15 10 58 12 14 59 14</p>
+          <p>18 60 26 16 61 24 19 62 27</p>
+          <p>17 63 25 19 64 27 16 65 24</p>
+          <p>22 66 30 23 67 31 20 68 28</p>
+          <p>21 69 29 20 70 28 23 71 31</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Box02" name="Box02">
+        <translate sid="translate">-0.032445 0.072185 -0.040368</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateZ">0 0 1 -90.000009</rotate>
+        <scale sid="scale">0.901250 1.000000 1.000000</scale>
+        <node id="Box02-Pivot" name="Box02-Pivot">
+          <translate>1.982896 2.044414 6.446616</translate>
+          <rotate>0.991355 0.050718 0.121012 90.554619</rotate>
+          <instance_geometry url="#Box02-lib">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_01___Default" target="#_01___Default"/>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

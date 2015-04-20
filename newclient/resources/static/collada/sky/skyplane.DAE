@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2010-01-16T16:47:47Z</created>
+    <modified>2010-01-16T16:47:47Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_geometries>
+    <geometry id="Box02-lib" name="Box02Mesh">
+      <mesh>
+        <source id="Box02-lib-Position">
+          <float_array id="Box02-lib-Position-array" count="54">
+-3674.571777 4611.892578 -47.270107
+4460.336426 4611.892578 -48.384747
+-3674.571777 -4659.066406 -47.983147
+4460.336426 -4659.066406 -49.011955
+-3674.571777 4611.892578 -65.768402
+4460.336426 4611.892578 -64.653793
+-3674.571777 -4659.066406 -65.057426
+4460.336426 -4659.066406 -64.028595
+-3674.572021 -23.586914 37.454742
+392.882202 -4659.066406 -28.671501
+392.882202 -23.586914 798.534180
+4460.336426 -23.586914 26.129791
+392.882202 4611.892578 -26.347366
+-3674.572021 -23.586914 -150.494293
+392.882202 -23.586914 -363.074036
+392.882202 -4659.066406 -84.369514
+4460.336426 -23.586914 -139.169342
+392.882202 4611.892578 -86.690659
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-Position-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box02-lib-Normal0">
+          <float_array id="Box02-lib-Normal0-array" count="144">
+-0.143230 -0.042946 0.988757
+-0.041227 -0.133360 0.990210
+0.001007 0.000076 1.000000
+0.145426 0.043276 0.988422
+0.041978 0.132379 0.990310
+0.001007 0.000076 1.000000
+-0.041327 -0.011357 -0.999081
+0.001052 0.000095 -0.999999
+-0.010751 -0.048762 -0.998753
+0.043618 0.011714 -0.998980
+0.001052 0.000095 -0.999999
+0.011499 0.047762 -0.998793
+-0.087732 0.103789 0.990722
+-0.143230 -0.042946 0.988757
+0.001007 0.000076 1.000000
+-0.143230 -0.042946 0.988757
+-0.004747 -0.018428 0.999819
+-0.041227 -0.133360 0.990210
+0.001007 0.000076 1.000000
+-0.041227 -0.133360 0.990210
+0.088922 -0.103111 0.990687
+0.088922 -0.103111 0.990687
+0.145426 0.043276 0.988422
+0.001007 0.000076 1.000000
+0.145426 0.043276 0.988422
+0.005417 0.016073 0.999856
+0.041978 0.132379 0.990310
+0.001007 0.000076 1.000000
+0.041978 0.132379 0.990310
+-0.087732 0.103789 0.990722
+-0.004747 -0.018428 -0.999819
+-0.041327 -0.011357 -0.999081
+-0.010751 -0.048762 -0.998753
+-0.041327 -0.011357 -0.999081
+-0.026713 0.040621 -0.998818
+0.001052 0.000095 -0.999999
+-0.010751 -0.048762 -0.998753
+0.001052 0.000095 -0.999999
+0.027911 -0.039944 -0.998812
+0.005417 0.016073 -0.999856
+0.043618 0.011714 -0.998980
+0.011499 0.047762 -0.998793
+0.043618 0.011714 -0.998980
+0.027911 -0.039944 -0.998812
+0.001052 0.000095 -0.999999
+0.011499 0.047762 -0.998793
+0.001052 0.000095 -0.999999
+-0.026713 0.040621 -0.998818
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-Normal0-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box02-lib-UV0">
+          <float_array id="Box02-lib-UV0-array" count="36">
+1.002703 0.998228
+0.002731 1.000386
+1.001036 0.001497
+0.001063 0.003655
+1.002703 0.998228
+0.002731 1.000386
+1.001036 0.001497
+0.001063 0.003655
+0.502717 0.999307
+1.001870 0.499862
+0.501883 0.500942
+0.501050 0.002576
+0.001897 0.502021
+0.502717 0.999307
+0.501883 0.500942
+1.001870 0.499862
+0.501050 0.002576
+0.001897 0.502021
+</float_array>
+          <technique_common>
+            <accessor source="#Box02-lib-UV0-array" count="18" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box02-lib-Vertex">
+          <input semantic="POSITION" source="#Box02-lib-Position"/>
+        </vertices>
+        <polygons count="16">
+          <input semantic="VERTEX" offset="0" source="#Box02-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Box02-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Box02-lib-UV0"/>
+          <p>8 0 8 9 1 9 10 2 10</p>
+          <p>11 3 11 12 4 12 10 5 10</p>
+          <p>13 6 13 14 7 14 15 8 15</p>
+          <p>16 9 16 14 10 14 17 11 17</p>
+          <p>0 12 1 8 13 8 10 14 10</p>
+          <p>8 15 8 2 16 0 9 17 9</p>
+          <p>10 18 10 9 19 9 3 20 2</p>
+          <p>3 21 2 11 22 11 10 23 10</p>
+          <p>11 24 11 1 25 3 12 26 12</p>
+          <p>10 27 10 12 28 12 0 29 1</p>
+          <p>6 30 4 13 31 13 15 32 15</p>
+          <p>13 33 13 4 34 5 14 35 14</p>
+          <p>15 36 15 14 37 14 7 38 6</p>
+          <p>5 39 7 16 40 16 17 41 17</p>
+          <p>16 42 16 7 43 6 14 44 14</p>
+          <p>17 45 17 14 46 14 4 47 5</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Box02" name="Box02">
+        <translate sid="translate">-10.729935 196.023682 4.341431</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <instance_geometry url="#Box02-lib"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

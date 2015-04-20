@@ -1,0 +1,133 @@
+require("ui/uisetup")
+require("ui/cutscene/cutscene")
+require("ui/components/filledpanel")
+require("ui/variablestore")
+require("ui/fonts")
+
+
+
+local ADDON_NAME = "intro"
+local savedVars = VariableStore:Get(ADDON_NAME)
+if(not savedVars["played"]) then
+
+	local winSizeWidth, winSizeHeight = uiParent:GetSize()
+	local background = FilledPanel:New(uiParent, winSizeWidth, winSizeHeight, "gui/frame/flatwhite.png")
+	background:SetColor(0.0, 0.0, 0.0, 1)
+
+	local textFrame = FilledPanel:New(background, 800, 50, "gui/frame/flatwhite.png")
+	textFrame:SetColor(0.9, 0.9, 0.9, 0)
+	textFrame:SetPoint("BOTTOMCENTER", background, "BOTTOMCENTER", 0, 0)
+
+	local script = function(cutscene)
+
+		local camp = cutscene:Image("cutscenes/intro/refugee/camp.png")
+		local truck = cutscene:Image("cutscenes/intro/refugee/truck.png")
+		local line = cutscene:Image("cutscenes/intro/refugee/line.png")
+		local soldiers = cutscene:Image("cutscenes/intro/refugee/soldiers.png")
+		local raid = cutscene:Image("cutscenes/intro/refugee/houseraid.png")
+		local crates = cutscene:Image("cutscenes/intro/refugee/crates.png")
+		local ship = cutscene:Image("cutscenes/intro/refugee/ship.png")
+
+		local text = cutscene:Text("The soldiers came early that morning...")
+		text:SetFont(GetCutsceneFont())
+		local text2 = cutscene:Text("...before anyone was awake")
+		text2:SetFont(GetCutsceneFont())
+
+		local function hideTexts()
+			text:Hide()
+			text2:Hide()
+		end
+
+	--	while true do
+			text:SetPoint("TOPCENTER", textFrame, "TOPCENTER", 0, 0)
+			text2:SetPoint("BOTTOMCENTER", textFrame, "BOTTOMCENTER", 0, 0)
+			hideTexts()
+			truck:SetAlpha(0)
+			line:SetAlpha(0)
+			camp:SetAlpha(0)
+			soldiers:SetAlpha(0)
+			raid:SetAlpha(0)
+			crates:SetAlpha(0)
+			ship:SetAlpha(0)
+			cutscene:Sleep(1000)
+			textFrame:SetColor(0.9, 0.9, 0.9, 1)
+			cutscene:SetPosition(truck, 60, -30)
+			text:SetText("The soldiers came early that morning...")
+			text:Show()
+			cutscene:Fade(soldiers, 0, 0.6, 3500)
+			cutscene:Zoom(soldiers, 1, 4, 5000)
+			cutscene:Sleep(3500)
+			cutscene:Fade(soldiers, soldiers:GetAlpha(), 0, 1500)
+			text2:SetText("...before anyone was awake")
+			text2:Show()
+			cutscene:Sleep(3000)
+			hideTexts()
+			cutscene:SetPosition(raid, winSizeWidth, -2*winSizeHeight /3)
+			cutscene:Fade(raid, 0, 0.6, 4500)
+
+			cutscene:LinearMove(raid, -500, -winSizeHeight / 5, 9000)
+			cutscene:Sleep(1000)
+			text:SetText("They went from house to house looking for rebels...")
+			text:Show()
+			cutscene:Sleep(2500)
+			text2:SetText("...and shot anyone who tried to run")
+			text2:Show()
+			cutscene:Fade(raid, 0.6, 0, 4500)
+			cutscene:Sleep(6500)
+			hideTexts()
+			cutscene:Sleep(2000)
+
+			text:SetText("I managed to escape on a truck with a few other survivors...")
+			text:Show()
+			cutscene:Fade(truck, 0, 0.4, 1600)
+			cutscene:Sleep(3000)
+			cutscene:SetPosition(line, 300, -300)
+			cutscene:Fade(line, 0, 0.7, 1500)
+			cutscene:Sleep(3000)
+			text2:SetText("...and ended up in a camp near mount Sychant")
+			text2:Show()
+			cutscene:Fade(camp, 0, 1, 1500)
+			cutscene:Fade(truck, truck:GetAlpha(), 0, 1500)
+			cutscene:Fade(line, line:GetAlpha(), 0, 1500)
+			cutscene:Sleep(3000)
+			hideTexts()
+			cutscene:Fade(camp, 1, 0, 1000)
+			cutscene:Sleep(3000)
+
+			text:SetText("I knew that I had no future there and was desperate to get away...")
+			text:Show()
+			cutscene:Sleep(1700)
+			cutscene:SetPosition(crates, 500, -100)
+			cutscene:Fade(crates, 0, 0.4, 1500)
+			cutscene:SetPosition(ship, 50, -200)
+
+			text2:SetText("so I hid in a crate that was being loaded on to a cargo ship")
+			text2:Show()
+			cutscene:Sleep(2000)
+			cutscene:Fade(ship, 0, 0.6, 2000)
+			cutscene:Fade(crates, 0.4, 0, 1000)
+			cutscene:Sleep(3000)
+
+			cutscene:Fade(ship, 0.6, 0, 2000)
+			hideTexts()
+			cutscene:Sleep(3500)
+			text:SetText("I had no idea that the ship was bound for the small village Endiku on Naradok")
+			text:Show()
+			cutscene:Sleep(3000)
+			text2:SetText("But I'm here now and from here on, it's up to me...")
+			text2:Show()
+			cutscene:Sleep(3000)
+			hideTexts()
+			cutscene:Sleep(2000)
+	--	end
+	end
+
+	cutscene = CutsceneFrame:New(background, script)
+	cutscene:AddListener("OnEnd", function()
+		background:Hide()
+		savedVars["played"] = true
+		VariableStore:Save(ADDON_NAME)
+	end)
+	cutscene:Start()
+end
+

@@ -1,0 +1,13 @@
+package se.spaced.client.ardor.ui.events;
+
+public enum CombatGuiEvents {
+	UNIT_COMBAT,
+	PLAYER_ENTERED_COMBAT,
+	PLAYER_LEFT_COMBAT,
+	PLAYER_DIED,
+	UNIT_DIED,
+	ENTITY_GAINED_AURA,
+	ENTITY_LOST_AURA,
+	COOLDOWN_CONSUMED,
+	UNIT_CHANGED_TARGET,
+}

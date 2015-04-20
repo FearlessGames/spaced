@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2010-01-02T17:51:02Z</created>
+    <modified>2010-01-02T17:51:02Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Map__3-image" name="Map__3">
+      <init_from>file://D:\Projects\Spaced\sghub\newclient\resources\textures\props\interiors\interior_equipment.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="interiorEQ" name="interiorEQ">
+      <instance_effect url="#interiorEQ-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="interiorEQ-fx" name="interiorEQ">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.588235  0.588235 0.588235 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Map__3-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.000000  0.000000 0.000000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">2.000000</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <color sid="transparent">1.000000  1.000000 1.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Plane01-lib" name="Plane01Mesh">
+      <mesh>
+        <source id="Plane01-lib-Position">
+          <float_array id="Plane01-lib-Position-array" count="12">
+-2.804628 -1.344910 0.000000
+2.804628 -1.344910 0.000000
+-2.804628 1.344910 0.000000
+2.804628 1.344910 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-Position-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane01-lib-Normal0">
+          <float_array id="Plane01-lib-Normal0-array" count="18">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-Normal0-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane01-lib-UV0">
+          <float_array id="Plane01-lib-UV0-array" count="8">
+0.000146 0.752323
+0.248540 0.752323
+0.000146 0.999854
+0.248540 0.999854
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-UV0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane01-lib-Vertex">
+          <input semantic="POSITION" source="#Plane01-lib-Position"/>
+        </vertices>
+        <polygons material="interiorEQ" count="2">
+          <input semantic="VERTEX" offset="0" source="#Plane01-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Plane01-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Plane01-lib-UV0"/>
+          <p>2 0 2 0 1 0 3 2 3</p>
+          <p>1 3 1 3 4 3 0 5 0</p>
+        </polygons>
+      </mesh>
+    </geometry>
+    <geometry id="Plane02-lib" name="Plane02Mesh">
+      <mesh>
+        <source id="Plane02-lib-Position">
+          <float_array id="Plane02-lib-Position-array" count="12">
+-1.003183 -0.562479 0.000000
+1.003183 -0.562479 0.000000
+-1.003183 0.562479 0.000000
+1.003183 0.562479 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane02-lib-Position-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane02-lib-Normal0">
+          <float_array id="Plane02-lib-Normal0-array" count="18">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane02-lib-Normal0-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane02-lib-UV0">
+          <float_array id="Plane02-lib-UV0-array" count="8">
+0.002499 0.314435
+0.300656 0.314435
+0.002499 0.518519
+0.300656 0.518519
+</float_array>
+          <technique_common>
+            <accessor source="#Plane02-lib-UV0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane02-lib-Vertex">
+          <input semantic="POSITION" source="#Plane02-lib-Position"/>
+        </vertices>
+        <polygons material="interiorEQ" count="2">
+          <input semantic="VERTEX" offset="0" source="#Plane02-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Plane02-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Plane02-lib-UV0"/>
+          <p>2 0 2 0 1 0 3 2 3</p>
+          <p>1 3 1 3 4 3 0 5 0</p>
+        </polygons>
+      </mesh>
+    </geometry>
+    <geometry id="Plane05-lib" name="Plane05Mesh">
+      <mesh>
+        <source id="Plane05-lib-Position">
+          <float_array id="Plane05-lib-Position-array" count="12">
+-1.003183 -0.562479 0.000000
+1.003183 -0.562479 0.000000
+-1.003183 0.562479 0.000000
+1.003183 0.562479 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane05-lib-Position-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane05-lib-Normal0">
+          <float_array id="Plane05-lib-Normal0-array" count="18">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane05-lib-Normal0-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane05-lib-UV0">
+          <float_array id="Plane05-lib-UV0-array" count="8">
+0.552793 0.747641
+0.100722 0.747641
+0.552793 0.518833
+0.100722 0.518833
+</float_array>
+          <technique_common>
+            <accessor source="#Plane05-lib-UV0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane05-lib-Vertex">
+          <input semantic="POSITION" source="#Plane05-lib-Position"/>
+        </vertices>
+        <polygons material="interiorEQ" count="2">
+          <input semantic="VERTEX" offset="0" source="#Plane05-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Plane05-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Plane05-lib-UV0"/>
+          <p>2 0 2 0 1 0 3 2 3</p>
+          <p>1 3 1 3 4 3 0 5 0</p>
+        </polygons>
+      </mesh>
+    </geometry>
+    <geometry id="Plane07-lib" name="Plane07Mesh">
+      <mesh>
+        <source id="Plane07-lib-Position">
+          <float_array id="Plane07-lib-Position-array" count="12">
+-1.003183 -0.562479 0.000000
+1.003183 -0.562479 0.000000
+-1.003183 0.562479 0.000000
+1.003183 0.562479 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane07-lib-Position-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane07-lib-Normal0">
+          <float_array id="Plane07-lib-Normal0-array" count="18">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plane07-lib-Normal0-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane07-lib-UV0">
+          <float_array id="Plane07-lib-UV0-array" count="8">
+0.248140 0.911375
+-0.000851 0.911375
+0.248140 0.783167
+-0.000851 0.783167
+</float_array>
+          <technique_common>
+            <accessor source="#Plane07-lib-UV0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane07-lib-Vertex">
+          <input semantic="POSITION" source="#Plane07-lib-Position"/>
+        </vertices>
+        <polygons material="interiorEQ" count="2">
+          <input semantic="VERTEX" offset="0" source="#Plane07-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Plane07-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Plane07-lib-UV0"/>
+          <p>2 0 2 0 1 0 3 2 3</p>
+          <p>1 3 1 3 4 3 0 5 0</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Plane01" name="Plane01">
+        <translate sid="translate">-0.418944 12.606436 0.815372</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateZ">0 0 1 179.999984</rotate>
+        <rotate sid="rotateX">1 0 0 135.000006</rotate>
+        <scale sid="scale">0.848988 1.551475 1.551475</scale>
+        <instance_geometry url="#Plane01-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="interiorEQ" target="#interiorEQ"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Plane02" name="Plane02">
+        <translate sid="translate">2.197781 3.043190 -3.486433</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateX">1 0 0 -79.999990</rotate>
+        <instance_geometry url="#Plane02-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="interiorEQ" target="#interiorEQ"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Plane05" name="Plane05">
+        <translate sid="translate">-2.944381 3.043190 -2.772373</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateX">1 0 0 -79.999990</rotate>
+        <instance_geometry url="#Plane05-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="interiorEQ" target="#interiorEQ"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Plane07" name="Plane07">
+        <translate sid="translate">-5.609645 3.043190 -2.839950</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateX">1 0 0 -79.999990</rotate>
+        <instance_geometry url="#Plane07-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="interiorEQ" target="#interiorEQ"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

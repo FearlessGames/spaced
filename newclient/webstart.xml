@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<project name="client-webstart" default="build-webstart" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<property name="deploy.dir" location="${baseDir}/deploy"/>
+	<property name="build.dir" value="${baseDir}/build"/>
+
+	<property name="webstart.build.dir" value="webstart-build"/>
+	<property name="spaced.jar.name" value="spaced.jar"/>
+
+
+	<property name="libs.dir" value="${webstart.build.dir}"/>
+	<target name="copy-libs">
+		<mkdir dir="${libs.dir}"/>
+		<copy todir="${libs.dir}" flatten="true">
+			<fileset dir="${baseDir}/libs">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="../Fearless-common/libs">
+				<include name="**/*.jar"/>
+				<exclude name="**/*testing**/*"/>
+			</fileset>
+
+			<fileset dir="${baseDir}/../shared/libs">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../shared/build/">
+				<include name="spaced-shared.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../messages/build">
+				<include name="spaced-shared-messages.jar"/>
+				<include name="spaced-client-messages.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../ArdorGui/build">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../ArdorTech/build">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../smrt-release">
+				<include name="**/*.jar"/>
+				<exclude name="**/smrt-stubs.jar"/>
+			</fileset>
+			<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+				<include name="**/*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<path id="dist.classpath">
+		<fileset dir="${libs.dir}" includes="**/*.jar, **/*.zip"/>
+	</path>
+	<target name="generate-key">
+		<genkey keystore="fearless-games.keystore" alias="fearless-games" storepass="sr-mmo-dev"
+				  dname="CN=Fearless,L=Stockholm,O=Fearless Games,C=SE">
+		</genkey>
+	</target>
+
+	<property name="webstart.signed.dir" value="${baseDir}/webstart-signed"/>
+	<target name="build-webstart" depends="copy-libs">
+		<mkdir dir="${webstart.build.dir}"/>
+
+		<manifestclasspath taskname="setup-manifest" property="dist.manifest.classpath"
+								 jarfile="${webstart.build.dir}/${spaced.jar.name}">
+			<classpath refid="dist.classpath"/>
+		</manifestclasspath>
+		<jar destfile="${webstart.build.dir}/${spaced.jar.name}" manifest="${deploy.dir}/MANIFEST.MF">
+			<fileset dir="${build.dir}/main">
+				<include name="**/*"/>
+			</fileset>
+			<fileset dir="resources">
+				<include name="**"/>
+			</fileset>
+			<manifest>
+				<attribute name="Class-Path" value="${dist.manifest.classpath}"/>
+			</manifest>
+		</jar>
+		<jar destfile="${webstart.build.dir}/windows_natives.jar">
+			<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win+linux">
+				<include name="*.dll"/>
+			</fileset>
+		</jar>
+		<jar destfile="${webstart.build.dir}/macosx_natives.jar">
+			<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/macosx">
+				<include name="*.jnilib"/>
+				<include name="*.dylib"/>
+			</fileset>
+		</jar>
+		<jar destfile="${webstart.build.dir}/linux_natives.jar">
+			<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win+linux">
+				<include name="*.so"/>
+			</fileset>
+		</jar>
+		<jar destfile="${webstart.build.dir}/solaris_natives.jar">
+			<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/solaris">
+				<include name="*.so"/>
+			</fileset>
+		</jar>
+
+		<mkdir dir="${webstart.signed.dir}"/>
+		<signjar destDir="${webstart.signed.dir}" alias="fearless-games" keystore="fearless-games.keystore"
+					storepass="sr-mmo-dev">
+			<path>
+				<fileset dir="${webstart.build.dir}" includes="**/*.jar"/>
+			</path>
+			<flattenmapper/>
+		</signjar>
+	</target>
+</project>	

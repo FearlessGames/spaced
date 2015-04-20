@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+"
+      codebase="http://www.fearlessgames.se/spaced/webstart"
+      href="spaced.jnlp">
+
+  <information>
+    <title>Spaced</title>
+    <vendor>Fearless Games</vendor>
+    <homepage href="http://www.fearlessgames.se"/>
+    <description kind="short">Spaced is a massively multiplayer game set in space developed by the independent game company Fearless Games</description>
+    <description kind="tooltip">Spaced - </description>
+    <icon href="icon.png"/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <jar href="spaced.jar"/>
+    <jar href="ardor3d-animation.jar" />
+    <jar href="ardor3d-awt.jar" />
+    <jar href="ardor3d-collada.jar" />
+    <jar href="ardor3d-core.jar" />
+    <jar href="ardor3d-effects.jar" />
+    <jar href="ardor3d-lwjgl.jar" />
+    <jar href="ardor3d-ui.jar" />
+    <jar href="gauva" />
+    <jar href="jaxen.jar" />
+    <jar href="jdom.jar" />
+    <jar href="lwjgl.jar" />
+    <jar href="saxpath.jar" />
+  </resources>
+
+  <resources os="Windows">
+  	<j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <nativelib href="windows_natives.jar"/>
+  </resources>
+  <resources os="Mac OS">
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <nativelib href="macosx_natives.jar"/>
+  </resources>
+  <resources os="SunOS">
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <nativelib href="solaris_natives.jar"/>
+  </resources>
+  <resources os="Linux">
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <nativelib href="linux_natives.jar"/>
+  </resources>
+  <application-desc main-class="se.spaced.client.launcher.ArdorRealGame"/>
+</jnlp>

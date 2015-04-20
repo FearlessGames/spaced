@@ -1,0 +1,18 @@
+<material>
+  <diffuse r="0.6" g="0.6" b="0.6" a="0.1"/>
+  <specular r="0.0" g="0.0" b="0.0" a="0.0"/>
+  <ambient r="0.5" g="0.5" b="0.5" a="0.2"/>
+  <emissive r="0.4" g="0.4" b="0.4" a="0.9"/>
+  <shininess>0.0</shininess>
+  <cull>None</cull>
+  <blending>
+    <sourceFunction>SourceAlpha</sourceFunction>
+    <destinationFunction>One</destinationFunction>
+    <alphaTesting>false</alphaTesting>
+    <alphaTestReference>0.0</alphaTestReference>
+  </blending>
+  <depthWrite>false</depthWrite>
+  <depthRead>true</depthRead>  
+ 
+  <renderBucket>Opaque</renderBucket>
+</material>

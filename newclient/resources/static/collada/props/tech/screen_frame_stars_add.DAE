@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2012-04-01T15:42:09Z</created>
+    <modified>2012-04-01T15:42:09Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Map__4-image" name="Map__4">
+      <init_from>file://C:\projects\spaced\newclient\resources\textures\props\vehicles\Atlas.png</init_from>
+    </image>
+    <image id="Map__5-image" name="Map__5">
+      <init_from>file://C:\projects\spaced\newclient\resources\textures\props\vehicles\Atlas.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Glass" name="Glass">
+      <instance_effect url="#Glass-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Glass-fx" name="Glass">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.588000  0.588000 0.588000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Map__4-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">1.818000  1.818000 1.818000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">7.999999</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <texture texture="Map__5-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Object082-lib" name="Object082Mesh">
+      <mesh>
+        <source id="Object082-lib-Position">
+          <float_array id="Object082-lib-Position-array" count="18">
+-0.118852 -0.454254 1.658304
+-1.341321 -0.454254 1.658304
+-2.563789 -0.454254 1.658304
+-0.118852 -0.452601 3.534172
+-1.341321 -0.452601 3.534172
+-2.563789 -0.452601 3.534172
+</float_array>
+          <technique_common>
+            <accessor source="#Object082-lib-Position-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Object082-lib-Normal0">
+          <float_array id="Object082-lib-Normal0-array" count="36">
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+0.000000 -1.000000 0.000881
+</float_array>
+          <technique_common>
+            <accessor source="#Object082-lib-Normal0-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Object082-lib-UV0">
+          <float_array id="Object082-lib-UV0-array" count="64">
+0.908815 1.558349
+0.898671 1.564121
+0.898671 1.607102
+0.908815 1.589325
+0.576646 1.523806
+0.534034 1.523806
+0.534034 1.625479
+0.576646 1.625479
+0.542507 1.632114
+0.511316 1.632114
+0.511316 1.676136
+0.542507 1.676136
+0.573699 1.632114
+0.573699 1.676136
+0.666817 1.568970
+0.731179 1.568970
+0.731882 1.504645
+0.666114 1.504645
+0.861136 1.564121
+0.861136 1.607102
+0.930189 1.589325
+0.930189 1.558349
+0.801284 1.499832
+0.801284 1.539510
+0.978848 1.539510
+0.978848 1.499832
+0.801223 1.539510
+0.801223 1.499586
+0.842423 1.560856
+0.804922 1.560856
+0.804922 1.607416
+0.842423 1.607416
+</float_array>
+          <technique_common>
+            <accessor source="#Object082-lib-UV0-array" count="32" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Object082-lib-Vertex">
+          <input semantic="POSITION" source="#Object082-lib-Position"/>
+        </vertices>
+        <polygons material="Glass" count="4">
+          <input semantic="VERTEX" offset="0" source="#Object082-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Object082-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Object082-lib-UV0"/>
+          <p>1 0 8 0 1 9 3 2 10</p>
+          <p>3 3 10 4 4 11 1 5 8</p>
+          <p>2 6 12 1 7 8 4 8 11</p>
+          <p>4 9 11 5 10 13 2 11 12</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Object082" name="Object082">
+        <matrix sid="matrix">1.000000 0.000000 0.000000 1.364645 0.000000 0.000000 1.000000 -1.122953 0.000000 -1.000000 0.000000 -0.398134 0.000000 0.000000 0.000000 1.000000</matrix>
+        <instance_geometry url="#Object082-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Glass" target="#Glass"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

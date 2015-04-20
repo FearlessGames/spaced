@@ -1,0 +1,2 @@
+require("lua/core/inheritance")
+

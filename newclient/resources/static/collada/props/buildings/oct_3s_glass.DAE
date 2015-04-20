@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2009-12-04T23:59:37Z</created>
+    <modified>2009-12-04T23:59:37Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Map__2-image" name="Map__2">
+      <init_from>civ1024.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Glass" name="Glass">
+      <instance_effect url="#Glass-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Glass-fx" name="Glass">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.588235  0.588235 0.588235 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Map__2-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.666000  0.666000 0.666000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">17.148375</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <color sid="transparent">1.000000  1.000000 1.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.620000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="building_wallWindowGlass05-lib" name="building_wallWindowGlass05Mesh">
+      <mesh>
+        <source id="building_wallWindowGlass05-lib-Position">
+          <float_array id="building_wallWindowGlass05-lib-Position-array" count="144">
+-8.500000 0.100000 0.000000
+8.500000 0.100000 0.000000
+-8.500000 0.100000 17.000000
+8.500000 0.100000 17.000000
+9.953374 3.013487 -0.000002
+9.953374 37.013481 -0.000002
+9.953374 3.013487 17.000000
+9.953374 37.013481 17.000000
+-8.534044 3.077515 19.999922
+8.465954 37.077496 19.999922
+-8.534044 3.077515 36.999924
+8.465954 37.077496 36.999924
+9.956501 83.008255 -0.000027
+9.956531 117.008255 -0.000027
+9.956501 83.008255 16.999975
+9.956531 117.008255 16.999975
+8.469653 82.944717 20.000048
+-8.530316 116.944778 20.000048
+8.469653 82.944717 37.000050
+-8.530316 116.944778 37.000050
+8.500100 119.920082 -0.000002
+-8.499902 119.920135 -0.000002
+8.500100 119.920082 17.000000
+-8.499902 119.920135 17.000000
+-31.468010 116.946503 0.000099
+-48.468037 82.946556 0.000099
+-31.468010 116.946503 17.000101
+-48.468037 82.946556 17.000101
+-31.500797 79.919807 19.999952
+-48.500797 79.919838 19.999952
+-31.500797 79.919807 36.999954
+-48.500797 79.919838 36.999954
+-29.953409 117.008507 20.000154
+-29.953428 83.008507 20.000154
+-29.953409 117.008507 37.000153
+-29.953428 83.008507 37.000153
+-48.468155 37.073948 -0.000132
+-31.468153 3.073959 -0.000132
+-48.468155 37.073948 16.999870
+-31.468153 3.073959 16.999870
+-29.957193 37.013912 19.999922
+-29.957184 3.013920 19.999922
+-29.957193 37.013912 36.999924
+-29.957184 3.013920 36.999924
+-48.500835 40.099983 20.000093
+-31.500835 40.099983 20.000093
+-48.500835 40.099983 37.000092
+-31.500835 40.099983 37.000092
+</float_array>
+          <technique_common>
+            <accessor source="#building_wallWindowGlass05-lib-Position-array" count="48" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="building_wallWindowGlass05-lib-Normal0">
+          <float_array id="building_wallWindowGlass05-lib-Normal0-array" count="216">
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+0.894427 -0.447214 0.000000
+0.894427 -0.447214 0.000000
+0.894427 -0.447214 0.000000
+0.894427 -0.447214 0.000000
+0.894427 -0.447214 0.000000
+0.894427 -0.447214 0.000000
+1.000000 -0.000001 0.000000
+1.000000 -0.000001 0.000000
+1.000000 -0.000001 0.000000
+1.000000 -0.000001 0.000000
+1.000000 -0.000001 0.000000
+1.000000 -0.000001 0.000000
+0.894428 0.447212 0.000000
+0.894428 0.447212 0.000000
+0.894428 0.447212 0.000000
+0.894428 0.447212 0.000000
+0.894428 0.447212 0.000000
+0.894428 0.447212 0.000000
+0.000003 1.000000 0.000000
+0.000003 1.000000 0.000000
+0.000003 1.000000 0.000000
+0.000003 1.000000 0.000000
+0.000003 1.000000 0.000000
+0.000003 1.000000 0.000000
+-0.894427 0.447215 0.000000
+-0.894427 0.447215 0.000000
+-0.894427 0.447215 0.000000
+-0.894427 0.447215 0.000000
+-0.894427 0.447215 0.000000
+-0.894427 0.447215 0.000000
+0.000002 1.000000 0.000000
+0.000002 1.000000 0.000000
+0.000002 1.000000 0.000000
+0.000002 1.000000 0.000000
+0.000002 1.000000 0.000000
+0.000002 1.000000 0.000000
+-1.000000 0.000001 0.000000
+-1.000000 0.000001 0.000000
+-1.000000 0.000001 0.000000
+-1.000000 0.000001 0.000000
+-1.000000 0.000001 0.000000
+-1.000000 0.000001 0.000000
+-0.894427 -0.447214 0.000000
+-0.894427 -0.447214 0.000000
+-0.894427 -0.447214 0.000000
+-0.894427 -0.447214 0.000000
+-0.894427 -0.447214 0.000000
+-0.894427 -0.447214 0.000000
+-1.000000 -0.000000 0.000000
+-1.000000 -0.000000 0.000000
+-1.000000 -0.000000 0.000000
+-1.000000 -0.000000 0.000000
+-1.000000 -0.000000 0.000000
+-1.000000 -0.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#building_wallWindowGlass05-lib-Normal0-array" count="72" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="building_wallWindowGlass05-lib-UV0">
+          <float_array id="building_wallWindowGlass05-lib-UV0-array" count="96">
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+0.293652 0.382129
+0.493640 0.382129
+0.493640 0.494630
+0.293652 0.494630
+</float_array>
+          <technique_common>
+            <accessor source="#building_wallWindowGlass05-lib-UV0-array" count="48" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="building_wallWindowGlass05-lib-Vertex">
+          <input semantic="POSITION" source="#building_wallWindowGlass05-lib-Position"/>
+        </vertices>
+        <polygons material="Glass" count="24">
+          <input semantic="VERTEX" offset="0" source="#building_wallWindowGlass05-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#building_wallWindowGlass05-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#building_wallWindowGlass05-lib-UV0"/>
+          <p>0 0 1 1 1 0 2 2 2</p>
+          <p>3 3 3 2 4 2 1 5 0</p>
+          <p>4 6 5 5 7 4 6 8 6</p>
+          <p>7 9 7 6 10 6 5 11 4</p>
+          <p>8 12 9 9 13 8 10 14 10</p>
+          <p>11 15 11 10 16 10 9 17 8</p>
+          <p>12 18 13 13 19 12 14 20 14</p>
+          <p>15 21 15 14 22 14 13 23 12</p>
+          <p>16 24 17 17 25 16 18 26 18</p>
+          <p>19 27 19 18 28 18 17 29 16</p>
+          <p>20 30 21 21 31 20 22 32 22</p>
+          <p>23 33 23 22 34 22 21 35 20</p>
+          <p>24 36 25 25 37 24 26 38 26</p>
+          <p>27 39 27 26 40 26 25 41 24</p>
+          <p>28 42 29 29 43 28 30 44 30</p>
+          <p>31 45 31 30 46 30 29 47 28</p>
+          <p>32 48 33 33 49 32 34 50 34</p>
+          <p>35 51 35 34 52 34 33 53 32</p>
+          <p>36 54 37 37 55 36 38 56 38</p>
+          <p>39 57 39 38 58 38 37 59 36</p>
+          <p>40 60 41 41 61 40 42 62 42</p>
+          <p>43 63 43 42 64 42 41 65 40</p>
+          <p>44 66 45 45 67 44 46 68 46</p>
+          <p>47 69 47 46 70 46 45 71 44</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="building_wallWindowGlass05" name="building_wallWindowGlass05">
+        <translate sid="translate">-20.719872 7.439159 13.810581</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <rotate sid="rotateZ">0 0 1 -89.999900</rotate>
+        <scale sid="scale">0.690536 0.345268 0.345268</scale>
+        <instance_geometry url="#building_wallWindowGlass05-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Glass" target="#Glass"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2010-01-04T07:05:52Z</created>
+    <modified>2010-01-04T07:05:52Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_geometries>
+    <geometry id="Box01-lib" name="Box01Mesh">
+      <mesh>
+        <source id="Box01-lib-Position">
+          <float_array id="Box01-lib-Position-array" count="24">
+-3904.781250 -3767.461426 0.000000
+3904.781250 -3767.461426 0.000000
+-3904.781250 3767.461426 0.000000
+3904.781250 3767.461426 0.000000
+-3904.781250 -3767.461426 -2192.595703
+3904.781250 -3767.461426 -2192.595703
+-3904.781250 3767.461426 -2192.595703
+3904.781250 3767.461426 -2192.595703
+</float_array>
+          <technique_common>
+            <accessor source="#Box01-lib-Position-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box01-lib-Normal0">
+          <float_array id="Box01-lib-Normal0-array" count="90">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+1.000000 0.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Box01-lib-Normal0-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Box01-lib-UV0">
+          <float_array id="Box01-lib-UV0-array" count="24">
+0.000000 0.000000
+1.000000 0.000000
+0.000000 1.000000
+1.000000 1.000000
+0.000000 0.000000
+1.000000 0.000000
+0.000000 1.000000
+1.000000 1.000000
+0.000000 0.000000
+1.000000 0.000000
+0.000000 1.000000
+1.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Box01-lib-UV0-array" count="12" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Box01-lib-Vertex">
+          <input semantic="POSITION" source="#Box01-lib-Position"/>
+        </vertices>
+        <polygons count="10">
+          <input semantic="VERTEX" offset="0" source="#Box01-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Box01-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Box01-lib-UV0"/>
+          <p>4 0 9 5 1 8 7 2 10</p>
+          <p>7 3 10 6 4 11 4 5 9</p>
+          <p>0 6 4 1 7 5 5 8 7</p>
+          <p>5 9 7 4 10 6 0 11 4</p>
+          <p>1 12 0 3 13 1 7 14 3</p>
+          <p>7 15 3 5 16 2 1 17 0</p>
+          <p>3 18 4 2 19 5 6 20 7</p>
+          <p>6 21 7 7 22 6 3 23 4</p>
+          <p>2 24 0 0 25 1 4 26 3</p>
+          <p>4 27 3 6 28 2 2 29 0</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Box01" name="Box01">
+        <translate sid="translate">-1.104492 0.000000 -91.898438</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <scale sid="scale">1.058022 1.058022 1.000000</scale>
+        <instance_geometry url="#Box01-lib"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

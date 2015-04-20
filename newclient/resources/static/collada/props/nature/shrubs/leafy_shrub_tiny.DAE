@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2010-02-04T18:55:21Z</created>
+    <modified>2010-02-04T18:55:21Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="1.000000"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Map__3-image" name="Map__3">
+      <init_from>file://C:\Spaced\newclient\resources\textures\props\nature\small_nature1024.png</init_from>
+    </image>
+    <image id="smallnature-image" name="smallnature">
+      <init_from>file://C:\Spaced\newclient\resources\textures\props\nature\small_nature1024.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="glass_lights" name="glass_lights">
+      <instance_effect url="#glass_lights-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="glass_lights-fx" name="glass_lights">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.588235  0.588235 0.588235 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Map__3-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.000000  0.000000 0.000000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">2.000000</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <texture texture="smallnature-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>ADD</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Plane01-lib" name="Plane01Mesh">
+      <mesh>
+        <source id="Plane01-lib-Position">
+          <float_array id="Plane01-lib-Position-array" count="48">
+-0.337747 -0.701487 -1.063711
+0.548532 0.264174 -1.059634
+-0.818043 -1.596334 -0.275796
+1.311748 -0.926447 0.055005
+-1.018019 -0.227934 -0.807487
+1.111772 0.441953 -0.833856
+-0.679955 0.915791 0.031172
+1.538965 0.668502 -0.304101
+-0.737009 -1.140058 0.139260
+0.936097 0.682904 0.094228
+0.611054 -0.721556 -1.064783
+-0.285901 0.264073 -1.032266
+1.036238 -1.139868 0.052115
+-0.657022 0.720789 0.214092
+-1.049643 -0.235147 -0.914307
+1.169278 -0.482436 -0.940676
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-Position-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane01-lib-Normal0">
+          <float_array id="Plane01-lib-Normal0-array" count="72">
+0.738058 0.674136 -0.028481
+0.738288 0.673904 -0.027991
+0.738482 0.673709 -0.027578
+0.738890 0.673296 -0.026708
+0.738482 0.673709 -0.027578
+0.738288 0.673904 -0.027991
+0.736714 -0.676202 -0.002012
+0.736721 -0.676193 -0.002031
+0.736728 -0.676186 -0.002047
+0.736743 -0.676170 -0.002082
+0.736728 -0.676186 -0.002047
+0.736721 -0.676193 -0.002031
+-0.097903 0.347968 0.932380
+-0.175101 0.410761 0.894771
+-0.215770 0.442588 0.870379
+-0.282871 0.493069 0.822719
+-0.215770 0.442588 0.870379
+-0.175101 0.410761 0.894771
+0.043978 -0.642547 0.764983
+0.013924 -0.586660 0.809714
+-0.008638 -0.542492 0.840017
+-0.042271 -0.473131 0.879978
+-0.008638 -0.542492 0.840017
+0.013924 -0.586660 0.809714
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-Normal0-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane01-lib-UV0">
+          <float_array id="Plane01-lib-UV0-array" count="256">
+0.016018 0.306197
+0.207219 0.304766
+0.012777 0.499572
+0.203979 0.499572
+0.015586 0.305206
+0.206787 0.305206
+0.015586 0.500013
+0.206787 0.500013
+0.014613 0.501003
+0.205815 0.499572
+0.196799 0.311065
+0.017999 0.312477
+0.195473 0.503190
+0.016673 0.504601
+0.015586 0.305206
+0.206787 0.305206
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+0.686658 0.102853
+0.749601 0.102853
+0.812544 0.102853
+0.875487 0.102853
+0.686658 0.165265
+0.749601 0.165265
+0.812544 0.165265
+0.875487 0.165265
+0.686658 0.227677
+0.749601 0.227677
+0.812544 0.227677
+0.875487 0.227677
+0.686658 0.290090
+0.749601 0.290090
+0.812544 0.290090
+0.875487 0.290090
+</float_array>
+          <technique_common>
+            <accessor source="#Plane01-lib-UV0-array" count="128" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane01-lib-Vertex">
+          <input semantic="POSITION" source="#Plane01-lib-Position"/>
+        </vertices>
+        <polygons material="glass_lights" count="8">
+          <input semantic="VERTEX" offset="0" source="#Plane01-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#Plane01-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#Plane01-lib-UV0"/>
+          <p>12 0 12 10 1 10 13 2 13</p>
+          <p>11 3 11 13 4 13 10 5 10</p>
+          <p>8 6 8 0 7 0 9 8 9</p>
+          <p>1 9 1 9 10 9 0 11 0</p>
+          <p>4 12 4 2 13 2 5 14 5</p>
+          <p>3 15 3 5 16 5 2 17 2</p>
+          <p>6 18 6 14 19 14 7 20 7</p>
+          <p>15 21 15 7 22 7 14 23 14</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="Plane01" name="Plane01">
+        <translate sid="translate">-0.145150 0.513102 -0.177965</translate>
+        <rotate sid="jointOrientX">1 0 0 -90.000000</rotate>
+        <scale sid="scale">0.578481 0.578481 0.578481</scale>
+        <instance_geometry url="#Plane01-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="glass_lights" target="#glass_lights"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

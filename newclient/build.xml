@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<project name="client" default="all" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+	<property name="fearless.commons" value="${baseDir}/../Fearless-common"/>
+
+	<property file="${baseDir}/../local.properties"/>
+	<property file="${baseDir}/../default.properties"/>
+
+	<import file="${fearless.commons}/ant-utils/commontasks.xml"/>
+
+	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.dir" location="${baseDir}/src"/>
+
+	<path id="buildlib.classpath">
+		<fileset dir="${baseDir}/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+
+		<fileset dir="${baseDir}/../shared/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../shared/build/">
+			<include name="spaced-shared.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../messages/build">
+			<include name="spaced-shared-messages.jar"/>
+			<include name="spaced-client-messages.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorGui/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../smrt-release">
+			<include name="**/*.jar"/>
+			<exclude name="**/smrt-stubs.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="testlib.classpath">
+		<fileset dir="../shared/build">
+			<include name="spaced-shared-test.jar"/>
+		</fileset>
+	</path>
+
+
+	<path id="run.classpath">
+		<path refid="buildlib.classpath"/>
+	</path>
+
+	<path id="test.compile.classpath">
+		<path refid="buildlib.classpath"/>
+		<pathelement location="${build.dir.test}"/>
+		<pathelement location="${baseDir}/resources"/>
+		<path refid="junit.lib"/>
+		<fileset dir="${baseDir}/../shared/build">
+			<include name="spaced-shared-test.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="full-test" depends="copy-test-resources, test"/>
+
+	<property name="ardor.path" value="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win+linux/"/>
+
+	<target name="all" depends="full-build, check-failures"/>
+	<target name="full-build" depends="compile, full-test"/>
+
+	<target name="copy-test-resources">
+		<copy todir="${build.dir.test}/resources">
+			<fileset dir="${src.tests}/resources"/>
+		</copy>
+		<copy todir="${build.dir.test}">
+			<fileset dir="${baseDir}/../ArdorGui/resources"/>
+		</copy>
+
+	</target>
+
+
+	<target name="run-ardor" description="Start the ardor client">
+		<copy toDir="${build.dir.classes}" file="${baseDir}/src/logback.xml"/>
+		<java classname="se.spaced.client.launcher.ArdorRealGame" fork="true" maxmemory="1024m">
+			<jvmarg value="-splash:resources/splash.png"/>
+			<jvmarg value="-Djava.library.path=${ardor.path}"/>
+			<jvmarg value="-Xloggc:spacedClient.gclog"/>
+			<classpath>
+				<pathelement location="${baseDir}/resources"/>
+				<pathelement location="${baseDir}/../shared/resources"/>
+				<pathelement location="${baseDir}/../ArdorGui/resources"/>
+				<path refid="run.classpath"/>
+				<!--<path refid="resources.classpath"/>-->
+
+				<pathelement location="${build.dir.classes}"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="run-bots" description="Start the bot client">
+		<copy toDir="${baseDir}/build/main" file="${baseDir}/src/logback.xml"/>
+		<property name="host" value="localhost"/>
+		<java classname="se.spaced.client.launcher.MultiBotLauncher" fork="true">
+			<classpath>
+				<path refid="run.classpath"/>
+				<!--<path refid="resources.classpath"/>-->
+				<pathelement location="resources"/>
+				<pathelement location="${build.dir.classes}/"/>
+			</classpath>
+			<arg value="${host}"/>
+		</java>
+	</target>
+
+	<target name="generate-lua-doc" description="Generate lua documention">
+		<mkdir dir="${build.dir}/doc"/>
+		<java classname="se.spaced.client.launcher.DocumentationGenerator" fork="true">
+			<classpath>
+				<path refid="run.classpath"/>
+				<!--<path refid="resources.classpath"/>-->
+				<pathelement location="resources"/>
+				<pathelement location="${build.dir.classes}"/>
+			</classpath>
+			<arg value="${build.dir}/doc/lua-api-dokuwiki.txt"/>
+		</java>
+	</target>
+
+
+	<target name="validate-xmo" description="Validates xmo files">
+		<echo>Using resource classpath: ${baseDir}/resources</echo>
+		<java classname="se.spaced.shared.model.xmo.XmoFileValidator" fork="true" failonerror="true">
+			<classpath>
+				<path refid="run.classpath"/>
+				<pathelement location="${baseDir}/resources"/>
+			</classpath>
+			<arg value="/"/>
+			<arg value="${baseDir}/resources"/>
+		</java>
+	</target>
+
+
+	<import file="${baseDir}/../shared/javancss.xml"/>
+	<target name="javancss">
+		<javancss
+				lib.dir="${baseDir}/../libs/javancss"
+				src.dir="${baseDir}/src"
+				output.dir="${baseDir}/build"
+				/>
+	</target>
+
+	<target name="package" depends="compile">
+		<build-jar compiled.dir="${build.dir.classes}" jar.name="spaced-client"/>
+	</target>
+
+</project>

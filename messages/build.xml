@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<project name="messages" default="all" basedir=".">
+
+	<property file="../local.properties"/>
+	<property file="../default.properties"/>
+
+	<dirname property="baseDir" file="${ant.file}"/>
+
+	<property name="src.tests" value="${baseDir}/test"/>
+	<property name="build.dir" value="${baseDir}/build"/>
+
+	<property name="reports.dir" value="${basedir}/reports"/>
+	<property name="coverage.dir" value="${reports.dir}/coverage"/>
+
+	<property name="libs.dir" value="${basedir}/../shared/libs"/>
+
+
+	<path id="build.classpath">
+		<fileset dir="${baseDir}/../shared/build">
+			<include name="spaced-shared.jar"/>
+		</fileset>
+		<fileset dir="${libs.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../smrt-release">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../Fearless-common/libs/">
+			<include name="**/*.jar"/>
+		</fileset>
+
+	</path>
+
+	<target name="all" depends="build-protocol, package"/>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="reports"/>
+		<delete dir="coverage"/>
+		<delete dir="outinstr"/>
+	</target>
+
+	<target name="package-shared" depends="build-protocol">
+		<jar destfile="build/spaced-shared-messages.jar">
+			<fileset dir="build/generated-protocol-classes"/>
+		</jar>
+	</target>
+
+	<target name="package" depends="package-shared">
+	</target>
+
+
+	<!-- new stuff!!! -->
+	<path id="dependencies.smrt">
+		<pathelement path="../shared/build/classes"/>
+
+		<path refid="build.classpath"/>
+	</path>
+
+	<path id="dependencies.smrt2">
+		<path refid="dependencies.smrt"/>
+		<pathelement path="build/generated-protocol-classes"/>
+	</path>
+
+	<property name="smrt.import" value="${baseDir}/../smrt-release/macros.xml"/>
+	<dirname property="smrtDir" file="${smrt.import}"/>
+	<import file="${smrt.import}"/>
+
+	<target name="build-protocol">
+		<!-- Capture the path as a delimited property using the refid attribute -->
+		<property name="myclasspath" refid="dependencies.smrt"/>
+		<!-- Emit the property to the ant console -->
+		<echo message="Classpath = ${myclasspath}"/>
+		<smrt-generate
+				output.compiled.dir="${baseDir}/build/generated-protocol-classes"
+				output.source.dir="${baseDir}/build/generated-protocol-src"
+				src.dir="${baseDir}/src-protocol"
+				classpathref="dependencies.smrt">
+		</smrt-generate>
+	</target>
+	<target name="test">
+	</target>
+</project>

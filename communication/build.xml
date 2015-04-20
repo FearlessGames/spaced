@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<project name="communications" default="all" basedir=".">
+
+	<dirname property="baseDir" file="${ant.file}"/>
+	<property name="fearless.commons" location="${baseDir}/../Fearless-common"/>
+
+	<property file="../local.properties"/>
+	<property file="../default.properties"/>
+
+	<import file="${fearless.commons}/ant-utils/commontasks.xml"/>
+
+	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.dir" value="${baseDir}/src"/>
+
+	<path id="buildlib.classpath">
+		<fileset dir="${fearless.libs}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../server/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="../messages/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../smrt-release">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../ArdorTech/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../shared/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../server/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${baseDir}/../newclient/build">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${baseDir}/../server/build/test"/>
+		<pathelement path="${baseDir}/../newclient/build/test"/>
+	</path>
+	<path id="testlib.classpath"/>
+
+	<target name="build" depends="compile"/>
+
+
+	<target name="all" depends="full-build, check-failures"/>
+	<target name="full-build" depends="test"/>
+
+</project>

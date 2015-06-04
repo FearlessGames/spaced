@@ -66,9 +66,9 @@
 	</target>
 
 	<target name="clean" description="Clean everything">
-		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/ardortech/build.xml" dir="${basedir}/ardortech/" target="clean" inheritAll="false"/>
 		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="clean" inheritAll="false"/>
-		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="clean" inheritAll="false"/>
+		<ant antfile="${basedir}/ardorgui/build.xml" dir="${basedir}/ardorgui/" target="clean" inheritAll="false"/>
 		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="clean" inheritAll="false"/>
 		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="clean" inheritAll="false"/>
 		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="clean" inheritAll="false"/>
@@ -76,9 +76,9 @@
 	</target>
 
 	<target name="build" description="Compile everything">
-		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/ardortech/build.xml" dir="${basedir}/ardortech/" target="package" inheritAll="false"/>
 		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="package" inheritAll="false"/>
-		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="package" inheritAll="false"/>
+		<ant antfile="${basedir}/ardorgui/build.xml" dir="${basedir}/ardorgui/" target="package" inheritAll="false"/>
 		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="package" inheritAll="false"/>
 		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="build" inheritAll="false"/>
 		<ant antfile="${basedir}/newclient/build.xml" dir="${basedir}/newclient/" target="package" inheritAll="false"/>
@@ -87,8 +87,8 @@
 
 
 	<target name="test" description="Run all tests" depends="build">
-		<ant antfile="${basedir}/ArdorTech/build.xml" dir="${basedir}/ArdorTech/" target="all" inheritAll="false"/>
-		<ant antfile="${basedir}/ArdorGui/build.xml" dir="${basedir}/ArdorGui/" target="all" inheritAll="false"/>
+		<ant antfile="${basedir}/ardortech/build.xml" dir="${basedir}/ardortech/" target="all" inheritAll="false"/>
+		<ant antfile="${basedir}/ardorgui/build.xml" dir="${basedir}/ardorgui/" target="all" inheritAll="false"/>
 		<ant antfile="${basedir}/shared/build.xml" dir="${basedir}/shared/" target="full-build" inheritAll="false"/>
 		<ant antfile="${basedir}/messages/build.xml" dir="${basedir}/messages/" target="test" inheritAll="false"/>
 		<ant antfile="${basedir}/server/build.xml" dir="${basedir}/server/" target="full-test" inheritAll="false"/>

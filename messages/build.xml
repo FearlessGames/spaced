@@ -23,7 +23,7 @@
 		<fileset dir="${libs.dir}">
 			<include name="**/*.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../smrt-release">
+		<fileset dir="${baseDir}/../smrt">
 			<include name="**/*.jar"/>
 		</fileset>
 		<fileset dir="${baseDir}/../Fearless-common/libs/">
@@ -63,7 +63,7 @@
 		<pathelement path="build/generated-protocol-classes"/>
 	</path>
 
-	<property name="smrt.import" value="${baseDir}/../smrt-release/macros.xml"/>
+	<property name="smrt.import" value="${baseDir}/../smrt/macros.xml"/>
 	<dirname property="smrtDir" file="${smrt.import}"/>
 	<import file="${smrt.import}"/>
 

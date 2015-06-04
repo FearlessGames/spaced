@@ -1,0 +1,60 @@
+apply plugin: 'java'
+
+def templateDir = "../smrt-release/src-templates"
+
+project.ext.libDir = new File("lib")
+
+repositories {
+	jcenter()
+	flatDir name: 'projectLibs', dirs: project.ext.libDir
+	maven {
+		url 'http://flexo.fearlessgames.se/artifactory/libs-local'
+		credentials {
+			username = "reader"
+			password = "f3ArlessGamesR0X!"
+		}
+	}
+}
+
+
+sourceSets {
+	generate {
+
+	}
+	generated {
+		java {
+			srcDir "$buildDir/generated"
+		}
+	}
+}
+
+
+configurations {
+	generate
+}
+
+dependencies {
+	generateCompile project(":smrt")
+	generateCompile 'se.smrt:smrt-generator:1.0'
+	generateCompile 'org.apache.velocity:velocity:1.7'
+	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
+	compile 'com.google.guava:guava:18.0'
+	compile project(':shared')
+}
+
+
+
+
+task generate(type: JavaCompile) {
+	source = sourceSets.main.java
+	configurations.getByName("generateCompile").dependencies.forEach {
+		println it.name
+	}
+	classpath = configurations.compile + configurations.generateCompile
+	options.compilerArgs = [
+			"-Atemplatedir=$templateDir",
+			"-processor", "se.smrt.generator.MessageCodeGenerator"
+	]
+	destinationDir = sourceSets.generated.java.srcDirs.first()
+}
+

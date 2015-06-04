@@ -5,12 +5,12 @@
 	<dirname property="baseDir" file="${ant.file}"/>
 
 	<path id="libs">
-		<fileset dir="${baseDir}/../ArdorTech/lib/">
+		<fileset dir="${baseDir}/../ardortech/lib/">
 			<include name="ardor3d/*.jar"/>
 			<include name="ardor3d/dependencies/jdom/*.jar"/>
 		</fileset>
 
-		<fileset dir="${baseDir}/../ArdorTech/build/">
+		<fileset dir="${baseDir}/../ardortech/build/">
 			<include name="ArdorTech.jar"/>
 		</fileset>
 

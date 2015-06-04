@@ -24,7 +24,7 @@
 			<include name="**/*.jar"/>
 		</fileset>
 
-		<fileset dir="${baseDir}/../ArdorTech/build">
+		<fileset dir="${baseDir}/../ardortech/build">
 			<include name="**/*.jar"/>
 		</fileset>
 		<fileset dir="${baseDir}/../shared/libs">
@@ -37,7 +37,7 @@
 			<include name="spaced-shared-messages.jar"/>
 			<include name="spaced-client-messages.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+		<fileset dir="${baseDir}/../ardortech/lib/ardor3d">
 			<include name="**/*.jar"/>
 		</fileset>
 	</path>

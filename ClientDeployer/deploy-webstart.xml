@@ -25,7 +25,7 @@
 				<include name="**/*.jar"/>
 			</fileset>
 
-			<fileset dir="${spacedBase}/ArdorTech/lib">
+			<fileset dir="${spacedBase}/ardortech/lib">
 				<include name="**/*.jar"/>
 			</fileset>
 
@@ -38,7 +38,7 @@
 				<include name="**/*.jar"/>
 			</fileset>
 
-			<fileset dir="${spacedBase}/smrt-release/lib">
+			<fileset dir="/messages/lib">
 				<include name="smrt-runtime.jar"/>
 			</fileset>
 
@@ -48,21 +48,21 @@
 
 	<target name="makeNativeJars">
 		<jar destfile="${deployNativeLibsDir}/windows-lwjgl.jar"
-			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win32"/>
+			  basedir="${spacedBase}/ardortech/lib/ardor3d/dependencies/lwjgl/native/win32"/>
 		<jar destfile="${deployNativeLibsDir}/linux-lwjgl.jar"
-			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/linux"/>
+			  basedir="${spacedBase}/ardortech/lib/ardor3d/dependencies/lwjgl/native/linux"/>
 		<jar destfile="${deployNativeLibsDir}/macosx-lwjgl.jar"
-			  basedir="${spacedBase}/ArdorTech/lib/ardor3d/dependencies/lwjgl/native/macosx"/>
+			  basedir="${spacedBase}/ardortech/lib/ardor3d/dependencies/lwjgl/native/macosx"/>
 	</target>
 
 	<target name="jarClient">
 		<copy todir="${deployClassesDir}">
 
-			<fileset dir="${spacedBase}/ArdorTech/build/classes">
+			<fileset dir="${spacedBase}/ardortech/build/classes">
 				<include name="**/*"/>
 			</fileset>
 
-			<fileset dir="${spacedBase}/ArdorGui/build/classes">
+			<fileset dir="${spacedBase}/ardorgui/build/classes">
 				<include name="**/*"/>
 			</fileset>
 

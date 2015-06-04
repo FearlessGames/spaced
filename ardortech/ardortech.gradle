@@ -1,0 +1,42 @@
+apply plugin: 'java'
+
+repositories {
+	jcenter()
+	maven {
+		url 'http://flexo.fearlessgames.se/artifactory/libs-local'
+		credentials {
+			username = "reader"
+			password = "f3ArlessGamesR0X!"
+		}
+	}
+}
+
+dependencies {
+	compile 'com.ardor3d:ardor3d-core:0.9'
+	compile 'com.ardor3d:ardor3d-ui:0.9'
+	compile 'com.ardor3d:ardor3d-terrain:0.9'
+	compile 'com.ardor3d:ardor3d-collada:0.9'
+	compile 'com.ardor3d:ardor3d-effects:0.9'
+	compile 'com.ardor3d:ardor3d-extras:0.9'
+	compile 'com.ardor3d:ardor3d-math:0.9'
+	compile 'com.ardor3d:ardor3d-savable:0.9'
+	compile 'com.ardor3d:ardor3d-lwjgl:0.9'
+	compile 'com.ardor3d:ardor3d-extras:0.9'
+	compile 'com.ardor3d:ardor3d-animation:0.9'
+	compile 'com.ardor3d:ardor3d-awt:0.9'
+
+	compile 'com.google.inject:guice:3.0'
+	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
+	compile 'se.fearless.fearless-common:locators:1.0-SNAPSHOT'
+	compile 'org.slf4j:slf4j-api:1.7.12'
+	compile 'org.apache.commons:commons-math:2.2'
+
+	compile 'se.krka.kahlua:kahlua-j2se_5.1:2.1.0'
+	compile 'com.thoughtworks.xstream:xstream:1.4.8'
+
+
+	testCompile 'junit:junit:4.12'
+	testCompile 'se.mockachino:mockachino:0.6.2'
+	//compile 'com.google.guava:guava:18.0'
+
+}

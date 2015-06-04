@@ -11,7 +11,7 @@
 	<import file="${fearless.commons}/ant-utils/commontasks.xml"/>
 
 
-	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.tests" location="/shared/src/test/"/>
 	<property name="src.dir" value="${baseDir}/src"/>
 
 	<path id="buildlib.classpath">
@@ -21,7 +21,7 @@
 		<fileset dir="${fearless.libs}">
 			<include name="**/*.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../smrt-release">
+		<fileset dir="${baseDir}/../smrt">
 			<include name="**/*.jar"/>
 		</fileset>
 		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">

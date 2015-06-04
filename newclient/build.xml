@@ -31,17 +31,17 @@
 			<include name="spaced-shared-messages.jar"/>
 			<include name="spaced-client-messages.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../ArdorGui/build">
+		<fileset dir="${baseDir}/../ardorgui/build">
 			<include name="**/*.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../ArdorTech/build">
+		<fileset dir="${baseDir}/../ardortech/build">
 			<include name="**/*.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../smrt-release">
+		<fileset dir="${baseDir}/../smrt">
 			<include name="**/*.jar"/>
 			<exclude name="**/smrt-stubs.jar"/>
 		</fileset>
-		<fileset dir="${baseDir}/../ArdorTech/lib/ardor3d">
+		<fileset dir="${baseDir}/../ardortech/lib/ardor3d">
 			<include name="**/*.jar"/>
 		</fileset>
 	</path>
@@ -70,7 +70,7 @@
 
 	<target name="full-test" depends="copy-test-resources, test"/>
 
-	<property name="ardor.path" value="${baseDir}/../ArdorTech/lib/ardor3d/dependencies/lwjgl/native/win+linux/"/>
+	<property name="ardor.path" value="${baseDir}/../ardortech/lib/ardor3d/dependencies/lwjgl/native/win+linux/"/>
 
 	<target name="all" depends="full-build, check-failures"/>
 	<target name="full-build" depends="compile, full-test"/>
@@ -80,7 +80,7 @@
 			<fileset dir="${src.tests}/resources"/>
 		</copy>
 		<copy todir="${build.dir.test}">
-			<fileset dir="${baseDir}/../ArdorGui/resources"/>
+			<fileset dir="${baseDir}/../ardorgui/resources"/>
 		</copy>
 
 	</target>
@@ -95,7 +95,7 @@
 			<classpath>
 				<pathelement location="${baseDir}/resources"/>
 				<pathelement location="${baseDir}/../shared/resources"/>
-				<pathelement location="${baseDir}/../ArdorGui/resources"/>
+				<pathelement location="${baseDir}/../ardorgui/resources"/>
 				<path refid="run.classpath"/>
 				<!--<path refid="resources.classpath"/>-->
 

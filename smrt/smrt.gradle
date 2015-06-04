@@ -1,0 +1,10 @@
+project.ext.libDir = new File("lib")
+
+repositories {
+	flatDir name: 'projectLibs', dirs: project.ext.libDir
+	jcenter()
+}
+
+dependencies {
+	compile 'se.smrt:smrt-generator:1.0'
+}

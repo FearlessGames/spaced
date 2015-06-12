@@ -6,7 +6,7 @@ import com.ardor3d.util.TextureManager;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import se.ardortech.TextureManagerImpl;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.util.cache.Cache;
 import se.spaced.shared.util.cache.CacheLoader;
 import se.spaced.shared.util.cache.CacheManager;

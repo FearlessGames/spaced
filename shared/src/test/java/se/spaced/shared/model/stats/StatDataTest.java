@@ -1,8 +1,8 @@
 package se.spaced.shared.model.stats;
 
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
 
 import static org.junit.Assert.assertEquals;
 

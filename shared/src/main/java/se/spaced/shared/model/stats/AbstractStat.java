@@ -1,8 +1,8 @@
 package se.spaced.shared.model.stats;
 
 import org.apache.commons.math.util.MathUtils;
-import se.fearlessgames.common.publisher.SimplePublisher;
-import se.fearlessgames.common.publisher.Subscriber;
+import se.fearless.common.publisher.SimplePublisher;
+import se.fearless.common.publisher.Subscriber;
 
 public abstract class AbstractStat implements Stat {
 	private static final double EPSILON = 1e-6;

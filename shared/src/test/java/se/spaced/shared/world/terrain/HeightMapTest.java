@@ -6,7 +6,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Doubles;
 import org.junit.Test;
-import se.fearlessgames.common.publisher.Subscriber;
+import se.fearless.common.publisher.Subscriber;
 import se.krka.kahlua.integration.expose.ReturnValues;
 
 import java.util.Collection;

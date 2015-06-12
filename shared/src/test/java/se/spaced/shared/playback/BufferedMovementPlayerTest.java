@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.spaced.shared.model.AnimationState;
 
 import static org.junit.Assert.assertEquals;

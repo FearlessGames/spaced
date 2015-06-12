@@ -7,7 +7,7 @@ import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.ConversionException;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

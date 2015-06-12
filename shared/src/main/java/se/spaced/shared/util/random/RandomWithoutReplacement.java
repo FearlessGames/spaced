@@ -3,7 +3,7 @@ package se.spaced.shared.util.random;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import se.fearlessgames.common.collections.Collections3;
+import se.fearless.common.collections.Collections3;
 
 import java.util.List;
 import java.util.Random;

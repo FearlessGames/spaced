@@ -3,7 +3,7 @@ package se.spaced.shared.events;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 import se.krka.kahlua.integration.annotations.Desc;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 

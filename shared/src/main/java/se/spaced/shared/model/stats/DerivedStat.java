@@ -1,6 +1,6 @@
 package se.spaced.shared.model.stats;
 
-import se.fearlessgames.common.publisher.Subscriber;
+import se.fearless.common.publisher.Subscriber;
 
 public abstract class DerivedStat extends AbstractStat implements Subscriber<Stat> {
 

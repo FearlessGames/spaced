@@ -2,7 +2,7 @@ package se.spaced.shared.util.math;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 
 import static org.junit.Assert.assertEquals;
 

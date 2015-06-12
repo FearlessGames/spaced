@@ -11,7 +11,7 @@ import se.ardortech.math.Rotations;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Vectors;
-import se.fearlessgames.common.io.FileStreamLocator;
+import se.fearless.common.io.FileStreamLocator;
 import se.spaced.shared.model.xmo.XmoLoader;
 import se.spaced.shared.model.xmo.XmoRoot;
 import se.spaced.shared.util.cache.CacheManager;

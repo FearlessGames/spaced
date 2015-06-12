@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.smrt.core.remote.DefaultReadCodec;
 import se.smrt.core.remote.DefaultWriteCodec;

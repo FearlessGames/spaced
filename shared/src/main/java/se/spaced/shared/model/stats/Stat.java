@@ -1,6 +1,6 @@
 package se.spaced.shared.model.stats;
 
-import se.fearlessgames.common.publisher.Publisher;
+import se.fearless.common.publisher.Publisher;
 
 public interface Stat extends Publisher<Stat> {
 	/**

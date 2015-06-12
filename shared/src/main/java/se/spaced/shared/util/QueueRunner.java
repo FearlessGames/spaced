@@ -1,6 +1,6 @@
 package se.spaced.shared.util;
 
-import se.fearlessgames.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeListener;
 
 public interface QueueRunner<Key, Data> extends LifetimeListener {
 

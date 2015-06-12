@@ -14,7 +14,7 @@ import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.TextureManager;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.resources.XmoMaterialManager;
 import se.spaced.shared.xml.XmlIOException;
 

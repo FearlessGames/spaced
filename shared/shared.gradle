@@ -1,7 +1,7 @@
 project.ext.libDir = new File("lib")
 
 repositories {
-	jcenter()
+	mavenCentral()
 	flatDir name: 'projectLibs', dirs: project.ext.libDir
 	maven {
 		url 'http://flexo.fearlessgames.se/artifactory/libs-local'
@@ -15,5 +15,22 @@ repositories {
 dependencies {
 	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
 	compile 'se.fearless.fearless-common:lua:1.0-SNAPSHOT'
-	compile 'com.google.guava:guava:18.0'
+	compile 'se.fearless.fearless-common:locators:1.0-SNAPSHOT'
+	compile 'com.google.guava:guava:16.0.1'
+	compile 'com.ardor3d:ardor3d-core:0.9'
+	compile 'com.ardor3d:ardor3d-collada:0.9'
+	compile 'com.thoughtworks.xstream:xstream:1.4.8'
+	compile 'org.critterai:nmgen:0.2.0'
+	compile 'se.smrt:smrt-runtime:1.0'
+	compile 'se.smrt:smrt-generator:1.0'
+	compile 'org.apache.mina:mina-core:2.0.4'
+	compile project(':ardortech')
+	compile 'com.google.inject.extensions:guice-grapher:3.0'
+	compile 'se.hiflyer:paparazzo:0.2-SNAPSHOT'
+
+
+	compile 'se.mockachino:mockachino:0.6.2' // remove this from compile if possible
+
+	testCompile 'junit:junit:4.12'
+	testCompile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
 }

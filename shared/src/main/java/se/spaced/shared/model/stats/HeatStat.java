@@ -1,7 +1,7 @@
 package se.spaced.shared.model.stats;
 
-import se.fearlessgames.common.publisher.Subscriber;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.publisher.Subscriber;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.shared.util.math.LinearTimeValue;
 
 public class HeatStat extends AbstractStat implements Subscriber<Stat> {

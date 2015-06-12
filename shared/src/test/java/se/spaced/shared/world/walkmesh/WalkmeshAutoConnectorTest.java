@@ -5,8 +5,8 @@ import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.shared.world.area.Polygon;
 
 import java.util.List;

@@ -2,8 +2,8 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.publisher.Subscriber;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.publisher.Subscriber;
+import se.fearless.common.time.MockTimeProvider;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;

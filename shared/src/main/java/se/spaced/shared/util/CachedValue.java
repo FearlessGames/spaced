@@ -1,6 +1,6 @@
 package se.spaced.shared.util;
 
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 
 /**
  * class to hold any generic cashed data. Will call the cache updater to get the value when it needs to refresh

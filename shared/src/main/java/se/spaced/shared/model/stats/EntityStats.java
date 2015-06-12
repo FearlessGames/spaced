@@ -2,7 +2,7 @@ package se.spaced.shared.model.stats;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Maps;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 
 import java.util.Map;
 

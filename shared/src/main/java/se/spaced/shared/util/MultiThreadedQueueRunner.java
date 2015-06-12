@@ -2,7 +2,7 @@ package se.spaced.shared.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeListener;
 import se.spaced.shared.concurrency.SimpleThreadFactory;
 
 import java.util.concurrent.ExecutorService;

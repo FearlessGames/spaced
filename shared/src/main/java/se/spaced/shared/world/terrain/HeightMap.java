@@ -7,9 +7,9 @@ import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.DiscreteDomain;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Range;
-import se.fearlessgames.common.publisher.Publisher;
-import se.fearlessgames.common.publisher.SimplePublisher;
-import se.fearlessgames.common.publisher.Subscriber;
+import se.fearless.common.publisher.Publisher;
+import se.fearless.common.publisher.SimplePublisher;
+import se.fearless.common.publisher.Subscriber;
 
 public class HeightMap implements Publisher<HeightMap> {
 	private final int size;

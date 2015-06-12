@@ -1,6 +1,6 @@
 package se.spaced.shared.world.terrain;
 
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,6 +1,17 @@
 apply plugin: 'java'
 
-def templateDir = "../smrt-release/src-templates"
+def templateDir = "../smrt/src/main/resources"
+
+configurations {
+	generate.extendsFrom compile
+}
+def generatedResources = "$buildDir/generated-resources/java"
+
+sourceSets {
+	generate {
+		output.dir(generatedResources, builtBy: 'compileJava')
+	}
+}
 
 
 repositories {
@@ -15,14 +26,12 @@ repositories {
 }
 
 
-configurations {
-	generate
-}
 
 dependencies {
-//	generateCompile project(":smrt")
-//	generateCompile 'se.smrt:smrt-generator:1.0'
-//	generateCompile 'org.apache.velocity:velocity:1.7'
+
+	generate 'se.smrt:smrt-generator:1.0'
+	//generate 'org.apache.velocity:velocity:1.7'
+	generate files('lib/velocity-1.6.2.jar', 'lib/commons-collections-3.2.1.jar', 'lib/commons-lang-2.4.jar')
 	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
 	compile 'com.google.guava:guava:18.0'
 	compile 'se.smrt:smrt-runtime:1.0'
@@ -31,25 +40,25 @@ dependencies {
 }
 
 
+compileJava.doFirst {
+	println 'First'
+	configurations.generate.forEach {
+		println it.name
+	}
 
-
-task generate(type: JavaCompile) {
-	source = sourceSets.main.java
-
-//	classpath = configurations.compile + configurations.generateCompile
-//	classpath.forEach {
-//		if (it.name.contains("Codec")) {
-//			def tree = zipTree(it)
-//			tree.forEach {
-//				println it.name
-//			}
-//		}
-
-//	}
-	//options.compilerArgs = [
-//			"-Atemplatedir=$templateDir",
-//			"-processor", "se.smrt.generator.MessageCodeGenerator"
-//	]
-//	destinationDir = sourceSets.generated.java.srcDirs.first()
+	println options.compilerArgs
 }
 
+
+compileJava.doFirst {
+	def generatedResourcesDir = file(generatedResources)
+	generatedResourcesDir.mkdirs()
+}
+
+compileJava.options.compilerArgs = [
+			"-Atemplatedir=$templateDir",
+			"-processor", "se.smrt.generator.MessageCodeGenerator",
+			"-processorpath", configurations.generate.asPath,
+			"-s", "$generatedResources"
+
+	]

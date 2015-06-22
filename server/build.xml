@@ -12,7 +12,7 @@
 
 	<property name="client.lib.dir" value="../newclient/libs/"/>
 
-	<property name="src.tests" location="${baseDir}/test/"/>
+	<property name="src.tests" location="/server/src/test/"/>
 	<property name="src.dir" value="${baseDir}/src"/>
 
 	<property name="wsdl.dir" value="${baseDir}/build/wsdl"/>
@@ -54,7 +54,7 @@
 		<fileset dir="../shared/build">
 			<include name="spaced-shared-test.jar"/>
 		</fileset>
-		<pathelement location="${baseDir}/resources"/>
+		<pathelement location="/server/src/main/resources"/>
 	</path>
 
 
@@ -81,7 +81,7 @@
 			<classpath>
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
-				<pathelement location="resources"/>
+				<pathelement location="src/main/resources"/>
 				<pathelement location="${baseDir}/../shared/resources"/>
 			</classpath>
 		</java>
@@ -98,7 +98,7 @@
 			<classpath>
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
-				<pathelement location="resources"/>
+				<pathelement location="src/main/resources"/>
 				<pathelement location="${baseDir}/../shared/resources"/>
 			</classpath>
 		</java>
@@ -127,7 +127,7 @@
 			<classpath>
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
-				<pathelement location="resources"/>
+				<pathelement location="src/main/resources"/>
 				<pathelement location="${baseDir}/../shared/resources"/>
 			</classpath>
 		</java>

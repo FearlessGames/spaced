@@ -2,17 +2,21 @@ apply plugin: 'java'
 
 def templateDir = "../smrt/src/main/resources"
 
-configurations {
-	generate.extendsFrom compile
-}
-def generatedResources = "$buildDir/generated-resources/java"
+def generateOutputDir = file("$buildDir/generated-resources/java")
+
+def generatedSource = file(generateOutputDir)
 
 sourceSets {
-	generate {
-		output.dir(generatedResources, builtBy: 'compileJava')
+	generated {
+		java.srcDir generatedSource
+		compileClasspath += main.output
 	}
 }
 
+configurations {
+	generate.extendsFrom compile
+	generated
+}
 
 repositories {
 	mavenCentral()
@@ -28,8 +32,7 @@ repositories {
 
 
 dependencies {
-
-	generate 'se.smrt:smrt-generator:1.0'
+	generate'se.smrt:smrt-generator:1.0'
 	generate 'org.apache.velocity:velocity:1.7'
 	generate 'commons-collections:commons-collections:3.2.1'
 	generate 'commons-lang:commons-lang:2.6'
@@ -42,24 +45,19 @@ dependencies {
 
 
 compileJava.doFirst {
-	println 'First'
-	configurations.generate.forEach {
-		println it.name
-	}
-
-	println options.compilerArgs
-}
-
-
-compileJava.doFirst {
-	def generatedResourcesDir = file(generatedResources)
-	generatedResourcesDir.mkdirs()
+	generateOutputDir.mkdirs()
 }
 
 compileJava.options.compilerArgs = [
 			"-Atemplatedir=$templateDir",
 			"-processor", "se.smrt.generator.MessageCodeGenerator",
 			"-processorpath", configurations.generate.asPath,
-			"-s", "$generatedResources"
+			"-s", "$generateOutputDir"
 
 	]
+
+jar {
+	include {
+		sourceSets.generated.output
+	}
+}

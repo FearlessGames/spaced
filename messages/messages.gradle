@@ -16,6 +16,7 @@ sourceSets {
 configurations {
 	generate.extendsFrom compile
 	generated
+	smrtTemplates
 }
 
 repositories {
@@ -36,6 +37,7 @@ dependencies {
 	generate 'org.apache.velocity:velocity:1.7'
 	generate 'commons-collections:commons-collections:3.2.1'
 	generate 'commons-lang:commons-lang:2.6'
+	smrtTemplates project(path: ':smrt', configuration: 'templates')
 	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
 	compile 'com.google.guava:guava:18.0'
 	compile 'se.smrt:smrt-runtime:1.0'
@@ -43,13 +45,24 @@ dependencies {
 	compile project(':ardortech')
 }
 
+task explodeTemplates(type: Copy) {
+	from zipTree(configurations.smrtTemplates.singleFile)
+	ext.explodedDir = file("$buildDir/templates")
+	into explodedDir
+
+	doFirst {
+		explodedDir.mkdirs()
+	}
+}
+
+compileJava.dependsOn explodeTemplates
 
 compileJava.doFirst {
 	generateOutputDir.mkdirs()
 }
 
 compileJava.options.compilerArgs = [
-			"-Atemplatedir=$templateDir",
+			"-Atemplatedir=$explodeTemplates.explodedDir",
 			"-processor", "se.smrt.generator.MessageCodeGenerator",
 			"-processorpath", configurations.generate.asPath,
 			"-s", "$generateOutputDir"

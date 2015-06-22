@@ -1,3 +1,5 @@
+apply plugin: 'java'
+
 project.ext.libDir = new File("lib")
 
 repositories {

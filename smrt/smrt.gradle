@@ -1,10 +1,18 @@
-project.ext.libDir = new File("lib")
+apply plugin: 'base'
 
-repositories {
-	flatDir name: 'projectLibs', dirs: project.ext.libDir
-	jcenter()
+configurations {
+	templates
 }
 
-dependencies {
-	compile 'se.smrt:smrt-generator:1.0'
+version = 1.0
+
+task packageTemplates(type: Zip) {
+	from 'src/main/resources'
+	baseName = 'smrt-templates'
+}
+
+assemble.dependsOn packageTemplates
+
+artifacts {
+	templates packageTemplates
 }

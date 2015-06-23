@@ -21,13 +21,17 @@ dependencies {
 	compile 'se.fearless.fearless-common:security:1.0-SNAPSHOT'
 	compile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
 
-	compile files('libs/hibernate/hibernate-core-4.1.5.SP1.jar', 'libs/hibernate/hibernate-commons-annotations-4.0.1.Final.jar')
-	compile files('libs/hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar', 'libs/hibernate/jboss-transaction-api_1.1_spec-1.0.0.Final.jar')
+	compile 'org.hibernate:hibernate-core:4.1.5.SP1'
+	compile 'org.hibernate.common:hibernate-commons-annotations:4.0.1.Final'
+	compile 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+
 	compile 'com.thoughtworks.xstream:xstream-hibernate:1.4.2'
 
 	compile 'com.h2database:h2:1.3.170'
 
-	compile 'se.fearless:fettle:0.8.4'
+	compile('se.fearless:fettle:0.8.4') {
+		exclude group: 'com.google.guava', module: 'guava'
+	}
 
 	compile 'org.eclipse.jetty:jetty-server:7.4.5.v20110725'
 	compile 'org.apache.httpcomponents:httpclient:4.0.1'

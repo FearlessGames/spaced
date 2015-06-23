@@ -108,6 +108,7 @@ import se.spaced.shared.world.area.PolygonGraphLoader;
 import se.spaced.shared.world.area.ZoneBasedPolygonGraphLoader;
 import se.spaced.shared.xml.XmlIOException;
 
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public final class ServiceModule extends AbstractModule {
@@ -122,7 +123,7 @@ public final class ServiceModule extends AbstractModule {
 		//bind(SpellDao.class).to(SpellDaoMemory.class);
 
 		bind(MovementService.class).to(MovementServiceImpl.class);
-		bind(UUIDFactory.class).to(UUIDFactoryImpl.class);
+
 		bind(RemoteServer.class).to(RemoteServerImpl.class);
 		bind(ClientConnectionHandler.class).to(ClientConnectionHandlerImpl.class);
 
@@ -168,6 +169,12 @@ public final class ServiceModule extends AbstractModule {
 
 		bind(PolygonGraphLoader.class).to(ZoneBasedPolygonGraphLoader.class).in(Scopes.SINGLETON);
 		bind(CacheManager.class).annotatedWith(Names.named("xmoCachedManager")).to(CacheManager.class).in(Scopes.SINGLETON);
+	}
+
+	@Provides
+	@Singleton
+	public UUIDFactory getUuidFactory(TimeProvider timeProvider, Random random) {
+		return new UUIDFactoryImpl(timeProvider, random);
 	}
 
 	@Provides

@@ -37,6 +37,5 @@ dependencies {
 
 	testCompile 'junit:junit:4.12'
 	testCompile 'se.mockachino:mockachino:0.6.2'
-	//compile 'com.google.guava:guava:18.0'
 
 }

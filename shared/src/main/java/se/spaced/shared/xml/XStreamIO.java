@@ -9,11 +9,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.ConversionException;
 import se.fearless.common.io.StreamLocator;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
 
 public class XStreamIO implements XmlIO {
 	private final XStream xStream;
@@ -23,6 +19,7 @@ public class XStreamIO implements XmlIO {
 	public XStreamIO(final XStream xStream, final StreamLocator streamLocator) {
 		this.xStream = xStream;
 		this.streamLocator = streamLocator;
+
 	}
 
 	@Override

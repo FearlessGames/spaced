@@ -69,7 +69,7 @@
 	<target name="all" depends="full-test, check-failures"/>
 
 	<target name="run" description="run the server">
-		<copy toDir="${build.dir.classes}" file="${baseDir}/src/logback.xml"/>
+		<copy toDir="${build.dir.classes}" file="/logback.xml"/>
 		<java classname="se.spaced.server.Starter" fork="true" spawn="false" args="--auth=FAME">
 			<jvmarg value="-server"/>
 			<jvmarg value="-Xloggc:spacedServer.gclog"/>

@@ -18,7 +18,7 @@ public class ResourcesModule extends AbstractModule {
 	@Singleton
 	public StreamLocator getStreamLocator() {
 		return new MultiStreamLocator(
-				new FileStreamLocator(new File("resources")),
+				new FileStreamLocator(new File("src/main/resources")),
 				new FileStreamLocator(new File("../shared/resources"))
 		);
 	}

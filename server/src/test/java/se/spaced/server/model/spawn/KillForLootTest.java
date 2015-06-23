@@ -3,7 +3,7 @@ package se.spaced.server.model.spawn;
 import com.google.common.collect.Sets;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.loot.LootTemplateProbability;
@@ -26,7 +26,7 @@ import java.util.HashSet;
 
 import static org.junit.Assert.assertNull;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 import static se.spaced.server.model.items.InventoryAssertUtils.assertItemCountInInventory;
 
 

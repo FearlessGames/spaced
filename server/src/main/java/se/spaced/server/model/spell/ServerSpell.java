@@ -2,7 +2,7 @@ package se.spaced.server.model.spell;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.messages.protocol.Spell;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
@@ -20,17 +20,7 @@ import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.model.TargetingType;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;

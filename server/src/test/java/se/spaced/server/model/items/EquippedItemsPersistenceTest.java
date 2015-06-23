@@ -2,8 +2,8 @@ package se.spaced.server.model.items;
 
 import org.hibernate.Transaction;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.PersistedAppearanceData;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.currency.PersistedCurrency;

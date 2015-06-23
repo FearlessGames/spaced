@@ -2,7 +2,7 @@ package se.spaced.server.net.listeners.auth;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.messages.protocol.c2s.ClientMovementMessages;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.movement.MovementService;

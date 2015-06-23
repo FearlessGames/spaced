@@ -1,7 +1,7 @@
 package se.spaced.server.loot;
 
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.shared.util.random.RandomProvider;
 
 import javax.persistence.Entity;

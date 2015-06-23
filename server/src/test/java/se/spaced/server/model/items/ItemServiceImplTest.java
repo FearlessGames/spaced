@@ -3,9 +3,9 @@ package se.spaced.server.model.items;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.messages.protocol.SpacedItem;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -16,10 +16,7 @@ import se.spaced.shared.model.items.ItemType;
 
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
 import static se.mockachino.matchers.Matchers.*;
 import static se.spaced.server.model.items.InventoryAssertUtils.assertItemCountInInventory;

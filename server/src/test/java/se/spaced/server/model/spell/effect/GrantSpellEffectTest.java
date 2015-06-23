@@ -2,10 +2,11 @@ package se.spaced.server.model.spell.effect;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.*;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.Mockachino;
+import se.mockachino.Settings;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.player.PlayerMockFactory;

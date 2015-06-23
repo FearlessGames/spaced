@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
-import se.fearlessgames.common.lifetime.LifetimeListener;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeManager;
 import se.spaced.server.persistence.DBSettings;
 import se.spaced.server.persistence.util.GuiceHibernateInterceptor;
 

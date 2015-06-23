@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Player;
@@ -14,8 +14,8 @@ import se.spaced.server.persistence.dao.impl.hibernate.GraveyardTemplate;
 import se.spaced.shared.model.stats.EntityStats;
 
 import static org.junit.Assert.assertEquals;
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.when;
+import static se.mockachino.matchers.Matchers.any;
 
 public class DeathServiceImplTest extends ScenarioTestBase {
 

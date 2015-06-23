@@ -6,12 +6,12 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
-import se.mockachino.annotations.*;
+import se.fearless.common.time.SystemTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
+import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.mob.brains.CompositeMobBrain;
 import se.spaced.server.mob.brains.MobBrain;
@@ -40,10 +40,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.setupMocks;
 
 
 public class BrainTemplateHibernateTest extends PersistentTestBase {

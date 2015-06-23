@@ -3,22 +3,18 @@ package se.spaced.server.trade;
 import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.hiflyer.fettle.StateMachineTemplate;
-import se.hiflyer.fettle.export.DotExporter;
-import se.hiflyer.fettle.impl.AbstractTransitionModel;
-import se.mockachino.*;
-import se.mockachino.order.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.fearless.fettle.Arguments;
+import se.fearless.fettle.StateMachineTemplate;
+import se.fearless.fettle.export.DotExporter;
+import se.fearless.fettle.impl.AbstractTransitionModel;
+import se.mockachino.Mockachino;
+import se.mockachino.order.OrderingContext;
 import se.spaced.server.model.ServerEntity;
-import se.spaced.server.model.items.Inventory;
-import se.spaced.server.model.items.InventoryService;
-import se.spaced.server.model.items.InventoryServiceImpl;
-import se.spaced.server.model.items.InventoryType;
-import se.spaced.server.model.items.ServerItem;
-import se.spaced.server.model.items.ServerItemTemplate;
+import se.spaced.server.model.items.*;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.net.broadcast.SmrtBroadcasterImpl;
 import se.spaced.server.persistence.dao.impl.inmemory.InMemoryInventoryDao;
@@ -26,11 +22,10 @@ import se.spaced.shared.model.items.ItemType;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.matchers.Matchers.any;
 
 public class TradeTest {
 	private UUIDMockFactory uuidFactory;
@@ -380,8 +375,8 @@ public class TradeTest {
 
 	@Test
 	public void testDot() throws Exception {
-		StateMachineTemplate<TradeState, TradeActions> transitionModel = tradeTransitionModelProvider.get();
-		DotExporter<TradeState, TradeActions> exp = new DotExporter<TradeState, TradeActions>((AbstractTransitionModel<TradeState, TradeActions>) transitionModel,
+		StateMachineTemplate<TradeState, TradeActions, Arguments> transitionModel = tradeTransitionModelProvider.get();
+		DotExporter<TradeState, TradeActions, Arguments> exp = new DotExporter<TradeState, TradeActions, Arguments>((AbstractTransitionModel<TradeState, TradeActions, Arguments>) transitionModel,
 				"Trade");
 		exp.asDot(System.out, false);
 	}

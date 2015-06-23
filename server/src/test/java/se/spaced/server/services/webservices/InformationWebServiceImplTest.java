@@ -2,9 +2,9 @@ package se.spaced.server.services.webservices;
 
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.mockachino.annotations.*;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.time.SystemTimeProvider;
+import se.mockachino.annotations.Mock;
 import se.spaced.server.account.AccountService;
 import se.spaced.server.model.action.ActionScheduler;
 import se.spaced.server.net.RemoteServer;

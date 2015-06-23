@@ -2,11 +2,11 @@ package se.spaced.server.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.movement.TransportationMode;
 import se.spaced.server.model.spawn.MobTemplate;
 import se.spaced.shared.model.aura.ModStat;
@@ -15,9 +15,7 @@ import se.spaced.shared.model.stats.StatType;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.util.random.RealRandomProvider;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ServerEntityTest {
 	private final UUIDFactory uuidFactory = UUIDFactoryImpl.INSTANCE;

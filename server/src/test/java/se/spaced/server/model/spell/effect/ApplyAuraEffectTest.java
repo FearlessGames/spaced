@@ -2,8 +2,8 @@ package se.spaced.server.model.spell.effect;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.AuraInstance;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -17,11 +17,10 @@ import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.model.stats.Operator;
 import se.spaced.shared.model.stats.StatType;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.getData;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.matchers.Matchers.any;
 
 public class ApplyAuraEffectTest extends ScenarioTestBase {
 	private static final double EPSILON = 1e-10;

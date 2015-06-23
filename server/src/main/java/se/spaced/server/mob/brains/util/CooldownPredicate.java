@@ -2,7 +2,7 @@ package se.spaced.server.mob.brains.util;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Maps;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.ServerEntity;
 
 import java.util.concurrent.ConcurrentMap;

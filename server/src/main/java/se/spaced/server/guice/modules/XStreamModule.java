@@ -5,7 +5,7 @@ import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.resources.zone.ZoneXmlFileHandler;
 import se.spaced.client.resources.zone.ZoneXmlReader;
 import se.spaced.server.persistence.util.ServerXStreamRegistry;

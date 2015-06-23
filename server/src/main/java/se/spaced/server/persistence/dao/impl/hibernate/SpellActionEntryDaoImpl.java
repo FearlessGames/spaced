@@ -2,7 +2,7 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 
 import com.google.inject.Inject;
 import org.hibernate.SessionFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.interfaces.SpellActionEntryDao;
 import se.spaced.server.persistence.util.PageParameters;
 import se.spaced.server.persistence.util.transactions.AutoTransaction;

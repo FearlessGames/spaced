@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
-import se.mockachino.*;
+import se.fearless.common.mock.MockUtil;
+import se.mockachino.Mockachino;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.PersistedAppearanceData;
@@ -26,12 +26,9 @@ import se.spaced.shared.model.items.UnequipFailure;
 import se.spaced.shared.model.stats.Operator;
 import se.spaced.shared.model.stats.StatType;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 public class EquipmentServiceImplTest extends ScenarioTestBase {
 	private ServerEntity entity;

@@ -4,8 +4,8 @@ import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.ConcurrentTestHelper;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.ConcurrentTestHelper;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Player;
@@ -15,9 +15,7 @@ import se.spaced.server.model.player.PlayerMockFactory;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
 
 public class EntityTargetServiceImplTest extends ScenarioTestBase {

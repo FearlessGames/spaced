@@ -2,8 +2,8 @@ package se.spaced.server.model.combat;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.aura.AuraService;
 import se.spaced.server.model.aura.ServerAura;
@@ -13,7 +13,8 @@ import se.spaced.shared.util.random.RealRandomProvider;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 public class SimpleCombatMechanicsTest {
 

@@ -3,7 +3,7 @@ package se.spaced.server.model.spell.effect;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
@@ -14,14 +14,7 @@ import se.spaced.server.persistence.dao.interfaces.Persistable;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.network.protocol.codec.datatype.SpellEffect;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)

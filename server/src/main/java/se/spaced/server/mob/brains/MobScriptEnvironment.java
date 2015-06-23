@@ -2,7 +2,7 @@ package se.spaced.server.mob.brains;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 import se.krka.kahlua.require.LuaSourceProvider;
 import se.spaced.server.mob.MobInfoProvider;
 import se.spaced.server.mob.MobOrderExecutor;

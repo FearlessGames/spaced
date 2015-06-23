@@ -1,7 +1,7 @@
 package se.spaced.server.model;
 
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.spawn.PlayerTemplate;
 import se.spaced.shared.model.EntityInteractionCapability;
 import se.spaced.shared.model.Gender;

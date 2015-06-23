@@ -1,7 +1,7 @@
 package se.spaced.server.model.world;
 
 import com.google.common.collect.Maps;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.shared.world.TimeSystemInfo;
 
 import java.util.Map;

@@ -5,7 +5,7 @@ import com.google.inject.Singleton;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.VectorMath;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.Mob;

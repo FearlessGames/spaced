@@ -4,14 +4,14 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
 import se.spaced.server.model.spawn.schedule.SpawnSchedule;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class SpawnServiceImplTest extends ScenarioTestBase {

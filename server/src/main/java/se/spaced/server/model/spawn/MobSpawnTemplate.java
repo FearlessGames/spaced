@@ -2,8 +2,8 @@ package se.spaced.server.model.spawn;
 
 import com.google.inject.Inject;
 import org.hibernate.annotations.Type;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.model.action.ActionScheduler;
@@ -16,14 +16,7 @@ import se.spaced.shared.util.math.interval.IntervalInt;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.world.area.Geometry;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class MobSpawnTemplate extends ExternalPersistableBase {

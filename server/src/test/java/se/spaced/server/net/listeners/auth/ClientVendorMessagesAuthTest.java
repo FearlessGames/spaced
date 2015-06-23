@@ -6,10 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.time.SystemTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.SpacedItem;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
@@ -34,7 +34,8 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.util.List;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.notSame;
 
 public class ClientVendorMessagesAuthTest {
 

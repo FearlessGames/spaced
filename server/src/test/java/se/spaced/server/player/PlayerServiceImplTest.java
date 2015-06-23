@@ -6,10 +6,10 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
@@ -35,11 +35,9 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.util.Collection;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.setupMocks;
 
 
 public class PlayerServiceImplTest extends PersistentTestBase {

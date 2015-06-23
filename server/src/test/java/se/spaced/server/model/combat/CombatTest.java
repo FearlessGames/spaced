@@ -2,7 +2,7 @@ package se.spaced.server.model.combat;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;
-import se.fearlessgames.common.util.ConcurrentTestHelper;
+import se.fearless.common.util.ConcurrentTestHelper;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Mob;
 import se.spaced.server.model.Player;

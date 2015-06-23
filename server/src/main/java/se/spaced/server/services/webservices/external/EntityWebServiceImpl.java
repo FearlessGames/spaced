@@ -2,7 +2,7 @@ package se.spaced.server.services.webservices.external;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.spawn.EntityTemplate;
 import se.spaced.server.persistence.dao.interfaces.EntityTemplateDao;
 import se.spaced.server.services.PlayerConnectedService;

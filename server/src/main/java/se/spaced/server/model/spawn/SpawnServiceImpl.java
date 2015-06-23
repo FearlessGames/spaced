@@ -5,7 +5,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.s2c.S2CEmptyReceiver;
 import se.spaced.messages.protocol.s2c.S2CProtocol;

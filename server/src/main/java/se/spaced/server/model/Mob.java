@@ -1,6 +1,6 @@
 package se.spaced.server.model;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.server.loot.Loot;
 import se.spaced.server.loot.LootGenerator;

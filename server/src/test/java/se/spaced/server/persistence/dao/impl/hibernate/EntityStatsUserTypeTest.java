@@ -5,7 +5,7 @@ import org.hibernate.annotations.Columns;
 import org.hibernate.annotations.Type;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.shared.model.stats.EntityStats;
 
 import javax.persistence.Column;

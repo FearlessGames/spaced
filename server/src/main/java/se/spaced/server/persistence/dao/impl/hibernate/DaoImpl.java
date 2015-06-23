@@ -2,7 +2,7 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.interfaces.Dao;
 import se.spaced.server.persistence.dao.interfaces.Persistable;
 import se.spaced.server.persistence.util.transactions.AutoTransaction;

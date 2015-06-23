@@ -1,8 +1,8 @@
 package se.spaced.server.persistence.dao.impl.inmemory;
 
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.persistence.DuplicateObjectException;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.server.persistence.dao.impl.OwnedPersistableBase;

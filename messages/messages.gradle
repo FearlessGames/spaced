@@ -1,7 +1,5 @@
 apply plugin: 'java'
 
-def templateDir = "../smrt/src/main/resources"
-
 def generateOutputDir = file("$buildDir/generated-resources/java")
 
 def generatedSource = file(generateOutputDir)
@@ -9,7 +7,7 @@ def generatedSource = file(generateOutputDir)
 sourceSets {
 	generated {
 		java.srcDir generatedSource
-		compileClasspath += main.output
+		compileClasspath += main.output + main.compileClasspath
 	}
 }
 
@@ -17,6 +15,7 @@ configurations {
 	generate.extendsFrom compile
 	generated
 	smrtTemplates
+	codecs
 }
 
 repositories {
@@ -29,8 +28,6 @@ repositories {
 		}
 	}
 }
-
-
 
 dependencies {
 	generate'se.smrt:smrt-generator:1.0'
@@ -69,8 +66,14 @@ compileJava.options.compilerArgs = [
 
 	]
 
-jar {
-	include {
-		sourceSets.generated.output
-	}
+task jarGenerated(type: Jar) {
+	from sourceSets.generated.output
+	baseName = 'codecs'
+}
+
+assemble.dependsOn jarGenerated
+
+
+artifacts {
+	codecs jarGenerated
 }

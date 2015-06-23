@@ -1,7 +1,7 @@
 package se.spaced.server.model.movement;
 
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.persistence.dao.impl.hibernate.GraveyardTemplate;
 import se.spaced.server.persistence.util.transactions.AutoTransaction;

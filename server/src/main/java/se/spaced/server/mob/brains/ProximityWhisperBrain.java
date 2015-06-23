@@ -1,7 +1,7 @@
 package se.spaced.server.mob.brains;
 
 import com.google.common.base.Predicates;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.s2c.S2CMultiDispatcher;
 import se.spaced.messages.protocol.s2c.S2CProtocol;

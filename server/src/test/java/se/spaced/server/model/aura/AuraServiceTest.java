@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.ServerEntity;
@@ -18,9 +18,7 @@ import se.spaced.shared.model.stats.Operator;
 import se.spaced.shared.model.stats.StatType;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class AuraServiceTest extends ScenarioTestBase {

@@ -3,7 +3,7 @@ package se.spaced.server.mob.brains;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.mob.MobDecision;
 import se.spaced.server.mob.MobInfoProvider;
@@ -21,7 +21,8 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.eq;
+import static se.mockachino.matchers.Matchers.same;
 
 public class AttackingBrainTest extends ScenarioTestBase {
 	private MobInfoProvider mobInfoProvider;

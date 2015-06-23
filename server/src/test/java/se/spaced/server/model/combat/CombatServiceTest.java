@@ -2,7 +2,7 @@ package se.spaced.server.model.combat;
 
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.ServerEntity;
@@ -15,11 +15,10 @@ import se.spaced.server.persistence.dao.impl.hibernate.GraveyardTemplate;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.eq;
 
 
 public class CombatServiceTest extends AbstractCombatServiceTest {

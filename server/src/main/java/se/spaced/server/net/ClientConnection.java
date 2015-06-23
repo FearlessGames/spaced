@@ -1,6 +1,6 @@
 package se.spaced.server.net;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.c2s.remote.C2SVersionReceiver;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.account.Account;

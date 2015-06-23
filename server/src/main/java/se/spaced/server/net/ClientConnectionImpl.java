@@ -4,7 +4,7 @@ package se.spaced.server.net;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.c2s.C2SProtocol;
 import se.spaced.messages.protocol.c2s.remote.C2SChecksum;
 import se.spaced.messages.protocol.c2s.remote.C2SRemoteProtocolErrorHandler;

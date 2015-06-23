@@ -1,7 +1,7 @@
 package se.spaced.server.mob;
 
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.movement.MovementService;
 import se.spaced.shared.model.AnimationState;

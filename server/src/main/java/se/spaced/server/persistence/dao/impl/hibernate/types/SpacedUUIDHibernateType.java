@@ -6,7 +6,7 @@ import org.hibernate.type.StandardBasicTypes;
 import org.hibernate.usertype.UserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;

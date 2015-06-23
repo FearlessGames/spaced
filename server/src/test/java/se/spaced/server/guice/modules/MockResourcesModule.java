@@ -5,9 +5,9 @@ import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.io.StreamLocator;
-import se.fearlessgames.common.mock.MockUtil;
-import se.mockachino.*;
+import se.fearless.common.io.StreamLocator;
+import se.fearless.common.mock.MockUtil;
+import se.mockachino.Mockachino;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

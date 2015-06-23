@@ -1,6 +1,6 @@
 package se.spaced.server.net;
 
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.messages.protocol.c2s.C2SProtocol;
 import se.spaced.messages.protocol.c2s.object.MessageObject;
 import se.spaced.server.model.action.ActionScheduler;

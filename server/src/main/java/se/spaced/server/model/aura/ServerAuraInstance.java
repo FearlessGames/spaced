@@ -1,7 +1,7 @@
 package se.spaced.server.model.aura;
 
 import com.google.common.collect.ImmutableSet;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.AuraInstance;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.shared.model.aura.ModStat;

@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.PersistedAppearanceData;
 import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.server.model.spell.ServerSpell;

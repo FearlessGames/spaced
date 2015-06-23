@@ -1,6 +1,6 @@
 package se.spaced.server.tools.spawnpattern.presenter;
 
-import se.fearlessgames.common.util.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.server.model.spawn.MobSpawnTemplate;
 import se.spaced.server.model.spawn.MobTemplate;
 import se.spaced.server.model.spawn.SpawnPatternTemplate;

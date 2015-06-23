@@ -2,7 +2,7 @@ package se.spaced.server.model.combat;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.PersistedCreatureType;

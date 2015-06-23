@@ -1,6 +1,6 @@
 package se.spaced.server.model.spawn.schedule;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.action.ActionScheduler;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 

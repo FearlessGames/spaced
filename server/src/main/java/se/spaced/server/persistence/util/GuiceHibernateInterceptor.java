@@ -7,7 +7,7 @@ import org.hibernate.EmptyInterceptor;
 import org.hibernate.EntityMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.interfaces.Persistable;
 
 import java.io.Serializable;

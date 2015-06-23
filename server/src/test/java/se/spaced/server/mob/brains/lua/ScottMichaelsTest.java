@@ -4,17 +4,17 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.io.ClasspathStreamLocator;
-import se.fearlessgames.common.io.StreamLocator;
-import se.fearlessgames.common.lua.SimpleLuaSourceProvider;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.io.ClasspathStreamLocator;
+import se.fearless.common.io.StreamLocator;
+import se.fearless.common.lua.SimpleLuaSourceProvider;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.krka.kahlua.require.LuaSourceProvider;
-import se.mockachino.*;
-import se.mockachino.alias.*;
-import se.mockachino.annotations.*;
+import se.mockachino.Invocation;
+import se.mockachino.alias.SimpleAlias;
+import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.mob.MobInfoProvider;
 import se.spaced.server.mob.MobOrderExecutor;
@@ -52,7 +52,8 @@ import se.spaced.shared.world.area.PolygonGraph;
 import java.util.Arrays;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyDouble;
 
 public class ScottMichaelsTest {
 	private final UUIDFactory uuidFactory = UUIDFactoryImpl.INSTANCE;

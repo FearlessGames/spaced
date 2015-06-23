@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.util.random.RealRandomProvider;
 import se.spaced.shared.world.area.Polygon;

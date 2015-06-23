@@ -2,12 +2,13 @@ package se.spaced.server;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.action.ActionScheduler;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyLong;
 
 public class SpacedServerTest {
 	private SpacedServer spacedServer;

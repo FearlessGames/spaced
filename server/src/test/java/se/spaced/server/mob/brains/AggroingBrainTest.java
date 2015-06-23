@@ -20,8 +20,9 @@ import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
-import static se.fearlessgames.common.mock.MockUtil.deepMock;
-import static se.mockachino.Mockachino.*;
+import static se.fearless.common.mock.MockUtil.deepMock;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 public class AggroingBrainTest extends ScenarioTestBase {
 	private AggroingBrain aggroingBrain;

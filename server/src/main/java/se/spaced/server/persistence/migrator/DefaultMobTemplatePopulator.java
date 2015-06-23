@@ -3,7 +3,7 @@ package se.spaced.server.persistence.migrator;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import org.hibernate.Transaction;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.PersistedAppearanceData;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.spawn.EntityTemplate;

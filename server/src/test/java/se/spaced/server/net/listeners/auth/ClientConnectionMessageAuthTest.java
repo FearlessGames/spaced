@@ -2,11 +2,11 @@ package se.spaced.server.net.listeners.auth;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.Digester;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
-import se.mockachino.annotations.*;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.security.Digester;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactoryImpl;
+import se.mockachino.annotations.Mock;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.messages.protocol.s2c.ServerConnectionMessages;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.account.Account;

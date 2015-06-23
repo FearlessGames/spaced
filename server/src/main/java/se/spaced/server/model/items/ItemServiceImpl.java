@@ -2,9 +2,9 @@ package se.spaced.server.model.items;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.ActionScheduler;

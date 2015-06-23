@@ -4,20 +4,11 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.spaced.server.persistence.dao.impl.hibernate.types.ModStatUserType;
-import se.spaced.server.persistence.dao.impl.hibernate.types.QuaternionHibernateType;
-import se.spaced.server.persistence.dao.impl.hibernate.types.SpacedUUIDHibernateType;
-import se.spaced.server.persistence.dao.impl.hibernate.types.Vector3HibernateType;
-import se.spaced.server.persistence.dao.impl.hibernate.types.XmlStringType;
+import se.fearless.common.uuid.UUID;
+import se.spaced.server.persistence.dao.impl.hibernate.types.*;
 import se.spaced.server.persistence.dao.interfaces.Persistable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

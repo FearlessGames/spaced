@@ -3,7 +3,7 @@ package se.spaced.server.model.action;
 import com.google.common.collect.Sets;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Mob;
@@ -21,7 +21,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.type;
 
 
 public class SpellActionTest extends ScenarioTestBase {

@@ -5,7 +5,7 @@ import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.krka.kahlua.luaj.compiler.LuaCompiler;
 import se.krka.kahlua.vm.LuaClosure;
 import se.spaced.server.mob.MobOrderExecutor;

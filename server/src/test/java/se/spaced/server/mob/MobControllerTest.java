@@ -2,10 +2,10 @@ package se.spaced.server.mob;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.lifetime.LifetimeManagerImpl;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManagerImpl;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.mob.brains.MobBrain;
 import se.spaced.server.model.Mob;
@@ -14,7 +14,7 @@ import se.spaced.server.model.spawn.SpawnListener;
 import se.spaced.shared.util.ListenerDispatcher;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.anyLong;
 
 public class MobControllerTest extends ScenarioTestBase {
 	private MobController mobController;

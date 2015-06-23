@@ -1,6 +1,6 @@
 package se.spaced.server.account;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.Player;
 import se.spaced.server.persistence.DuplicateObjectException;
 import se.spaced.server.persistence.ObjectNotFoundException;

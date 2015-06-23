@@ -1,6 +1,6 @@
 package se.spaced.server.persistence;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.interfaces.Persistable;
 
 public class MockOwner implements Persistable {

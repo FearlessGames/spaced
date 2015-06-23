@@ -3,7 +3,7 @@ package se.spaced.server.model.items;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.action.ActionScheduler;
@@ -21,7 +21,7 @@ import se.spaced.shared.model.items.ItemType;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
 
 public class ItemServiceImplDBTest extends PersistentTestBase {
 

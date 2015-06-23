@@ -3,7 +3,7 @@ package se.spaced.server.model.items;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
@@ -18,9 +18,7 @@ import se.spaced.server.player.PlayerServiceImpl;
 import se.spaced.shared.model.Gender;
 import se.spaced.shared.model.items.ItemType;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static se.spaced.server.model.items.InventoryAssertUtils.assertItemCountInInventory;
 import static se.spaced.server.model.items.InventoryAssertUtils.firstItem;
 

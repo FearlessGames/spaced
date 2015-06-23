@@ -1,7 +1,7 @@
 package se.spaced.server.mob.brains.templates;
 
 import com.google.common.collect.ImmutableSet;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.mob.brains.MobBrain;
 import se.spaced.server.mob.brains.NullBrain;
 import se.spaced.server.model.Mob;

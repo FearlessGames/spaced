@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Mob;
 import se.spaced.server.model.spawn.MobTemplate;

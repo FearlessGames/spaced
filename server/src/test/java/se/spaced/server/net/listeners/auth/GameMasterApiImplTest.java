@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.SpacedItem;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -12,11 +12,7 @@ import se.spaced.server.model.PersistedPositionalData;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.ActionScheduler;
-import se.spaced.server.model.items.Inventory;
-import se.spaced.server.model.items.InventoryFullException;
-import se.spaced.server.model.items.InventoryType;
-import se.spaced.server.model.items.ServerItem;
-import se.spaced.server.model.items.ServerItemTemplate;
+import se.spaced.server.model.items.*;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.net.ClientConnection;
 import se.spaced.server.persistence.dao.impl.hibernate.TransactionManager;
@@ -28,7 +24,8 @@ import se.spaced.shared.model.items.ItemType;
 
 import static org.junit.Assert.fail;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyInt;
 
 public class GameMasterApiImplTest extends ScenarioTestBase {
 	private Player gmEntity;

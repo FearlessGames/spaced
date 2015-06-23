@@ -3,7 +3,7 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.impl.OwnedPersistableBase;
 import se.spaced.server.persistence.dao.interfaces.FindByOwnerDao;
 import se.spaced.server.persistence.dao.interfaces.Persistable;

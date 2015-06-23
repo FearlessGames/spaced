@@ -5,7 +5,7 @@ import com.google.inject.Singleton;
 import org.hibernate.HibernateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.Player;
 import se.spaced.server.persistence.DuplicateObjectException;
 import se.spaced.server.persistence.ObjectNotFoundException;

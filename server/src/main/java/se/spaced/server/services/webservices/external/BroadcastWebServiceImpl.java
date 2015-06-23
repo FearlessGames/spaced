@@ -2,7 +2,7 @@ package se.spaced.server.services.webservices.external;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.entity.EntityService;

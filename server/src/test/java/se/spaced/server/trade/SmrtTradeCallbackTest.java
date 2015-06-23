@@ -2,10 +2,11 @@ package se.spaced.server.trade;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.*;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.Mockachino;
+import se.mockachino.Settings;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.items.ServerItem;
@@ -13,7 +14,8 @@ import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
 import se.spaced.server.net.broadcast.SmrtBroadcasterImpl;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
 
 public class SmrtTradeCallbackTest {
 	private SmrtTradeCallback tradeCallback;

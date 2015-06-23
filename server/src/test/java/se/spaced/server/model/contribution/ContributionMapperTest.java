@@ -2,9 +2,9 @@ package se.spaced.server.model.contribution;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.ActionScheduler;
 import se.spaced.server.model.combat.CombatRepositoryImpl;
@@ -16,7 +16,7 @@ import se.spaced.server.net.broadcast.SmrtBroadcasterImpl;
 import se.spaced.shared.model.MagicSchool;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.anyInt;
 
 public class ContributionMapperTest {
 

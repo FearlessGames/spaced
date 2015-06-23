@@ -2,22 +2,17 @@ package se.spaced.server.trade;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import se.hiflyer.fettle.Action;
-import se.hiflyer.fettle.Arguments;
-import se.hiflyer.fettle.Condition;
-import se.hiflyer.fettle.Fettle;
-import se.hiflyer.fettle.StateMachine;
-import se.hiflyer.fettle.StateMachineTemplate;
-import se.hiflyer.fettle.builder.StateMachineBuilder;
+import se.fearless.fettle.*;
+import se.fearless.fettle.builder.StateMachineBuilder;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.items.ServerItem;
 
 import java.util.Collection;
 
-public class TradeTransitionModelProvider implements Provider<StateMachineTemplate<TradeState, TradeActions>> {
+public class TradeTransitionModelProvider implements Provider<StateMachineTemplate<TradeState, TradeActions, Arguments>> {
 
 	private final TradeCallback tradeCallback;
-	private final StateMachineTemplate<TradeState, TradeActions> instance;
+	private final StateMachineTemplate<TradeState, TradeActions, Arguments> instance;
 
 	@Inject
 	public TradeTransitionModelProvider(TradeCallback tradeCallback) {
@@ -26,21 +21,21 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 	}
 
 	@Override
-	public StateMachineTemplate<TradeState, TradeActions> get() {
+	public StateMachineTemplate<TradeState, TradeActions, Arguments> get() {
 		return instance;
 	}
 
-	private StateMachineTemplate<TradeState, TradeActions> buildStateMachine() {
-		StateMachineBuilder<TradeState, TradeActions> builder = Fettle.newBuilder(TradeState.class, TradeActions.class);
+	private StateMachineTemplate<TradeState, TradeActions, Arguments> buildStateMachine() {
+		StateMachineBuilder<TradeState, TradeActions, Arguments> builder = Fettle.newBuilder(TradeState.class, TradeActions.class);
 
 		builder.onEntry(TradeState.NEGOTIATING).perform(new NegotiatingEntryAction());
 		builder.onEntry(TradeState.COMPLETED).perform(new TradeCompletedAction());
 		builder.onEntry(TradeState.ABORTED).perform(new AbortedEntryAction());
 
 		builder.transition().from(TradeState.START).to(TradeState.NEGOTIATING).on(TradeActions.INITIATED).perform(
-				new Action<TradeState, TradeActions>() {
+				new Action<TradeState, TradeActions, Arguments>() {
 					@Override
-					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 						if (args.getNumberOfArguments() > 0) {
 							Trade trade = (Trade) args.getFirst();
 							tradeCallback.initiated(trade.getInitiator(), trade.getCollaborator(), trade.getChecksum());
@@ -63,7 +58,7 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 		return builder.buildTransitionModel();
 	}
 
-	private void addOfferUppdates(StateMachineBuilder<TradeState, TradeActions> builder) {
+	private void addOfferUppdates(StateMachineBuilder<TradeState, TradeActions, Arguments> builder) {
 		Condition noDuplicatesCondition = new NoDuplicationCondition();
 
 		builder.transition().from(TradeState.NEGOTIATING).to(TradeState.NEGOTIATING).on(TradeActions.OFFER_UPDATED).when(noDuplicatesCondition);
@@ -74,13 +69,13 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private void addAccepts(StateMachineBuilder<TradeState, TradeActions> builder) {
+	private void addAccepts(StateMachineBuilder<TradeState, TradeActions, Arguments> builder) {
 		Condition checksumMatchesCondition = new ChecksumMatchesCondition();
 
 		builder.transition().from(TradeState.NEGOTIATING).to(TradeState.INITIATOR_ACCEPT).on(TradeActions.INITIATOR_ACCEPT).when(checksumMatchesCondition).
-				perform(new Action<TradeState, TradeActions>() {
+				perform(new Action<TradeState, TradeActions, Arguments>() {
 					@Override
-					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 						if (args.getNumberOfArguments() > 0) {
 							Trade trade = (Trade) args.getFirst();
 							tradeCallback.initiatorAccepted(trade.getInitiator(), trade.getCollaborator());
@@ -89,9 +84,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 				});
 
 		builder.transition().from(TradeState.NEGOTIATING).to(TradeState.COLLABORATOR_ACCEPT).on(TradeActions.COLLABORATOR_ACCEPT).when(checksumMatchesCondition).
-				perform(new Action<TradeState, TradeActions>() {
+				perform(new Action<TradeState, TradeActions, Arguments>() {
 					@Override
-					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 						if (args.getNumberOfArguments() > 0) {
 							Trade trade = (Trade) args.getFirst();
 							tradeCallback.collaboratorAccepted(trade.getInitiator(), trade.getCollaborator());
@@ -105,7 +100,7 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 		builder.transition().from(TradeState.INITIATOR_ACCEPT).to(TradeState.COMPLETED).on(TradeActions.COLLABORATOR_ACCEPT).when(checksumMatchesCondition);
 	}
 
-	private void addRejects(StateMachineBuilder<TradeState, TradeActions> builder) {
+	private void addRejects(StateMachineBuilder<TradeState, TradeActions, Arguments> builder) {
 		builder.transition().from(TradeState.INITIATOR_ACCEPT).to(TradeState.NEGOTIATING).on(TradeActions.INITIATOR_RETRACT);
 
 		builder.transition().from(TradeState.COLLABORATOR_ACCEPT).to(TradeState.NEGOTIATING).on(TradeActions.INITIATOR_RETRACT);
@@ -116,12 +111,12 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 		builder.transition().from(TradeState.INITIATOR_ACCEPT).to(TradeState.NEGOTIATING).on(TradeActions.COLLABORATOR_RETRACT);
 	}
 
-	private void addClosing(StateMachineBuilder<TradeState, TradeActions> builder) {
+	private void addClosing(StateMachineBuilder<TradeState, TradeActions, Arguments> builder) {
 
 		builder.transition().fromAll().to(TradeState.ABORTED).on(TradeActions.COLLABORATOR_REJECTED).
-				perform(new Action<TradeState, TradeActions>() {
+				perform(new Action<TradeState, TradeActions, Arguments>() {
 					@Override
-					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 						if (args.getNumberOfArguments() > 0) {
 							Trade trade = (Trade) args.getFirst();
 							tradeCallback.collaboratorRejected(trade.getInitiator(), trade.getCollaborator());
@@ -130,9 +125,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 				});
 
 		builder.transition().fromAll().to(TradeState.ABORTED).on(TradeActions.INITIATOR_REJECTED).
-				perform(new Action<TradeState, TradeActions>() {
+				perform(new Action<TradeState, TradeActions, Arguments>() {
 					@Override
-					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+					public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 						if (args.getNumberOfArguments() == 1) {
 							Trade trade = (Trade) args.getFirst();
 							tradeCallback.initiatorRejected(trade.getInitiator(), trade.getCollaborator());
@@ -144,8 +139,8 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private void addTradeViolations(StateMachineBuilder<TradeState, TradeActions> builder) {
-		Action<TradeState, TradeActions> tryToUpdateCompletedTradeAction = new ClosedTradeViolationAction();
+	private void addTradeViolations(StateMachineBuilder<TradeState, TradeActions, Arguments> builder) {
+		Action<TradeState, TradeActions, Arguments> tryToUpdateCompletedTradeAction = new ClosedTradeViolationAction();
 
 		builder.transition().from(TradeState.COMPLETED).to(TradeState.COMPLETED).on(TradeActions.ABORTED).perform(tryToUpdateCompletedTradeAction);
 
@@ -160,7 +155,7 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 		builder.transition().fromAll().to(TradeState.ABORTED).on(TradeActions.ABORTED);
 	}
 
-	private static class ChecksumMatchesCondition implements Condition {
+	private static class ChecksumMatchesCondition implements Condition<Arguments> {
 		@Override
 		public boolean isSatisfied(Arguments args) {
 			if (args.getNumberOfArguments() < 2) {
@@ -177,7 +172,7 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private static class NoDuplicationCondition implements Condition {
+	private static class NoDuplicationCondition implements Condition<Arguments> {
 		@Override
 		public boolean isSatisfied(Arguments arguments) {
 			if (arguments.getNumberOfArguments() < 2) {
@@ -190,9 +185,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private class NegotiatingEntryAction implements Action<TradeState, TradeActions> {
+	private class NegotiatingEntryAction implements Action<TradeState, TradeActions, Arguments> {
 		@Override
-		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 			if (args.getNumberOfArguments() < 1) {
 				throw new RuntimeException("Bad number of arguments for negotiating entry - " + args);
 			}
@@ -214,9 +209,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private class AbortedEntryAction implements Action<TradeState, TradeActions> {
+	private class AbortedEntryAction implements Action<TradeState, TradeActions, Arguments> {
 		@Override
-		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 			if (args.getNumberOfArguments() > 0) {
 				Trade trade = (Trade) args.getFirst();
 
@@ -226,9 +221,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private class TradeCompletedAction implements Action<TradeState, TradeActions> {
+	private class TradeCompletedAction implements Action<TradeState, TradeActions, Arguments> {
 		@Override
-		public void onTransition(TradeState from, TradeState to, TradeActions causedBy, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+		public void onTransition(TradeState from, TradeState to, TradeActions causedBy, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 			if (args.getNumberOfArguments() > 0) {
 				Trade trade = (Trade) args.getFirst();
 				tradeCallback.tradeCompleted(trade.getTradeTransaction());
@@ -237,9 +232,9 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 
 	}
 
-	private static class ClosedTradeViolationAction implements Action<TradeState, TradeActions> {
+	private static class ClosedTradeViolationAction implements Action<TradeState, TradeActions, Arguments> {
 		@Override
-		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions> machine) {
+		public void onTransition(TradeState from, TradeState to, TradeActions cause, Arguments args, StateMachine<TradeState, TradeActions, Arguments> machine) {
 			if (args.getNumberOfArguments() > 0) {
 				Trade trade = (Trade) args.getFirst();
 				throw new IllegalStateException("Tried to add an item to a rejected trade in state " + trade.getCurrentState());

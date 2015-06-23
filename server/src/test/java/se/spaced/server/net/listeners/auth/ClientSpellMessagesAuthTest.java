@@ -2,8 +2,8 @@ package se.spaced.server.net.listeners.auth;
 
 import com.google.common.collect.Lists;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.Spell;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.spell.ServerSpell;

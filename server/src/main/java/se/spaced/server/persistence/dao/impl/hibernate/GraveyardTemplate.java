@@ -1,16 +1,8 @@
 package se.spaced.server.persistence.dao.impl.hibernate;
 
-import org.hibernate.annotations.Any;
-import org.hibernate.annotations.AnyMetaDef;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.MetaValue;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
-import se.spaced.server.model.spawn.area.RandomSpaceSpawnArea;
-import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
-import se.spaced.server.model.spawn.area.SpawnArea;
-import se.spaced.server.model.spawn.area.SpawnPoint;
+import org.hibernate.annotations.*;
+import se.fearless.common.uuid.UUID;
+import se.spaced.server.model.spawn.area.*;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.server.persistence.dao.interfaces.NamedPersistable;
 import se.spaced.shared.model.PositionalData;

@@ -3,10 +3,10 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.Player;
@@ -22,9 +22,7 @@ import se.spaced.server.stats.KillStat;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class KillEntryDaoImplTest extends PersistentTestBase {
 

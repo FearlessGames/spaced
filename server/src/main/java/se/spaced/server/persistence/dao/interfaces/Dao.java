@@ -1,6 +1,6 @@
 package se.spaced.server.persistence.dao.interfaces;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 import java.util.List;
 

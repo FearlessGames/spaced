@@ -29,6 +29,7 @@ dependencies {
 	compile project(':ardortech')
 	compile 'com.google.inject.extensions:guice-grapher:3.0'
 	compile 'se.hiflyer:paparazzo:0.2-SNAPSHOT'
+	compile 'org.slf4j:jul-to-slf4j:1.7.12'
 
 
 	compile 'se.mockachino:mockachino:0.6.2' // remove this from compile if possible

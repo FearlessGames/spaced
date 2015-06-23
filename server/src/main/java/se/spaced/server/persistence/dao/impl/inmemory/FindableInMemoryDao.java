@@ -1,7 +1,7 @@
 package se.spaced.server.persistence.dao.impl.inmemory;
 
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.server.persistence.dao.interfaces.FindableDao;
 import se.spaced.server.persistence.dao.interfaces.NamedPersistable;
 

@@ -2,7 +2,7 @@ package se.spaced.server.model.world;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.spaced.shared.world.TimeSystemInfo;
 
 import static org.junit.Assert.assertEquals;

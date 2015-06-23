@@ -5,7 +5,7 @@ import com.ardor3d.math.type.ReadOnlyVector2;
 import org.hibernate.annotations.Type;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.shared.util.math.interval.IntervalInt;
 import se.spaced.shared.util.random.RandomProvider;

@@ -2,9 +2,9 @@ package se.spaced.server.net.listeners.auth;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Player;
@@ -13,11 +13,7 @@ import se.spaced.server.model.items.ServerItem;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.net.ClientConnection;
 import se.spaced.server.persistence.dao.impl.hibernate.TransactionManager;
-import se.spaced.server.trade.SmrtTradeCallback;
-import se.spaced.server.trade.TradeExecutor;
-import se.spaced.server.trade.TradeService;
-import se.spaced.server.trade.TradeServiceImpl;
-import se.spaced.server.trade.TradeTransitionModelProvider;
+import se.spaced.server.trade.*;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;

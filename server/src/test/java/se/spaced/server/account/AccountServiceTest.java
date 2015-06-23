@@ -5,9 +5,9 @@ import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.Player;
@@ -24,10 +24,7 @@ import se.spaced.shared.model.Gender;
 
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class AccountServiceTest extends PersistentTestBase {
 	private AccountService accountService;

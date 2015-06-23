@@ -1,7 +1,7 @@
 package se.spaced.server.account;
 
 import com.google.common.collect.Lists;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.Player;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 

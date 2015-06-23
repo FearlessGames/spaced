@@ -1,7 +1,7 @@
 package se.spaced.server.mob.brains.templates;
 
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.mob.brains.MobBrain;
 import se.spaced.server.mob.brains.ProximityWhisperBrain;

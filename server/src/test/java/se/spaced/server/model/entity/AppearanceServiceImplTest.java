@@ -2,9 +2,9 @@ package se.spaced.server.model.entity;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.action.ActionScheduler;
@@ -18,7 +18,7 @@ import se.spaced.server.persistence.dao.impl.inmemory.InMemoryEquipmentDao;
 import se.spaced.shared.util.ListenerDispatcher;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.anyBoolean;
 
 public class AppearanceServiceImplTest {
 

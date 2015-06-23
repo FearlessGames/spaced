@@ -1,6 +1,6 @@
 package se.spaced.server.net.listeners.auth;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 public class ExternalAccount {
 	private final UUID uuid;

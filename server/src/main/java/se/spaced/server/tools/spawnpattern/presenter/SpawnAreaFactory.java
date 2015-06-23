@@ -2,8 +2,8 @@ package se.spaced.server.tools.spawnpattern.presenter;
 
 import com.google.inject.Inject;
 import se.ardortech.math.SpacedRotation;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
 import se.spaced.server.model.spawn.area.RandomSpaceSpawnArea;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;

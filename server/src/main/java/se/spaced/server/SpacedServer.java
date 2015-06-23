@@ -4,8 +4,8 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.model.action.ActionScheduler;
 
 @Singleton

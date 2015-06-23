@@ -1,6 +1,6 @@
 package se.spaced.server.model.spawn;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 import javax.persistence.Entity;
 

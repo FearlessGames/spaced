@@ -1,7 +1,7 @@
 package se.spaced.server.loot;
 
 import com.google.common.collect.Lists;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.shared.util.random.RandomProvider;
 

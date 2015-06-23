@@ -5,7 +5,7 @@ import org.hibernate.Hibernate;
 import org.hibernate.Transaction;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.server.model.spawn.MobSpawnTemplate;
 import se.spaced.server.model.spawn.SpawnPatternTemplate;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
@@ -15,11 +15,7 @@ import se.spaced.server.persistence.migrator.ExportServerContent;
 import se.spaced.server.tools.spawnpattern.view.SpawnPatternToolView;
 import se.spaced.shared.world.area.SinglePoint;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class SpawnPatternToolPresenter implements SpawnPatternToolView.Presenter {
 	private final SpawnPatternToolView view;

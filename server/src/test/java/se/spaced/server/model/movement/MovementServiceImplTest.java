@@ -1,15 +1,16 @@
 package se.spaced.server.model.movement;
 
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.mockachino.matchers.*;
+import se.fearless.common.mock.MockUtil;
+import se.mockachino.matchers.Matchers;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.model.spell.effect.RangeableEffect;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.verifyNever;
+import static se.mockachino.Mockachino.verifyOnce;
 
 public class MovementServiceImplTest extends ScenarioTestBase {
 

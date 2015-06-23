@@ -1,6 +1,6 @@
 package se.spaced.server.spell;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.spell.ServerSpell;
 

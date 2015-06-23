@@ -1,42 +1,17 @@
 package se.spaced.server.tools.spawnpattern;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Injector;
-import com.google.inject.Provides;
-import com.google.inject.Scopes;
-import com.google.inject.Singleton;
+import com.google.inject.*;
 import com.thoughtworks.xstream.XStream;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.server.GuiceFactory;
-import se.spaced.server.tools.spawnpattern.presenter.GeometryFactory;
-import se.spaced.server.tools.spawnpattern.presenter.MobSpawnTemplatePresenter;
-import se.spaced.server.tools.spawnpattern.presenter.SpawnAreaFactory;
-import se.spaced.server.tools.spawnpattern.presenter.SpawnAreaPresenter;
-import se.spaced.server.tools.spawnpattern.presenter.SpawnPatternTemplatePresenter;
-import se.spaced.server.tools.spawnpattern.presenter.SpawnPatternToolPresenter;
-import se.spaced.server.tools.spawnpattern.view.AddMobTemplateDialogProvider;
-import se.spaced.server.tools.spawnpattern.view.AddMobTemplateDialogProviderImpl;
-import se.spaced.server.tools.spawnpattern.view.BrainParameterView;
-import se.spaced.server.tools.spawnpattern.view.BrainParameterViewImpl;
-import se.spaced.server.tools.spawnpattern.view.ErrorView;
-import se.spaced.server.tools.spawnpattern.view.IsFrame;
-import se.spaced.server.tools.spawnpattern.view.MobSpawnTemplateView;
-import se.spaced.server.tools.spawnpattern.view.MobSpawnTemplateViewImpl;
-import se.spaced.server.tools.spawnpattern.view.SpawnAreaView;
-import se.spaced.server.tools.spawnpattern.view.SpawnAreaViewImpl;
-import se.spaced.server.tools.spawnpattern.view.SpawnPatternTemplateView;
-import se.spaced.server.tools.spawnpattern.view.SpawnPatternTemplateViewImpl;
-import se.spaced.server.tools.spawnpattern.view.SpawnPatternToolView;
-import se.spaced.server.tools.spawnpattern.view.SpawnPatternToolViewImpl;
+import se.spaced.server.tools.spawnpattern.presenter.*;
+import se.spaced.server.tools.spawnpattern.view.*;
 import se.spaced.shared.tools.ClipBoarder;
 import se.spaced.shared.tools.ClipBoarderImpl;
 import se.spaced.shared.xml.XStreamIO;
 
 import javax.inject.Inject;
-import javax.swing.BorderFactory;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.*;
 import javax.swing.border.Border;
 import java.lang.reflect.InvocationTargetException;
 

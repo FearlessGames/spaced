@@ -3,7 +3,7 @@ package se.spaced.server.model.items;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.Player;

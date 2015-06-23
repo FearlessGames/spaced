@@ -6,30 +6,18 @@ import com.google.common.collect.Multiset;
 import com.google.common.collect.Sets;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.spaced.server.loot.KofNLootTemplate;
-import se.spaced.server.loot.Loot;
-import se.spaced.server.loot.LootTemplateProbability;
-import se.spaced.server.loot.MultiLootTemplate;
-import se.spaced.server.loot.SingleItemLootTemplate;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.spaced.server.loot.*;
 import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.util.random.RealRandomProvider;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
+import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.mock;
 
 
 public class LootTemplateTest {

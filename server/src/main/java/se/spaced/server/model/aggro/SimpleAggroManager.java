@@ -5,7 +5,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import se.fearlessgames.common.collections.Collections3;
+import se.fearless.common.collections.Collections3;
 import se.spaced.server.model.ServerEntity;
 
 import java.util.Map;

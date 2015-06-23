@@ -1,8 +1,8 @@
 package se.spaced.server.persistence.migrator;
 
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.Digester;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.security.Digester;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.account.Account;
 import se.spaced.server.account.AccountService;
 import se.spaced.server.account.AccountType;

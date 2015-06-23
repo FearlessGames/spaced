@@ -1,6 +1,6 @@
 package se.spaced.server.persistence.dao.interfaces;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 /**
  * Everything that will end up in the database at some point must

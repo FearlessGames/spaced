@@ -2,14 +2,16 @@ package se.spaced.server.model.currency;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
+import se.fearless.common.mock.MockUtil;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Player;
 import se.spaced.server.persistence.DuplicateObjectException;
 
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.verifyNever;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyLong;
 
 public class MoneyServiceImplTest extends ScenarioTestBase {
 

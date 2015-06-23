@@ -2,12 +2,13 @@ package se.spaced.server.model.items;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.ServerEntity;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 
 public class InventoryTest {

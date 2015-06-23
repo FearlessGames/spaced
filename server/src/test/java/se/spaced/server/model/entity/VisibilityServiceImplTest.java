@@ -5,18 +5,14 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.ConcurrentTestHelper;
-import se.mockachino.*;
-import se.mockachino.matchers.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.ConcurrentTestHelper;
+import se.mockachino.Mockachino;
+import se.mockachino.matchers.Matchers;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
-import se.spaced.server.model.PersistedAppearanceData;
-import se.spaced.server.model.PersistedCreatureType;
-import se.spaced.server.model.PersistedFaction;
-import se.spaced.server.model.Player;
-import se.spaced.server.model.ServerEntity;
+import se.spaced.server.model.*;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.shared.activecache.Job;
 import se.spaced.shared.model.AnimationState;
@@ -27,8 +23,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.verifyExactly;
+import static se.mockachino.matchers.Matchers.any;
 
 public class VisibilityServiceImplTest extends ScenarioTestBase {
 	private SpacedRotation rotation = SpacedRotation.IDENTITY;

@@ -1,6 +1,6 @@
 package se.spaced.server.model.currency;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.server.persistence.dao.interfaces.NamedPersistable;
 

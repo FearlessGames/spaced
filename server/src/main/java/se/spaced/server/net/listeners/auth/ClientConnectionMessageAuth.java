@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.Salts;
 import se.spaced.messages.protocol.c2s.ClientConnectionMessages;
 import se.spaced.messages.protocol.s2c.ServerConnectionMessages;

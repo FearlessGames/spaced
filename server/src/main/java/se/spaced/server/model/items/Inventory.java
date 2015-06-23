@@ -1,6 +1,6 @@
 package se.spaced.server.model.items;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.InventoryData;
 import se.spaced.messages.protocol.SpacedInventory;
 import se.spaced.server.model.ServerEntity;

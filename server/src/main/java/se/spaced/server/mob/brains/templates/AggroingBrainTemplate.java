@@ -2,7 +2,7 @@ package se.spaced.server.mob.brains.templates;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.mob.brains.AggroingBrain;
 import se.spaced.server.mob.brains.MobBrain;

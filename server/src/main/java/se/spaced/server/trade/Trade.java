@@ -1,10 +1,10 @@
 package se.spaced.server.trade;
 
 import com.google.common.collect.Sets;
-import se.fearlessgames.common.util.Digester;
-import se.hiflyer.fettle.Arguments;
-import se.hiflyer.fettle.StateMachine;
-import se.hiflyer.fettle.StateMachineTemplate;
+import se.fearless.common.security.Digester;
+import se.fearless.fettle.Arguments;
+import se.fearless.fettle.StateMachine;
+import se.fearless.fettle.StateMachineTemplate;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.items.ServerItem;
 
@@ -21,12 +21,12 @@ public class Trade {
 	private final Collection<ServerItem> itemsFromInitiator;
 	private final Collection<ServerItem> itemsFromCollaborator;
 
-	final StateMachine<TradeState, TradeActions> state;
+	final StateMachine<TradeState, TradeActions, Arguments> state;
 
 	public Trade(
 			ServerEntity initiator,
 			ServerEntity collaborator,
-			StateMachineTemplate<TradeState, TradeActions> tradeTransitionModel) {
+			StateMachineTemplate<TradeState, TradeActions, Arguments> tradeTransitionModel) {
 		this.initiator = initiator;
 		this.collaborator = collaborator;
 		itemsFromInitiator = Sets.newLinkedHashSet();

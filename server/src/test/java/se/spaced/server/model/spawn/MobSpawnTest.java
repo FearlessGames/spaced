@@ -5,12 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.matchers.*;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.matchers.Matchers;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.mob.brains.GMPuppeteerBrain;
 import se.spaced.server.mob.brains.MobBrain;
@@ -36,7 +36,7 @@ import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
 
 public class MobSpawnTest {

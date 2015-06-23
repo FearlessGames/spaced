@@ -2,21 +2,10 @@ package se.spaced.server.persistence.migrator;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.mob.brains.templates.CompositeBrainTemplate;
 import se.spaced.server.mob.brains.templates.ProximityWhisperBrainTemplate;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryAuraDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryBrainTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryCooldownTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryCreatureTypeDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryCurrencyDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryFactionDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryGraveyardTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryItemTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryLootTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemoryMobTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemorySpawnPatternTemplateDao;
-import se.spaced.server.persistence.dao.impl.inmemory.InMemorySpellDao;
+import se.spaced.server.persistence.dao.impl.inmemory.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

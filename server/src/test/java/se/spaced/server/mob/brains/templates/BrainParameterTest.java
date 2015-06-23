@@ -5,10 +5,10 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.io.StreamLocator;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
+import se.fearless.common.io.StreamLocator;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.mob.brains.MobScriptEnvironment;
 import se.spaced.server.model.combat.EntityCombatService;
@@ -19,11 +19,7 @@ import se.spaced.server.tools.spawnpattern.view.InputType;
 
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
 
 public class BrainParameterTest {

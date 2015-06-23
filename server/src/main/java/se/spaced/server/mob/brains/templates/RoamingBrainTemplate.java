@@ -2,7 +2,7 @@ package se.spaced.server.mob.brains.templates;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.mob.MobOrderExecutor;
 import se.spaced.server.mob.brains.MobBrain;
 import se.spaced.server.mob.brains.RoamingBrain;

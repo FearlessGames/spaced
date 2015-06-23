@@ -2,7 +2,7 @@ package se.spaced.server.persistence.migrator;
 
 import com.google.inject.Inject;
 import org.hibernate.Transaction;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.persistence.dao.impl.hibernate.TransactionManager;
 import se.spaced.server.persistence.dao.interfaces.FactionDao;

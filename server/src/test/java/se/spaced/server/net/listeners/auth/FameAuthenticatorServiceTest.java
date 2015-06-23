@@ -6,9 +6,9 @@ import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.annotations.*;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.annotations.Mock;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.messages.protocol.Salts;
 import se.spaced.shared.util.ListenerDispatcher;
 
@@ -16,7 +16,8 @@ import java.io.IOException;
 
 import static junit.framework.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
 
 @SuppressWarnings("unchecked")

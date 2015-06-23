@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.annotations.*;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.spawn.MobTemplate;
@@ -14,10 +14,7 @@ import se.spaced.shared.playback.MovementPoint;
 
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class ModelTest extends ScenarioTestBase {

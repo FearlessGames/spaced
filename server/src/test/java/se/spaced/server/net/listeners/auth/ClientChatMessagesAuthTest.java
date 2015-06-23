@@ -3,17 +3,13 @@ package se.spaced.server.net.listeners.auth;
 import org.apache.mina.core.session.IoSession;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.SystemTimeProvider;
+import se.fearless.common.time.TimeProvider;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
-import se.spaced.server.model.PersistedAppearanceData;
-import se.spaced.server.model.PersistedCreatureType;
-import se.spaced.server.model.PersistedFaction;
-import se.spaced.server.model.PersistedPositionalData;
-import se.spaced.server.model.Player;
+import se.spaced.server.model.*;
 import se.spaced.server.model.combat.CombatRepository;
 import se.spaced.server.model.combat.CombatRepositoryImpl;
 import se.spaced.server.model.entity.EntityService;
@@ -29,8 +25,9 @@ import se.spaced.shared.util.ListenerDispatcher;
 
 import java.util.Random;
 
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.matchers.Matchers.eq;
 
 
 public class ClientChatMessagesAuthTest {

@@ -1,6 +1,6 @@
 package se.spaced.server.model.vendor;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.server.mob.brains.VendorBrain;
 import se.spaced.server.model.Player;

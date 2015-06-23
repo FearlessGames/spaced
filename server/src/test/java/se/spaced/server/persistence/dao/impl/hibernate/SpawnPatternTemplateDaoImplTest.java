@@ -7,10 +7,10 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
-import se.mockachino.annotations.*;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
+import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.loot.LootTemplateProbability;
 import se.spaced.server.loot.MultiLootTemplate;
@@ -32,11 +32,7 @@ import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
 import se.spaced.server.net.broadcast.SmrtBroadcasterImpl;
 import se.spaced.server.persistence.dao.interfaces.LootTemplateDao;
-import se.spaced.server.persistence.migrator.DefaultMobTemplatePopulator;
-import se.spaced.server.persistence.migrator.Migrator;
-import se.spaced.server.persistence.migrator.MockCreatureTypePopulator;
-import se.spaced.server.persistence.migrator.MockFactionPopulator;
-import se.spaced.server.persistence.migrator.MockSpellPopulator;
+import se.spaced.server.persistence.migrator.*;
 import se.spaced.shared.util.random.RealRandomProvider;
 
 import java.security.SecureRandom;
@@ -46,7 +42,8 @@ import java.util.List;
 import java.util.Random;
 
 import static org.junit.Assert.assertNotNull;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.setupMocks;
 
 
 public class SpawnPatternTemplateDaoImplTest extends PersistentTestBase {

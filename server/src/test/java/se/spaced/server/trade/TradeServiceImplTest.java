@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.items.ServerItem;
@@ -19,7 +19,8 @@ import se.spaced.shared.playback.MovementPoint;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
 
 public class TradeServiceImplTest extends ScenarioTestBase {

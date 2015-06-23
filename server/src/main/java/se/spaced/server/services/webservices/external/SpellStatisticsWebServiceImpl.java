@@ -2,7 +2,7 @@ package se.spaced.server.services.webservices.external;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.persistence.dao.interfaces.SpellActionEntryDao;
 import se.spaced.server.persistence.util.PageParameters;
 import se.spaced.server.stats.SpellActionEntry;

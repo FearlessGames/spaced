@@ -3,8 +3,8 @@ package se.spaced.server.net.listeners.auth;
 import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.messages.protocol.SpacedItem;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
@@ -22,7 +22,7 @@ import java.util.List;
 
 import static org.junit.Assert.fail;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 	private ClientConnection clientConnection;

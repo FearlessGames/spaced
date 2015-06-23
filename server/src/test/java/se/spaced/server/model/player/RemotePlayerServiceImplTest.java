@@ -2,12 +2,13 @@ package se.spaced.server.model.player;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.*;
-import se.mockachino.annotations.*;
-import se.mockachino.matchers.*;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.CallHandler;
+import se.mockachino.MethodCall;
+import se.mockachino.annotations.Mock;
+import se.mockachino.matchers.Matchers;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.messages.protocol.InventoryData;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -27,7 +28,8 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.eq;
 
 
 public class RemotePlayerServiceImplTest extends ScenarioTestBase {

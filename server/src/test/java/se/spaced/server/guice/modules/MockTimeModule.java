@@ -2,8 +2,8 @@ package se.spaced.server.guice.modules;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.time.TimeProvider;
 
 public class MockTimeModule extends AbstractModule {
 	@Override

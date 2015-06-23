@@ -1,7 +1,7 @@
 package se.spaced.server.model.spawn;
 
 import se.ardortech.math.SpacedRotation;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;

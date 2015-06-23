@@ -2,7 +2,7 @@ package se.spaced.server.loot;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.shared.util.random.RandomProvider;
 
 import javax.persistence.CascadeType;

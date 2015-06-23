@@ -1,12 +1,8 @@
 package se.spaced.server.net.mina;
 
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.spaced.messages.protocol.CooldownProxy;
-import se.spaced.messages.protocol.Entity;
-import se.spaced.messages.protocol.SpacedInventory;
-import se.spaced.messages.protocol.SpacedItem;
-import se.spaced.messages.protocol.Spell;
+import se.fearless.common.uuid.UUID;
+import se.spaced.messages.protocol.*;
 import se.spaced.messages.protocol.c2s.remote.C2SAbstractRequiredReadCodecImpl;
 import se.spaced.messages.protocol.c2s.remote.C2SRequiredReadCodec;
 import se.spaced.server.model.ServerEntity;

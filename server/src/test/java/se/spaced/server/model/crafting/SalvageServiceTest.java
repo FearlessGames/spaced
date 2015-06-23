@@ -3,9 +3,9 @@ package se.spaced.server.model.crafting;
 import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.annotations.*;
+import se.fearless.common.time.MockTimeProvider;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.annotations.Mock;
 import se.spaced.server.loot.EmptyLootTemplate;
 import se.spaced.server.loot.Loot;
 import se.spaced.server.loot.LootAwardService;
@@ -23,7 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.type;
 
 public class SalvageServiceTest {
 	@Mock

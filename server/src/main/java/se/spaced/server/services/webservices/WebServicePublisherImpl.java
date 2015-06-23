@@ -4,8 +4,8 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine;
 import org.apache.cxf.transport.http_jetty.JettyHTTPServerEngineFactory;
-import se.fearlessgames.common.lifetime.LifetimeListener;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeManager;
 
 import javax.xml.ws.Endpoint;
 import java.util.ArrayList;

@@ -112,7 +112,7 @@
 
 
 			<jw:icon file="${baseDir}/spaced.png"/>
-			<jw:icon kind="splash" file="${spacedBase}/newclient/resources/splash.png"/>
+			<jw:icon kind="splash" file="/newclient/src/main/resources/splash.png"/>
 
 			<jw:shortcut desktop="true" online="true"/>
 

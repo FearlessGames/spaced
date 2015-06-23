@@ -70,7 +70,7 @@
 			<fileset dir="${build.dir}/main">
 				<include name="**/*"/>
 			</fileset>
-			<fileset dir="resources">
+			<fileset dir="src/main/resources">
 				<include name="**"/>
 			</fileset>
 			<manifest>

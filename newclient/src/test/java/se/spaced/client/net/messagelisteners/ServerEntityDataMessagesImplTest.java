@@ -2,8 +2,8 @@ package se.spaced.client.net.messagelisteners;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.util.MockTimeProvider;
-import se.fearless.common.util.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.client.model.ClientEntity;

@@ -5,7 +5,7 @@ import com.ardor3d.renderer.Camera;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.mockachino.annotations.Mock;
 import se.spaced.client.ardor.Water;
 import se.spaced.client.environment.components.Fog;

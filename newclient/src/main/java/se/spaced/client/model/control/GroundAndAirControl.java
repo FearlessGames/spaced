@@ -4,7 +4,7 @@ import com.ardor3d.renderer.Camera;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.input.ClientMouseButton;
-import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.CharacterPhysics;
 import se.spaced.client.model.ClientAuraService;

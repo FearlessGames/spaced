@@ -11,7 +11,7 @@ import se.ardorgui.ArdorGuiSettings;
 import se.ardorgui.view.GuiViewFactory;
 import se.ardortech.TextureLoadCallback;
 import se.ardortech.TextureManager;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.effect.EffectSystem;

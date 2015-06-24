@@ -3,7 +3,7 @@ package se.spaced.client.view.ardor;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.client.ardor.ui.events.ChatEvents;
 import se.spaced.client.game.logic.implementations.chat.ChatLogicListener;
 import se.spaced.client.model.ClientEntity;

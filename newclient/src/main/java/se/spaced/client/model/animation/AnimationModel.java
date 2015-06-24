@@ -106,7 +106,7 @@ public class AnimationModel {
 
 		final AttachmentPoint ap = new AttachmentPoint(attachmentPointIdentifier.name());
 		final int jointIndex = skeletonPose.getSkeleton().findJointByName(jointName);
-		ap.setJointIndex(jointIndex);
+		ap.setJointIndex((short) jointIndex);
 		skeletonPose.addPoseListener(ap);
 
 		if (offset != null) {

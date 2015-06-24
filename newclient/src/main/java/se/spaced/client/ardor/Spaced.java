@@ -7,7 +7,7 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import se.ardortech.BaseArdorMain;
 import se.fearless.common.lifetime.LifetimeManager;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.client.core.states.GameState;
 import se.spaced.client.core.states.GameStateHandler;
 

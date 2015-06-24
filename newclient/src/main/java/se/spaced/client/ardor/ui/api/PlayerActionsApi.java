@@ -2,7 +2,7 @@ package se.spaced.client.ardor.ui.api;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.krka.kahlua.integration.annotations.LuaMethod;

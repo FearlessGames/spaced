@@ -1,6 +1,6 @@
 package se.spaced.client.launcher;
 
-import com.ardor3d.image.util.AWTImageLoader;
+import com.ardor3d.image.util.awt.AWTImageLoader;
 import com.ardor3d.util.resource.ResourceLocator;
 import com.ardor3d.util.resource.ResourceLocatorTool;
 import com.google.inject.Guice;
@@ -8,7 +8,6 @@ import com.google.inject.Injector;
 import se.ardortech.Main;
 import se.ardortech.SpacedResourceLocator;
 import se.fearless.common.io.StreamLocator;
-import se.fearless.common.log.Slf4jJulBridge;
 import se.spaced.client.launcher.modules.ResourceModule;
 import se.spaced.client.launcher.modules.SpacedModule;
 import se.spaced.client.launcher.modules.StartupModule;
@@ -20,6 +19,7 @@ import se.spaced.client.settings.ui.AvailableDisplayModesSupplier;
 import se.spaced.client.settings.ui.RenderPropertiesPresenter;
 import se.spaced.client.settings.ui.RenderPropertiesViewImpl;
 import se.spaced.client.view.ardor.ArdorChat;
+import se.spaced.shared.util.Slf4jJulBridge;
 
 import java.util.List;
 

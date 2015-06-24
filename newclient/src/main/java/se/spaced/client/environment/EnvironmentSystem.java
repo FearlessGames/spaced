@@ -5,7 +5,7 @@ import com.ardor3d.scenegraph.Node;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.client.environment.components.Fog;
 import se.spaced.client.environment.components.Sky;
 import se.spaced.client.environment.components.Sun;

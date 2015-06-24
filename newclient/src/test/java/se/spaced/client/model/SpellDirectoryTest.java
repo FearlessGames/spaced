@@ -3,7 +3,7 @@ package se.spaced.client.model;
 import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.mock.MockUtil;
-import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;

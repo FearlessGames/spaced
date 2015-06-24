@@ -3,7 +3,7 @@ package se.spaced.client.presenter;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.client.ardor.ui.events.CombatGuiEvents;
 import se.spaced.client.model.listener.UserCharacterListener;
 import se.spaced.client.net.smrt.ServerConnection;

@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.ClientEntityProxy;
 import se.spaced.client.model.ClientSpellProxy;

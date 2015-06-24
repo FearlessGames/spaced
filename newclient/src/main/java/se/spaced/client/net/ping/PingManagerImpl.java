@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.fearless.common.lifetime.LifetimeListener;
 import se.fearless.common.lifetime.LifetimeManager;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.client.net.smrt.ServerConnection;
 import se.spaced.client.net.smrt.ServerConnectionListener;
 

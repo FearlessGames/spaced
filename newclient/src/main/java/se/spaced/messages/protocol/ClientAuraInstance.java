@@ -1,7 +1,7 @@
 package se.spaced.messages.protocol;
 
 import com.google.common.collect.ImmutableSet;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.shared.model.aura.ModStat;

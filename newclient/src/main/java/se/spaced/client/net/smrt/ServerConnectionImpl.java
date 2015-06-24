@@ -8,7 +8,7 @@ import org.apache.mina.core.session.IoSession;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 import se.fearless.common.lifetime.LifetimeListener;
 import se.fearless.common.lifetime.LifetimeManager;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.spaced.messages.protocol.c2s.C2SLogDecorator;
 import se.spaced.messages.protocol.c2s.C2SProtocol;
 import se.spaced.messages.protocol.c2s.remote.C2SChecksum;

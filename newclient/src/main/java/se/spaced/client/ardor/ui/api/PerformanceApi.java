@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import se.fearless.common.lua.LuaVm;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.profiler.AggregatingProfiler;
 import se.krka.kahlua.profiler.BufferedProfiler;

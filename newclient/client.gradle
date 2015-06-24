@@ -17,5 +17,20 @@ repositories {
 
 dependencies {
 	compile project(':ardortech')
+	compile project(':ardorgui')
 	compile project(':messages')
+
+	compile 'org.jcraft:jorbis:0.0.17'
+	compile 'se.fearless.fearless-common:security:1.0-SNAPSHOT'
+	compile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
+
+	compile files('libs/JGoogleAnalytics_0.4.jar', 'libs/jinngine.0.8.jar')
+	compile 'cz.advel.jbullet:jbullet:20101010-1'
+
+	compile files('libs/poly2tri-ardor3d-0.1.1-SNAPSHOT.jar', 'libs/poly2tri-core-0.1.1-SNAPSHOT.jar')
+
+	compile 'de.huxhorn.lilith:de.huxhorn.lilith.3rdparty.flyingsaucer.core-renderer:8RC1'
+
+	compile 'org.apache.cxf:cxf-bundle:2.4.2'
+
 }

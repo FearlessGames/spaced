@@ -2,8 +2,8 @@ package se.spaced.client.model;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.util.MockTimeProvider;
-import se.fearless.common.util.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.listener.ClientEntityListener;
 import se.spaced.client.model.listener.UserCharacterListener;

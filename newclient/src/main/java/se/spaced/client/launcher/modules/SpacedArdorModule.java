@@ -35,7 +35,7 @@ import se.ardortech.render.module.RendererSettings;
 import se.fearless.common.io.StreamLocator;
 import se.fearless.common.lifetime.ExecutorServiceLifetimeAdapter;
 import se.fearless.common.lifetime.LifetimeManager;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.GameInputListener;

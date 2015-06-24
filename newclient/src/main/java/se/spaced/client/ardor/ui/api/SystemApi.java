@@ -2,7 +2,7 @@ package se.spaced.client.ardor.ui.api;
 
 import com.ardor3d.extension.ui.UIHud;
 import com.google.inject.Inject;
-import se.fearless.common.util.TimeProvider;
+import se.fearless.common.time.TimeProvider;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.integration.expose.ReturnValues;
 

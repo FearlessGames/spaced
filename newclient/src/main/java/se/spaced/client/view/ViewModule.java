@@ -1,7 +1,7 @@
 package se.spaced.client.view;
 
 import com.ardor3d.image.Image;
-import com.ardor3d.image.util.AWTImageLoader;
+import com.ardor3d.image.util.awt.AWTImageLoader;
 import com.ardor3d.input.MouseCursor;
 import com.ardor3d.input.MouseManager;
 import com.google.common.collect.Maps;

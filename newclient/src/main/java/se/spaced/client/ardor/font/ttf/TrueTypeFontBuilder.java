@@ -5,13 +5,12 @@ import com.ardor3d.extension.ui.text.font.UIFont;
 import com.ardor3d.image.Image;
 import com.ardor3d.image.Texture;
 import com.ardor3d.image.Texture2D;
-import com.ardor3d.image.util.AWTImageLoader;
+import com.ardor3d.image.util.awt.AWTImageLoader;
 import com.ardor3d.util.TextureKey;
 import se.spaced.client.ardor.font.ttf.effects.ColorEffect;
 import se.spaced.client.ardor.font.ttf.effects.Effect;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collection;

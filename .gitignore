@@ -70,3 +70,6 @@ hs_err_pid*
 build/
 
 reports/
+
+#generated files
+messages/src/codecs

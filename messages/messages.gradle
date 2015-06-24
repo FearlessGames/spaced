@@ -1,6 +1,7 @@
 apply plugin: 'java'
 
-def generateOutputDir = file("$buildDir/generated-resources/java")
+def generatedOutputBase = file("src/codecs")
+def generateOutputDir = file("$generatedOutputBase/java")
 
 def generatedSource = file(generateOutputDir)
 
@@ -76,4 +77,8 @@ assemble.dependsOn jarGenerated
 
 artifacts {
 	codecs jarGenerated
+}
+
+clean {
+	delete generatedOutputBase
 }

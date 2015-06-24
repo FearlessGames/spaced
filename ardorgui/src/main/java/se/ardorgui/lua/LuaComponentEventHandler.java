@@ -1,6 +1,6 @@
 package se.ardorgui.lua;
 
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -3,7 +3,7 @@ package se.ardorgui.lua.bindings;
 import com.ardor3d.input.Key;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

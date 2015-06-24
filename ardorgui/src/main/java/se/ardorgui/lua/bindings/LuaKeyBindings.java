@@ -5,7 +5,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import se.ardortech.input.KeyListener;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 
 import java.util.EnumMap;

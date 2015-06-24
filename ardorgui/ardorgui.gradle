@@ -17,4 +17,8 @@ repositories {
 
 dependencies {
 	compile project(':ardortech')
+	compile project(':shared')
+	compile 'se.fearless.fearless-common:lua:1.0-SNAPSHOT'
+
+	testCompile 'junit:junit:4.12'
 }

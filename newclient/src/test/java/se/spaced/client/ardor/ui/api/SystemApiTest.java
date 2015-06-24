@@ -3,7 +3,7 @@ package se.spaced.client.ardor.ui.api;
 import com.ardor3d.extension.ui.UIHud;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.krka.kahlua.integration.expose.ReturnValues;
 import se.mockachino.order.OrderingContext;
 

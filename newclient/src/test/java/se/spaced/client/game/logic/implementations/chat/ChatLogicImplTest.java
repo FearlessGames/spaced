@@ -3,7 +3,7 @@ package se.spaced.client.game.logic.implementations.chat;
 import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.mock.MockUtil;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.model.ClientEntity;

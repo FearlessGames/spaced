@@ -4,7 +4,7 @@ import com.ardor3d.math.type.ReadOnlyColorRGBA;
 import com.ardor3d.scenegraph.Node;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;

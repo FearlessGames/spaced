@@ -2,7 +2,7 @@ package se.spaced.client.environment.time;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.spaced.shared.world.TimeSystemInfo;
 
 import static org.junit.Assert.assertEquals;

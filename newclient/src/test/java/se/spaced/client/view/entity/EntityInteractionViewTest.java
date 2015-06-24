@@ -10,7 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import se.ardortech.input.ClientMouseButton;
 import se.ardortech.pick.Picker;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;

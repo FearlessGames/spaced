@@ -33,4 +33,6 @@ dependencies {
 
 	compile 'org.apache.cxf:cxf-bundle:2.4.2'
 
+	testCompile 'junit:junit:4.12'
+	testCompile 'no.simensan.kahluatest:kahluatest:0.1'
 }

@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.lifetime.LifetimeManager;
 import se.fearless.common.mock.MockUtil;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.spaced.client.net.smrt.ServerConnection;
 
 import static org.junit.Assert.assertEquals;

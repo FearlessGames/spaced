@@ -4,7 +4,7 @@ import com.ardor3d.scenegraph.Node;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.pick.Picker;
-import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.time.MockTimeProvider;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.util.ListenerDispatcher;
 

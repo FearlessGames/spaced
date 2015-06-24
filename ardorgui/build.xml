@@ -18,7 +18,7 @@
 	<property name="example.classes.dir" value="${build.dir}/example-classes"/>
 	<!-- build/example-classes -->
 
-	<property name="test.src.dir" value="${baseDir}/test"/>
+	<property name="test.src.dir" value="/src/test"/>
 	<!-- test -->
 	<property name="test.classes.dir" value="${build.dir}/test-classes"/>
 	<!-- build/test-classes -->
@@ -131,7 +131,7 @@
 			<formatter type="plain"/>
 
 			<batchtest fork="yes" todir="${test.reports.dir}">
-				<fileset dir="${test.src.dir}">
+				<fileset dir="/src/test">
 					<include name="**/**Test**.java"/>
 				</fileset>
 			</batchtest>
@@ -143,7 +143,7 @@
 			<jvmarg value="-Djava.library.path=${ardor.path}"/>
 			<classpath>
 				<path refid="example.run.classpath"/>
-				<pathelement location="${baseDir}/resources"/>
+				<pathelement location="/src/main/resources"/>
 			</classpath>
 		</java>
 	</target>
@@ -153,8 +153,8 @@
 			<jvmarg value="-Djava.library.path=${ardor.path}"/>
 			<classpath>
 				<path refid="example.run.classpath"/>
-				<pathelement location="${baseDir}/resources"/>
-				<pathelement location="${baseDir}/test-resources"/>
+				<pathelement location="/src/main/resources"/>
+				<pathelement location="/src/test/test-resources"/>
 			</classpath>
 		</java>
 	</target>

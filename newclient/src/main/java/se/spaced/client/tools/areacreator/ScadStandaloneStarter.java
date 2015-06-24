@@ -5,10 +5,11 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.lifetime.LifetimeManagerImpl;
-import se.fearlessgames.common.mock.MockUtil;
-import se.mockachino.*;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManagerImpl;
+import se.mockachino.CallHandler;
+import se.mockachino.MethodCall;
+import se.mockachino.MockUtil;
 import se.spaced.client.model.UserCharacter;
 import se.spaced.client.tools.areacreator.impl.AreaCreatorPresenterImpl;
 import se.spaced.client.tools.areacreator.impl.AreaCreatorViewImpl;
@@ -20,7 +21,7 @@ import se.spaced.shared.tools.ClipBoarder;
 import se.spaced.shared.tools.ClipBoarderImpl;
 import se.spaced.shared.util.ListenerDispatcher;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.when;
 
 public class ScadStandaloneStarter {
 

@@ -4,10 +4,10 @@ import com.ardor3d.math.type.ReadOnlyColorRGBA;
 import com.ardor3d.scenegraph.Node;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.entity.EntityIndicator;
 import se.spaced.client.ardor.entity.VisualEntityFactory;
 import se.spaced.client.model.ClientEntity;
@@ -20,11 +20,9 @@ import se.spaced.client.view.entity.VisualEntityView;
 
 import java.security.SecureRandom;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class VisualEntityViewTest {

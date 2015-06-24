@@ -2,7 +2,7 @@ package se.spaced.client.launcher.modules;
 
 import com.google.inject.Module;
 import com.thoughtworks.xstream.XStream;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.model.xmo.ColladaContentLoader;
 import se.spaced.shared.xml.XmlIO;
 

@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 import se.spaced.client.model.UserCharacter;
 import se.spaced.client.net.smrt.ServerConnection;
 import se.spaced.shared.model.AnimationState;

@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.ardor.entity.AuraVisualiser;
 import se.spaced.client.ardor.entity.AuraVisualiserEvent;
 import se.spaced.client.ardor.ui.events.SpellEvents;

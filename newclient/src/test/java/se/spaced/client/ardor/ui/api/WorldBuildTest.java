@@ -1,7 +1,7 @@
 package se.spaced.client.ardor.ui.api;
 
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManagerImpl;
+import se.fearless.common.lifetime.LifetimeManagerImpl;
 import se.spaced.client.ardor.effect.EffectLoader;
 import se.spaced.client.model.UserCharacter;
 import se.spaced.client.resources.zone.ScenegraphService;
@@ -16,9 +16,10 @@ import se.spaced.shared.model.PositionalData;
 import se.spaced.shared.resources.XmoMaterialManager;
 import se.spaced.shared.util.ListenerDispatcher;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubReturn;
 
 
 public class WorldBuildTest {

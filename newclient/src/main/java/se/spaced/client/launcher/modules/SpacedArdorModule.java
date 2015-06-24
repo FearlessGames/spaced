@@ -2,11 +2,7 @@ package se.spaced.client.launcher.modules;
 
 import com.ardor3d.extension.model.collada.jdom.ColladaImporter;
 import com.ardor3d.extension.ui.skin.Skin;
-import com.ardor3d.framework.Canvas;
-import com.ardor3d.framework.FrameHandler;
-import com.ardor3d.framework.NativeCanvas;
-import com.ardor3d.framework.Scene;
-import com.ardor3d.framework.Updater;
+import com.ardor3d.framework.*;
 import com.ardor3d.input.FocusWrapper;
 import com.ardor3d.input.KeyboardWrapper;
 import com.ardor3d.input.MouseWrapper;
@@ -36,12 +32,12 @@ import se.ardortech.SpacedResourceLocator;
 import se.ardortech.TextureManager;
 import se.ardortech.pick.Picker;
 import se.ardortech.render.module.RendererSettings;
-import se.fearlessgames.common.io.StreamLocator;
-import se.fearlessgames.common.lifetime.ExecutorServiceLifetimeAdapter;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.io.StreamLocator;
+import se.fearless.common.lifetime.ExecutorServiceLifetimeAdapter;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.GameInputListener;
 import se.spaced.client.ardor.Spaced;
 import se.spaced.client.ardor.SpacedScene;
@@ -85,11 +81,7 @@ import se.spaced.shared.tools.ClipBoarder;
 import se.spaced.shared.tools.ClipBoarderImpl;
 import se.spaced.shared.util.cache.CacheManager;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public final class SpacedArdorModule extends AbstractModule {
 

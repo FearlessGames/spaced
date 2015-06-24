@@ -10,7 +10,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.view.cursor.BasicCursorView;
 import se.spaced.client.view.cursor.Cursor;
 import se.spaced.client.view.cursor.CursorResources;

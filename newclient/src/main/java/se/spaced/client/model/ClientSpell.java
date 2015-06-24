@@ -1,8 +1,8 @@
 package se.spaced.client.model;
 
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.integration.expose.ReturnValues;
 import se.spaced.client.model.cooldown.ClientCooldown;

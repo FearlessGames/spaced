@@ -2,15 +2,11 @@ package se.spaced.client.ardor.effect;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.lifetime.ExecutorServiceLifetimeAdapter;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.ExecutorServiceLifetimeAdapter;
+import se.fearless.common.lifetime.LifetimeManager;
 
 import java.util.Collection;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 @Singleton
 public class SimpleEffectSystem implements EffectSystem, EffectNode {

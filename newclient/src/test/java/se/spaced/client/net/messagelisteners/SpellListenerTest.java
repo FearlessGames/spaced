@@ -5,11 +5,12 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.*;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.CallHandler;
+import se.mockachino.MethodCall;
+import se.mockachino.MockUtil;
 import se.spaced.client.model.ClientSpell;
 import se.spaced.client.model.ClientSpellProxy;
 import se.spaced.client.model.SpellDirectory;
@@ -18,11 +19,7 @@ import se.spaced.client.model.cooldown.ClientCooldownServiceImpl;
 import se.spaced.client.model.spelleffects.ClientGrantSpellEffect;
 import se.spaced.client.model.spelleffects.ClientSpellEffect;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.messages.protocol.AuraTemplate;
-import se.spaced.messages.protocol.Cooldown;
-import se.spaced.messages.protocol.CooldownData;
-import se.spaced.messages.protocol.CooldownProxy;
-import se.spaced.messages.protocol.Spell;
+import se.spaced.messages.protocol.*;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.network.protocol.codec.datatype.SpellData;
@@ -37,7 +34,7 @@ import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 public class SpellListenerTest {
 

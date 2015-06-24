@@ -9,9 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.io.FileStreamLocator;
-import se.fearlessgames.common.lifetime.LifetimeListener;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeManager;
 import se.spaced.client.ardor.entity.InteractionColors;
 import se.spaced.client.model.Prop;
 import se.spaced.client.model.UserCharacter;
@@ -27,7 +27,7 @@ import se.spaced.shared.scheduler.JobManager;
 import se.spaced.shared.util.ListenerDispatcher;
 import se.spaced.shared.xml.XmlIOException;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.io.File;
 import java.util.Iterator;
 

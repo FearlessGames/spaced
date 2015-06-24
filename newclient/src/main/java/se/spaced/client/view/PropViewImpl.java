@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.util.ListenerDispatcher;
 

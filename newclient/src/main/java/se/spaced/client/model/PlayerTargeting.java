@@ -2,7 +2,7 @@ package se.spaced.client.model;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.listener.ClientEntityListener;
 import se.spaced.client.model.player.PlayerEntityProvider;
 import se.spaced.client.model.player.PlayerTargetingListener;

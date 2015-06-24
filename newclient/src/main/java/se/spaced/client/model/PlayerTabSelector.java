@@ -2,13 +2,9 @@ package se.spaced.client.model;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Singleton
 public class PlayerTabSelector {

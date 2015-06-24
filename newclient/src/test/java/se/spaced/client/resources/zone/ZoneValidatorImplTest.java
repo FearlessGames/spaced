@@ -7,16 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Sphere;
-import se.fearlessgames.common.io.StreamLocator;
-import se.mockachino.annotations.*;
+import se.fearless.common.io.StreamLocator;
+import se.mockachino.annotations.Mock;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.resources.zone.Zone;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Iterator;
 
 import static org.junit.Assert.assertFalse;

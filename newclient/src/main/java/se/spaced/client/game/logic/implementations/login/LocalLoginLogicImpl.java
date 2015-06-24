@@ -1,9 +1,9 @@
 package se.spaced.client.game.logic.implementations.login;
 
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.BCrypter;
-import se.fearlessgames.common.util.Digester;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.util.BCrypter;
+import se.fearless.common.util.Digester;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.core.states.GameStateContext;
 import se.spaced.client.core.states.LoadingState;
 import se.spaced.client.game.logic.local.LocalLoginLogic;

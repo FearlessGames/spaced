@@ -2,9 +2,9 @@ package se.spaced.client.game.logic.implementations.combat;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.model.ClientAuraService;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.UserCharacter;
@@ -19,13 +19,7 @@ import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.c2s.C2SProtocol;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.events.EventHandler;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.MagicSchool;
-import se.spaced.shared.model.PositionalData;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.model.stats.StatData;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
@@ -34,7 +28,8 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.security.SecureRandom;
 
 import static org.junit.Assert.assertEquals;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubReturn;
 
 
 public class CombatLogicImplTest {

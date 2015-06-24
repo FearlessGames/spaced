@@ -3,9 +3,9 @@ package se.spaced.client.ardor.ui.api;
 import com.ardor3d.extension.ui.UIHud;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.util.MockTimeProvider;
 import se.krka.kahlua.integration.expose.ReturnValues;
-import se.mockachino.order.*;
+import se.mockachino.order.OrderingContext;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;

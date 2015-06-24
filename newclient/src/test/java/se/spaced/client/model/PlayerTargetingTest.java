@@ -2,12 +2,12 @@ package se.spaced.client.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
-import se.mockachino.annotations.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
+import se.mockachino.annotations.Mock;
 import se.spaced.client.model.listener.ClientEntityListener;
 import se.spaced.client.model.player.PlayerEntityProvider;
 import se.spaced.client.model.player.PlayerTargetingListener;
@@ -16,12 +16,7 @@ import se.spaced.client.net.messagelisteners.EntityCacheImpl;
 import se.spaced.client.net.smrt.ServerConnection;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.shared.activecache.ActiveCache;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.PositionalData;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.util.ListenerDispatcher;
@@ -30,7 +25,7 @@ import java.security.SecureRandom;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 public class PlayerTargetingTest {
 	private final MockTimeProvider timeProvider = new MockTimeProvider();

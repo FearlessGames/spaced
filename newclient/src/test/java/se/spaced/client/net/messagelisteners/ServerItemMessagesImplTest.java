@@ -6,10 +6,10 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDMockFactory;
-import se.mockachino.annotations.*;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDMockFactory;
+import se.mockachino.annotations.Mock;
 import se.spaced.client.model.ClientSpell;
 import se.spaced.client.model.InventoryProvider;
 import se.spaced.client.model.item.ClientInventory;
@@ -17,12 +17,7 @@ import se.spaced.client.model.item.ClientItem;
 import se.spaced.client.model.item.ItemLookup;
 import se.spaced.client.model.item.ItemTemplateServiceImpl;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.messages.protocol.ClientAuraInstance;
-import se.spaced.messages.protocol.InventoryData;
-import se.spaced.messages.protocol.ItemTemplate;
-import se.spaced.messages.protocol.ItemTemplateData;
-import se.spaced.messages.protocol.SpacedItem;
-import se.spaced.messages.protocol.Spell;
+import se.spaced.messages.protocol.*;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.events.EventHandler;
 import se.spaced.shared.model.AppearanceData;
@@ -30,7 +25,7 @@ import se.spaced.shared.model.Money;
 import se.spaced.shared.model.items.ItemType;
 
 import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.setupMocks;
 
 public class ServerItemMessagesImplTest {
 	ServerItemMessagesImpl serverItemMessages;

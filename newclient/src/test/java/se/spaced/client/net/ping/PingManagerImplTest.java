@@ -2,13 +2,14 @@ package se.spaced.client.net.ping;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.MockTimeProvider;
 import se.spaced.client.net.smrt.ServerConnection;
 
 import static org.junit.Assert.assertEquals;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
 
 
 public class PingManagerImplTest {

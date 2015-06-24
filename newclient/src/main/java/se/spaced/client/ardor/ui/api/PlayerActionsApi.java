@@ -2,9 +2,9 @@ package se.spaced.client.ardor.ui.api;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.client.model.item.ClientItem;
 import se.spaced.client.model.player.PlayerActions;

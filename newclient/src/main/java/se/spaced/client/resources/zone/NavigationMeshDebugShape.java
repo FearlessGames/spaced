@@ -10,7 +10,7 @@ import com.ardor3d.scenegraph.Mesh;
 import com.ardor3d.scenegraph.Node;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.server.navigation.NavigationMeshBuilder;
 
 import javax.inject.Singleton;

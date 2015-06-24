@@ -3,7 +3,7 @@ package se.spaced.client.net.smrt;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.messages.protocol.s2c.object.MessageObject;
 

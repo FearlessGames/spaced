@@ -3,12 +3,12 @@ package se.spaced.client.tools;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import se.fearlessgames.common.lifetime.LifetimeListener;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.lua.LuaVm;
 import se.krka.kahlua.j2se.interpreter.InteractiveShell;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

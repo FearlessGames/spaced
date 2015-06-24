@@ -10,7 +10,7 @@ import com.google.inject.name.Named;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManager;
 import se.spaced.client.model.Prop;
 import se.spaced.client.physics.CollisionFilter;
 import se.spaced.client.physics.PhysicsObject;
@@ -19,12 +19,7 @@ import se.spaced.shared.model.xmo.XmoEntity;
 import se.spaced.shared.resources.zone.Zone;
 import se.spaced.shared.util.QueueRunner;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 

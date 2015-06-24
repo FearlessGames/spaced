@@ -2,8 +2,8 @@ package se.spaced.client.net.remoteservices;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.mockachino.annotations.*;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.mockachino.annotations.Mock;
 import se.spaced.client.net.GameServer;
 import se.spaced.shared.events.EventHandler;
 
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 @Ignore
 public class ServerInfoWSCImplTest {

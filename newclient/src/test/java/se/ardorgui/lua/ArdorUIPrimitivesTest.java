@@ -8,13 +8,13 @@ import com.ardor3d.renderer.Camera;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.TextureManager;
-import se.fearlessgames.common.lua.LuaVm;
-import se.mockachino.order.*;
+import se.fearless.common.lua.LuaVm;
+import se.mockachino.order.OrderingContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.anyInt;
 
 public class ArdorUIPrimitivesTest {
 

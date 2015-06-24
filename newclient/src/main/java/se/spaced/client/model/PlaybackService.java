@@ -1,6 +1,6 @@
 package se.spaced.client.model;
 
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.activecache.CacheUpdateListener;

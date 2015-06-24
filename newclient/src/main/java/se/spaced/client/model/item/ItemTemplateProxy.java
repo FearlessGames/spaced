@@ -1,6 +1,6 @@
 package se.spaced.client.model.item;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.ItemTemplate;
 
 public class ItemTemplateProxy implements ItemTemplate {

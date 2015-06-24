@@ -11,9 +11,9 @@ import se.ardorgui.ArdorGuiSettings;
 import se.ardorgui.view.GuiViewFactory;
 import se.ardortech.TextureLoadCallback;
 import se.ardortech.TextureManager;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.effect.EffectSystem;
 import se.spaced.client.ardor.ui.SpacedGui;
 import se.spaced.client.ardor.ui.SpacedGuiImpl;
@@ -29,12 +29,7 @@ import se.spaced.client.net.messagelisteners.SpellCacheImpl;
 import se.spaced.client.net.ping.PingManager;
 import se.spaced.client.net.remoteservices.ServerInfoWSC;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.client.resources.zone.RootZoneService;
-import se.spaced.client.resources.zone.ScenegraphService;
-import se.spaced.client.resources.zone.ZoneActivationService;
-import se.spaced.client.resources.zone.ZoneDebugShapeService;
-import se.spaced.client.resources.zone.ZoneValidator;
-import se.spaced.client.resources.zone.ZoneXmlWriter;
+import se.spaced.client.resources.zone.*;
 import se.spaced.client.tools.spd.SpdView;
 import se.spaced.client.view.PropSelectionListener;
 import se.spaced.client.view.entity.EntityView;
@@ -52,8 +47,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubReturn;
+import static se.mockachino.matchers.Matchers.any;
 
 public final class MockModule extends AbstractMockModule {
 	@Override

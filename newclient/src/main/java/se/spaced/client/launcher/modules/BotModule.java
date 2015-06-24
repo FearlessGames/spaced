@@ -8,11 +8,11 @@ import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;
 import se.ardortech.Main;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.lifetime.LifetimeManagerImpl;
-import se.fearlessgames.common.lua.LuaVm;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManagerImpl;
+import se.fearless.common.lua.LuaVm;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.effect.EffectSystem;
 import se.spaced.client.bot.BotGameLoop;
 import se.spaced.client.core.states.GameState;
@@ -27,7 +27,7 @@ import se.spaced.shared.events.EventHandler;
 import se.spaced.shared.model.xmo.XmoEntityFactory;
 import se.spaced.shared.util.cache.CacheManager;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
 
 public final class BotModule extends AbstractModule {
 

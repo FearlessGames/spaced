@@ -2,10 +2,10 @@ package se.spaced.client.net.messagelisteners;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.mockachino.matchers.matcher.*;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.ClientEntityProxy;
 import se.spaced.client.model.PlaybackService;
@@ -19,13 +19,7 @@ import se.spaced.messages.protocol.ItemTemplate;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.events.EventHandler;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityInteractionCapability;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.PositionalData;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.items.ContainerType;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
@@ -34,11 +28,9 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.util.Collections;
 import java.util.EnumSet;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
 
 public class ServerEntityDataMessagesImplTest {

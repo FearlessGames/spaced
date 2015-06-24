@@ -2,23 +2,18 @@ package se.spaced.client.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.listener.ClientEntityListener;
 import se.spaced.client.model.listener.UserCharacterListener;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.PositionalData;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.util.ListenerDispatcher;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class UserCharacterTest {

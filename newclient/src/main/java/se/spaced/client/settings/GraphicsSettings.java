@@ -5,7 +5,7 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import se.ardortech.TextureManager;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.ardor.FlatWater;
 import se.spaced.client.ardor.SimpleWater;
 import se.spaced.client.ardor.Water;

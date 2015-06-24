@@ -1,7 +1,7 @@
 package se.spaced.client.net.smrt;
 
 import com.google.inject.Inject;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.messages.protocol.SpacedInventory;
 import se.spaced.messages.protocol.SpacedItem;

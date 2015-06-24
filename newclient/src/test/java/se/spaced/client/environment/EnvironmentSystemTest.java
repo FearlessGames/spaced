@@ -5,18 +5,13 @@ import com.ardor3d.renderer.Camera;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
-import se.mockachino.annotations.*;
+import se.fearless.common.util.TimeProvider;
+import se.mockachino.annotations.Mock;
 import se.spaced.client.ardor.Water;
 import se.spaced.client.environment.components.Fog;
 import se.spaced.client.environment.components.SphereSky;
 import se.spaced.client.environment.components.Sun;
-import se.spaced.client.environment.settings.EnvSettings;
-import se.spaced.client.environment.settings.EnvSettingsImpl;
-import se.spaced.client.environment.settings.FogSetting;
-import se.spaced.client.environment.settings.InterpolableProvider;
-import se.spaced.client.environment.settings.SoundSetting;
-import se.spaced.client.environment.settings.SunSetting;
+import se.spaced.client.environment.settings.*;
 import se.spaced.client.environment.time.GameTime;
 import se.spaced.client.environment.time.GameTimeManager;
 import se.spaced.client.model.ClientEntity;
@@ -30,7 +25,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyDouble;
 
 public class EnvironmentSystemTest {
 	private EnvironmentSystem environmentSystem;

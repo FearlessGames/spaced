@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.util.TimeProvider;
+import se.fearless.common.util.TimeProvider;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.integration.expose.ReturnValues;
 import se.spaced.client.environment.time.GameTime;

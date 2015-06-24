@@ -4,7 +4,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.spelleffects.ClientGrantSpellEffect;
 import se.spaced.client.model.spelleffects.ClientRangeSpellEffect;
 import se.spaced.client.model.spelleffects.ClientSpellEffect;

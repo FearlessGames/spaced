@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.input.ClientMouseButton;
 import se.ardortech.pick.Picker;
-import se.fearlessgames.common.util.TimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.util.TimeProvider;
+import se.fearless.common.uuid.UUID;
 import se.spaced.shared.util.ListenerDispatcher;
 
 @Singleton

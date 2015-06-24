@@ -12,7 +12,7 @@ import com.google.inject.Singleton;
 import se.ardortech.TextureLoadCallback;
 import se.ardortech.TextureManager;
 import se.ardortech.water.WaterNode;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.environment.components.Sky;
 
 import java.nio.FloatBuffer;

@@ -2,11 +2,11 @@ package se.spaced.client.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.ardor.ui.events.SpellEvents;
 import se.spaced.client.net.messagelisteners.SpellCacheImpl;
 import se.spaced.client.net.smrt.ServerConnection;
@@ -22,9 +22,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
 
 

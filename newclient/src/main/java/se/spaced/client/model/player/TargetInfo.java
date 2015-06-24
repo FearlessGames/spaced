@@ -1,6 +1,6 @@
 package se.spaced.client.model.player;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.Relation;
 

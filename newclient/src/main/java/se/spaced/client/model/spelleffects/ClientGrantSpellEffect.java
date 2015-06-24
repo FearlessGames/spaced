@@ -1,6 +1,6 @@
 package se.spaced.client.model.spelleffects;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.messages.protocol.Spell;
 import se.spaced.shared.model.EffectType;

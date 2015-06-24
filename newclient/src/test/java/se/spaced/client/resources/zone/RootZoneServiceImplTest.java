@@ -3,16 +3,18 @@ package se.spaced.client.resources.zone;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.lifetime.LifetimeManager;
-import se.fearlessgames.common.lifetime.LifetimeManagerImpl;
-import se.mockachino.*;
+import se.fearless.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManagerImpl;
+import se.mockachino.CallHandler;
+import se.mockachino.MethodCall;
 import se.spaced.shared.resources.zone.Zone;
 import se.spaced.shared.util.cache.CacheManager;
 
 import java.util.concurrent.CountDownLatch;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyDouble;
 
 public class RootZoneServiceImplTest {
 

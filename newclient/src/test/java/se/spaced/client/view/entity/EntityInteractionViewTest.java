@@ -10,16 +10,16 @@ import org.junit.Ignore;
 import org.junit.Test;
 import se.ardortech.input.ClientMouseButton;
 import se.ardortech.pick.Picker;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.shared.util.ListenerDispatcher;
 
 import java.security.SecureRandom;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class EntityInteractionViewTest {

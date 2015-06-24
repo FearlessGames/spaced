@@ -1,6 +1,6 @@
 package se.spaced.client.model;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.Entity;
 
 public class ClientEntityProxy implements Entity {

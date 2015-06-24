@@ -1,7 +1,7 @@
 package se.spaced.client.model.item;
 
 import com.google.common.base.Objects;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.client.model.ClientSpell;
 import se.spaced.messages.protocol.AuraTemplate;

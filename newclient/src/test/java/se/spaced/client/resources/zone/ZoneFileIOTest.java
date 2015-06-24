@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Sphere;
-import se.fearlessgames.common.io.FileStreamLocator;
+import se.fearless.common.io.FileStreamLocator;
 import se.spaced.shared.resources.zone.Zone;
 import se.spaced.shared.xml.XStreamIO;
 import se.spaced.shared.xml.XmlIO;

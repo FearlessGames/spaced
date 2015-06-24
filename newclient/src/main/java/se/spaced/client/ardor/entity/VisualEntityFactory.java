@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.SpacedResource;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.ardor.ui.api.FontApi;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.Relation;

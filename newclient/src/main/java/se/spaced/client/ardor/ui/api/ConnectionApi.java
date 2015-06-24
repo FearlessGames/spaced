@@ -3,7 +3,7 @@ package se.spaced.client.ardor.ui.api;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.integration.expose.ReturnValues;
 import se.krka.kahlua.vm.KahluaTable;

@@ -2,7 +2,7 @@ package se.spaced.client.net.messagelisteners;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.ardor.ui.events.LoadEvents;
 import se.spaced.client.resources.zone.LoadListener;
 import se.spaced.client.resources.zone.ScenegraphService;

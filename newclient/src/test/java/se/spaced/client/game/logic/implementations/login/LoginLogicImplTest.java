@@ -3,8 +3,8 @@ package se.spaced.client.game.logic.implementations.login;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.core.states.GameStateContext;
 import se.spaced.client.core.states.LoadingState;
 import se.spaced.client.model.listener.ClientEntityListener;
@@ -14,7 +14,8 @@ import se.spaced.messages.protocol.Salts;
 import se.spaced.messages.protocol.c2s.C2SProtocol;
 import se.spaced.shared.util.ListenerDispatcher;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubReturn;
 
 
 public class LoginLogicImplTest {

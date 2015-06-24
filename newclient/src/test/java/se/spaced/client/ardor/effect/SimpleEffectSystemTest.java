@@ -3,7 +3,7 @@ package se.spaced.client.ardor.effect;
 import com.ardor3d.util.ReadOnlyTimer;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeManager;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;

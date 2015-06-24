@@ -2,10 +2,10 @@ package se.spaced.client.model.item;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.uuid.UUID;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.uuid.UUID;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.messages.protocol.AuraTemplate;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.shared.model.AppearanceData;
@@ -16,9 +16,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.*;
 
 
 public class ClientItemTest {

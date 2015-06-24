@@ -5,14 +5,10 @@ import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import se.fearlessgames.common.lua.LuaVm;
-import se.fearlessgames.common.lua.SimpleLuaSourceProvider;
+import se.fearless.common.lua.LuaVm;
+import se.fearless.common.lua.SimpleLuaSourceProvider;
 import se.krka.kahlua.require.LuaSourceProvider;
-import se.spaced.client.ardor.effect.LuaEffectApi;
-import se.spaced.client.ardor.effect.ParticleEffect;
-import se.spaced.client.ardor.effect.ParticleEffectPrototype;
-import se.spaced.client.ardor.effect.SoundEffect;
-import se.spaced.client.ardor.effect.SoundEffectPrototype;
+import se.spaced.client.ardor.effect.*;
 
 public final class LuaModule implements Module {
 

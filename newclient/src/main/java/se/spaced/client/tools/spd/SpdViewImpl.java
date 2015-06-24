@@ -6,33 +6,18 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.math.Rotations;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.ui.swing.slidertext.JTextSlider;
+import se.fearless.common.ui.swing.slidertext.JTextSlider;
 import se.spaced.client.model.Prop;
 import se.spaced.client.view.ActivePropProvider;
 import se.spaced.shared.tools.ui.FilteredJList;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.ListSelectionModel;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.*;
+import java.awt.event.*;
 
 @Singleton
 public class SpdViewImpl extends JFrame implements SpdView {

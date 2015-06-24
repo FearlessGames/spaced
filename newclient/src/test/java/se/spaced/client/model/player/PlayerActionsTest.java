@@ -2,11 +2,11 @@ package se.spaced.client.model.player;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.fearlessgames.common.mock.MockUtil;
-import se.fearlessgames.common.util.MockTimeProvider;
-import se.fearlessgames.common.util.SystemTimeProvider;
-import se.fearlessgames.common.util.uuid.UUIDFactory;
-import se.fearlessgames.common.util.uuid.UUIDFactoryImpl;
+import se.fearless.common.mock.MockUtil;
+import se.fearless.common.util.MockTimeProvider;
+import se.fearless.common.util.SystemTimeProvider;
+import se.fearless.common.uuid.UUIDFactory;
+import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.ClientSpell;
 import se.spaced.client.model.PlayerTargeting;

@@ -9,7 +9,7 @@ import org.lwjgl.openal.AL10;
 import org.lwjgl.util.WaveData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

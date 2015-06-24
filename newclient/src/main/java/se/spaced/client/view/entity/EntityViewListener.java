@@ -1,6 +1,6 @@
 package se.spaced.client.view.entity;
 
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 
 public interface EntityViewListener {
 	void entityLeftClicked(UUID entityUuid);

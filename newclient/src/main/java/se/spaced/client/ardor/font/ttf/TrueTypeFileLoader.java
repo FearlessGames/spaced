@@ -3,13 +3,12 @@ package se.spaced.client.ardor.font.ttf;
 import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.util.cache.Cache;
 import se.spaced.shared.util.cache.CacheLoader;
 import se.spaced.shared.util.cache.impl.ThreadSafeCache;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
+import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 

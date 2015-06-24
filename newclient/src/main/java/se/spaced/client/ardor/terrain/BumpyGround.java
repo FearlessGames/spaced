@@ -13,7 +13,7 @@ import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedVector3;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.world.terrain.HeightMap;
 import se.spaced.shared.world.terrain.WorldGround;
 

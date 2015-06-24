@@ -11,10 +11,10 @@ import se.ardorgui.FixedAnchorLayout;
 import se.ardorgui.components.area.AnchorPoint;
 import se.ardorgui.lua.ArdorUIPrimitives;
 import se.ardortech.TextureManager;
-import se.fearlessgames.common.lua.LuaVm;
+import se.fearless.common.lua.LuaVm;
 
 import static org.junit.Assert.assertEquals;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
 
 public class GuiComponentTest {
 	private UIPanel parent;

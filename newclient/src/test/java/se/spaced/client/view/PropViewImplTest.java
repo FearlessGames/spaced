@@ -4,15 +4,14 @@ import com.ardor3d.scenegraph.Node;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.pick.Picker;
-import se.fearlessgames.common.util.MockTimeProvider;
+import se.fearless.common.util.MockTimeProvider;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.util.ListenerDispatcher;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.anyInt;
 
 public class PropViewImplTest {
 

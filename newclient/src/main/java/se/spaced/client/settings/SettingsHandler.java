@@ -6,8 +6,8 @@ import com.google.inject.name.Named;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.render.module.RendererSettings;
-import se.fearlessgames.common.lifetime.LifetimeListener;
-import se.fearlessgames.common.lifetime.LifetimeManager;
+import se.fearless.common.lifetime.LifetimeListener;
+import se.fearless.common.lifetime.LifetimeManager;
 import se.spaced.shared.xml.XmlIO;
 
 @Singleton

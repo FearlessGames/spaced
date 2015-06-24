@@ -2,7 +2,7 @@ package se.spaced.client.presenter;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.ardor.ui.events.CombatGuiEvents;
 import se.spaced.client.model.PlayerTargeting;
 import se.spaced.client.model.UserCharacter;

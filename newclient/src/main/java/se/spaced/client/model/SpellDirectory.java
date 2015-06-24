@@ -3,7 +3,7 @@ package se.spaced.client.model;
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearlessgames.common.util.uuid.UUID;
+import se.fearless.common.uuid.UUID;
 import se.spaced.client.ardor.ui.events.SpellEvents;
 import se.spaced.messages.protocol.Spell;
 import se.spaced.shared.activecache.ActiveCache;

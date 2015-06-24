@@ -3,7 +3,7 @@ package se.spaced.client.sound;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.lwjgl.openal.AL10;
-import se.fearlessgames.common.io.StreamLocator;
+import se.fearless.common.io.StreamLocator;
 import se.spaced.client.sound.lwjgl.LwjglSoundSource;
 import se.spaced.client.sound.lwjgl.LwjglStreamingSoundSource;
 

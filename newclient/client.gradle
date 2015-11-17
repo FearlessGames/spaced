@@ -23,6 +23,7 @@ dependencies {
 	compile 'org.jcraft:jorbis:0.0.17'
 	compile 'se.fearless.fearless-common:security:1.0-SNAPSHOT'
 	compile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
+	compile 'se.fearless.kahluatest:kahluatest:1.0-SNAPSHOT'
 
 	compile files('libs/JGoogleAnalytics_0.4.jar', 'libs/jinngine.0.8.jar')
 	compile 'cz.advel.jbullet:jbullet:20101010-1'
@@ -36,5 +37,4 @@ dependencies {
 	runtime 'ch.qos.logback:logback-classic:1.0.13'
 
 	testCompile 'junit:junit:4.12'
-	testCompile 'no.simensan.kahluatest:kahluatest:0.1'
 }

@@ -1,8 +1,11 @@
 package se.spaced.client.ardor.ui;
 
-import no.simensan.kahluatest.AbstractKahluaTest;
-import no.simensan.kahluatest.annotations.LuaTest;
+import org.junit.runner.RunWith;
+import se.fearless.kahluatest.KahluaRunner;
+import se.fearless.kahluatest.annotations.LuaTest;
 
+
+@RunWith(KahluaRunner.class)
 @LuaTest(source = "teststats.lua")
-public class StatsTest extends AbstractKahluaTest {
+public class StatsTest {
 }

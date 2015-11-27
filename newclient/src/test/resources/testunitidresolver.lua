@@ -34,13 +34,16 @@ function testResolveSelf()
 	assertNotNil(table.find(function(v) return v == "player" end, results))
 end
 
-function testResolveUnknown()
+function testResolveNone()
 	local results = ResolveUnitIds({})
 	assertEquals(0, #results)
 end
 
 function testResolveTarget()
 	local results = ResolveUnitIds(GetTarget())
+	for k, v in pairs(results) do
+		print(k, v)
+	end
 	assertEquals(1, #results)
 	assertNotNil(table.find(function(v) return v == "target" end, results))
 end
@@ -76,6 +79,7 @@ function testFocus()
 	assertEquals(2, #results)
 	assertNotNil(table.find(function(v) return v == "focus" end, results))
 	assertNotNil(table.find(function(v) return v == "target" end, results))
+	SetFocusTarget(nil)
 end
 
 function testResolveNil()

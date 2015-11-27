@@ -1,5 +1,5 @@
 require("ui/components/button")
-require("lua/core/inheritance")
+require("core/inheritance")
 require("ui/components/container")
 
 

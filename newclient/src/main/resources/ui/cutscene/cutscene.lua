@@ -1,4 +1,4 @@
-require("lua/core/inheritance")
+require("core/inheritance")
 require("ui/components/picture")
 require("ui/components/label")
 require("ui/components/container")

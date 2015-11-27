@@ -15,15 +15,20 @@ repositories {
 	}
 }
 
+configurations {
+	luaCommon
+}
+
 dependencies {
 	compile project(':ardortech')
 	compile project(':ardorgui')
 	compile project(':messages')
+	luaCommon project(path: ':lua', configuration: 'common')
 
 	compile 'org.jcraft:jorbis:0.0.17'
 	compile 'se.fearless.fearless-common:security:1.0-SNAPSHOT'
 	compile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
-	compile 'se.fearless.kahluatest:kahluatest:1.0-SNAPSHOT'
+	compile 'se.fearless.kahluatest:kahluatest:1.0'
 
 	compile files('libs/JGoogleAnalytics_0.4.jar', 'libs/jinngine.0.8.jar')
 	compile 'cz.advel.jbullet:jbullet:20101010-1'
@@ -38,3 +43,15 @@ dependencies {
 
 	testCompile 'junit:junit:4.12'
 }
+
+task explodeLua(type: Copy) {
+	from zipTree(configurations.luaCommon.singleFile)
+	ext.explodedDir = file("$buildDir/resources/main")
+	into explodedDir
+
+	doFirst {
+		explodedDir.mkdirs()
+	}
+}
+
+compileJava.dependsOn explodeLua

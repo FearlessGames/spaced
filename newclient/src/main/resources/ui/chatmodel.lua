@@ -1,4 +1,4 @@
-require("lua/core/inheritance")
+require("core/inheritance")
 
 ChatModel = {}
 

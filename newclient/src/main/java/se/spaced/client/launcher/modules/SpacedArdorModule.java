@@ -3,6 +3,8 @@ package se.spaced.client.launcher.modules;
 import com.ardor3d.extension.model.collada.jdom.ColladaImporter;
 import com.ardor3d.extension.ui.skin.Skin;
 import com.ardor3d.framework.*;
+import com.ardor3d.framework.lwjgl.LwjglCanvas;
+import com.ardor3d.framework.lwjgl.LwjglCanvasRenderer;
 import com.ardor3d.input.FocusWrapper;
 import com.ardor3d.input.KeyboardWrapper;
 import com.ardor3d.input.MouseWrapper;
@@ -81,15 +83,14 @@ import se.spaced.shared.tools.ClipBoarder;
 import se.spaced.shared.tools.ClipBoarderImpl;
 import se.spaced.shared.util.cache.CacheManager;
 
+import java.security.SecureRandom;
 import java.util.concurrent.*;
 
 public final class SpacedArdorModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(UUIDFactory.class).to(UUIDFactoryImpl.class);
 		bind(SpacedGui.class).to(SpacedGuiImpl.class);
-		bind(Canvas.class).to(NativeCanvas.class);
 		bind(Main.class).to(Spaced.class).in(Scopes.SINGLETON);
 		bind(Scene.class).to(SpacedScene.class).in(Scopes.SINGLETON);
 		bind(Updater.class).to(SpacedUpdater.class).in(Scopes.SINGLETON);
@@ -148,6 +149,18 @@ public final class SpacedArdorModule extends AbstractModule {
 		final Node node = new Node("propsNode");
 		node.getSceneHints().setDataMode(DataMode.VBO);
 		return node;
+	}
+
+	@Provides
+	@Singleton
+	public UUIDFactory getUUIDFactory(TimeProvider timeProvider) {
+		return new UUIDFactoryImpl(timeProvider, new SecureRandom());
+	}
+
+	@Provides
+	@Singleton
+	public Canvas getCanvas(DisplaySettings displaySettings, LwjglCanvasRenderer canvasRenderer) {
+		return new LwjglCanvas(displaySettings, canvasRenderer);
 	}
 
 	@Provides

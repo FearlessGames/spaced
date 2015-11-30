@@ -28,7 +28,7 @@ public class DevResourceModule extends AbstractModule implements ResourceModule 
 	@Singleton
 	@Named("resourceRootDir")
 	public File getResourceRootDir() {
-		return new File("resources");
+		return new File("src/main/resources");
 	}
 
 

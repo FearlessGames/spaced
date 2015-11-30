@@ -24,6 +24,8 @@ dependencies {
 	compile 'com.ardor3d:ardor3d-extras:0.9'
 	compile 'com.ardor3d:ardor3d-animation:0.9'
 	compile 'com.ardor3d:ardor3d-awt:0.9'
+	compile 'org.lwjgl.lwjgl:lwjgl:2.9.3'
+
 
 	compile 'com.google.inject:guice:3.0'
 	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'

@@ -1,8 +1,11 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+mainClassName = "se.spaced.client.launcher.ArdorRealGame"
+applicationDefaultJvmArgs = ["-Djava.library.path=../ardortech/lib/ardor3d/dependencies/lwjgl/native/win+linux"]
 
 repositories {
 	mavenCentral()

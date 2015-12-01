@@ -94,7 +94,7 @@
 			<jvmarg value="-Xloggc:spacedClient.gclog"/>
 			<classpath>
 				<pathelement location="/newclient/src/main/resources"/>
-				<pathelement location="${baseDir}/../shared/resources"/>
+				<pathelement location="/"/>
 				<pathelement location="${baseDir}/../ardorgui/resources"/>
 				<path refid="run.classpath"/>
 				<!--<path refid="resources.classpath"/>-->

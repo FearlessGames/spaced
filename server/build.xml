@@ -82,7 +82,7 @@
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
 				<pathelement location="src/main/resources"/>
-				<pathelement location="${baseDir}/../shared/resources"/>
+				<pathelement location="/"/>
 			</classpath>
 		</java>
 	</target>
@@ -99,7 +99,7 @@
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
 				<pathelement location="src/main/resources"/>
-				<pathelement location="${baseDir}/../shared/resources"/>
+				<pathelement location="/"/>
 			</classpath>
 		</java>
 	</target>
@@ -128,7 +128,7 @@
 				<path refid="run.classpath"/>
 				<pathelement location="${build.dir.classes}"/>
 				<pathelement location="src/main/resources"/>
-				<pathelement location="${baseDir}/../shared/resources"/>
+				<pathelement location="/"/>
 			</classpath>
 		</java>
 	</target>

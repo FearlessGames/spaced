@@ -42,6 +42,7 @@ public class PropXmoEntityCreator implements QueueRunner.Runner<Prop, Void> {
 
 	private void buildXmoEntity(Prop prop) {
 		try {
+			log.debug("Building xmo entity {}", prop.getXmoFile());
 			XmoEntity xmoEntity = createXmoEntity(prop);
 			prop.setXmoEntity(xmoEntity);
 			physics.buildPhysicsOn(prop);

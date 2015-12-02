@@ -53,8 +53,8 @@ public class DevResourceModule extends AbstractModule implements ResourceModule 
 				new FileStreamLocator(new File(System.getProperty("user.dir") + "/resources")),
 				new FileStreamLocator(resourceRootDir),
 				new FileStreamLocator(new File(resourceRootDir, "/textures")),
-				new FileStreamLocator(new File("../shared/resources")),
-				new FileStreamLocator(new File("../ArdorGui/resources")),
+				new FileStreamLocator(new File("../shared/src/main/resources")),
+				new FileStreamLocator(new File("../ArdorGui/src/main/resources")),
 				new ClasspathStreamLocator());
 
 	}

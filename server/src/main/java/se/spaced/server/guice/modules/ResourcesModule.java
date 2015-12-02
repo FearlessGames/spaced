@@ -19,7 +19,7 @@ public class ResourcesModule extends AbstractModule {
 	public StreamLocator getStreamLocator() {
 		return new MultiStreamLocator(
 				new FileStreamLocator(new File("src/main/resources")),
-				new FileStreamLocator(new File("../shared/resources"))
+				new FileStreamLocator(new File("../shared/src/main/resources"))
 		);
 	}
 }

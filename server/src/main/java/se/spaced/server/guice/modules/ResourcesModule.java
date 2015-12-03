@@ -6,6 +6,7 @@ import com.google.inject.Singleton;
 import se.fearless.common.io.FileStreamLocator;
 import se.fearless.common.io.MultiStreamLocator;
 import se.fearless.common.io.StreamLocator;
+import se.spaced.shared.resources.LoggingStreamLocatorDecorator;
 
 import java.io.File;
 
@@ -19,7 +20,8 @@ public class ResourcesModule extends AbstractModule {
 	public StreamLocator getStreamLocator() {
 		return new MultiStreamLocator(
 				new FileStreamLocator(new File("src/main/resources")),
-				new FileStreamLocator(new File("../shared/src/main/resources"))
+				new LoggingStreamLocatorDecorator(new FileStreamLocator(new File("../shared/src/main/resources"))
+				)
 		);
 	}
 }

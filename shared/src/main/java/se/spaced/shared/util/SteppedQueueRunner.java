@@ -28,6 +28,9 @@ public class SteppedQueueRunner<Key, Data> implements QueueRunner<Key, Data> {
 	}
 	
 	public void step() {
+		if (tasks.isEmpty()) {
+			return;
+		}
 		QueueData<Key, Data> task = tasks.poll();
 		try {
 			Data data = loader.onRunWith(task.key);

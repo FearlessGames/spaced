@@ -8,7 +8,7 @@ public enum TransportationMode {
 
 	private final boolean walkmeshBound;
 
-	private TransportationMode(boolean walkmeshBound) {
+	TransportationMode(boolean walkmeshBound) {
 		this.walkmeshBound = walkmeshBound;
 	}
 

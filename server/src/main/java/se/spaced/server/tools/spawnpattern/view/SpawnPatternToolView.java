@@ -13,7 +13,7 @@ public interface SpawnPatternToolView {
 
 	void showExportedXml(String title, String xml);
 
-	public interface Presenter {
+	interface Presenter {
 		void show();
 
 		void selectedSpawnPattern(SpawnPatternTemplate spawnPatternTemplate);

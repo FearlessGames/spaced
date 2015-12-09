@@ -13,7 +13,7 @@ public interface SpawnAreaView extends IsPanel {
 
 	Class<?> askForAreaType(Class<?>[] possibilities, Class<?> preselected);
 
-	public interface Presenter {
+	interface Presenter {
 
 		void changeAreaType();
 	}

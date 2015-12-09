@@ -5,7 +5,7 @@ import se.spaced.server.model.spawn.MobTemplate;
 public interface AddMobTemplateDialogProvider {
 	void show(AddMobTemplateDialogCallback addMobTemplateDialogCallback);
 
-	public interface AddMobTemplateDialogCallback {
+	interface AddMobTemplateDialogCallback {
 		void createNewSpawnTemplateForMob(MobTemplate mobTemplate);
 	}
 }

@@ -10,7 +10,7 @@ public interface MobSpawnTemplateView extends IsPanel {
 
 	void setMobTemplateData(MobTemplate mobTemplate);
 
-	public interface Presenter {
+	interface Presenter {
 
 		void changeMaxCount(int maxCount);
 

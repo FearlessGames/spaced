@@ -3,7 +3,7 @@ package se.spaced.server.tools.loot.edit;
 import se.spaced.server.loot.PersistableLootTemplate;
 import se.spaced.server.tools.loot.HasPanel;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 
 public interface EditView extends HasPanel {
@@ -18,7 +18,7 @@ public interface EditView extends HasPanel {
 
 	void refreshTree();
 
-	public interface Presenter {
+	interface Presenter {
 
 		void onViewTemplate(PersistableLootTemplate selectedItem);
 

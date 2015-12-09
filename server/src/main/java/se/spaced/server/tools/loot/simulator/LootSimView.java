@@ -3,7 +3,7 @@ package se.spaced.server.tools.loot.simulator;
 import se.spaced.server.loot.PersistableLootTemplate;
 import se.spaced.server.tools.loot.HasPanel;
 
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 public interface LootSimView extends HasPanel {
 
@@ -13,7 +13,7 @@ public interface LootSimView extends HasPanel {
 
 	JTextArea getTextArea();
 
-	public interface Presenter {
+	interface Presenter {
 		void onSearch(PersistableLootTemplate selectedItem);
 
 		void onReload();

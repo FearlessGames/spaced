@@ -115,13 +115,13 @@ public class GameMasterServiceImpl implements GameMasterService {
 				player.getName(),
 				quantity,
 				template.getName()));
-		log.warn("{} was given {} {} by {}", new Object[]{player, quantity, template, gm.getName()});
+		log.warn("{} was given {} {} by {}", player, quantity, template, gm.getName());
 	}
 
 	@Override
 	@AutoTransaction
 	public void reloadMob(final ServerEntity gm, final ServerEntity entity) {
-		final MobLifecycle mobLifecycle = spawnService.getOwner((ServerEntity) entity);
+		final MobLifecycle mobLifecycle = spawnService.getOwner(entity);
 		if (mobLifecycle != null) {
 
 			scheduler.add(new Action(timeProvider.now()) {
@@ -178,7 +178,7 @@ public class GameMasterServiceImpl implements GameMasterService {
 		spellService.addSpellForEntity(player, spell);
 		broadcaster.create().to(player).send().spell().spellAdded(spell);
 		broadcaster.create().to(gm).send().gamemaster().successNotification("Spell " + spell.getName() + " was added to " + player.getName());
-		log.warn("{} was granted {} by", new Object[]{player, spell, gm.getName()});
+		log.warn("{} was granted {} by", player, spell, gm.getName());
 
 	}
 
@@ -203,7 +203,7 @@ public class GameMasterServiceImpl implements GameMasterService {
 		PersistedMoney money = new PersistedMoney(currency, amount);
 		moneyService.awardMoney(player, money);
 		broadcaster.create().to(gm).send().gamemaster().successNotification("Awarded " + player.getName() + " " + amount + " " + currency.getName());
-		log.warn("{} was awarded {} by {}", new Object[]{player, money, gm.getName()});
+		log.warn("{} was awarded {} by {}", player, money, gm.getName());
 	}
 
 	@Override

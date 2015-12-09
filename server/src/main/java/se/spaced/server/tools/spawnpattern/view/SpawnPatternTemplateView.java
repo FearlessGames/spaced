@@ -14,7 +14,7 @@ public interface SpawnPatternTemplateView extends IsPanel {
 
 	void selectMobSpawnTemplate(MobSpawnTemplate mobSpawnTemplate);
 
-	public interface Presenter {
+	interface Presenter {
 		void selectedMobSpawnTemplate(MobSpawnTemplate mobSpawnTemplate);
 
 		void removeSpawnTemplate(MobSpawnTemplate mobSpawnTemplate);

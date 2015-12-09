@@ -14,7 +14,7 @@ public interface BrainParameterView extends IsPanel {
 			MobTemplate mobTemplate,
 			MobSpawnTemplate mobSpawnTemplate);
 
-	public interface Presenter {
+	interface Presenter {
 		void changeGeometryData();
 	}
 }

@@ -205,7 +205,7 @@ public class LootTemplateTest {
 			KofNLootTemplate lootTemplate = new KofNLootTemplate(uuidFactory.combUUID(),
 					"templateName",
 					1,
-					Sets.<LootTemplateProbability>newHashSet(inputs));
+					Sets.newHashSet(inputs));
 
 			Multiset<ServerItemTemplate> freq = ConcurrentHashMultiset.create();
 			for (int i = 0; i < 1000; i++) {

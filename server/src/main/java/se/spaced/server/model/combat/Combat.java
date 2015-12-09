@@ -28,7 +28,7 @@ public class Combat {
 	private boolean firstUpdate;
 	private final SmrtBroadcaster<S2CProtocol> broadcaster;
 	private final EntityCombatService entityCombatService;
-	private final Multimap<ServerEntity, ServerEntity> hostilities = Multimaps.<ServerEntity, ServerEntity>synchronizedMultimap(HashMultimap.<ServerEntity, ServerEntity>create());
+	private final Multimap<ServerEntity, ServerEntity> hostilities = Multimaps.synchronizedMultimap(HashMultimap.<ServerEntity, ServerEntity>create());
 
 	public Combat(
 			CurrentActionService currentActionService, ActionScheduler scheduler,

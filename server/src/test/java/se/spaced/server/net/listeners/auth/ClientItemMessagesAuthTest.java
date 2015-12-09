@@ -48,14 +48,7 @@ public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 	public void testUseItemNotFound() throws Exception {
 		stubReturn(player).on(clientConnection).getPlayer();
 
-		final UUID uuid = uuidFactory.randomUUID();
-		ServerItem item = new ServerItem(new ServerItemTemplate.Builder(uuidFactory.combUUID(),
-				"Can of Slurm",
-				ItemType.CONSUMABLE).build());
-		item.setPk(uuid);
-		stubReturn(false).on(itemService).isOwner(player, item);
-
-		itemMessagesAuth.useItem(item);
+		itemMessagesAuth.useItem(null);
 		verifyNever().on(itemService).useItem(any(ServerEntity.class), any(ServerEntity.class), any(ServerItem.class));
 	}
 

@@ -1,5 +1,9 @@
 package se.spaced.shared.model.stats;
 
+import se.fearless.common.stats.DerivedStat;
+import se.fearless.common.stats.MutableStat;
+import se.fearless.common.stats.Stat;
+
 public class CompoundRegenStat extends DerivedStat implements MutableStat {
 
 	private final MutableStat baseRegenRate;

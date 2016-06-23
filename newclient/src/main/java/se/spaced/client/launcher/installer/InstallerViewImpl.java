@@ -1,30 +1,18 @@
 package se.spaced.client.launcher.installer;
 
-import com.google.common.io.InputSupplier;
 import org.xhtmlrenderer.simple.XHTMLPanel;
 import org.xhtmlrenderer.swing.BasicPanel;
 import org.xhtmlrenderer.swing.FSMouseListener;
 import org.xhtmlrenderer.swing.LinkListener;
 import org.xhtmlrenderer.util.XRRuntimeException;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.GridLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.InputStream;
 import java.text.DecimalFormat;
+import java.util.function.Supplier;
 
 public class InstallerViewImpl extends JFrame implements InstallerView {
 	private static final String TOTAL_DOWNLOAD = "Total downloaded: ";
@@ -48,11 +36,11 @@ public class InstallerViewImpl extends JFrame implements InstallerView {
 	private long totalDownloadSize;
 	private JPanel buttonPanel;
 	private XHTMLPanel xhtmlPanel;
-	private final InputSupplier<? extends InputStream> noNewsResource;
+	private final Supplier<InputStream> noNewsResource;
 	private JButton renderOptionsButton;
 
 
-	public InstallerViewImpl(final Presenter presenter, InputSupplier<? extends InputStream> noNewsResource) {
+	public InstallerViewImpl(final Presenter presenter, Supplier<InputStream> noNewsResource) {
 		this.noNewsResource = noNewsResource;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		mainPanel = new JPanel(new BorderLayout(0, 0));
@@ -187,7 +175,7 @@ public class InstallerViewImpl extends JFrame implements InstallerView {
 			xhtmlPanel.setDocument(url);
 		} catch (XRRuntimeException e) {
 			try {
-				xhtmlPanel.setDocument(noNewsResource.getInput(), ".");
+				xhtmlPanel.setDocument(noNewsResource.get(), ".");
 			} catch (Exception e1) {
 				showError("Failed to display noNews page", e1);
 			}

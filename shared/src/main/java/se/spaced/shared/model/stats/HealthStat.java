@@ -1,6 +1,9 @@
 package se.spaced.shared.model.stats;
 
 import se.fearless.common.publisher.Subscriber;
+import se.fearless.common.stats.AbstractStat;
+import se.fearless.common.stats.SimpleStat;
+import se.fearless.common.stats.Stat;
 import se.fearless.common.time.TimeProvider;
 import se.spaced.shared.util.math.LinearTimeValue;
 

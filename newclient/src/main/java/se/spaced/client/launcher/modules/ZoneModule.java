@@ -55,7 +55,7 @@ public class ZoneModule extends AbstractModule {
 	public HeightMap getHeightMap(StreamLocator streamLocator) throws IOException {
 		HeightmapLoader loader = new RawHeightMapLoader(4096f,
 				476f,
-				streamLocator.getInputSupplier("/terrains/landsend/terrain/heightmap16bit.raw"));
+				streamLocator.getInputStreamSupplier("/terrains/landsend/terrain/heightmap16bit.raw"));
 		return loader.loadHeightMap();
 	}
 

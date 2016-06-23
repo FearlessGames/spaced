@@ -15,9 +15,11 @@ repositories {
 }
 
 dependencies {
-	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
-	compile 'se.fearless.fearless-common:lua:1.0-SNAPSHOT'
-	compile 'se.fearless.fearless-common:locators:1.0-SNAPSHOT'
+	compile 'se.fearless.fearless-common:core:1.1'
+	compile 'se.fearless.fearless-common:lua:1.1'
+	compile 'se.fearless.fearless-common:locators:1.1'
+	compile 'se.fearless.fearless-common:math:1.1'
+	compile 'se.fearless.fearless-common:stats:1.1'
 	compile 'com.google.guava:guava:16.0.1'
 	compile 'com.ardor3d:ardor3d-core:0.9'
 	compile 'com.ardor3d:ardor3d-collada:0.9'
@@ -35,5 +37,5 @@ dependencies {
 	compile 'se.mockachino:mockachino:0.6.2' // remove this from compile if possible
 
 	testCompile 'junit:junit:4.12'
-	testCompile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
+	testCompile 'se.fearless.fearless-common:test:1.0.2'
 }

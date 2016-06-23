@@ -24,6 +24,6 @@ public class SpacedResourceLocator implements ResourceLocator {
 				type = resourceName.substring(dot);
 			}
 		}
-		return new SpacedResource(resourceName, streamLocator.getInputSupplier(resourceName), type);
+		return new SpacedResource(resourceName, streamLocator.getInputStreamSupplier(resourceName), type);
 	}
 }

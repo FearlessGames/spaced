@@ -1,5 +1,8 @@
 package se.spaced.shared.model.stats;
 
+import se.fearless.common.stats.AbstractStat;
+import se.fearless.common.stats.DerivedStat;
+
 public class MaxShieldStrength extends DerivedStat {
 	private final AbstractStat shieldEfficiency;
 	private final AbstractStat shieldCharge;

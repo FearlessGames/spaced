@@ -4,23 +4,17 @@ import com.google.common.collect.Sets;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.spaced.messages.protocol.Entity;
 import se.spaced.server.model.cooldown.CooldownSetTemplate;
 import se.spaced.server.model.spell.ServerSpell;
-import se.spaced.server.model.spell.effect.CoolEffect;
-import se.spaced.server.model.spell.effect.DamageSchoolEffect;
-import se.spaced.server.model.spell.effect.Effect;
-import se.spaced.server.model.spell.effect.HealEffect;
-import se.spaced.server.model.spell.effect.ProjectileEffect;
-import se.spaced.server.model.spell.effect.RangeableEffect;
-import se.spaced.server.model.spell.effect.RecoverEffect;
+import se.spaced.server.model.spell.effect.*;
 import se.spaced.shared.model.AnimationState;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.model.TargetingType;
-import se.spaced.shared.model.aura.ModStat;
 import se.spaced.shared.model.stats.EntityStats;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.playback.MovementPoint;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
@@ -28,9 +22,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
 import static se.mockachino.matchers.Matchers.*;
 
@@ -896,7 +888,7 @@ public class SpellCombatServiceTest extends AbstractCombatServiceTest {
 		targetBaseStats.getShieldCharge().changeValue(400);
 		targetBaseStats.getShieldStrength().changeValue(400);
 
-		attacker.getBaseStats().getAttackRating().addModStat(new ModStat(EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER * 10, StatType.ATTACK_RATING, Operator.ADD));
+		attacker.getBaseStats().getAttackRating().addModStat(new ModStat(EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER * 10, SpacedStatType.ATTACK_RATING, Operator.ADD));
 
 		MagicSchool magicSchool = MagicSchool.FIRE;
 		DamageSchoolEffect damageSchoolEffect = new DamageSchoolEffect(spellCombatService,
@@ -926,7 +918,7 @@ public class SpellCombatServiceTest extends AbstractCombatServiceTest {
 		targetBaseStats.getShieldCharge().changeValue(400);
 		targetBaseStats.getShieldStrength().changeValue(400);
 
-		attacker.getBaseStats().getAttackRating().addModStat(new ModStat(-EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER * 99, StatType.ATTACK_RATING, Operator.ADD));
+		attacker.getBaseStats().getAttackRating().addModStat(new ModStat(-EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER * 99, SpacedStatType.ATTACK_RATING, Operator.ADD));
 
 		MagicSchool magicSchool = MagicSchool.FIRE;
 		DamageSchoolEffect damageSchoolEffect = new DamageSchoolEffect(spellCombatService,

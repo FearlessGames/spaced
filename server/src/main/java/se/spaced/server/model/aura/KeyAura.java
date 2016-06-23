@@ -1,9 +1,9 @@
 package se.spaced.server.model.aura;
 
 import com.google.common.collect.ImmutableSet;
+import se.fearless.common.stats.ModStat;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.ActionScheduler;
-import se.spaced.shared.model.aura.ModStat;
 
 import javax.persistence.Entity;
 

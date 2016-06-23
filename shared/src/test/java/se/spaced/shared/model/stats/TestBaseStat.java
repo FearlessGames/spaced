@@ -2,10 +2,9 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.stats.SimpleStat;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class TestBaseStat {

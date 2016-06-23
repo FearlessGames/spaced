@@ -1,10 +1,10 @@
 package se.spaced.server.model.aura;
 
 import com.google.common.collect.ImmutableSet;
+import se.fearless.common.stats.ModStat;
 import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.AuraInstance;
 import se.spaced.server.model.ServerEntity;
-import se.spaced.shared.model.aura.ModStat;
 
 public class ServerAuraInstance implements Comparable<ServerAuraInstance>, AuraInstance {
 	private final ServerAura aura;

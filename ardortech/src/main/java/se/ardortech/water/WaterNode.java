@@ -3,27 +3,13 @@ package se.ardortech.water;
 import com.ardor3d.image.Texture;
 import com.ardor3d.image.Texture2D;
 import com.ardor3d.image.TextureStoreFormat;
-import com.ardor3d.math.ColorRGBA;
-import com.ardor3d.math.Matrix4;
-import com.ardor3d.math.Plane;
-import com.ardor3d.math.Vector3;
-import com.ardor3d.math.Vector4;
+import com.ardor3d.math.*;
 import com.ardor3d.math.type.ReadOnlyMatrix4;
 import com.ardor3d.math.type.ReadOnlyVector3;
-import com.ardor3d.renderer.Camera;
+import com.ardor3d.renderer.*;
 import com.ardor3d.renderer.Camera.ProjectionMode;
-import com.ardor3d.renderer.ContextCapabilities;
-import com.ardor3d.renderer.ContextManager;
-import com.ardor3d.renderer.Renderer;
-import com.ardor3d.renderer.TextureRenderer;
-import com.ardor3d.renderer.TextureRendererFactory;
 import com.ardor3d.renderer.queue.RenderBucketType;
-import com.ardor3d.renderer.state.BlendState;
-import com.ardor3d.renderer.state.ClipState;
-import com.ardor3d.renderer.state.CullState;
-import com.ardor3d.renderer.state.FogState;
-import com.ardor3d.renderer.state.GLSLShaderObjectsState;
-import com.ardor3d.renderer.state.TextureState;
+import com.ardor3d.renderer.state.*;
 import com.ardor3d.scenegraph.Node;
 import com.ardor3d.scenegraph.Spatial;
 import com.ardor3d.scenegraph.hint.CullHint;
@@ -420,8 +406,8 @@ public class WaterNode extends Node {
 
 		try {
 			log.info("loading " + currentShaderStr);
-			waterShader.setVertexShader(streamLocator.getInputSupplier(currentShaderStr + ".vert").getInput());
-			waterShader.setFragmentShader(streamLocator.getInputSupplier(currentShaderStr + ".frag").getInput());
+			waterShader.setVertexShader(streamLocator.getInputStreamSupplier(currentShaderStr + ".vert").get());
+			waterShader.setFragmentShader(streamLocator.getInputStreamSupplier(currentShaderStr + ".frag").get());
 		} catch (final IOException e) {
 			throw new RuntimeException("Failed to load water shader");
 			//logger.log(Level.WARNING, "Error loading shader", e);

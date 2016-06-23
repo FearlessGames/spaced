@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 mainClassName = "se.spaced.client.launcher.ArdorRealGame"
 applicationDefaultJvmArgs = ["-Djava.library.path=../ardortech/lib/ardor3d/dependencies/lwjgl/native/win+linux"]
@@ -29,9 +29,9 @@ dependencies {
 	luaCommon project(path: ':lua', configuration: 'common')
 
 	compile 'org.jcraft:jorbis:0.0.17'
-	compile 'se.fearless.fearless-common:security:1.0-SNAPSHOT'
-	compile 'se.fearless.fearless-common:test:1.0-SNAPSHOT'
-	compile 'se.fearless.kahluatest:kahluatest:1.0'
+	compile 'se.fearless.fearless-common:security:1.2'
+	compile 'se.fearless.fearless-common:test:1.2'
+	compile 'se.fearless.kahluatest:kahluatest:1.1'
 
 	compile files('libs/JGoogleAnalytics_0.4.jar', 'libs/jinngine.0.8.jar')
 	compile 'cz.advel.jbullet:jbullet:20101010-1'
@@ -55,6 +55,10 @@ task explodeLua(type: Copy) {
 	doFirst {
 		explodedDir.mkdirs()
 	}
+}
+
+test {
+	jvmArgs = applicationDefaultJvmArgs
 }
 
 compileJava.dependsOn explodeLua

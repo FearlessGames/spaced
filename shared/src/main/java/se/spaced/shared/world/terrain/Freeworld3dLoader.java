@@ -17,7 +17,7 @@ public class Freeworld3dLoader extends AbstractHeightmapLoader {
 	@Override
 	public HeightMap loadHeightMap() throws IOException {
 		data = new double[size * size];
-		InputStream ins = streamLocator.getInputSupplier(fileName).getInput();
+		InputStream ins = streamLocator.getInputStreamSupplier(fileName).get();
 
 		// freeworld3d seems to be exporting as 513x513x16bit
 		// ("When the terrain is exported to 16bit, the height values are scaled to be between 0 and 2 ^ 16, roughly 65K.")

@@ -1,5 +1,9 @@
 package se.spaced.shared.model.stats;
 
+import se.fearless.common.stats.AbstractStat;
+import se.fearless.common.stats.DerivedStat;
+import se.fearless.common.stats.Stat;
+
 public class MaxHitPoints extends DerivedStat {
 	private final Stat stamina;
 	private final double factor;

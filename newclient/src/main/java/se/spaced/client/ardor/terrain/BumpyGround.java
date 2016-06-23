@@ -8,6 +8,7 @@ import com.ardor3d.math.Vector4;
 import com.ardor3d.renderer.Camera;
 import com.ardor3d.renderer.queue.RenderBucketType;
 import com.ardor3d.util.TextureManager;
+import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
@@ -17,6 +18,8 @@ import se.fearless.common.io.StreamLocator;
 import se.spaced.shared.world.terrain.HeightMap;
 import se.spaced.shared.world.terrain.WorldGround;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Singleton
@@ -79,8 +82,20 @@ public class BumpyGround {
 			terrain = new TerrainWithLightsOnGroundBuilder(terrainDataProvider, terrainCamera, executor).build();
 
 
-			terrain.setVertexShader(streamLocator.getInputSupplier(vertexShaderPath));
-			terrain.setPixelShader(streamLocator.getInputSupplier(fragmentShaderPath));
+			terrain.setVertexShader(new InputSupplier<InputStream>() {
+				@Override
+				public InputStream getInput() throws IOException {
+					return streamLocator.getInputStreamSupplier(vertexShaderPath).get();
+				}
+
+				;
+			});
+			terrain.setPixelShader(new InputSupplier<InputStream>() {
+				@Override
+				public InputStream getInput() throws IOException {
+					return streamLocator.getInputStreamSupplier(fragmentShaderPath).get();
+				}
+			});
 
 			// Uncomment for debugging
 			//terrain.getTextureClipmap().setShowDebug(true);

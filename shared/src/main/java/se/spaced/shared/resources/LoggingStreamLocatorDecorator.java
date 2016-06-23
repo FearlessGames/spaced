@@ -1,13 +1,12 @@
 package se.spaced.shared.resources;
 
-import com.google.common.io.InputSupplier;
-import com.google.common.io.OutputSupplier;
 import org.slf4j.Logger;
 import se.fearless.common.io.StreamLocator;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Iterator;
+import java.util.function.Supplier;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -21,15 +20,15 @@ public class LoggingStreamLocatorDecorator implements StreamLocator {
 	}
 
 	@Override
-	public InputSupplier<? extends InputStream> getInputSupplier(String s) {
+	public Supplier<InputStream> getInputStreamSupplier(String s) {
 		logger.info("getInputSupplier {}", s);
-		return streamLocator.getInputSupplier(s);
+		return streamLocator.getInputStreamSupplier(s);
 	}
 
 	@Override
-	public OutputSupplier<? extends OutputStream> getOutputSupplier(String s) {
+	public Supplier<OutputStream> getOutputStreamSupplier(String s) {
 		logger.info("getOutputSupplier {}", s);
-		return streamLocator.getOutputSupplier(s);
+		return streamLocator.getOutputStreamSupplier(s);
 	}
 
 	@Override

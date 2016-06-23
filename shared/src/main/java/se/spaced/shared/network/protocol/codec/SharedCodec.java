@@ -4,23 +4,17 @@ import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
+import se.fearless.common.stats.ModStat;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.smrt.core.remote.DefaultReadCodec;
 import se.smrt.core.remote.DefaultWriteCodec;
 import se.spaced.messages.protocol.AuraTemplate;
 import se.spaced.messages.protocol.Cooldown;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityInteractionCapability;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.MagicSchool;
-import se.spaced.shared.model.PositionalData;
-import se.spaced.shared.model.aura.ModStat;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.items.ContainerType;
 import se.spaced.shared.model.stats.EntityStats;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.network.protocol.codec.datatype.SpellData;
 import se.spaced.shared.playback.RecordingPoint;
@@ -257,7 +251,8 @@ public class SharedCodec {
 		}
 		codec.writeByte(output, (byte) mods.size());
 		for (ModStat modStat : mods) {
-			codec.writeShort(output, (short) modStat.getStatType().ordinal());
+			SpacedStatType statType = (SpacedStatType) modStat.getStatType();
+			codec.writeShort(output, (short) statType.ordinal());
 			codec.writeShort(output, (short) modStat.getOperator().ordinal());
 			codec.writeDouble(output, modStat.getValue());
 		}

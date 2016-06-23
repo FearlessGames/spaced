@@ -2,6 +2,8 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.stats.CappedStat;
+import se.fearless.common.stats.SimpleStat;
 
 import static org.junit.Assert.assertEquals;
 

@@ -3,14 +3,14 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.aura.ModStatAura;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 
 import java.security.SecureRandom;
 
@@ -23,8 +23,8 @@ public class ModStatAuraPersistentTest extends PersistentTestBase {
 
 	@Test
 	public void testPersist() {
-		ModStat speedStat = new ModStat(100, StatType.SPEED, Operator.ADD);
-		ModStat staminaStat = new ModStat(200, StatType.STAMINA, Operator.ADD);
+		ModStat speedStat = new ModStat(100, SpacedStatType.SPEED, Operator.ADD);
+		ModStat staminaStat = new ModStat(200, SpacedStatType.STAMINA, Operator.ADD);
 		ModStatAura modStatAura = new ModStatAura("test", "./", 1000, true, 5, true, speedStat, staminaStat);
 		UUID pk = uuidFactory.combUUID();
 		modStatAura.setPk(pk);

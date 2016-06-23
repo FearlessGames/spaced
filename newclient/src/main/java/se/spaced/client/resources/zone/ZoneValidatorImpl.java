@@ -8,8 +8,6 @@ import se.fearless.common.io.StreamLocator;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.resources.zone.Zone;
 
-import java.io.IOException;
-
 @Singleton
 public class ZoneValidatorImpl implements ZoneValidator {
 	private final Logger log = LoggerFactory.getLogger(getClass());
@@ -35,9 +33,9 @@ public class ZoneValidatorImpl implements ZoneValidator {
 	@Override
 	public boolean validateProp(Prop prop) {
 		try {
-			streamLocator.getInputSupplier(prop.getXmoFile()).getInput();
+			streamLocator.getInputStreamSupplier(prop.getXmoFile()).get();
 			return true;
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return false;
 		}
 	}

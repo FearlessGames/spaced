@@ -1,15 +1,16 @@
 package se.spaced.shared.xml;
 
 import com.google.common.base.Charsets;
-import com.google.common.io.CharStreams;
-import com.google.common.io.InputSupplier;
-import com.google.common.io.OutputSupplier;
 import com.google.inject.Inject;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.ConversionException;
+import se.fearless.common.io.InputReaderSupplier;
+import se.fearless.common.io.OutputStreamWriterSupplier;
 import se.fearless.common.io.StreamLocator;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.function.Supplier;
 
 public class XStreamIO implements XmlIO {
 	private final XStream xStream;
@@ -24,9 +25,11 @@ public class XStreamIO implements XmlIO {
 
 	@Override
 	public <T> T load(final Class<T> classToLoad, final String path) throws XmlIOException {
-		InputSupplier<InputStreamReader> is = CharStreams.newReaderSupplier(streamLocator.getInputSupplier(path), Charsets.UTF_8);
 
-		try (Reader reader = is.getInput()) {
+		Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier(path);
+		Supplier<InputStreamReader> is = InputReaderSupplier.asInputReaderSupplier(inputSupplier, StandardCharsets.UTF_8);
+
+		try (Reader reader = is.get()) {
 			return classToLoad.cast(xStream.fromXML(reader));
 		} catch (ConversionException | IOException e) {
 			throw new XmlIOException(e);
@@ -37,9 +40,10 @@ public class XStreamIO implements XmlIO {
 
 	@Override
 	public void save(final Object o, final String path) throws XmlIOException {
-		OutputSupplier<OutputStreamWriter> os = CharStreams.newWriterSupplier(streamLocator.getOutputSupplier(path), Charsets.UTF_8);
+		Supplier<? extends OutputStream> outputStreamSupplier = streamLocator.getOutputStreamSupplier(path);
+		Supplier<OutputStreamWriter> os = OutputStreamWriterSupplier.asOutputStreamWriter(outputStreamSupplier.get(), Charsets.UTF_8);
 
-		try (Writer writer = os.getOutput()) {
+		try (Writer writer = os.get()) {
 			xStream.toXML(o, writer);
 		} catch (IOException e) {
 			throw new XmlIOException(e);

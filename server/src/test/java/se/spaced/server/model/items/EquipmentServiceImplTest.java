@@ -5,6 +5,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
 import se.fearless.common.mock.MockUtil;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.mockachino.Mockachino;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -18,13 +20,11 @@ import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
 import se.spaced.server.model.spawn.area.SpawnArea;
 import se.spaced.server.persistence.dao.impl.hibernate.GraveyardTemplate;
-import se.spaced.shared.model.aura.ModStat;
 import se.spaced.shared.model.items.ContainerType;
 import se.spaced.shared.model.items.EquipFailure;
 import se.spaced.shared.model.items.ItemType;
 import se.spaced.shared.model.items.UnequipFailure;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 
 import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.*;
@@ -195,7 +195,7 @@ public class EquipmentServiceImplTest extends ScenarioTestBase {
 				false,
 				0,
 				false,
-				new ModStat(10.0, StatType.STAMINA, Operator.ADD));
+				new ModStat(10.0, SpacedStatType.STAMINA, Operator.ADD));
 		aura.setPk(uuidFactory.randomUUID());
 		ServerItemTemplate shirtTemplate = new ServerItemTemplate.Builder(uuidFactory.combUUID(),
 				"Shirt",
@@ -225,7 +225,7 @@ public class EquipmentServiceImplTest extends ScenarioTestBase {
 				false,
 				0,
 				false,
-				new ModStat(10.0, StatType.STAMINA, Operator.ADD));
+				new ModStat(10.0, SpacedStatType.STAMINA, Operator.ADD));
 		aura.setPk(uuidFactory.randomUUID());
 		ServerItemTemplate shirtTemplate = new ServerItemTemplate.Builder(uuidFactory.combUUID(),
 				"Shirt",

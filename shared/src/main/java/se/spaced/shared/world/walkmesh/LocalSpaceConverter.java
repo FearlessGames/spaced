@@ -21,7 +21,7 @@ import se.spaced.shared.xml.SharedXStreamRegistry;
 import se.spaced.shared.xml.XStreamIO;
 import se.spaced.shared.xml.XmlIOException;
 
-import javax.swing.JFileChooser;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class LocalSpaceConverter {
 		Splitter splitter = Splitter.on("resources").trimResults();
 		Iterable<String> split = splitter.split(path);
 		XmoRoot xmoRoot = xmoLoader.loadXmo(Iterables.get(split, 1));
-		Walkmesh walkmesh = (Walkmesh) xStream.fromXML(streamLocator.getInputSupplier(xmoRoot.getWalkmeshFile()).getInput());
+		Walkmesh walkmesh = (Walkmesh) xStream.fromXML(streamLocator.getInputStreamSupplier(xmoRoot.getWalkmeshFile()).get());
 
 		// TODO: change from these hard coded values (used to convert the fearless ship walkmesh)
 		LocalSpaceConverter localSpaceConverter = new LocalSpaceConverter(new SpacedVector3(0, -20, 0),

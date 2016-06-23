@@ -8,7 +8,6 @@ import com.ardor3d.scenegraph.Spatial;
 import com.ardor3d.ui.text.BMFont;
 import com.ardor3d.ui.text.BMText;
 import com.ardor3d.util.resource.ResourceSource;
-import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
@@ -31,6 +30,7 @@ import se.spaced.shared.xml.XmlIOException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 @Singleton
 public class VisualEntityFactory {
@@ -150,12 +150,12 @@ public class VisualEntityFactory {
 
 	private BMFont getFont() {
 		if (font == null) {
-			InputSupplier<? extends InputStream> inputSupplier = streamLocator.getInputSupplier("fonts/Eras.fnt");
+			Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier("fonts/Eras.fnt");
 			ResourceSource resource = new SpacedResource("fonts/Eras.fnt", inputSupplier, "fnt") {
 				@Override
 				public ResourceSource getRelativeSource(String s) {
 					return new SpacedResource("Eras_0.png",
-							streamLocator.getInputSupplier("textures/fonts/Eras_0.png"),
+							streamLocator.getInputStreamSupplier("textures/fonts/Eras_0.png"),
 							".png");
 				}
 			};

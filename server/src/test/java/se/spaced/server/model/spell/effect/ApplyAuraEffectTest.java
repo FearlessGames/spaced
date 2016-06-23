@@ -3,6 +3,8 @@ package se.spaced.server.model.spell.effect;
 import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.mock.MockUtil;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.AuraInstance;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
@@ -12,10 +14,8 @@ import se.spaced.server.model.aura.ModStatAura;
 import se.spaced.server.model.aura.ServerAura;
 import se.spaced.server.model.spawn.MobTemplate;
 import se.spaced.shared.model.MagicSchool;
-import se.spaced.shared.model.aura.ModStat;
 import se.spaced.shared.model.stats.EntityStats;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 
 import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.getData;
@@ -37,7 +37,7 @@ public class ApplyAuraEffectTest extends ScenarioTestBase {
 
 	@Before
 	public void setup() {
-		modStat = new ModStat(BUFF_AMOUNT, StatType.STAMINA, Operator.ADD);
+		modStat = new ModStat(BUFF_AMOUNT, SpacedStatType.STAMINA, Operator.ADD);
 		serverAura = new ModStatAura("Some AuraTemplate", "", DURATION, false, 0, true, modStat);
 		serverAura.setPk(AURA_PK);
 		applyAuraEffect = new ApplyAuraEffect(smrtBroadcaster,

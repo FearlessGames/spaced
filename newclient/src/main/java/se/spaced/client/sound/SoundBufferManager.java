@@ -81,7 +81,7 @@ public class SoundBufferManager {
 
 	private SoundBuffer newWavBuffer(final String filepath) {
 
-		try (InputStream is = streamLocator.getInputSupplier(filepath).getInput()) {
+		try (InputStream is = streamLocator.getInputStreamSupplier(filepath).get()) {
 			//somehow WaveData.create(is) fails when its run from a webservice (most likely because of underlying AudioSystem.getAudioInputStream(is)
 			//but if we load the whole thing instead and send it in it works
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -104,7 +104,7 @@ public class SoundBufferManager {
 	private SoundBuffer newOggBuffer(final String filepath) {
 
 
-		try (OggInputStream ogg = new OggInputStream(streamLocator.getInputSupplier(filepath).getInput())){
+		try (OggInputStream ogg = new OggInputStream(streamLocator.getInputStreamSupplier(filepath).get())) {
 			final byte[] oggBytes = ByteStreams.toByteArray(ogg);
 			final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(oggBytes.length);
 			byteBuffer.put(oggBytes);

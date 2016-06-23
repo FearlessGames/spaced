@@ -6,11 +6,12 @@ import org.hibernate.annotations.Columns;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
+import se.fearless.common.stats.AuraStats;
+import se.fearless.common.stats.ModStat;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.Action;
 import se.spaced.server.model.action.ActionScheduler;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.AuraStats;
+import se.spaced.shared.model.stats.SpacedStatType;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -55,7 +56,8 @@ public class ModStatAura extends ServerAura {
 	@Override
 	public void remove(ServerEntity target) {
 		for (ModStat mod : mods) {
-			AuraStats auraStats = target.getBaseStats().getAuraStatByType(mod.getStatType());
+			AuraStats auraStats = target.getBaseStats().getAuraStatByType(
+					(SpacedStatType) mod.getStatType());
 			auraStats.removeModStat(mod);
 		}
 	}
@@ -69,7 +71,7 @@ public class ModStatAura extends ServerAura {
 			long now,
 			final ServerAuraInstance newAura, final AuraInstanceRemover remover) {
 		for (ModStat mod : mods) {
-			AuraStats auraStats = target.getBaseStats().getAuraStatByType(mod.getStatType());
+			AuraStats auraStats = target.getBaseStats().getAuraStatByType((SpacedStatType) mod.getStatType());
 			auraStats.addModStat(mod);
 		}
 		actionScheduler.add(new Action(now + getDuration()) {

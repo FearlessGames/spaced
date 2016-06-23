@@ -1,18 +1,13 @@
 package se.spaced.shared.world.terrain;
 
-import com.google.common.io.InputSupplier;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.function.Supplier;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 public class RawDataHeightMapFileFormatTest {
 
@@ -66,9 +61,9 @@ public class RawDataHeightMapFileFormatTest {
 	@Test
 	public void readSimple() throws Exception {
 		final byte[] data = new byte[] {49, -105, 0, 4, 0, 0, 127, -1, -26, 101, -1, -2, 0, 0, 51, 51, -103, -104, -26, 101, -52, -53, 25, -103, 76, -52, -77, 50, 127, -1, 25, -103, 51, 51, -103, -104};
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new InputSupplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
 			@Override
-			public InputStream getInput() throws IOException {
+			public InputStream get() {
 				return new ByteArrayInputStream(data);
 			}
 		});
@@ -101,12 +96,16 @@ public class RawDataHeightMapFileFormatTest {
 
 	@Test
 	public void failToRead() throws Exception {
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new InputSupplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
 			@Override
-			public InputStream getInput() throws IOException {
+			public InputStream get() {
 
 				InputStream is = mock(InputStream.class);
-				when(is.read()).thenReturn(49, 151, 0, 8, 1, 2, 3).thenThrow(new IOException("Fail"));
+				try {
+					when(is.read()).thenReturn(49, 151, 0, 8, 1, 2, 3).thenThrow(new IOException("Fail"));
+				} catch (IOException e) {
+					fail("This should not be possible");
+				}
 				return is;
 			}
 		});
@@ -121,9 +120,9 @@ public class RawDataHeightMapFileFormatTest {
 	@Test
 	public void badHeaderMarker() throws Exception {
 		final byte[] data = new byte[] {49, 31, 0, 4, 0, 0, 127, -1, -26, 101, -1, -2, 0, 0, 51, 51, -103, -104, -26, 101, -52, -53, 25, -103, 76, -52, -77, 50, 127, -1, 25, -103, 51, 51, -103, -104};
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new InputSupplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
 			@Override
-			public InputStream getInput() throws IOException {
+			public InputStream get() {
 				return new ByteArrayInputStream(data);
 			}
 		});

@@ -1,6 +1,7 @@
 apply plugin: 'java'
 
 repositories {
+	mavenLocal()
 	jcenter()
 	maven {
 		url 'http://flexo.fearlessgames.se/artifactory/libs-local'
@@ -29,7 +30,7 @@ dependencies {
 
 	compile 'com.google.inject:guice:3.0'
 	compile 'se.fearless.fearless-common:core:1.0-SNAPSHOT'
-	compile 'se.fearless.fearless-common:locators:1.0-SNAPSHOT'
+	compile 'se.fearless.fearless-common:locators:1.1'
 	compile 'org.slf4j:slf4j-api:1.7.12'
 	compile 'org.apache.commons:commons-math:2.2'
 

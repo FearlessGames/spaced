@@ -4,22 +4,17 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.smrt.core.remote.DefaultCodecImpl;
-import se.spaced.shared.model.AnimationState;
-import se.spaced.shared.model.AppearanceData;
-import se.spaced.shared.model.CreatureType;
-import se.spaced.shared.model.EntityState;
-import se.spaced.shared.model.Faction;
-import se.spaced.shared.model.PositionalData;
-import se.spaced.shared.model.aura.ModStat;
+import se.spaced.shared.model.*;
 import se.spaced.shared.model.stats.EntityStats;
-import se.spaced.shared.model.stats.Operator;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.model.stats.StatData;
-import se.spaced.shared.model.stats.StatType;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 
 import java.io.IOException;
@@ -122,7 +117,7 @@ public class SharedCodecTest {
 		stats.getShieldRecoveryRate().changeValue(0.4);
 		stats.getBaseCoolRate().changeValue(0.6);
 		stats.getBaseShieldEfficiency().decreaseValue(0.1);
-		stats.getAuraStatByType(StatType.SPEED).addModStat(new ModStat(0.0, StatType.SPEED, Operator.POST_MULTIPLY));
+		stats.getAuraStatByType(SpacedStatType.SPEED).addModStat(new ModStat(0.0, SpacedStatType.SPEED, Operator.POST_MULTIPLY));
 		stats.getOutOfCombatShieldRecovery().disable();
 
 		sharedCodec.writeEntityStats(defaultCodec, outputStream, stats);
@@ -161,7 +156,7 @@ public class SharedCodecTest {
 		EntityStats stats = new EntityStats(timeProvider, new StatData(20, 10, 0.3, 0.9, 0.5, 0.0));
 		stats.getOutOfCombatShieldRecovery().disable();
 		stats.getShieldRecoveryRate().changeValue(1);
-		stats.getBaseShieldRecovery().addModStat(new ModStat(2, StatType.SHIELD_RECOVERY, Operator.ADD));
+		stats.getBaseShieldRecovery().addModStat(new ModStat(2, SpacedStatType.SHIELD_RECOVERY, Operator.ADD));
 
 		assertEquals(3, stats.getShieldRecoveryRate().getValue(), EPSILON);
 
@@ -177,7 +172,7 @@ public class SharedCodecTest {
 		int attackRatingAdded = 10;
 		EntityStats stats = new EntityStats(timeProvider, new StatData(20, 10, 0.3, 0.9, 0.5, 0.0));
 
-		stats.getAttackRating().addModStat(new ModStat(attackRatingAdded, StatType.ATTACK_RATING, Operator.ADD));
+		stats.getAttackRating().addModStat(new ModStat(attackRatingAdded, SpacedStatType.ATTACK_RATING, Operator.ADD));
 
 		sharedCodec.writeEntityStats(defaultCodec, outputStream, stats);
 		EntityStats readStats = sharedCodec.readEntityStats(defaultCodec, inputStream);

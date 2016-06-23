@@ -32,7 +32,7 @@ public class SoundSourceFactory {
 	public SoundSource newStreamingSoundSource(final String filepath) {
 		final LwjglSoundSource soundSource = newSoundSource();
 
-		return new LwjglStreamingSoundSource(soundSource, executorService, bufferFactory, streamLocator.getInputSupplier(filepath));
+		return new LwjglStreamingSoundSource(soundSource, executorService, bufferFactory, streamLocator.getInputStreamSupplier(filepath));
 	}
 
 	private LwjglSoundSource newSoundSource() {

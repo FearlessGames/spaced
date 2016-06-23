@@ -1,5 +1,8 @@
 package se.spaced.shared.model.stats;
 
+import se.fearless.common.stats.DerivedStat;
+import se.fearless.common.stats.Stat;
+
 public class OutOfCombatHealthRegen extends DerivedStat {
 	private final double secondsToFullRegen;
 	private final Stat maxHealth;

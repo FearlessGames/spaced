@@ -1,8 +1,6 @@
 package se.spaced.client.resources.zone;
 
 import com.google.common.collect.Iterators;
-import com.google.common.io.InputSupplier;
-import com.google.common.io.OutputSupplier;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
@@ -14,6 +12,7 @@ import se.spaced.shared.resources.zone.Zone;
 
 import java.io.*;
 import java.util.Iterator;
+import java.util.function.Supplier;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -28,7 +27,7 @@ public class ZoneValidatorImplTest {
 	@Mock
 	File file2;
 	@Mock
-	private InputSupplier<InputStream> inputSupplier;
+	private Supplier<InputStream> inputSupplier;
 	@Mock
 	private ByteArrayInputStream bais;
 
@@ -41,14 +40,14 @@ public class ZoneValidatorImplTest {
 	@Test
 	public void testValidatingPropOk() throws IOException {
 		Prop p = new Prop("brajja.xmo", null, null, null);
-		stubReturn(bais).on(inputSupplier).getInput();
+		stubReturn(bais).on(inputSupplier).get();
 		assertTrue(test.validateProp(p));
 	}
 
 	@Test
 	public void testValidatingPropNotFound() throws IOException {
 		Prop p = new Prop("p1.xmo", null, null, null);
-		stubThrow(new IOException("CANNOT FIND YOUWWWW")).on(inputSupplier).getInput();
+		stubThrow(new RuntimeException("CANNOT FIND YOUWWWW")).on(inputSupplier).get();
 		assertFalse(test.validateProp(p));
 	}
 
@@ -59,7 +58,7 @@ public class ZoneValidatorImplTest {
 		Prop p2 = new Prop("p2.xmo", null, null, null);
 		z.addProp(p1);
 		z.addProp(p2);
-		stubReturn(bais).on(inputSupplier).getInput();
+		stubReturn(bais).on(inputSupplier).get();
 		assertTrue(test.validateZone(z));
 	}
 
@@ -70,19 +69,19 @@ public class ZoneValidatorImplTest {
 		Prop p2 = new Prop("p2.xmo", null, null, null);
 		z.addProp(p1);
 		z.addProp(p2);
-		stubThrow(new IOException("CANNOT FIND YOUWWWW")).on(inputSupplier).getInput();
+		stubThrow(new RuntimeException("CANNOT FIND YOUWWWW")).on(inputSupplier).get();
 		assertFalse(test.validateZone(z));
 	}
 
 
 	StreamLocator streamLocator = new StreamLocator() {
 		@Override
-		public InputSupplier<? extends InputStream> getInputSupplier(String key) {
+		public Supplier<InputStream> getInputStreamSupplier(String key) {
 			return inputSupplier;
 		}
 
 		@Override
-		public OutputSupplier<? extends OutputStream> getOutputSupplier(String key) {
+		public Supplier<OutputStream> getOutputStreamSupplier(String key) {
 			return null;
 		}
 

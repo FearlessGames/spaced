@@ -1,6 +1,5 @@
 package se.spaced.server.persistence.migrator;
 
-import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,6 +16,7 @@ import javax.inject.Singleton;
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;
+import java.util.function.Supplier;
 
 @Singleton
 public class ServerContentPopulator implements Migrator {
@@ -93,9 +93,9 @@ public class ServerContentPopulator implements Migrator {
 
 		try {
 
-			InputSupplier<? extends InputStream> supplier = streamLocator.getInputSupplier(fileName);
+			Supplier<? extends InputStream> supplier = streamLocator.getInputStreamSupplier(fileName);
 
-			List<ExternalPersistableBase> list = (List<ExternalPersistableBase>) unmarshaller.getXStream().fromXML(supplier.getInput());
+			List<ExternalPersistableBase> list = (List<ExternalPersistableBase>) unmarshaller.getXStream().fromXML(supplier.get());
 
 			for (ExternalPersistableBase persistable : list) {
 				//log.debug("Persisted: {}", persistable);

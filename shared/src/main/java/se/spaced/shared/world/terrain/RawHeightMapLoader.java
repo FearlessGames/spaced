@@ -1,18 +1,17 @@
 package se.spaced.shared.world.terrain;
 
-import com.google.common.io.InputSupplier;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 public class RawHeightMapLoader implements HeightmapLoader {
 
 	private final float widthMapSize;
 	private final float heightScale;
-	private final InputSupplier<? extends InputStream> inputSupplier;
+	private final Supplier<InputStream> inputSupplier;
 
-	public RawHeightMapLoader(float widthMapSize, float heightScale, InputSupplier<? extends InputStream> inputSupplier) {
+	public RawHeightMapLoader(float widthMapSize, float heightScale, Supplier<InputStream> inputSupplier) {
 		this.widthMapSize = widthMapSize;
 		this.heightScale = heightScale;
 		this.inputSupplier = inputSupplier;
@@ -22,7 +21,7 @@ public class RawHeightMapLoader implements HeightmapLoader {
 	@Override
 	public HeightMap loadHeightMap() throws IOException {
 
-		InputStream ins = inputSupplier.getInput();
+		InputStream ins = inputSupplier.get();
 		DataInputStream dis = new DataInputStream(ins);
 		int header = dis.readUnsignedShort();
 		if (header != RawDataHeightMapExporter.HEADER_MARKER) {

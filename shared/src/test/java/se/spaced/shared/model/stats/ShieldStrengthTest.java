@@ -2,6 +2,7 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.stats.SimpleStat;
 import se.fearless.common.time.MockTimeProvider;
 
 import static org.junit.Assert.assertEquals;

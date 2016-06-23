@@ -3,17 +3,17 @@ package se.ardortech;
 import com.ardor3d.util.export.InputCapsule;
 import com.ardor3d.util.export.OutputCapsule;
 import com.ardor3d.util.resource.ResourceSource;
-import com.google.common.io.InputSupplier;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 public class SpacedResource implements ResourceSource {
 	private final String key;
-	private final InputSupplier<? extends InputStream> inputSupplier;
+	private final Supplier<InputStream> inputSupplier;
 	private final String type;
 
-	public SpacedResource(String key, InputSupplier<? extends InputStream> inputSupplier, String type) {
+	public SpacedResource(String key, Supplier<InputStream> inputSupplier, String type) {
 		this.key = key;
 		this.inputSupplier = inputSupplier;
 		this.type = type;
@@ -45,7 +45,7 @@ public class SpacedResource implements ResourceSource {
 
 	@Override
 	public InputStream openStream() throws IOException {
-		return inputSupplier.getInput();
+		return inputSupplier.get();
 	}
 
 	@Override

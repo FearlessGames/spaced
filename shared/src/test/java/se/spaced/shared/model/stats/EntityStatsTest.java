@@ -2,8 +2,10 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.stats.AuraStats;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.time.MockTimeProvider;
-import se.spaced.shared.model.aura.ModStat;
 
 import static org.junit.Assert.assertEquals;
 
@@ -56,7 +58,7 @@ public class EntityStatsTest {
 		stats.getShieldStrength().decreaseValue(2);
 		stats.getShieldRecoveryRate().increaseValue(0.1);
 		stats.getBaseShieldEfficiency().decreaseValue(0.2);
-		stats.getSpeedModifier().addModStat(new ModStat(-0.5, StatType.SPEED, Operator.ADD));
+		stats.getSpeedModifier().addModStat(new ModStat(-0.5, SpacedStatType.SPEED, Operator.ADD));
 		stats.getAttackRating().changeValue(1.2);
 
 		EntityStats stats2 = new EntityStats(timeProvider);
@@ -75,11 +77,11 @@ public class EntityStatsTest {
 		stats.getStamina().changeValue(10);
 
 		assertEquals(70, stats.getMaxHealth().getValue(), EPSILON);
-		ModStat stat = new ModStat(5, StatType.STAMINA, Operator.ADD);
-		stats.getAuraStatByType(StatType.STAMINA).addModStat(stat);
+		ModStat stat = new ModStat(5, SpacedStatType.STAMINA, Operator.ADD);
+		stats.getAuraStatByType(SpacedStatType.STAMINA).addModStat(stat);
 		assertEquals(105, stats.getMaxHealth().getValue(), EPSILON);
 
-		stats.getAuraStatByType(StatType.STAMINA).removeModStat(stat);
+		stats.getAuraStatByType(SpacedStatType.STAMINA).removeModStat(stat);
 		assertEquals(70, stats.getMaxHealth().getValue(), EPSILON);
 	}
 
@@ -88,7 +90,7 @@ public class EntityStatsTest {
 		EntityStats stats = new EntityStats(timeProvider);
 
 		AuraStats attackRating = stats.getAttackRating();
-		attackRating.addModStat(new ModStat(EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER, StatType.ATTACK_RATING, Operator.ADD));
+		attackRating.addModStat(new ModStat(EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER, SpacedStatType.ATTACK_RATING, Operator.ADD));
 
 		AttackModifier attackModifier = stats.getAttackModifier();
 		assertEquals(1.01, attackModifier.getValue(), EPSILON);

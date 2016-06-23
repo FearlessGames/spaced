@@ -109,8 +109,8 @@ public class XmoEntityFactoryImpl implements XmoEntityFactory {
 		skinningShader.setEnabled(true);
 		try {
 
-			skinningShader.setVertexShader(streamLocator.getInputSupplier("shaders/skinning_gpu.vert").getInput());
-			skinningShader.setFragmentShader(streamLocator.getInputSupplier("shaders/simpleTextureShader.frag").getInput());
+			skinningShader.setVertexShader(streamLocator.getInputStreamSupplier("shaders/skinning_gpu.vert").get());
+			skinningShader.setFragmentShader(streamLocator.getInputStreamSupplier("shaders/simpleTextureShader.frag").get());
 		} catch (final IOException ioe) {
 			log.error("Failed to load skinning shader");
 			log.error(ioe.toString());

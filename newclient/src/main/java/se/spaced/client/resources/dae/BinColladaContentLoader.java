@@ -2,7 +2,6 @@ package se.spaced.client.resources.dae;
 
 import com.ardor3d.extension.model.collada.jdom.data.ColladaStorage;
 import com.ardor3d.util.export.binary.BinaryImporter;
-import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +14,7 @@ import se.spaced.shared.util.cache.impl.ThreadSafeCache;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 public class BinColladaContentLoader implements ColladaContentLoader, CacheLoader<String, ColladaContents> {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -40,9 +40,9 @@ public class BinColladaContentLoader implements ColladaContentLoader, CacheLoade
 		ColladaStorage colladaStorage = null;
 
 		try {
-			InputSupplier<? extends InputStream> inputSupplier = streamLocator.getInputSupplier(colladaFile);
+			Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier(colladaFile);
 			logger.debug("Loading " + colladaFile + " from bin cache");
-			colladaStorage = (ColladaStorage) new BinaryImporter().load(inputSupplier.getInput());
+			colladaStorage = (ColladaStorage) new BinaryImporter().load(inputSupplier.get());
 
 		} catch (IOException e) {
 			logger.info("Failed to load bin collada for " + colladaFile, e);

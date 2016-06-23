@@ -50,7 +50,7 @@ public class Installer implements InstallerView.Presenter {
 			@Override
 			public void run() {
 				installerView = new InstallerViewImpl(Installer.this,
-						streamLocator.getInputSupplier("installer/noNews.html"));
+						streamLocator.getInputStreamSupplier("installer/noNews.html"));
 				installerView.setNewsPage("http://flexo.fearlessgames.se/client/resources/news/news.html");
 				installerView.createAndShowUI();
 			}

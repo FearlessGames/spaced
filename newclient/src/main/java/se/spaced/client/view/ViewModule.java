@@ -5,7 +5,6 @@ import com.ardor3d.image.util.awt.AWTImageLoader;
 import com.ardor3d.input.MouseCursor;
 import com.ardor3d.input.MouseManager;
 import com.google.common.collect.Maps;
-import com.google.common.io.InputSupplier;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
@@ -24,6 +23,7 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
+import java.util.function.Supplier;
 
 public class ViewModule extends AbstractModule {
 	@Override
@@ -41,9 +41,9 @@ public class ViewModule extends AbstractModule {
 		Map<Cursor, MouseCursor> cursors = Maps.newHashMap();
 
 		for (Map.Entry<Cursor, String> entry : CursorResources.cursors()) {
-			InputSupplier<? extends InputStream> is = streamLocator.getInputSupplier(entry.getValue());
+			Supplier<InputStream> is = streamLocator.getInputStreamSupplier(entry.getValue());
 
-			try (InputStream stream = is.getInput()) {
+			try (InputStream stream = is.get()) {
 				Image image = imageLoader.load(stream, true);
 				MouseCursor mouseCursor = new MouseCursor(entry.getKey().toString(), image, 0, image.getHeight() - 1);
 				cursors.put(entry.getKey(), mouseCursor);

@@ -2,6 +2,8 @@ package se.spaced.server.model;
 
 import org.junit.Before;
 import org.junit.Test;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
@@ -9,9 +11,7 @@ import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.movement.TransportationMode;
 import se.spaced.server.model.spawn.MobTemplate;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.util.random.RealRandomProvider;
 
@@ -73,7 +73,7 @@ public class ServerEntityTest {
 	public void buffRunSpeed() throws Exception {
 		MobTemplate template = new MobTemplate.Builder(uuidFactory.randomUUID(), "Foo").runSpeed(8.0).build();
 		Mob entity = template.createMob(timeProvider, UUID.ZERO, randomProvider);
-		entity.getBaseStats().getAuraStatByType(StatType.SPEED).addModStat(new ModStat(.1, StatType.SPEED, Operator.ADD));
+		entity.getBaseStats().getAuraStatByType(SpacedStatType.SPEED).addModStat(new ModStat(.1, SpacedStatType.SPEED, Operator.ADD));
 		double runSpeed = entity.getRunSpeed();
 		assertEquals(8.8, runSpeed, EPSILON);
 	}
@@ -83,7 +83,7 @@ public class ServerEntityTest {
 	public void debuffWalkSpeed() throws Exception {
 		MobTemplate template = new MobTemplate.Builder(uuidFactory.randomUUID(), "Foo").walkSpeed(4.0).build();
 		Mob entity = template.createMob(timeProvider, UUID.ZERO, randomProvider);
-		entity.getBaseStats().getAuraStatByType(StatType.SPEED).addModStat(new ModStat(-.5, StatType.SPEED, Operator.ADD));
+		entity.getBaseStats().getAuraStatByType(SpacedStatType.SPEED).addModStat(new ModStat(-.5, SpacedStatType.SPEED, Operator.ADD));
 		double walkSpeed = entity.getWalkSpeed();
 		assertEquals(2.0, walkSpeed, EPSILON);
 	}

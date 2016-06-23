@@ -20,6 +20,7 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 	maven {
 		url 'http://flexo.fearlessgames.se/artifactory/libs-local'

@@ -53,7 +53,7 @@ public class TextureManagerImpl implements TextureManager {
 		@Override
 		public Texture call() throws Exception {
 			String type = name.substring(name.lastIndexOf('.'));
-			ResourceSource source = new SpacedResource(name, streamLocator.getInputSupplier(name), type);
+			ResourceSource source = new SpacedResource(name, streamLocator.getInputStreamSupplier(name), type);
 			final TextureKey textureKey = TextureKey.getKey(source, flipped, TextureStoreFormat.GuessNoCompressedFormat, Texture.MinificationFilter.Trilinear);
 			Texture texture = com.ardor3d.util.TextureManager.loadFromKey(textureKey, null, null);
 			onAfterTextureLoad(textureKey, texture);

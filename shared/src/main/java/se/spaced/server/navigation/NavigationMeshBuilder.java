@@ -9,26 +9,11 @@ import com.ardor3d.scenegraph.Mesh;
 import com.ardor3d.scenegraph.MeshData;
 import com.ardor3d.scenegraph.Spatial;
 import com.google.common.base.Preconditions;
-import com.google.common.io.InputSupplier;
 import com.google.common.primitives.Floats;
 import com.google.common.primitives.Ints;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import org.critterai.nmgen.CleanNullRegionBorders;
-import org.critterai.nmgen.ContourSet;
-import org.critterai.nmgen.ContourSetBuilder;
-import org.critterai.nmgen.DetailMeshBuilder;
-import org.critterai.nmgen.FilterOutSmallRegions;
-import org.critterai.nmgen.IContourAlgorithm;
-import org.critterai.nmgen.IOpenHeightFieldAlgorithm;
-import org.critterai.nmgen.MatchNullRegionEdges;
-import org.critterai.nmgen.OpenHeightfield;
-import org.critterai.nmgen.OpenHeightfieldBuilder;
-import org.critterai.nmgen.PolyMeshField;
-import org.critterai.nmgen.PolyMeshFieldBuilder;
-import org.critterai.nmgen.SolidHeightfield;
-import org.critterai.nmgen.SolidHeightfieldBuilder;
-import org.critterai.nmgen.TriangleMesh;
+import org.critterai.nmgen.*;
 import se.ardortech.NullTextureManager;
 import se.ardortech.SpacedResourceLocator;
 import se.ardortech.math.AABox;
@@ -45,38 +30,18 @@ import se.spaced.client.environment.time.HourMinuteGameTimeManager;
 import se.spaced.client.model.Prop;
 import se.spaced.client.resources.dae.CachingColladaContentLoader;
 import se.spaced.client.resources.zone.ZoneXmlFileHandler;
-import se.spaced.shared.model.xmo.AttachmentPointIdentifier;
-import se.spaced.shared.model.xmo.Blending;
-import se.spaced.shared.model.xmo.Material;
-import se.spaced.shared.model.xmo.XmoAttachmentPoint;
-import se.spaced.shared.model.xmo.XmoEntity;
-import se.spaced.shared.model.xmo.XmoEntityFactoryImpl;
-import se.spaced.shared.model.xmo.XmoLoader;
-import se.spaced.shared.model.xmo.XmoMetaNode;
+import se.spaced.shared.model.xmo.*;
 import se.spaced.shared.resources.NullXmoMaterialManager;
 import se.spaced.shared.resources.zone.Zone;
 import se.spaced.shared.util.cache.CacheManager;
 import se.spaced.shared.world.TimeSystemInfo;
-import se.spaced.shared.xml.ColorRGBAConverter;
-import se.spaced.shared.xml.QuaternionConverter;
-import se.spaced.shared.xml.Vector3Converter;
-import se.spaced.shared.xml.XStreamIO;
-import se.spaced.shared.xml.XmlIOException;
+import se.spaced.shared.xml.*;
 
-import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.function.Supplier;
 
 /**
  * See API here: http://www.critterai.org/javadoc/nmgen/index.html
@@ -427,9 +392,9 @@ public class NavigationMeshBuilder {
 	}
 
 	public static Mesh buildArdorFromNavMesh(StreamLocator streamLocator, String filename) throws IOException {
-		InputSupplier<? extends InputStream> inputSupplier = streamLocator.getInputSupplier(filename);
+		Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier(filename);
 
-		InputStream input = inputSupplier.getInput();
+		InputStream input = inputSupplier.get();
 		Preconditions.checkNotNull(input, "No input stream for navigation mesh " + filename);
 		DataInputStream stream = new DataInputStream(input);
 		final int triangleMeshVerticesLen = stream.readInt();

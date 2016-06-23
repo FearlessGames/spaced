@@ -1,8 +1,8 @@
 package se.spaced.messages.protocol;
 
 import com.google.common.collect.ImmutableSet;
+import se.fearless.common.stats.ModStat;
 import se.fearless.common.uuid.UUID;
-import se.spaced.shared.model.aura.ModStat;
 
 public interface AuraTemplate {
 	UUID getPk();

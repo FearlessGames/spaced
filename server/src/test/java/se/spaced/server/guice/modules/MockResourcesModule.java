@@ -1,6 +1,5 @@
 package se.spaced.server.guice.modules;
 
-import com.google.common.io.InputSupplier;
 import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
@@ -10,8 +9,8 @@ import se.fearless.common.mock.MockUtil;
 import se.mockachino.Mockachino;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 public class MockResourcesModule implements Module {
 
@@ -31,19 +30,19 @@ public class MockResourcesModule implements Module {
 
 	private void setupPolygonGraphMockData(StreamLocator streamLocator) {
 
-		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputSupplier("mobs/navmesh/fearless.xml");
-		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputSupplier(
+		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputStreamSupplier("mobs/navmesh/fearless.xml");
+		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputStreamSupplier(
 				"/mobs/navmesh/fearless.xml");
-		Mockachino.stubReturn(supplier(getOuterZoneWithNoChildren())).on(streamLocator).getInputSupplier(
+		Mockachino.stubReturn(supplier(getOuterZoneWithNoChildren())).on(streamLocator).getInputStreamSupplier(
 				"/zone/spacebattle/outerSpace.zone");
-		Mockachino.stubReturn(supplier(getTheStormXmo())).on(streamLocator).getInputSupplier(
+		Mockachino.stubReturn(supplier(getTheStormXmo())).on(streamLocator).getInputStreamSupplier(
 				"/props/world/buildings/the_storm.xmo");
 	}
 
-	private InputSupplier<InputStream> supplier(final byte[] content) {
-		return new InputSupplier<InputStream>() {
+	private Supplier<InputStream> supplier(final byte[] content) {
+		return new Supplier<InputStream>() {
 			@Override
-			public InputStream getInput() throws IOException {
+			public InputStream get() {
 				return new ByteArrayInputStream(content);
 			}
 		};

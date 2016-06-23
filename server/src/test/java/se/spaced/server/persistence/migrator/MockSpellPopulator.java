@@ -3,6 +3,8 @@ package se.spaced.server.persistence.migrator;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import org.hibernate.Transaction;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.action.ActionScheduler;
@@ -17,9 +19,7 @@ import se.spaced.server.persistence.dao.impl.hibernate.TransactionManager;
 import se.spaced.server.persistence.dao.interfaces.SpellDao;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.model.TargetingType;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
 import java.util.List;
@@ -226,7 +226,7 @@ public class MockSpellPopulator implements Migrator {
 
 		ServerAura aura = new ModStatAura("Fortitude",
 				"textures/gui/abilityicons/fortitude", 60 * 1000L, false,
-				0, true, new ModStat(5, StatType.STAMINA, Operator.ADD));
+				0, true, new ModStat(5, SpacedStatType.STAMINA, Operator.ADD));
 		aura.setPk(uuidFactory.combUUID());
 		ApplyAuraEffect auraEffect = new ApplyAuraEffect(smrtBroadcaster, MagicSchool.FIRE, aura,
 				auraService);

@@ -4,6 +4,7 @@ import com.ardor3d.renderer.Camera;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.input.ClientMouseButton;
+import se.fearless.common.stats.ModStat;
 import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.CharacterPhysics;
@@ -13,7 +14,6 @@ import se.spaced.client.model.control.states.LocalRecorder;
 import se.spaced.client.physics.PhysicsWorld;
 import se.spaced.messages.protocol.ClientAuraInstance;
 import se.spaced.messages.protocol.ClientAuraTemplate;
-import se.spaced.shared.model.aura.ModStat;
 
 import java.util.Collections;
 

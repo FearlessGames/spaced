@@ -1,25 +1,15 @@
 package se.spaced.shared.model.xmo;
 
-import com.google.common.io.Files;
-import com.google.common.io.InputSupplier;
-import com.google.common.io.OutputSupplier;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import se.fearless.common.io.FileSystemIterator;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.FileStreamLocator;
 import se.spaced.shared.xml.SharedXStreamRegistry;
 import se.spaced.shared.xml.XStreamIO;
 import se.spaced.shared.xml.XmlIO;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.Iterator;
 
 public class XmoFileValidator {
 	private final String path;
@@ -36,7 +26,7 @@ public class XmoFileValidator {
 		SharedXStreamRegistry sharedXStreamRegistry = new SharedXStreamRegistry();
 		sharedXStreamRegistry.registerDefaultsOn(xStream);
 
-		XmlIO io = new XStreamIO(xStream, new AbsolutFileStreamLocator(args[0]));
+		XmlIO io = new XStreamIO(xStream, new FileStreamLocator(new File(args[0])));
 
 		XmoFileValidator xmoFileValidator = new XmoFileValidator(args[0], io);
 		String scanDir = args[1];
@@ -140,29 +130,6 @@ public class XmoFileValidator {
 	private void verify(boolean b, String s) {
 		if (!b) {
 			errorHolder.append(s).append("\r\n");
-		}
-	}
-
-	private static class AbsolutFileStreamLocator implements StreamLocator {
-		private final String root;
-
-		AbsolutFileStreamLocator(String root) {
-			this.root = root;
-		}
-
-		@Override
-		public InputSupplier<? extends InputStream> getInputSupplier(final String key) {
-			return Files.newInputStreamSupplier(new File(key));
-		}
-
-		@Override
-		public OutputSupplier<? extends OutputStream> getOutputSupplier(final String key) {
-			return Files.newOutputStreamSupplier(new File(key));
-		}
-
-		@Override
-		public Iterator<String> listKeys() {
-			return new FileSystemIterator(new File(root));
 		}
 	}
 }

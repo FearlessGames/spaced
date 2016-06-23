@@ -1,7 +1,6 @@
 package se.spaced.server.mob.brains.templates;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +23,7 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.function.Supplier;
 
 @Entity
 public class ScriptedBrainTemplate extends BrainTemplate {
@@ -47,9 +47,9 @@ public class ScriptedBrainTemplate extends BrainTemplate {
 	@Override
 	public MobBrain createBrain(Mob mob, SpawnArea spawnArea, BrainParameterProvider brainParameterProvider) {
 		String scriptPath = brainParameterProvider.getScriptPath();
-		InputSupplier<? extends InputStream> supplier = locator.getInputSupplier(scriptPath);
+		Supplier<? extends InputStream> supplier = locator.getInputStreamSupplier(scriptPath);
 		try {
-			LuaClosure closure = LuaCompiler.loadis(supplier.getInput(), scriptPath, scriptEnv.getVm().getEnvironment());
+			LuaClosure closure = LuaCompiler.loadis(supplier.get(), scriptPath, scriptEnv.getVm().getEnvironment());
 			return new ScriptedMobBrain(mob, orderExecutor, scriptEnv, closure);
 		} catch (IOException e) {
 			log.error("Failed to load script for brain @ " + scriptPath);

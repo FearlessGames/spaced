@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.fearless.common.mock.MockUtil;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
@@ -13,9 +15,7 @@ import se.spaced.server.model.spawn.MobTemplate;
 import se.spaced.server.model.spell.effect.DamageSchoolEffect;
 import se.spaced.server.model.spell.effect.HealEffect;
 import se.spaced.shared.model.MagicSchool;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.util.math.interval.IntervalInt;
 
 import static org.junit.Assert.*;
@@ -41,7 +41,7 @@ public class AuraServiceTest extends ScenarioTestBase {
 				true,
 				0,
 				true,
-				new ModStat(10.0, StatType.STAMINA, Operator.ADD));
+				new ModStat(10.0, SpacedStatType.STAMINA, Operator.ADD));
 		serverAura.setPk(AURA_PK);
 
 		MobTemplate template = new MobTemplate.Builder(uuidFactory.randomUUID(), "Mr Mob").stamina(12).build();
@@ -104,7 +104,7 @@ public class AuraServiceTest extends ScenarioTestBase {
 				true,
 				1,
 				true,
-				new ModStat(10.0, StatType.STAMINA, Operator.ADD));
+				new ModStat(10.0, SpacedStatType.STAMINA, Operator.ADD));
 
 		assertEquals(12.0, target.getBaseStats().getStamina().getValue(), AuraServiceTest.EPSILON);
 		auraService.apply(performer, target, serverAura, timeProvider.now());
@@ -132,7 +132,7 @@ public class AuraServiceTest extends ScenarioTestBase {
 				true,
 				1,
 				true,
-				new ModStat(1.2, StatType.STAMINA, Operator.POST_MULTIPLY));
+				new ModStat(1.2, SpacedStatType.STAMINA, Operator.POST_MULTIPLY));
 
 		assertEquals(12.0, target.getBaseStats().getStamina().getValue(), AuraServiceTest.EPSILON);
 
@@ -156,7 +156,7 @@ public class AuraServiceTest extends ScenarioTestBase {
 				true,
 				1,
 				true,
-				new ModStat(1.2, StatType.STAMINA, Operator.POST_MULTIPLY));
+				new ModStat(1.2, SpacedStatType.STAMINA, Operator.POST_MULTIPLY));
 
 		multiplyAura.setPk(uuidFactory.combUUID());
 		ModStatAura addAura = new ModStatAura("Add template",
@@ -165,7 +165,7 @@ public class AuraServiceTest extends ScenarioTestBase {
 				true,
 				1,
 				true,
-				new ModStat(10, StatType.STAMINA, Operator.ADD));
+				new ModStat(10, SpacedStatType.STAMINA, Operator.ADD));
 
 		addAura.setPk(uuidFactory.combUUID());
 		assertEquals(12.0, target.getBaseStats().getStamina().getValue(), AuraServiceTest.EPSILON);

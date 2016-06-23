@@ -5,6 +5,7 @@ import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedVector3;
+import se.fearless.common.stats.Stat;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.OrderedAction;
 import se.spaced.server.model.aura.AuraService;
@@ -13,7 +14,6 @@ import se.spaced.server.model.cooldown.CooldownSetTemplate;
 import se.spaced.server.model.cooldown.ServerCooldown;
 import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.server.model.spell.effect.RangeableEffect;
-import se.spaced.shared.model.stats.Stat;
 import se.spaced.shared.util.math.interval.IntervalInt;
 import se.spaced.shared.util.random.RandomProvider;
 

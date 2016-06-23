@@ -3,11 +3,13 @@ package se.spaced.shared.model.stats;
 import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.publisher.Subscriber;
+import se.fearless.common.stats.SimpleStat;
+import se.fearless.common.stats.Stat;
 import se.fearless.common.time.MockTimeProvider;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class HealthStatTest {

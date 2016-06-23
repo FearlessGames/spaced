@@ -2,7 +2,10 @@ package se.spaced.shared.model.stats;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.spaced.shared.model.aura.ModStat;
+import se.fearless.common.stats.AuraStats;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
+import se.fearless.common.stats.SimpleStat;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,8 +22,8 @@ public class AuraStatTest {
 		stamina = new SimpleStat("Stamina", 10);
 		auraStats = new AuraStats(stamina);
 		maxHp = new MaxHitPoints(auraStats, 10);
-		fortitude = new ModStat(2, StatType.STAMINA, Operator.ADD);
-		fatigue = new ModStat(-3, StatType.STAMINA, Operator.ADD);
+		fortitude = new ModStat(2, SpacedStatType.STAMINA, Operator.ADD);
+		fatigue = new ModStat(-3, SpacedStatType.STAMINA, Operator.ADD);
 
 	}
 

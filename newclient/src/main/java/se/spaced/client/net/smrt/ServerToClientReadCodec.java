@@ -5,6 +5,8 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.ClientEntityProxy;
@@ -20,15 +22,13 @@ import se.spaced.messages.protocol.*;
 import se.spaced.messages.protocol.s2c.remote.S2CAbstractRequiredReadCodecImpl;
 import se.spaced.messages.protocol.s2c.remote.S2CRequiredReadCodec;
 import se.spaced.shared.model.*;
-import se.spaced.shared.model.aura.ModStat;
 import se.spaced.shared.model.items.ContainerType;
 import se.spaced.shared.model.items.EquipFailure;
 import se.spaced.shared.model.items.ItemType;
 import se.spaced.shared.model.items.UnequipFailure;
 import se.spaced.shared.model.player.PlayerCreationFailure;
 import se.spaced.shared.model.stats.EntityStats;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.network.protocol.codec.SharedCodec;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.network.protocol.codec.datatype.SpellData;
@@ -71,7 +71,7 @@ public class ServerToClientReadCodec extends S2CAbstractRequiredReadCodecImpl im
 
 		for (int i = 0; i < size; i++) {
 			int statOrdinal = readShort(input);
-			StatType statType = StatType.values()[statOrdinal];
+			SpacedStatType statType = SpacedStatType.values()[statOrdinal];
 			int operatorOrdinal = readShort(input);
 			Operator oper = Operator.values()[operatorOrdinal];
 			double value = readDouble(input);

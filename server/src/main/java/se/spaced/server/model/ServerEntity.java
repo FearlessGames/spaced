@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
+import se.fearless.common.stats.Stat;
 import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.messages.protocol.Cooldown;
@@ -18,7 +19,6 @@ import se.spaced.server.persistence.dao.impl.PersistableBase;
 import se.spaced.server.persistence.dao.interfaces.NamedPersistable;
 import se.spaced.shared.model.*;
 import se.spaced.shared.model.stats.EntityStats;
-import se.spaced.shared.model.stats.Stat;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.playback.MovementPoint;
 

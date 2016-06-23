@@ -4,9 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.type.StandardBasicTypes;
 import org.hibernate.usertype.UserType;
-import se.spaced.shared.model.aura.ModStat;
-import se.spaced.shared.model.stats.Operator;
-import se.spaced.shared.model.stats.StatType;
+import se.fearless.common.stats.ModStat;
+import se.fearless.common.stats.Operator;
+import se.spaced.shared.model.stats.SpacedStatType;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;
@@ -42,7 +42,7 @@ public class ModStatUserType implements UserType {
 		if (resultSet.wasNull()) {
 			return null;
 		}
-		return new ModStat(amount, StatType.valueOf(statTypeName), Operator.valueOf(operatorName));
+		return new ModStat(amount, SpacedStatType.valueOf(statTypeName), Operator.valueOf(operatorName));
 	}
 
 	@Override
@@ -55,7 +55,8 @@ public class ModStatUserType implements UserType {
 		} else {
 			ModStat stat = (ModStat) value;
 			preparedStatement.setDouble(index, stat.getValue());
-			preparedStatement.setString(index + 1, stat.getStatType().name());
+			SpacedStatType statType = (SpacedStatType) stat.getStatType();
+			preparedStatement.setString(index + 1, statType.name());
 			preparedStatement.setString(index + 2, stat.getOperator().name());
 		}
 

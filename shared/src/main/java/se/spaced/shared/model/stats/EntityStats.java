@@ -2,6 +2,7 @@ package se.spaced.shared.model.stats;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Maps;
+import se.fearless.common.stats.*;
 import se.fearless.common.time.TimeProvider;
 
 import java.util.Map;
@@ -37,7 +38,7 @@ public class EntityStats {
 	private final SimpleStat baseAttackRating;
 	private final AttackModifier attackModifier;
 
-	private final Map<StatType, AuraStats> auraStats = Maps.newEnumMap(StatType.class);
+	private final Map<SpacedStatType, AuraStats> auraStats = Maps.newEnumMap(SpacedStatType.class);
 
 
 	public EntityStats(TimeProvider timeProvider) {
@@ -49,7 +50,7 @@ public class EntityStats {
 
 		baseStamina = new SimpleStat("baseStamina", inits.getStamina());
 		AuraStats stamina = new AuraStats(baseStamina);
-		auraStats.put(StatType.STAMINA, stamina);
+		auraStats.put(SpacedStatType.STAMINA, stamina);
 		maxHealth = new MaxHitPoints(stamina, STAMINA_TO_HEALTH_FACTOR);
 
 		baseHealthRegenRate = new SimpleStat("baseHealthRegen", IN_COMBAT_REGEN);
@@ -61,11 +62,11 @@ public class EntityStats {
 
 		baseShieldCharge = new SimpleStat("BaseShieldCharge", inits.getBaseShieldCharge());
 		AuraStats shieldCharge = new AuraStats(baseShieldCharge);
-		auraStats.put(StatType.SHIELD_CHARGE, shieldCharge);
+		auraStats.put(SpacedStatType.SHIELD_CHARGE, shieldCharge);
 
 		baseShieldEfficiency = new SimpleStat("BaseShieldEfficiency", inits.getBaseShieldEfficiency());
 		AuraStats shieldEfficiency = new AuraStats(baseShieldEfficiency);
-		auraStats.put(StatType.SHIELD_EFFICIENCY, shieldEfficiency);
+		auraStats.put(SpacedStatType.SHIELD_EFFICIENCY, shieldEfficiency);
 
 		maxShieldStrength = new MaxShieldStrength(shieldEfficiency, shieldCharge);
 		baseShieldRecoveryRate = new SimpleStat("BaseShieldRecoveryRate", inits.getShieldRecovery());
@@ -73,7 +74,7 @@ public class EntityStats {
 
 		baseAttackRating = new SimpleStat("AttackRating", inits.getBaseAttackRating());
 		AuraStats attackRating = new AuraStats(baseAttackRating);
-		auraStats.put(StatType.ATTACK_RATING, attackRating);
+		auraStats.put(SpacedStatType.ATTACK_RATING, attackRating);
 		attackModifier = new AttackModifier(attackRating, EntityStats.ATTACK_RATING_PER_ATTACK_PERCENT_MULTIPLIER);
 
 		baseSpeedModifier = new SpeedModifierStat(1.0);
@@ -83,9 +84,9 @@ public class EntityStats {
 		AuraStats recoveryModifier = new AuraStats(baseShieldRecoveryRate);
 		shieldRecovery = new CompoundRegenStat(recoveryModifier, outOfCombatShieldRecovery, "ShieldRegenRate");
 
-		auraStats.put(StatType.COOL_RATE, coolrate);
-		auraStats.put(StatType.SPEED, speedModifier);
-		auraStats.put(StatType.SHIELD_RECOVERY, recoveryModifier);
+		auraStats.put(SpacedStatType.COOL_RATE, coolrate);
+		auraStats.put(SpacedStatType.SPEED, speedModifier);
+		auraStats.put(SpacedStatType.SHIELD_RECOVERY, recoveryModifier);
 		currentHeat = new HeatStat(timeProvider, maxHeat, coolrate);
 
 		shieldStrength = new ShieldStrength(timeProvider, maxShieldStrength, shieldRecovery);
@@ -119,7 +120,7 @@ public class EntityStats {
 	}
 
 	public MutableStat getStamina() {
-		return auraStats.get(StatType.STAMINA);
+		return auraStats.get(SpacedStatType.STAMINA);
 	}
 
 	public Stat getBaseStamina() {
@@ -139,7 +140,7 @@ public class EntityStats {
 	}
 	
 	public MutableStat getCoolRate() {
-		return auraStats.get(StatType.COOL_RATE);
+		return auraStats.get(SpacedStatType.COOL_RATE);
 	}
 
 	public SimpleStat getMaxHeat() {
@@ -155,7 +156,7 @@ public class EntityStats {
 	}
 
 	public MutableStat getShieldEfficiency() {
-		return auraStats.get(StatType.SHIELD_EFFICIENCY);
+		return auraStats.get(SpacedStatType.SHIELD_EFFICIENCY);
 	}
 
 	public SimpleStat getBaseShieldCharge() {
@@ -164,7 +165,7 @@ public class EntityStats {
 
 
 	public MutableStat getShieldCharge() {
-		return auraStats.get(StatType.SHIELD_CHARGE);
+		return auraStats.get(SpacedStatType.SHIELD_CHARGE);
 	}
 
 	public SimpleStat getBaseShieldEfficiency() {
@@ -172,7 +173,7 @@ public class EntityStats {
 	}
 
 	public AuraStats getSpeedModifier() {
-		return auraStats.get(StatType.SPEED);
+		return auraStats.get(SpacedStatType.SPEED);
 	}
 
 	public void update(EntityStats entityStats) {
@@ -311,7 +312,7 @@ public class EntityStats {
 				toString();
 	}
 
-	public AuraStats getAuraStatByType(StatType type) {
+	public AuraStats getAuraStatByType(SpacedStatType type) {
 		AuraStats stats = auraStats.get(type);
 		if (stats == null) {
 			throw new RuntimeException("Could not find stat of type " + type);
@@ -332,11 +333,11 @@ public class EntityStats {
 	}
 
 	public AuraStats getBaseShieldRecovery() {
-		return getAuraStatByType(StatType.SHIELD_RECOVERY);
+		return getAuraStatByType(SpacedStatType.SHIELD_RECOVERY);
 	}
 
 	public AuraStats getAttackRating() {
-		return getAuraStatByType(StatType.ATTACK_RATING);
+		return getAuraStatByType(SpacedStatType.ATTACK_RATING);
 	}
 
 	public AttackModifier getAttackModifier() {

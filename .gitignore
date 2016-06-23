@@ -74,3 +74,21 @@ reports/
 
 #generated files
 messages/src/codecs
+
+### GC log files
+*.gclog
+
+### Spaced starter dependency reports
+Starter.dependency.*
+
+### Spaced h2 db
+spaced_db.h2.db
+
+### Spaced saved vars
+*/vars/saved/
+
+### Spaced client settings files
+accountSettings.xml
+graphicsSettings.xml
+rendererSettings.xml
+

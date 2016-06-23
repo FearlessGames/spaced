@@ -1,6 +1,7 @@
 package se.spaced.server.persistence.migrator;
 
 import com.google.common.base.Supplier;
+import com.google.common.collect.Sets;
 import com.thoughtworks.xstream.XStream;
 import se.ardortech.math.SpacedVector3;
 import se.spaced.server.model.PersistedAppearanceData;
@@ -8,18 +9,7 @@ import se.spaced.server.model.cooldown.CooldownSetTemplate;
 import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
 import se.spaced.server.model.spell.ServerSpell;
-import se.spaced.server.persistence.dao.interfaces.AuraDao;
-import se.spaced.server.persistence.dao.interfaces.BrainTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.CooldownTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.CreatureTypeDao;
-import se.spaced.server.persistence.dao.interfaces.CurrencyDao;
-import se.spaced.server.persistence.dao.interfaces.FactionDao;
-import se.spaced.server.persistence.dao.interfaces.GraveyardTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.ItemTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.LootTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.MobTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.SpawnPatternTemplateDao;
-import se.spaced.server.persistence.dao.interfaces.SpellDao;
+import se.spaced.server.persistence.dao.interfaces.*;
 import se.spaced.server.persistence.migrator.converters.DefaultField;
 import se.spaced.server.persistence.migrator.converters.PostMarshallerConverter;
 import se.spaced.server.persistence.migrator.converters.PostUnmarshal;
@@ -101,6 +91,12 @@ public class ServerXStreamUnmarshaller extends SpacedXStreamBase {
 				@Override
 				public Object get() {
 					return new CooldownSetTemplate();
+				}
+			}).postUnmarshal(unmarshaledObject);
+			new DefaultField("requiredAuras", new Supplier<Object>() {
+				@Override
+				public Object get() {
+					return Sets.newHashSet();
 				}
 			}).postUnmarshal(unmarshaledObject);
 			ServerSpell spell = (ServerSpell) unmarshaledObject;

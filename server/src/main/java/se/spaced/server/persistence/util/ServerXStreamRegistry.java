@@ -1,20 +1,8 @@
 package se.spaced.server.persistence.util;
 
 import com.thoughtworks.xstream.XStream;
-import se.spaced.server.loot.KofNLootTemplate;
-import se.spaced.server.loot.LootTemplateProbability;
-import se.spaced.server.loot.MoneyLootTemplate;
-import se.spaced.server.loot.MultiLootTemplate;
-import se.spaced.server.loot.SingleItemLootTemplate;
-import se.spaced.server.mob.brains.templates.AggroingBrainTemplate;
-import se.spaced.server.mob.brains.templates.AttackingBrainTemplate;
-import se.spaced.server.mob.brains.templates.CompositeBrainTemplate;
-import se.spaced.server.mob.brains.templates.NullBrainTemplate;
-import se.spaced.server.mob.brains.templates.PatrollingBrainTemplate;
-import se.spaced.server.mob.brains.templates.ProximityWhisperBrainTemplate;
-import se.spaced.server.mob.brains.templates.RoamingBrainTemplate;
-import se.spaced.server.mob.brains.templates.ScriptedBrainTemplate;
-import se.spaced.server.mob.brains.templates.VendorBrainTemplate;
+import se.spaced.server.loot.*;
+import se.spaced.server.mob.brains.templates.*;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.aura.KeyAura;
@@ -34,20 +22,12 @@ import se.spaced.server.model.spawn.area.CompositeSpawnArea;
 import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
 import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
 import se.spaced.server.model.spell.ServerSpell;
-import se.spaced.server.model.spell.effect.ApplyAuraEffect;
-import se.spaced.server.model.spell.effect.CoolEffect;
-import se.spaced.server.model.spell.effect.DamageSchoolEffect;
-import se.spaced.server.model.spell.effect.Effect;
-import se.spaced.server.model.spell.effect.GrantSpellEffect;
-import se.spaced.server.model.spell.effect.HealEffect;
-import se.spaced.server.model.spell.effect.InterruptEffect;
-import se.spaced.server.model.spell.effect.ProjectileEffect;
-import se.spaced.server.model.spell.effect.RecoverEffect;
-import se.spaced.server.model.spell.effect.SelfDamageSchoolEffect;
+import se.spaced.server.model.spell.effect.*;
 import se.spaced.server.persistence.dao.impl.hibernate.GraveyardTemplate;
 import se.spaced.server.persistence.dao.interfaces.Persistable;
 import se.spaced.server.persistence.migrator.converters.HibernateSetConverter;
 import se.spaced.shared.model.items.ContainerType;
+import se.spaced.shared.model.stats.SpacedStatType;
 import se.spaced.shared.world.walkmesh.Walkmesh;
 import se.spaced.shared.world.walkmesh.WalkmeshConnection;
 import se.spaced.shared.xml.SharedXStreamRegistry;
@@ -61,6 +41,7 @@ public class ServerXStreamRegistry {
 
 		xStream.registerConverter(new HibernateSetConverter());
 		xStream.registerConverter(new EnumDoubleMapConverter(TransportationMode.class));
+
 
 		xStream.omitField(Effect.class, "smrtBroadcaster");
 		xStream.omitField(ProjectileEffect.class, "actionScheduler");
@@ -104,7 +85,7 @@ public class ServerXStreamRegistry {
 		xStream.alias("modStatAura", ModStatAura.class);
 		xStream.alias("keyAura", KeyAura.class);
 		xStream.alias("periodicEffectAura", PeriodicEffectAura.class);
-
+		xStream.alias("statType", SpacedStatType.class);
 		xStream.alias("item", ServerItemTemplate.class);
 
 		xStream.alias("takeK", KofNLootTemplate.class);
@@ -142,6 +123,7 @@ public class ServerXStreamRegistry {
 		xStream.processAnnotations(CooldownSetTemplate.class);
 		xStream.processAnnotations(SpawnPatternTemplate.class);
 
-
+		xStream.registerConverter(new StatTypeConverter());
 	}
+
 }

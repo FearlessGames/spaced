@@ -112,7 +112,8 @@ public class ServerContentPopulator implements Migrator {
 	public static void main(String[] args) {
 
 		SessionFactory factory = MockUtil.deepMock(SessionFactory.class);
-		StreamLocator locator = new FileStreamLocator(new File("resources"));
+		StreamLocator locator = new FileStreamLocator(new File("server/src/main/resources"));
+
 		ServerContentPopulator pop = new ServerContentPopulator(locator,
 				new InMemorySpellDao(),
 				new InMemoryItemTemplateDao(),

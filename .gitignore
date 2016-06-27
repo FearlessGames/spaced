@@ -92,3 +92,4 @@ accountSettings.xml
 graphicsSettings.xml
 rendererSettings.xml
 
+*.jfr

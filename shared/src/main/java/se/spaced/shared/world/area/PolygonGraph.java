@@ -2,14 +2,7 @@ package se.spaced.shared.world.area;
 
 import com.ardor3d.math.Vector2;
 import com.ardor3d.math.type.ReadOnlyVector2;
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Predicates;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Sets;
+import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedVector3;
@@ -21,6 +14,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PolygonGraph implements NeighbourLookup<Polygon> {
 	private final Logger log = LoggerFactory.getLogger(getClass());
@@ -62,34 +56,17 @@ public class PolygonGraph implements NeighbourLookup<Polygon> {
 
 	@Override
 	public Iterable<Polygon> getNeighbours(final Polygon polygon) {
-		Predicate<Neighbour> matches = new Predicate<Neighbour>() {
-			@Override
-			public boolean apply(Neighbour neighbour) {
-				return neighbour.polygon.equals(polygon);
-			}
-		};
-		return Iterables.transform(
-				Iterables.filter(polygons.get(polygon), Predicates.not(matches)), new Function<Neighbour, Polygon>() {
-			@Override
-			public Polygon apply(Neighbour neighbour) {
-				return neighbour.polygon;
-			}
-		});
+		return polygons.get(polygon).stream().filter(neighbour -> !neighbour.polygon.equals(polygon)).map(neighbour -> neighbour.polygon).collect(Collectors.toList());
 	}
 
 	public Polygon getPolygon(SpacedVector3 point) {
 		final ReadOnlyVector2 vector2 = new Vector2(point.getX(), point.getZ());
-		Iterable<Polygon> inside = Iterables.filter(getAllPolygons(), new Predicate<Polygon>() {
-			@Override
-			public boolean apply(Polygon polygon) {
-				return polygon.containsPoint(vector2);
-			}
-		});
+		Iterable<Polygon> inside = Iterables.filter(getAllPolygons(), polygon -> polygon.containsPoint(vector2));
 		Polygon closestDownwards = EVERYWHERE;
 		double closestDistance = Double.MAX_VALUE;
 		for (Polygon polygon : inside) {
 			double distance = getDistanceToPolygon(point, polygon);
-			log.debug("Distance from {} to polygon {} is {}", new Object[] {point, polygon, distance});
+			log.debug("Distance from {} to polygon {} is {}", point, polygon, distance);
 			if (distance < 0) {
 				distance = Math.abs(distance) * 5;
 			}
@@ -97,18 +74,12 @@ public class PolygonGraph implements NeighbourLookup<Polygon> {
 				closestDownwards = polygon;
 				closestDistance = distance;
 			}
-
 		}
 		return closestDownwards;
 	}
 
 	public Polygon getPolygon(final UUID id) {
-		return Iterables.find(polygons.keySet(), new Predicate<Polygon>() {
-			@Override
-			public boolean apply(Polygon polygon) {
-				return polygon.getId().equals(id);
-			}
-		});
+		return polygons.keySet().stream().filter(polygon -> polygon.getId().equals(id)).findFirst().get();
 	}
 
 	private double getDistanceToPolygon(SpacedVector3 point, Polygon polygon) {
@@ -133,12 +104,7 @@ public class PolygonGraph implements NeighbourLookup<Polygon> {
 
 	public Gate getGate(Polygon from, final Polygon to) {
 		Collection<Neighbour> neighbours = polygons.get(from);
-		Neighbour neighbour = Iterables.find(neighbours, new Predicate<Neighbour>() {
-			@Override
-			public boolean apply(Neighbour neighbour) {
-				return to.equals(neighbour.polygon);
-			}
-		});
+		Neighbour neighbour = neighbours.stream().filter(neighbour1 -> to.equals(neighbour1.polygon)).findFirst().get();
 		return neighbour.gate;
 	}
 

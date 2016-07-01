@@ -2,9 +2,13 @@ package se.spaced.shared.world.area;
 
 import com.ardor3d.math.Vector2;
 import com.ardor3d.math.type.ReadOnlyVector2;
+import com.github.davidmoten.rtree.Entry;
+import com.github.davidmoten.rtree.RTree;
+import com.github.davidmoten.rtree.geometry.Geometries;
 import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rx.Observable;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.VectorMath;
 import se.fearless.common.uuid.UUID;
@@ -32,8 +36,11 @@ public class PolygonGraph implements NeighbourLookup<Polygon> {
 
 	private final Multimap<Polygon, Neighbour> polygons = HashMultimap.create();
 
+	RTree<Polygon, Polygon> polygonLookup = RTree.star().create();
+
 	public void addPolygon(Polygon polygon) {
 		polygons.put(polygon, new Neighbour(SpacedVector3.ZERO, SpacedVector3.ZERO, polygon));
+		polygonLookup = polygonLookup.add(polygon, polygon);
 	}
 
 	public Collection<Polygon> getAllPolygons() {
@@ -61,7 +68,9 @@ public class PolygonGraph implements NeighbourLookup<Polygon> {
 
 	public Polygon getPolygon(SpacedVector3 point) {
 		final ReadOnlyVector2 vector2 = new Vector2(point.getX(), point.getZ());
-		Iterable<Polygon> inside = Iterables.filter(getAllPolygons(), polygon -> polygon.containsPoint(vector2));
+		Observable<Entry<Polygon, Polygon>> search = polygonLookup.search(Geometries.point(vector2.getX(), vector2.getY()));
+		Iterable<Polygon> inside = search.map(Entry::value).filter(polygon -> polygon.containsPoint(vector2)).toBlocking().toIterable();
+
 		Polygon closestDownwards = EVERYWHERE;
 		double closestDistance = Double.MAX_VALUE;
 		for (Polygon polygon : inside) {

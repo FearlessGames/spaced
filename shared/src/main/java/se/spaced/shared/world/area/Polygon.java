@@ -1,6 +1,8 @@
 package se.spaced.shared.world.area;
 
 import com.ardor3d.math.type.ReadOnlyVector2;
+import com.github.davidmoten.rtree.geometry.Geometries;
+import com.github.davidmoten.rtree.geometry.Rectangle;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -10,12 +12,13 @@ import se.ardortech.math.SpacedVector3;
 import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.shared.world.AreaPoint;
-import se.spaced.shared.world.Geometries;
 
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 
-public class Polygon implements Geometry, PointSequence {
+import static se.spaced.shared.world.Geometries.VECTOR_TO_AREA_POINT;
+
+public class Polygon implements Geometry, PointSequence, com.github.davidmoten.rtree.geometry.Geometry {
 	private  final List<SpacedVector3> points;
 	private final UUID id;
 
@@ -34,7 +37,7 @@ public class Polygon implements Geometry, PointSequence {
 
 	@Override
 	public ImmutableList<AreaPoint> getAreaPoints() {
-		return ImmutableList.copyOf(Iterables.transform(points, Geometries.VECTOR_TO_AREA_POINT));
+		return ImmutableList.copyOf(Iterables.transform(points, VECTOR_TO_AREA_POINT));
 	}
 
 	public ImmutableList<SpacedVector3> getPoints() {
@@ -119,5 +122,21 @@ public class Polygon implements Geometry, PointSequence {
 		return "Polygon{" +
 				"id=" + id +
 				'}';
+	}
+
+	@Override
+	public double distance(Rectangle rectangle) {
+		return mbr().distance(rectangle);
+	}
+
+	@Override
+	public Rectangle mbr() {
+		Rectangle2D mbr = getBoundingRect();
+		return Geometries.rectangle(mbr.getMinX(), mbr.getMinY(), mbr.getMaxX(), mbr.getMaxY());
+	}
+
+	@Override
+	public boolean intersects(Rectangle rectangle) {
+		return mbr().intersects(rectangle);
 	}
 }

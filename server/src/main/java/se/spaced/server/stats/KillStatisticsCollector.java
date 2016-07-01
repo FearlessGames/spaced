@@ -11,7 +11,6 @@ import se.spaced.server.model.spawn.EntityTemplate;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
 import se.spaced.server.persistence.dao.interfaces.KillEntryDao;
 import se.spaced.server.persistence.util.transactions.AutoTransaction;
-import se.spaced.shared.model.PositionalData;
 
 public class KillStatisticsCollector extends S2CEmptyReceiver {
 	private final Logger log = LoggerFactory.getLogger(getClass());
@@ -37,9 +36,5 @@ public class KillStatisticsCollector extends S2CEmptyReceiver {
 		}
 		entry.increaseKillCount();
 		killEntryDao.persist(entry);
-	}
-
-	@Override
-	public void restartRecorder(PositionalData positionalData) {
 	}
 }

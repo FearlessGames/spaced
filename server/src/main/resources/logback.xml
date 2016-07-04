@@ -6,6 +6,13 @@
 		</encoder>
 	</appender>
 
+	<appender name="EVENT_FILE" class="ch.qos.logback.core.FileAppender">
+		<file>events.log</file>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+
 	<logger name="se.spaced.server">
 		<level value="info"/>
 	</logger>
@@ -24,6 +31,11 @@
 
 	<logger name="se.spaced.server.model.vendor.VendorServiceImpl">
 		<level value="debug"/>
+	</logger>
+
+	<logger name="EVENT_LOGGER">
+		<level value="INFO"/>
+		<appender-ref ref="EVENT_FILE"/>
 	</logger>
 
 <!--	<logger name="se.spaced.server.net.mina">

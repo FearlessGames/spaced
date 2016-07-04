@@ -9,16 +9,16 @@ import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.spawn.EntityTemplate;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
-import se.spaced.server.persistence.dao.interfaces.KillEntryDao;
 import se.spaced.server.persistence.util.transactions.AutoTransaction;
+import se.spaced.shared.statistics.EventLogger;
 
 public class KillStatisticsCollector extends S2CEmptyReceiver {
 	private final Logger log = LoggerFactory.getLogger(getClass());
-	private final KillEntryDao killEntryDao;
+	private final EventLogger eventLogger;
 
 	@Inject
-	public KillStatisticsCollector(SmrtBroadcaster<S2CProtocol> broadcaster, KillEntryDao killEntryDao) {
-		this.killEntryDao = killEntryDao;
+	public KillStatisticsCollector(SmrtBroadcaster<S2CProtocol> broadcaster, EventLogger eventLogger) {
+		this.eventLogger = eventLogger;
 		broadcaster.addSpy(this);
 	}
 
@@ -30,11 +30,7 @@ public class KillStatisticsCollector extends S2CEmptyReceiver {
 		ServerEntity victim = (ServerEntity) target;
 		EntityTemplate killerTemplate = killer.getTemplate();
 		EntityTemplate victimTemplate = victim.getTemplate();
-		KillEntry entry = killEntryDao.findByParticipants(killerTemplate, victimTemplate);
-		if (entry == null) {
-			entry = new KillEntry(killerTemplate, victimTemplate);
-		}
-		entry.increaseKillCount();
-		killEntryDao.persist(entry);
+		eventLogger.log("KILL_EVENT", killerTemplate.getName(), killerTemplate.getPk().toString(), victimTemplate.getName(), victimTemplate.getPk().toString());
+
 	}
 }

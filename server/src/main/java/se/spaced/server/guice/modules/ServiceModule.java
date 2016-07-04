@@ -8,6 +8,8 @@ import com.google.inject.name.Named;
 import com.google.inject.name.Names;
 import org.apache.mina.filter.codec.ProtocolDecoder;
 import org.apache.mina.filter.codec.ProtocolEncoder;
+import se.fearless.common.json.GsonSerializer;
+import se.fearless.common.json.JsonSerializer;
 import se.fearless.common.lifetime.LifetimeManager;
 import se.fearless.common.lifetime.LifetimeManagerImpl;
 import se.fearless.common.lua.SimpleLuaSourceProvider;
@@ -98,6 +100,8 @@ import se.spaced.server.stats.KillStatisticsServiceImpl;
 import se.spaced.server.trade.*;
 import se.spaced.shared.network.webservices.admin.SpellAdminWebService;
 import se.spaced.shared.network.webservices.informationservice.InformationWebService;
+import se.spaced.shared.statistics.EventLogger;
+import se.spaced.shared.statistics.FileEventLogger;
 import se.spaced.shared.util.ListenerDispatcher;
 import se.spaced.shared.util.cache.CacheManager;
 import se.spaced.shared.util.random.RandomProvider;
@@ -169,6 +173,8 @@ public final class ServiceModule extends AbstractModule {
 
 		bind(PolygonGraphLoader.class).to(ZoneBasedPolygonGraphLoader.class).in(Scopes.SINGLETON);
 		bind(CacheManager.class).annotatedWith(Names.named("xmoCachedManager")).to(CacheManager.class).in(Scopes.SINGLETON);
+
+		bind(EventLogger.class).to(FileEventLogger.class).in(Scopes.SINGLETON);
 	}
 
 	@Provides
@@ -530,5 +536,11 @@ public final class ServiceModule extends AbstractModule {
 		ContributionMapper mapper = new ContributionMapper(contributionService, combatRepository);
 		broadcaster.addSpy(S2CAdapters.createServerCombatMessages(mapper));
 		return contributionService;
+	}
+
+	@Provides
+	@Singleton
+	public JsonSerializer getJsonSerializer() {
+		return new GsonSerializer();
 	}
 }

@@ -15,11 +15,12 @@ repositories {
 }
 
 dependencies {
-	compile 'se.fearless.fearless-common:core:1.1'
-	compile 'se.fearless.fearless-common:lua:1.1'
-	compile 'se.fearless.fearless-common:locators:1.1'
-	compile 'se.fearless.fearless-common:math:1.1'
-	compile 'se.fearless.fearless-common:stats:1.1'
+	compile 'se.fearless.fearless-common:core:1.2'
+	compile 'se.fearless.fearless-common:lua:1.2'
+	compile 'se.fearless.fearless-common:locators:1.2'
+	compile 'se.fearless.fearless-common:math:1.2'
+	compile 'se.fearless.fearless-common:stats:1.2'
+	compile 'se.fearless.fearless-common:json:1.2'
 	compile 'com.google.guava:guava:16.0.1'
 	compile 'com.ardor3d:ardor3d-core:0.9'
 	compile 'com.ardor3d:ardor3d-collada:0.9'
@@ -39,5 +40,5 @@ dependencies {
 
 	testCompile 'junit:junit:4.12'
 	testCompile 'se.fearless.fearless-common:test:1.0.2'
-	testRuntime 'ch.qos.logback:logback-classic:1.0.13'
+	testRuntime group: 'uk.org.lidalia', name: 'slf4j-test', version: '1.2.0'
 }

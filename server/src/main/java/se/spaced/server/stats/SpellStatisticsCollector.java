@@ -6,22 +6,22 @@ import se.spaced.messages.protocol.Spell;
 import se.spaced.messages.protocol.s2c.S2CEmptyReceiver;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.ServerEntity;
+import se.spaced.server.model.spawn.EntityTemplate;
 import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
-import se.spaced.server.persistence.dao.interfaces.SpellActionEntryDao;
+import se.spaced.shared.statistics.EventLogger;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SpellStatisticsCollector extends S2CEmptyReceiver {
-	private final SpellActionEntryDao spellActionEntryDao;
+	private final EventLogger eventLogger;
 	private final Map<Entity, SpellActionEntry> actionMap;
 
 	@Inject
-	public SpellStatisticsCollector(SmrtBroadcaster<S2CProtocol> broadcaster, SpellActionEntryDao spellActionEntryDao) {
-		this.spellActionEntryDao = spellActionEntryDao;
-		actionMap = new HashMap<Entity, SpellActionEntry>();
+	public SpellStatisticsCollector(SmrtBroadcaster<S2CProtocol> broadcaster, EventLogger eventLogger) {
+		this.eventLogger = eventLogger;
+		actionMap = new HashMap<>();
 		broadcaster.addSpy(this);
 	}
 
@@ -46,9 +46,10 @@ public class SpellStatisticsCollector extends S2CEmptyReceiver {
 
 		SpellActionEntry spellActionEntry = actionMap.remove(entity);
 		spellActionEntry.setCompleted(true);
-		spellActionEntry.setEndTime(new Date());
-
-		spellActionEntryDao.persist(spellActionEntry);
+		EntityTemplate performer = spellActionEntry.getPerformer();
+		EntityTemplate target1 = spellActionEntry.getTarget();
+		ServerSpell spell1 = spellActionEntry.getSpell();
+		eventLogger.log("SPELLCAST_COMPLETED", performer.getName(), entity.getPk().toString(), performer.getPk().toString(), target1.getName(), target.getPk().toString(), target1.getPk().toString(), spell1.getName(), spell1.getPk().toString());
 	}
 
 	@Override
@@ -59,9 +60,10 @@ public class SpellStatisticsCollector extends S2CEmptyReceiver {
 
 		SpellActionEntry spellActionEntry = actionMap.remove(entity);
 		spellActionEntry.setCompleted(false);
-		spellActionEntry.setEndTime(new Date());
 
-		spellActionEntryDao.persist(spellActionEntry);
-
+		EntityTemplate performer = spellActionEntry.getPerformer();
+		EntityTemplate target1 = spellActionEntry.getTarget();
+		ServerSpell spell1 = spellActionEntry.getSpell();
+		eventLogger.log("SPELLCAST_STOPPED", performer.getName(), performer.getPk().toString(), target1.getName(), target1.getPk().toString(), spell1.getName(), spell1.getPk().toString());
 	}
 }

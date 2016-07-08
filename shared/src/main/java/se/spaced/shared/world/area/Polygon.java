@@ -15,19 +15,21 @@ import se.spaced.shared.world.AreaPoint;
 
 import java.awt.geom.Rectangle2D;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static se.spaced.shared.world.Geometries.VECTOR_TO_AREA_POINT;
 
 public class Polygon implements Geometry, PointSequence, com.github.davidmoten.rtree.geometry.Geometry {
 	private  final List<SpacedVector3> points;
 	private final UUID id;
+	private final AtomicReference<Rectangle2D> boundingRect = new AtomicReference<>();
 
 	public Polygon() {
 		this(UUID.ZERO);
 	}
 
 	public Polygon(UUID id) {
-		this(id, Lists.<SpacedVector3>newArrayList());
+		this(id, Lists.newArrayList());
 	}
 
 	public Polygon(UUID id, Iterable<SpacedVector3> points) {
@@ -72,6 +74,19 @@ public class Polygon implements Geometry, PointSequence, com.github.davidmoten.r
 	}
 
 	public Rectangle2D getBoundingRect() {
+		Rectangle2D rect = boundingRect.get();
+		if (rect == null) {
+			rect = calculateBoundingRect();
+			if (boundingRect.compareAndSet(null, rect)) {
+				return rect;
+			} else {
+				return boundingRect.get();
+			}
+		}
+		return rect;
+	}
+
+	private Rectangle2D calculateBoundingRect() {
 		int xmin = Integer.MAX_VALUE;
 		int ymin = Integer.MAX_VALUE;
 		int xmax = Integer.MIN_VALUE;

@@ -31,7 +31,7 @@ dependencies {
 	compile 'org.apache.mina:mina-core:2.0.4'
 	compile project(':ardortech')
 	compile 'com.google.inject.extensions:guice-grapher:3.0'
-	compile 'se.hiflyer:paparazzo:0.2-SNAPSHOT'
+	compile 'se.hiflyer:paparazzo:0.2'
 	compile 'org.slf4j:jul-to-slf4j:1.7.12'
 	compile 'se.fearless.rtree:rtree:0.8-RC9'
 

@@ -1,6 +1,6 @@
 package se.spaced.shared.model.stats;
 
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Maps;
 import se.fearless.common.stats.*;
 import se.fearless.common.time.TimeProvider;
@@ -296,7 +296,7 @@ public class EntityStats {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(this).
+		return MoreObjects.toStringHelper(this).
 				add("baseStamina", baseStamina).
 				add("maxHealth", maxHealth).
 				add("currentHealth", currentHealth).

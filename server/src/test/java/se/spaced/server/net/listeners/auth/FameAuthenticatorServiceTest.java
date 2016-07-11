@@ -14,7 +14,7 @@ import se.spaced.shared.util.ListenerDispatcher;
 
 import java.io.IOException;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
 import static se.mockachino.matchers.Matchers.any;
 import static se.mockachino.matchers.Matchers.match;

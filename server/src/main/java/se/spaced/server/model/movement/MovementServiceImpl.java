@@ -119,13 +119,6 @@ public class MovementServiceImpl implements MovementService {
 	}
 
 	@Override
-	public void moveAndRotateEntity(
-			ServerEntity entity, SpacedVector3 newPos,
-			SpacedRotation rotation, long now, AnimationState state) {
-		moveAndRotateEntity(entity, new MovementPoint<AnimationState>(now, state, newPos, rotation));
-	}
-
-	@Override
 	public void moveAndRotateEntity(ServerEntity entity, MovementPoint<AnimationState> point) {
 		updatePosition(entity, point);
 	}

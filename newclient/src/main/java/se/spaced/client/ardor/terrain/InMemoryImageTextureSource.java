@@ -93,8 +93,7 @@ public class InMemoryImageTextureSource implements TextureSource {
 
 		int textureXStart = tileX * tileSize * levelSize;
 		int textureYStart = tileY * tileSize * levelSize;
-		log.debug("clipmapLevel {} textureStart ({}, {}) levelSize {}",
-				new Integer[]{clipmapLevel, textureXStart, textureYStart, levelSize});
+		log.debug("clipmapLevel {} textureStart ({}, {}) levelSize {}", clipmapLevel, textureXStart, textureYStart, levelSize);
 
 		for (int y = 0; y < tileSize; y++) {
 			for (int x = 0; x < tileSize; x++) {
@@ -110,8 +109,7 @@ public class InMemoryImageTextureSource implements TextureSource {
 					data.put(toIndex + 2, data1.get(fromIndex + 2));
 				} catch (IndexOutOfBoundsException e) {
 					log.error("Terrain Texture source fail!", e);
-					log.error("clipmapLevel {} textureStart ({}, {}) levelSize {}",
-							new Integer[]{clipmapLevel, textureXStart, textureYStart, levelSize});
+					log.error("clipmapLevel {} textureStart ({}, {}) levelSize {}", clipmapLevel, textureXStart, textureYStart, levelSize);
 					log.error("fromIndex {} ", fromIndex);
 				}
 			}

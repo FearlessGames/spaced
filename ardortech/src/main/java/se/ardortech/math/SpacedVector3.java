@@ -2,7 +2,6 @@ package se.ardortech.math;
 
 import com.ardor3d.math.Vector3;
 import com.ardor3d.math.type.ReadOnlyVector3;
-import org.apache.commons.math.MathRuntimeException;
 import org.apache.commons.math.util.MathUtils;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 
@@ -357,7 +356,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 		double threshold = 0.6 * getNorm();
 		if (threshold == 0) {
 			// TODO: Change?
-			throw MathRuntimeException.createArithmeticException("zero norm");
+			throw new RuntimeException("zero norm " + toString());
 		}
 
 		if ((x >= -threshold) && (x <= threshold)) {
@@ -389,7 +388,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 
 		double normProduct = v1.getNorm() * v2.getNorm();
 		if (normProduct == 0) {
-			throw MathRuntimeException.createArithmeticException("zero norm");
+			throw new RuntimeException("zero norm " + v1.toString() + " " + v2.toString());
 		}
 
 		double dot = dotProduct(v1, v2);

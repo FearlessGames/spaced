@@ -8,9 +8,6 @@ import se.spaced.shared.playback.MovementPoint;
 import se.spaced.shared.playback.RecordingPoint;
 
 public interface MovementService {
-	@Deprecated
-	void moveAndRotateEntity(
-			ServerEntity entity, SpacedVector3 newPos, SpacedRotation rotation, long now, AnimationState state);
 
 	void moveAndRotateEntity(ServerEntity entity, MovementPoint<AnimationState> point);
 

@@ -101,7 +101,7 @@ public class GameInputListener implements MouseListener, KeyListener {
 
 	@Override
 	public void onMove(int deltaX, int deltaY, final int newX, final int newY) {
-		log.debug("onMove ({}, {}) - delta {}, {}", new Integer[]{newX, newY, deltaX, deltaY});
+		log.debug("onMove ({}, {}) - delta {}, {}", newX, newY, deltaX, deltaY);
 		if (mouseDown(ClientMouseButton.LEFT) || mouseDown(ClientMouseButton.RIGHT)) {
 			//mouseWindowEdgeWorkaround.grab(newX, newY);
 			//deltaX = mouseWindowEdgeWorkaround.getLastDeltaX();

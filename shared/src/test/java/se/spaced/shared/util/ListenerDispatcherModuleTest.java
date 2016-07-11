@@ -6,8 +6,9 @@ import com.google.inject.Injector;
 import com.google.inject.name.Names;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertNotNull;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.assertNotNull;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
 
 public class ListenerDispatcherModuleTest {
 	@Test

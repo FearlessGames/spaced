@@ -2,7 +2,6 @@ package se.ardortech.math;
 
 import com.ardor3d.math.Quaternion;
 import com.ardor3d.math.type.ReadOnlyVector3;
-import org.apache.commons.math.MathRuntimeException;
 import org.apache.commons.math.geometry.CardanEulerSingularityException;
 import org.apache.commons.math.geometry.NotARotationMatrixException;
 import se.krka.kahlua.integration.annotations.LuaMethod;
@@ -167,7 +166,7 @@ public class SpacedRotation implements Serializable {
 
 		double norm = axis.getNorm();
 		if (norm == 0) {
-			throw MathRuntimeException.createArithmeticException("zero norm for rotation axis");
+			throw new RuntimeException("zero norm for rotation axis " + axis.toString());
 		}
 
 		double halfAngle = -0.5 * angle;
@@ -215,9 +214,9 @@ public class SpacedRotation implements Serializable {
 		// dimension check
 		if ((m.length != 3) || (m[0].length != 3) ||
 				(m[1].length != 3) || (m[2].length != 3)) {
-			throw new NotARotationMatrixException(
-					"a {0}x{1} matrix cannot be a rotation matrix",
-					m.length, m[0].length);
+			throw new RuntimeException(
+					String.format("a %d,%d matrix cannot be a rotation matrix",
+							m.length, m[0].length));
 		}
 
 		// compute a "close" orthogonal matrix
@@ -228,9 +227,8 @@ public class SpacedRotation implements Serializable {
 				ort[1][0] * (ort[0][1] * ort[2][2] - ort[2][1] * ort[0][2]) +
 				ort[2][0] * (ort[0][1] * ort[1][2] - ort[1][1] * ort[0][2]);
 		if (det < 0.0) {
-			throw new NotARotationMatrixException(
-					"the closest orthogonal matrix has a negative determinant {0}",
-					det);
+			throw new RuntimeException(
+					"the closest orthogonal matrix has a negative determinant " + det);
 		}
 
 		// There are different ways to compute the quaternions elements
@@ -361,7 +359,7 @@ public class SpacedRotation implements Serializable {
 		double v1v1 = SpacedVector3.dotProduct(v1, v1);
 		double v2v2 = SpacedVector3.dotProduct(v2, v2);
 		if ((u1u1 == 0) || (u2u2 == 0) || (v1v1 == 0) || (v2v2 == 0)) {
-			throw MathRuntimeException.createIllegalArgumentException("zero norm for rotation defining vector");
+			throw new RuntimeException("zero norm for rotation defining vector");
 		}
 
 		double u1x = u1.getX();
@@ -493,7 +491,7 @@ public class SpacedRotation implements Serializable {
 
 		double normProduct = u.getNorm() * v.getNorm();
 		if (normProduct == 0) {
-			throw MathRuntimeException.createIllegalArgumentException("zero norm for rotation defining vector");
+			throw new RuntimeException("zero norm for rotation defining vector");
 		}
 
 		double dot = SpacedVector3.dotProduct(u, v);
@@ -1103,9 +1101,7 @@ public class SpacedRotation implements Serializable {
 		}
 
 		// the algorithm did not converge after 10 iterations
-		throw new NotARotationMatrixException(
-				"unable to orthogonalize matrix in {0} iterations",
-				i - 1);
+		throw new RuntimeException(String.format("unable to orthogonalize matrix in %d iterations", i - 1));
 	}
 
 	/**

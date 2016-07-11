@@ -12,7 +12,7 @@ import com.google.inject.Singleton;
 import se.ardortech.TextureLoadCallback;
 import se.ardortech.TextureManager;
 import se.ardortech.water.WaterNode;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.environment.components.Sky;
 
 import java.nio.FloatBuffer;
@@ -28,10 +28,10 @@ public class FlatWater extends Water {
 	private Texture fallbackTexture;
 	private final Node skyNode;
 	private Texture foamTexture;
-	private final StreamLocator streamLocator;
+	private final IOLocator streamLocator;
 
 	@Inject
-	public FlatWater(TextureManager textureManager, Sky sky, StreamLocator streamLocator) {
+	public FlatWater(TextureManager textureManager, Sky sky, IOLocator streamLocator) {
 		this.textureManager = textureManager;
 		this.streamLocator = streamLocator;
 		skyNode = sky.getSkyNode();

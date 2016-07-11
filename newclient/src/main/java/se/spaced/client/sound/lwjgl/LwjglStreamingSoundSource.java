@@ -1,6 +1,7 @@
 package se.spaced.client.sound.lwjgl;
 
 import com.ardor3d.math.type.ReadOnlyVector3;
+import com.google.common.io.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.spaced.client.sound.OggInputStream;
@@ -9,19 +10,17 @@ import se.spaced.client.sound.SoundBufferManager;
 import se.spaced.client.sound.SoundSource;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 
 public class LwjglStreamingSoundSource implements SoundSource {
 	private static final Logger log = LoggerFactory.getLogger(LwjglStreamingSoundSource.class);
 	private final LwjglSoundSource soundSource;
 	private final ScheduledExecutorService scheduler;
 	private final SoundBufferManager bufferFactory;
-	private final Supplier<InputStream> inputSupplier;
+	private final ByteSource byteSource;
 	private final List<SoundBuffer> buffers;
 
 	private OggInputStream ogg;
@@ -32,12 +31,12 @@ public class LwjglStreamingSoundSource implements SoundSource {
 			LwjglSoundSource soundSource,
 			ScheduledExecutorService scheduler,
 			SoundBufferManager bufferFactory,
-			Supplier<InputStream> inputSupplier) {
+			ByteSource byteSource) {
 		this.soundSource = soundSource;
 		this.scheduler = scheduler;
 		this.bufferFactory = bufferFactory;
 		buffers = bufferFactory.newSoundBuffers(3);
-		this.inputSupplier = inputSupplier;
+		this.byteSource = byteSource;
 	}
 
 	@Override
@@ -195,7 +194,11 @@ public class LwjglStreamingSoundSource implements SoundSource {
 			}
 		}
 
-		ogg = new OggInputStream(inputSupplier.get());
+		try {
+			ogg = new OggInputStream(byteSource.openStream());
+		} catch (IOException e) {
+			log.error("Could not create stream for ogg");
+		}
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.google.inject.Singleton;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.model.Prop;
 import se.spaced.client.physics.PhysicsWorld;
 import se.spaced.client.resources.zone.*;
@@ -52,10 +52,10 @@ public class ZoneModule extends AbstractModule {
 
 	@Provides
 	@Singleton
-	public HeightMap getHeightMap(StreamLocator streamLocator) throws IOException {
+	public HeightMap getHeightMap(IOLocator streamLocator) throws IOException {
 		HeightmapLoader loader = new RawHeightMapLoader(4096f,
 				476f,
-				streamLocator.getInputStreamSupplier("/terrains/landsend/terrain/heightmap16bit.raw"));
+				streamLocator.getByteSource("/terrains/landsend/terrain/heightmap16bit.raw"));
 		return loader.loadHeightMap();
 	}
 

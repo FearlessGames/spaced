@@ -1,5 +1,5 @@
 require("ui/tracker")
-require("serialize")
+--require("serialize")
 
 function getAndSet(table, key, defaultValue)
 	local old = table[key]

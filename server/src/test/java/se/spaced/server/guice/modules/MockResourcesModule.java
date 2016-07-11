@@ -1,16 +1,17 @@
 package se.spaced.server.guice.modules;
 
+import com.google.common.io.ByteSource;
 import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.mock.MockUtil;
 import se.mockachino.Mockachino;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.function.Supplier;
 
 public class MockResourcesModule implements Module {
 
@@ -20,29 +21,29 @@ public class MockResourcesModule implements Module {
 
 	@Provides
 	@Singleton
-	public StreamLocator getStreamLocator() {
-		StreamLocator streamLocator = MockUtil.deepMock(StreamLocator.class);
+	public IOLocator getStreamLocator() {
+		IOLocator streamLocator = MockUtil.deepMock(IOLocator.class);
 		setupPolygonGraphMockData(streamLocator);
 
 
 		return streamLocator;
 	}
 
-	private void setupPolygonGraphMockData(StreamLocator streamLocator) {
+	private void setupPolygonGraphMockData(IOLocator streamLocator) {
 
-		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputStreamSupplier("mobs/navmesh/fearless.xml");
-		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getInputStreamSupplier(
+		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getByteSource("mobs/navmesh/fearless.xml");
+		Mockachino.stubReturn(supplier(getPolyGraphData())).on(streamLocator).getByteSource(
 				"/mobs/navmesh/fearless.xml");
-		Mockachino.stubReturn(supplier(getOuterZoneWithNoChildren())).on(streamLocator).getInputStreamSupplier(
+		Mockachino.stubReturn(supplier(getOuterZoneWithNoChildren())).on(streamLocator).getByteSource(
 				"/zone/spacebattle/outerSpace.zone");
-		Mockachino.stubReturn(supplier(getTheStormXmo())).on(streamLocator).getInputStreamSupplier(
+		Mockachino.stubReturn(supplier(getTheStormXmo())).on(streamLocator).getByteSource(
 				"/props/world/buildings/the_storm.xmo");
 	}
 
-	private Supplier<InputStream> supplier(final byte[] content) {
-		return new Supplier<InputStream>() {
+	private ByteSource supplier(final byte[] content) {
+		return new ByteSource() {
 			@Override
-			public InputStream get() {
+			public InputStream openStream() throws IOException {
 				return new ByteArrayInputStream(content);
 			}
 		};

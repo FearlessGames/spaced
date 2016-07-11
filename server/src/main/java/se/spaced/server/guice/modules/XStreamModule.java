@@ -5,7 +5,7 @@ import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.resources.zone.ZoneXmlFileHandler;
 import se.spaced.client.resources.zone.ZoneXmlReader;
 import se.spaced.server.persistence.util.ServerXStreamRegistry;
@@ -31,7 +31,7 @@ public class XStreamModule extends AbstractModule {
 
 	@Provides
 	@Singleton
-	public XmlIO getXmlIO(XStream xStream, StreamLocator streamLocator) {
+	public XmlIO getXmlIO(XStream xStream, IOLocator streamLocator) {
 		return new XStreamIO(xStream, streamLocator);
 	}
 }

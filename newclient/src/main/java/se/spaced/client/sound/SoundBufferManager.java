@@ -9,7 +9,7 @@ import org.lwjgl.openal.AL10;
 import org.lwjgl.util.WaveData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -25,12 +25,12 @@ public class SoundBufferManager {
 	private static final int MAX_CACHE_SIZE = 1024 * 1000 * 50;
 
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private final ThreadLocal<ByteBuffer> decodeBufferHolder;
 
 	@Inject
-	public SoundBufferManager(final StreamLocator streamLocator) {
-		this.streamLocator = streamLocator;
+	public SoundBufferManager(final IOLocator ioLocator) {
+		this.ioLocator = ioLocator;
 		decodeBufferHolder = new ThreadLocal<ByteBuffer>() {
 			@Override
 			protected ByteBuffer initialValue() {
@@ -81,7 +81,7 @@ public class SoundBufferManager {
 
 	private SoundBuffer newWavBuffer(final String filepath) {
 
-		try (InputStream is = streamLocator.getInputStreamSupplier(filepath).get()) {
+		try (InputStream is = ioLocator.getByteSource(filepath).openBufferedStream()) {
 			//somehow WaveData.create(is) fails when its run from a webservice (most likely because of underlying AudioSystem.getAudioInputStream(is)
 			//but if we load the whole thing instead and send it in it works
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -104,7 +104,7 @@ public class SoundBufferManager {
 	private SoundBuffer newOggBuffer(final String filepath) {
 
 
-		try (OggInputStream ogg = new OggInputStream(streamLocator.getInputStreamSupplier(filepath).get())) {
+		try (OggInputStream ogg = new OggInputStream(ioLocator.getByteSource(filepath).openStream())) {
 			final byte[] oggBytes = ByteStreams.toByteArray(ogg);
 			final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(oggBytes.length);
 			byteBuffer.put(oggBytes);

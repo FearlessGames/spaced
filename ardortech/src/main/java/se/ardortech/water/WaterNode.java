@@ -18,7 +18,7 @@ import com.ardor3d.scenegraph.hint.TextureCombineMode;
 import com.ardor3d.scenegraph.shape.Quad;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class WaterNode extends Node {
 	private final Texture normalmapTexture;
 	private final Texture dudvTexture;
 	private final Texture foamTexture;
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private final Texture fallbackTexture;
 	private Matrix4 fallbackTextureStateMatrix;
 
@@ -151,7 +151,7 @@ public class WaterNode extends Node {
 			Texture fallback,
 			Node skyBox,
 			Texture foamTexture,
-			StreamLocator streamLocator) {
+			IOLocator ioLocator) {
 		this.cam = cam;
 		this.useProjectedShader = useProjectedShader;
 		this.useRefraction = useRefraction;
@@ -160,7 +160,7 @@ public class WaterNode extends Node {
 		this.dudvTexture = dudv;
 		this.fallbackTexture = fallback;
 		this.foamTexture = foamTexture;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 		if (skyBox != null) {
 			final ClipState skyboxClipState = new ClipState();
 			skyboxClipState.setEnabled(false);
@@ -406,8 +406,8 @@ public class WaterNode extends Node {
 
 		try {
 			log.info("loading " + currentShaderStr);
-			waterShader.setVertexShader(streamLocator.getInputStreamSupplier(currentShaderStr + ".vert").get());
-			waterShader.setFragmentShader(streamLocator.getInputStreamSupplier(currentShaderStr + ".frag").get());
+			waterShader.setVertexShader(ioLocator.getByteSource(currentShaderStr + ".vert").openBufferedStream());
+			waterShader.setFragmentShader(ioLocator.getByteSource(currentShaderStr + ".frag").openBufferedStream());
 		} catch (final IOException e) {
 			throw new RuntimeException("Failed to load water shader");
 			//logger.log(Level.WARNING, "Error loading shader", e);

@@ -1,9 +1,9 @@
 package se.spaced.shared.world.terrain;
 
+import com.google.common.io.ByteSource;
 import org.junit.Test;
 
 import java.io.*;
-import java.util.function.Supplier;
 
 import static org.junit.Assert.*;
 import static se.mockachino.Mockachino.mock;
@@ -61,9 +61,9 @@ public class RawDataHeightMapFileFormatTest {
 	@Test
 	public void readSimple() throws Exception {
 		final byte[] data = new byte[] {49, -105, 0, 4, 0, 0, 127, -1, -26, 101, -1, -2, 0, 0, 51, 51, -103, -104, -26, 101, -52, -53, 25, -103, 76, -52, -77, 50, 127, -1, 25, -103, 51, 51, -103, -104};
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new ByteSource() {
 			@Override
-			public InputStream get() {
+			public InputStream openStream() throws IOException {
 				return new ByteArrayInputStream(data);
 			}
 		});
@@ -96,10 +96,9 @@ public class RawDataHeightMapFileFormatTest {
 
 	@Test
 	public void failToRead() throws Exception {
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new ByteSource() {
 			@Override
-			public InputStream get() {
-
+			public InputStream openStream() throws IOException {
 				InputStream is = mock(InputStream.class);
 				try {
 					when(is.read()).thenReturn(49, 151, 0, 8, 1, 2, 3).thenThrow(new IOException("Fail"));
@@ -120,9 +119,9 @@ public class RawDataHeightMapFileFormatTest {
 	@Test
 	public void badHeaderMarker() throws Exception {
 		final byte[] data = new byte[] {49, 31, 0, 4, 0, 0, 127, -1, -26, 101, -1, -2, 0, 0, 51, 51, -103, -104, -26, 101, -52, -53, 25, -103, 76, -52, -77, 50, 127, -1, 25, -103, 51, 51, -103, -104};
-		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new Supplier<InputStream>() {
+		HeightmapLoader loader = new RawHeightMapLoader(8, 1, new ByteSource() {
 			@Override
-			public InputStream get() {
+			public InputStream openStream() throws IOException {
 				return new ByteArrayInputStream(data);
 			}
 		});

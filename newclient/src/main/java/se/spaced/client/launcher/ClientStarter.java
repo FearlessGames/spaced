@@ -7,7 +7,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import se.ardortech.Main;
 import se.ardortech.SpacedResourceLocator;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.launcher.modules.ResourceModule;
 import se.spaced.client.launcher.modules.SpacedModule;
 import se.spaced.client.launcher.modules.StartupModule;
@@ -48,7 +48,7 @@ public class ClientStarter {
 		// TODO: Don't use this useless loader when we bother writing our own async one
 		AWTImageLoader.registerLoader();
 
-		ResourceLocator srl = new SpacedResourceLocator(startupInjector.getInstance(StreamLocator.class));
+		ResourceLocator srl = new SpacedResourceLocator(startupInjector.getInstance(IOLocator.class));
 		ResourceLocatorTool.addResourceLocator(ResourceLocatorTool.TYPE_TEXTURE, srl);
 
 		final Injector gameInjector = startupInjector.createChildInjector(

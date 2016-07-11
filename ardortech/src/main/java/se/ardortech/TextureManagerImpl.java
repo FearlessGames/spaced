@@ -6,18 +6,18 @@ import com.ardor3d.renderer.state.TextureState;
 import com.ardor3d.scenegraph.Spatial;
 import com.ardor3d.util.TextureKey;
 import com.ardor3d.util.resource.ResourceSource;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 public class TextureManagerImpl implements TextureManager {
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private final ExecutorService executorService;
 
-	public TextureManagerImpl(StreamLocator streamLocator, ExecutorService executorService) {
-		this.streamLocator = streamLocator;
+	public TextureManagerImpl(IOLocator ioLocator, ExecutorService executorService) {
+		this.ioLocator = ioLocator;
 		this.executorService = executorService;
 	}
 
@@ -53,7 +53,7 @@ public class TextureManagerImpl implements TextureManager {
 		@Override
 		public Texture call() throws Exception {
 			String type = name.substring(name.lastIndexOf('.'));
-			ResourceSource source = new SpacedResource(name, streamLocator.getInputStreamSupplier(name), type);
+			ResourceSource source = new SpacedResource(name, ioLocator.getByteSource(name), type);
 			final TextureKey textureKey = TextureKey.getKey(source, flipped, TextureStoreFormat.GuessNoCompressedFormat, Texture.MinificationFilter.Trilinear);
 			Texture texture = com.ardor3d.util.TextureManager.loadFromKey(textureKey, null, null);
 			onAfterTextureLoad(textureKey, texture);

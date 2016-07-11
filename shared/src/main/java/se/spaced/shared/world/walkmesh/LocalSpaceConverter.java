@@ -11,7 +11,8 @@ import se.ardortech.math.Rotations;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Vectors;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.model.xmo.XmoLoader;
 import se.spaced.shared.model.xmo.XmoRoot;
 import se.spaced.shared.util.cache.CacheManager;
@@ -45,13 +46,13 @@ public class LocalSpaceConverter {
 		xStreamRegistry.registerDefaultsOn(xStream);
 
 		File selectedFile = fileChooser.getSelectedFile();
-		FileStreamLocator streamLocator = new FileStreamLocator(rootDirectory);
-		XmoLoader xmoLoader = new XmoLoader(new XStreamIO(xStream, streamLocator), new CacheManager());
+		IOLocator ioLocator = new FileLocator(rootDirectory);
+		XmoLoader xmoLoader = new XmoLoader(new XStreamIO(xStream, ioLocator), new CacheManager());
 		String path = selectedFile.getAbsolutePath();
 		Splitter splitter = Splitter.on("resources").trimResults();
 		Iterable<String> split = splitter.split(path);
 		XmoRoot xmoRoot = xmoLoader.loadXmo(Iterables.get(split, 1));
-		Walkmesh walkmesh = (Walkmesh) xStream.fromXML(streamLocator.getInputStreamSupplier(xmoRoot.getWalkmeshFile()).get());
+		Walkmesh walkmesh = (Walkmesh) xStream.fromXML(ioLocator.getByteSource(xmoRoot.getWalkmeshFile()).openBufferedStream());
 
 		// TODO: change from these hard coded values (used to convert the fearless ship walkmesh)
 		LocalSpaceConverter localSpaceConverter = new LocalSpaceConverter(new SpacedVector3(0, -20, 0),

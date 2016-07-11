@@ -2,7 +2,7 @@ package se.spaced.client.launcher.modules;
 
 import com.google.inject.Module;
 import com.thoughtworks.xstream.XStream;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.model.xmo.ColladaContentLoader;
 import se.spaced.shared.xml.XmlIO;
 
@@ -14,7 +14,7 @@ public interface ResourceModule extends Module {
 
 	File getLuaVarsDir();
 
-	StreamLocator getStreamLocator(File resourceRootDir, File luaVarsDir);
+	IOLocator getStreamLocator(File resourceRootDir, File luaVarsDir);
 
 	File getResourceRootDir();
 

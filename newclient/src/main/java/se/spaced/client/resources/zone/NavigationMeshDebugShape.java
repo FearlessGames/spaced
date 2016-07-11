@@ -10,7 +10,7 @@ import com.ardor3d.scenegraph.Mesh;
 import com.ardor3d.scenegraph.Node;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.server.navigation.NavigationMeshBuilder;
 
 import javax.inject.Singleton;
@@ -24,10 +24,10 @@ public class NavigationMeshDebugShape {
 
 	private static final ColorRGBA DIFFUSE = new ColorRGBA(0.4f, 0.8f, 0.8f, 1.0f);
 	private static final ColorRGBA AMBIENT = new ColorRGBA(0.8f, 0.8f, 0.8f, 1.0f);
-	private final StreamLocator locator;
+	private final IOLocator locator;
 
 	@Inject
-	public NavigationMeshDebugShape(@Named("rootNode") Node rootNode, StreamLocator locator) {
+	public NavigationMeshDebugShape(@Named("rootNode") Node rootNode, IOLocator locator) {
 		this.rootNode = rootNode;
 		this.locator = locator;
 	}

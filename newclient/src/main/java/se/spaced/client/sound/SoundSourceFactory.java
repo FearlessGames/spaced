@@ -3,7 +3,7 @@ package se.spaced.client.sound;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.lwjgl.openal.AL10;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.sound.lwjgl.LwjglSoundSource;
 import se.spaced.client.sound.lwjgl.LwjglStreamingSoundSource;
 
@@ -11,14 +11,14 @@ import java.util.concurrent.ScheduledExecutorService;
 
 @Singleton
 public class SoundSourceFactory {
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private final ScheduledExecutorService executorService;
 	private final SoundBufferManager bufferFactory;
 	private final DirectBufferCache bufferCache = new DirectBufferCache();
 
 	@Inject
-	public SoundSourceFactory(StreamLocator streamLocator, ScheduledExecutorService executorService, SoundBufferManager bufferFactory) {
-		this.streamLocator = streamLocator;
+	public SoundSourceFactory(IOLocator ioLocator, ScheduledExecutorService executorService, SoundBufferManager bufferFactory) {
+		this.ioLocator = ioLocator;
 		this.executorService = executorService;
 		this.bufferFactory = bufferFactory;
 	}
@@ -32,7 +32,7 @@ public class SoundSourceFactory {
 	public SoundSource newStreamingSoundSource(final String filepath) {
 		final LwjglSoundSource soundSource = newSoundSource();
 
-		return new LwjglStreamingSoundSource(soundSource, executorService, bufferFactory, streamLocator.getInputStreamSupplier(filepath));
+		return new LwjglStreamingSoundSource(soundSource, executorService, bufferFactory, ioLocator.getByteSource(filepath));
 	}
 
 	private LwjglSoundSource newSoundSource() {

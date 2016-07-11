@@ -5,10 +5,10 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import com.thoughtworks.xstream.XStream;
-import se.fearless.common.io.ClasspathStreamLocator;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.ClasspathIOLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.io.MultiStreamLocator;
-import se.fearless.common.io.StreamLocator;
 import se.spaced.client.resources.dae.BinColladaContentLoader;
 import se.spaced.shared.model.xmo.ColladaContentLoader;
 import se.spaced.shared.xml.XStreamIO;
@@ -52,14 +52,14 @@ public class WebstartResourceModule extends AbstractModule implements ResourceMo
 	@Override
 	@Provides
 	@Singleton
-	public StreamLocator getStreamLocator(
+	public IOLocator getStreamLocator(
 			@Named("resourceRootDir") File resourceRootDir,
 			@Named("luaVarsDir") File luaVarsDir) {
 		return new MultiStreamLocator(
-				new FileStreamLocator(luaVarsDir),
-				new FileStreamLocator(new File(spacedBase + "resources")),
-				new FileStreamLocator(new File(spacedBase + "resources" + "/textures/")),
-				new ClasspathStreamLocator()
+				new FileLocator(luaVarsDir),
+				new FileLocator(new File(spacedBase + "resources")),
+				new FileLocator(new File(spacedBase + "resources" + "/textures/")),
+				new ClasspathIOLocator()
 		);
 
 	}
@@ -69,6 +69,6 @@ public class WebstartResourceModule extends AbstractModule implements ResourceMo
 	@Singleton
 	@Named("settings")
 	public XmlIO getSettingsXStreamIO(XStream xStream) {
-		return new XStreamIO(xStream, new FileStreamLocator(new File(spacedBase)));
+		return new XStreamIO(xStream, new FileLocator(new File(spacedBase)));
 	}
 }

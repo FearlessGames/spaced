@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.io.ClasspathStreamLocator;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.ClasspathIOLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.lua.SimpleLuaSourceProvider;
 import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
@@ -114,7 +114,7 @@ public class ScottMichaelsTest {
 
 		// Init services
 
-		StreamLocator locator = new ClasspathStreamLocator();
+		IOLocator locator = new ClasspathIOLocator();
 		LuaSourceProvider sourceProvider = new SimpleLuaSourceProvider(locator);
 
 		MobScriptEnvironment scriptEnv = new MobScriptEnvironment(sourceProvider,

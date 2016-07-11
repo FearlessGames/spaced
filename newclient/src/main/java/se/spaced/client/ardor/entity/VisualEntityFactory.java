@@ -8,13 +8,14 @@ import com.ardor3d.scenegraph.Spatial;
 import com.ardor3d.ui.text.BMFont;
 import com.ardor3d.ui.text.BMText;
 import com.ardor3d.util.resource.ResourceSource;
+import com.google.common.io.ByteSource;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.SpacedResource;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.ardor.ui.api.FontApi;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.Relation;
@@ -29,8 +30,6 @@ import se.spaced.shared.playback.BufferedMovementPlayer;
 import se.spaced.shared.xml.XmlIOException;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.function.Supplier;
 
 @Singleton
 public class VisualEntityFactory {
@@ -40,18 +39,18 @@ public class VisualEntityFactory {
 	private final AnimationClipCache animationCache;
 	private BMFont font;
 	private final AuraVisualiser auraVisualiser;
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private FontApi fontApi;
 
 	@Inject
 	public VisualEntityFactory(
 			XmoEntityFactory xmoEntityFactory,
 			AnimationClipCache animationCache,
-			AuraVisualiser auraVisualiser, StreamLocator streamLocator, FontApi fontApi) {
+			AuraVisualiser auraVisualiser, IOLocator ioLocator, FontApi fontApi) {
 		this.xmoEntityFactory = xmoEntityFactory;
 		this.animationCache = animationCache;
 		this.auraVisualiser = auraVisualiser;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 		this.fontApi = fontApi;
 		interactionColors = new InteractionColors();
 	}
@@ -150,12 +149,12 @@ public class VisualEntityFactory {
 
 	private BMFont getFont() {
 		if (font == null) {
-			Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier("fonts/Eras.fnt");
-			ResourceSource resource = new SpacedResource("fonts/Eras.fnt", inputSupplier, "fnt") {
+			ByteSource byteSource = ioLocator.getByteSource("fonts/Eras.fnt");
+			ResourceSource resource = new SpacedResource("fonts/Eras.fnt", byteSource, "fnt") {
 				@Override
 				public ResourceSource getRelativeSource(String s) {
 					return new SpacedResource("Eras_0.png",
-							streamLocator.getInputStreamSupplier("textures/fonts/Eras_0.png"),
+							ioLocator.getByteSource("textures/fonts/Eras_0.png"),
 							".png");
 				}
 			};

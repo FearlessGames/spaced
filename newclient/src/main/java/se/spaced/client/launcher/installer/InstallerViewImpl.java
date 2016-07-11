@@ -1,5 +1,6 @@
 package se.spaced.client.launcher.installer;
 
+import com.google.common.io.ByteSource;
 import org.xhtmlrenderer.simple.XHTMLPanel;
 import org.xhtmlrenderer.swing.BasicPanel;
 import org.xhtmlrenderer.swing.FSMouseListener;
@@ -10,9 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.InputStream;
 import java.text.DecimalFormat;
-import java.util.function.Supplier;
 
 public class InstallerViewImpl extends JFrame implements InstallerView {
 	private static final String TOTAL_DOWNLOAD = "Total downloaded: ";
@@ -36,11 +35,11 @@ public class InstallerViewImpl extends JFrame implements InstallerView {
 	private long totalDownloadSize;
 	private JPanel buttonPanel;
 	private XHTMLPanel xhtmlPanel;
-	private final Supplier<InputStream> noNewsResource;
+	private final ByteSource noNewsResource;
 	private JButton renderOptionsButton;
 
 
-	public InstallerViewImpl(final Presenter presenter, Supplier<InputStream> noNewsResource) {
+	public InstallerViewImpl(final Presenter presenter, ByteSource noNewsResource) {
 		this.noNewsResource = noNewsResource;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		mainPanel = new JPanel(new BorderLayout(0, 0));
@@ -175,7 +174,7 @@ public class InstallerViewImpl extends JFrame implements InstallerView {
 			xhtmlPanel.setDocument(url);
 		} catch (XRRuntimeException e) {
 			try {
-				xhtmlPanel.setDocument(noNewsResource.get(), ".");
+				xhtmlPanel.setDocument(noNewsResource.openBufferedStream(), ".");
 			} catch (Exception e1) {
 				showError("Failed to display noNews page", e1);
 			}

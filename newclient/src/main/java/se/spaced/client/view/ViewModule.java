@@ -5,11 +5,12 @@ import com.ardor3d.image.util.awt.AWTImageLoader;
 import com.ardor3d.input.MouseCursor;
 import com.ardor3d.input.MouseManager;
 import com.google.common.collect.Maps;
+import com.google.common.io.ByteSource;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Scopes;
 import com.google.inject.Singleton;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.view.cursor.BasicCursorView;
 import se.spaced.client.view.cursor.Cursor;
 import se.spaced.client.view.cursor.CursorResources;
@@ -23,7 +24,6 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-import java.util.function.Supplier;
 
 public class ViewModule extends AbstractModule {
 	@Override
@@ -37,13 +37,13 @@ public class ViewModule extends AbstractModule {
 
 	@Provides
 	@Singleton
-	public CursorView getCursorView(AWTImageLoader imageLoader, StreamLocator streamLocator, MouseManager mouseManager) {
+	public CursorView getCursorView(AWTImageLoader imageLoader, IOLocator ioLocator, MouseManager mouseManager) {
 		Map<Cursor, MouseCursor> cursors = Maps.newHashMap();
 
 		for (Map.Entry<Cursor, String> entry : CursorResources.cursors()) {
-			Supplier<InputStream> is = streamLocator.getInputStreamSupplier(entry.getValue());
+			ByteSource is = ioLocator.getByteSource(entry.getValue());
 
-			try (InputStream stream = is.get()) {
+			try (InputStream stream = is.openBufferedStream()) {
 				Image image = imageLoader.load(stream, true);
 				MouseCursor mouseCursor = new MouseCursor(entry.getKey().toString(), image, 0, image.getHeight() - 1);
 				cursors.put(entry.getKey(), mouseCursor);

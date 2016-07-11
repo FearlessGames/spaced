@@ -8,10 +8,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import se.ardortech.TextureManager;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.io.ClasspathStreamLocator;
+import se.fearless.common.io.ClasspathIOLocator;
 import se.fearless.common.mock.MockUtil;
-import se.mockachino.annotations.*;
-import se.mockachino.matchers.*;
+import se.mockachino.annotations.Mock;
+import se.mockachino.matchers.Matchers;
 import se.spaced.shared.resources.XmoMaterialManager;
 import se.spaced.shared.util.cache.CacheManager;
 import se.spaced.shared.xml.XmlIO;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
 
 
 public class XmoEntityFactoryImplTest {
@@ -48,7 +48,7 @@ public class XmoEntityFactoryImplTest {
 		factory = new XmoEntityFactoryImpl(colladaContentLoader,
 				materialManager,
 				textureManager,
-				new ClasspathStreamLocator(getClass()),
+				new ClasspathIOLocator(getClass()),
 				new XmoLoader(xmlIO, new CacheManager()));
 	}
 

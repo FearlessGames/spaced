@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.SingleValueConverter;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import se.ardortech.render.module.RendererSettings;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.lifetime.LifetimeManager;
 import se.fearless.common.lifetime.LifetimeManagerImpl;
 import se.spaced.client.environment.time.GameTimeManager;
@@ -35,7 +35,7 @@ public final class StartupModule extends AbstractModule {
 
 	@Provides
 	@Singleton
-	public XmlIO getXmlIo(XStream xStream, StreamLocator streamLocator) {
+	public XmlIO getXmlIo(XStream xStream, IOLocator streamLocator) {
 		return new XStreamIO(xStream, streamLocator);
 	}
 

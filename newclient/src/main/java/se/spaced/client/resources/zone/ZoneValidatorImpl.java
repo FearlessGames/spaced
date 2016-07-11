@@ -4,17 +4,19 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.resources.zone.Zone;
+
+import java.io.IOException;
 
 @Singleton
 public class ZoneValidatorImpl implements ZoneValidator {
 	private final Logger log = LoggerFactory.getLogger(getClass());
-	private final StreamLocator streamLocator;
+	private final IOLocator streamLocator;
 
 	@Inject
-	public ZoneValidatorImpl(StreamLocator streamLocator) {
+	public ZoneValidatorImpl(IOLocator streamLocator) {
 		this.streamLocator = streamLocator;
 	}
 
@@ -33,9 +35,9 @@ public class ZoneValidatorImpl implements ZoneValidator {
 	@Override
 	public boolean validateProp(Prop prop) {
 		try {
-			streamLocator.getInputStreamSupplier(prop.getXmoFile()).get();
+			streamLocator.getByteSource(prop.getXmoFile()).openStream();
 			return true;
-		} catch (Exception e) {
+		} catch (IOException e) {
 			return false;
 		}
 	}

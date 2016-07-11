@@ -9,7 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.lifetime.LifetimeListener;
 import se.fearless.common.lifetime.LifetimeManager;
 import se.spaced.client.ardor.entity.InteractionColors;
@@ -71,7 +72,7 @@ public class SpdPresenter implements PropSelectionListener, SpdView.Presenter, L
 		dispatcher.addListener(this);
 
 		String pathname = System.getProperty("user.dir") + "/../shared/resources";
-		FileStreamLocator locator = new FileStreamLocator(new File(pathname));
+		IOLocator locator = new FileLocator(new File(pathname));
 		Iterator<String> iterator = locator.listKeys();
 		while (iterator.hasNext()) {
 			String s = iterator.next();

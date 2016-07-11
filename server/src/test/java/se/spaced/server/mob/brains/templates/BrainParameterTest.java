@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDMockFactory;
@@ -41,7 +41,7 @@ public class BrainParameterTest {
 
 	@Test
 	public void getScriptedParameters() throws Exception {
-		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(StreamLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
+		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(IOLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
 		Set<? extends BrainParameter> requiredParameters = scriptedBrainTemplate.getRequiredParameters();
 		assertNotNull(requiredParameters);
 		assertEquals(1, requiredParameters.size());
@@ -53,7 +53,7 @@ public class BrainParameterTest {
 
 	@Test
 	public void scriptedParametersUpdates() throws Exception {
-		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(StreamLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
+		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(IOLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
 		Set<? extends BrainParameter> requiredParameters = scriptedBrainTemplate.getRequiredParameters();
 
 		BrainParameter brainParameter = Iterables.getOnlyElement(requiredParameters);
@@ -108,7 +108,7 @@ public class BrainParameterTest {
 
 	@Test
 	public void getCompositeParameters() throws Exception {
-		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(StreamLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
+		ScriptedBrainTemplate scriptedBrainTemplate = new ScriptedBrainTemplate(mock(IOLocator.class), mock(MobScriptEnvironment.class), mock(MobOrderExecutor.class));
 		AggroingBrainTemplate aggroingBrainTemplate = new AggroingBrainTemplate(mock(MobOrderExecutor.class), mock(TimeProvider.class), mock(RelationsService.class), mock(EntityCombatService.class));
 		CompositeBrainTemplate compositeBrainTemplate = CompositeBrainTemplate.create(uuidFactory.combUUID(), aggroingBrainTemplate, scriptedBrainTemplate);
 		Set<? extends BrainParameter> requiredParameters = compositeBrainTemplate.getRequiredParameters();

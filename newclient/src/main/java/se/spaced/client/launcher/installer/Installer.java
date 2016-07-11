@@ -4,7 +4,7 @@ import com.google.common.base.Supplier;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.lwjgl.opengl.DisplayMode;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.launcher.ClientStarter;
 import se.spaced.client.launcher.modules.StartupModule;
 import se.spaced.client.launcher.modules.WebstartResourceModule;
@@ -34,12 +34,12 @@ public class Installer implements InstallerView.Presenter {
 	private int nrOfActions;
 	private final Semaphore startSemaphore;
 	private final List<GameServer> gameServers;
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private static final WebstartResourceModule RESOURCE_MODULE = new WebstartResourceModule(System.getProperty("user.home") + File.separator + ".spaced" + File.separator);
 
-	public Installer(List<GameServer> gameServers, StreamLocator streamLocator) {
+	public Installer(List<GameServer> gameServers, IOLocator ioLocator) {
 		this.gameServers = gameServers;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 		resourceUpdater = new ResourceUpdater(new Getter(), new LocalFileUtil());
 		startSemaphore = new Semaphore(0);
 	}
@@ -50,7 +50,7 @@ public class Installer implements InstallerView.Presenter {
 			@Override
 			public void run() {
 				installerView = new InstallerViewImpl(Installer.this,
-						streamLocator.getInputStreamSupplier("installer/noNews.html"));
+						ioLocator.getByteSource("installer/noNews.html"));
 				installerView.setNewsPage("http://flexo.fearlessgames.se/client/resources/news/news.html");
 				installerView.createAndShowUI();
 			}
@@ -209,7 +209,7 @@ public class Installer implements InstallerView.Presenter {
 	public static void main(String[] args) throws Exception {
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		List<GameServer> gameServers = parseGameServers(args);
-		StreamLocator streamLocator = RESOURCE_MODULE.getStreamLocator(RESOURCE_MODULE.getResourceRootDir(), RESOURCE_MODULE.getLuaVarsDir());
+		IOLocator streamLocator = RESOURCE_MODULE.getStreamLocator(RESOURCE_MODULE.getResourceRootDir(), RESOURCE_MODULE.getLuaVarsDir());
 		Installer installer = new Installer(gameServers, streamLocator);
 		installer.start();
 	}

@@ -9,6 +9,7 @@ import com.ardor3d.scenegraph.Mesh;
 import com.ardor3d.scenegraph.MeshData;
 import com.ardor3d.scenegraph.Spatial;
 import com.google.common.base.Preconditions;
+import com.google.common.io.ByteSource;
 import com.google.common.primitives.Floats;
 import com.google.common.primitives.Ints;
 import com.thoughtworks.xstream.XStream;
@@ -20,8 +21,8 @@ import se.ardortech.math.AABox;
 import se.ardortech.math.Sphere;
 import se.ardortech.meshgenerator.MeshDataGenerator;
 import se.ardortech.meshgenerator.MeshFactory;
-import se.fearless.common.io.FileStreamLocator;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.environment.settings.EnvSettingsImpl;
 import se.spaced.client.environment.settings.EnvironmentSettings;
 import se.spaced.client.environment.time.GameTime;
@@ -41,7 +42,6 @@ import java.io.*;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.*;
-import java.util.function.Supplier;
 
 /**
  * See API here: http://www.critterai.org/javadoc/nmgen/index.html
@@ -339,7 +339,7 @@ public class NavigationMeshBuilder {
 		xStream.registerConverter(new QuaternionConverter());
 
 
-		FileStreamLocator streamLocator = new FileStreamLocator(new File("newclient/resources"));
+		IOLocator streamLocator = new FileLocator(new File("newclient/resources"));
 		XStreamIO xmlIO = new XStreamIO(xStream, streamLocator);
 		ZoneXmlFileHandler zoneXmlFileHandler = new ZoneXmlFileHandler(xmlIO
 		);
@@ -391,10 +391,10 @@ public class NavigationMeshBuilder {
 		}
 	}
 
-	public static Mesh buildArdorFromNavMesh(StreamLocator streamLocator, String filename) throws IOException {
-		Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier(filename);
+	public static Mesh buildArdorFromNavMesh(IOLocator streamLocator, String filename) throws IOException {
+		ByteSource byteSource = streamLocator.getByteSource(filename);
 
-		InputStream input = inputSupplier.get();
+		InputStream input = byteSource.openBufferedStream();
 		Preconditions.checkNotNull(input, "No input stream for navigation mesh " + filename);
 		DataInputStream stream = new DataInputStream(input);
 		final int triangleMeshVerticesLen = stream.readInt();

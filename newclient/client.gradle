@@ -25,13 +25,15 @@ configurations {
 dependencies {
 	compile project(':ardortech')
 	compile project(':ardorgui')
-	compile project(':messages')
+	compile project(path: ':messages', configuration: 'codecs')
+	compile project(path: ':messages', configuration: 'default')
 	luaCommon project(path: ':lua', configuration: 'common')
 
 	compile 'org.jcraft:jorbis:0.0.17'
-	compile 'se.fearless.fearless-common:security:1.2'
-	compile 'se.fearless.fearless-common:test:1.2'
+	compile 'se.fearless.fearless-common:security:1.3'
+	compile 'se.fearless.fearless-common:test:1.3'
 	compile 'se.fearless.kahluatest:kahluatest:1.1'
+	compile 'org.lwjgl.lwjgl:lwjgl_util:2.9.3'
 
 	compile files('libs/JGoogleAnalytics_0.4.jar', 'libs/jinngine.0.8.jar')
 	compile 'cz.advel.jbullet:jbullet:20101010-1'

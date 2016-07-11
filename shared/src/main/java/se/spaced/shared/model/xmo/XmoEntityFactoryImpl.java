@@ -14,7 +14,7 @@ import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.TextureManager;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.resources.XmoMaterialManager;
 import se.spaced.shared.xml.XmlIOException;
 
@@ -31,7 +31,7 @@ public class XmoEntityFactoryImpl implements XmoEntityFactory {
 
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	private final ColladaContentLoader colladaContentLoader;
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private GLSLShaderObjectsState skinningShader;
 	private final XmoLoader xmoLoader;
 
@@ -40,11 +40,11 @@ public class XmoEntityFactoryImpl implements XmoEntityFactory {
 			ColladaContentLoader colladaContentLoader,
 			XmoMaterialManager xmoMaterialManager,
 			TextureManager xmoTextureManager,
-			StreamLocator streamLocator,
+			IOLocator ioLocator,
 			XmoLoader xmoLoader) {
 		this.xmoMaterialManager = xmoMaterialManager;
 		this.xmoTextureManager = xmoTextureManager;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 		this.colladaContentLoader = colladaContentLoader;
 		this.xmoLoader = xmoLoader;
 
@@ -109,8 +109,8 @@ public class XmoEntityFactoryImpl implements XmoEntityFactory {
 		skinningShader.setEnabled(true);
 		try {
 
-			skinningShader.setVertexShader(streamLocator.getInputStreamSupplier("shaders/skinning_gpu.vert").get());
-			skinningShader.setFragmentShader(streamLocator.getInputStreamSupplier("shaders/simpleTextureShader.frag").get());
+			skinningShader.setVertexShader(ioLocator.getByteSource("shaders/skinning_gpu.vert").openBufferedStream());
+			skinningShader.setFragmentShader(ioLocator.getByteSource("shaders/simpleTextureShader.frag").openBufferedStream());
 		} catch (final IOException ioe) {
 			log.error("Failed to load skinning shader");
 			log.error(ioe.toString());

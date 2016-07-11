@@ -1,12 +1,13 @@
 package se.spaced.server.persistence.migrator;
 
+import com.google.common.io.ByteSource;
 import com.google.inject.Inject;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.io.FileStreamLocator;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.mock.MockUtil;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.server.persistence.dao.impl.inmemory.*;
@@ -14,21 +15,19 @@ import se.spaced.server.persistence.dao.interfaces.*;
 
 import javax.inject.Singleton;
 import java.io.File;
-import java.io.InputStream;
 import java.util.List;
-import java.util.function.Supplier;
 
 @Singleton
 public class ServerContentPopulator implements Migrator {
 	private final Logger log = LoggerFactory.getLogger(getClass());
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 	private final SessionFactory sessionFactory;
 
 	private final ServerXStreamUnmarshaller unmarshaller;
 
 	@Inject
 	public ServerContentPopulator(
-			StreamLocator streamLocator,
+			IOLocator ioLocator,
 			SpellDao spellDao,
 			ItemTemplateDao itemTemplateDao,
 			LootTemplateDao lootTemplateDao,
@@ -54,7 +53,7 @@ public class ServerContentPopulator implements Migrator {
 				currencyDao, auraDao);
 
 		this.sessionFactory = sessionFactory;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 	}
 
 
@@ -93,9 +92,9 @@ public class ServerContentPopulator implements Migrator {
 
 		try {
 
-			Supplier<? extends InputStream> supplier = streamLocator.getInputStreamSupplier(fileName);
+			ByteSource supplier = ioLocator.getByteSource(fileName);
 
-			List<ExternalPersistableBase> list = (List<ExternalPersistableBase>) unmarshaller.getXStream().fromXML(supplier.get());
+			List<ExternalPersistableBase> list = (List<ExternalPersistableBase>) unmarshaller.getXStream().fromXML(supplier.openBufferedStream());
 
 			for (ExternalPersistableBase persistable : list) {
 				//log.debug("Persisted: {}", persistable);
@@ -112,7 +111,7 @@ public class ServerContentPopulator implements Migrator {
 	public static void main(String[] args) {
 
 		SessionFactory factory = MockUtil.deepMock(SessionFactory.class);
-		StreamLocator locator = new FileStreamLocator(new File("server/src/main/resources"));
+		IOLocator locator = new FileLocator(new File("server/src/main/resources"));
 
 		ServerContentPopulator pop = new ServerContentPopulator(locator,
 				new InMemorySpellDao(),

@@ -5,7 +5,7 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import se.ardortech.TextureManager;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.client.ardor.FlatWater;
 import se.spaced.client.ardor.SimpleWater;
 import se.spaced.client.ardor.Water;
@@ -53,7 +53,7 @@ public class GraphicsSettings implements ValidatedSettings {
 
 					@Provides
 					@Singleton
-					public Water getWater(TextureManager textureManager, Sky sky, StreamLocator streamLocator) {
+					public Water getWater(TextureManager textureManager, Sky sky, IOLocator streamLocator) {
 						return new FlatWater(textureManager, sky, streamLocator);
 					}
 				};

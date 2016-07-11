@@ -1,23 +1,23 @@
 package se.spaced.shared.world.terrain;
 
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 public class Freeworld3dLoader extends AbstractHeightmapLoader {
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 
 	public Freeworld3dLoader(
-			String fileName, int size, float widthScale, float heightScale, StreamLocator streamLocator) {
+			String fileName, int size, float widthScale, float heightScale, IOLocator ioLocator) {
 		super(fileName, size, widthScale, heightScale);
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 	}
 
 	@Override
 	public HeightMap loadHeightMap() throws IOException {
 		data = new double[size * size];
-		InputStream ins = streamLocator.getInputStreamSupplier(fileName).get();
+		InputStream ins = ioLocator.getByteSource(fileName).openBufferedStream();
 
 		// freeworld3d seems to be exporting as 513x513x16bit
 		// ("When the terrain is exported to 16bit, the height values are scaled to be between 0 and 2 ^ 16, roughly 65K.")

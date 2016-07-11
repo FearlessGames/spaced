@@ -1,10 +1,11 @@
 package se.spaced.server.mob.brains.templates;
 
 import com.google.common.collect.ImmutableSet;
+import com.google.common.io.ByteSource;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.krka.kahlua.luaj.compiler.LuaCompiler;
 import se.krka.kahlua.vm.LuaClosure;
 import se.spaced.server.mob.MobOrderExecutor;
@@ -22,14 +23,12 @@ import se.spaced.server.tools.spawnpattern.view.InputType;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.function.Supplier;
 
 @Entity
 public class ScriptedBrainTemplate extends BrainTemplate {
 	private static final Logger log = LoggerFactory.getLogger(ScriptedBrainTemplate.class);
 	@Transient
-	private final StreamLocator locator;
+	private final IOLocator locator;
 	@Transient
 	private final MobScriptEnvironment scriptEnv;
 	@Transient
@@ -37,7 +36,7 @@ public class ScriptedBrainTemplate extends BrainTemplate {
 	public static final String SCRIPT_PATH = "Script path";
 
 	@Inject
-	public ScriptedBrainTemplate(StreamLocator locator, MobScriptEnvironment scriptEnv, MobOrderExecutor orderExecutor) {
+	public ScriptedBrainTemplate(IOLocator locator, MobScriptEnvironment scriptEnv, MobOrderExecutor orderExecutor) {
 		super(null, null);
 		this.locator = locator;
 		this.scriptEnv = scriptEnv;
@@ -47,9 +46,9 @@ public class ScriptedBrainTemplate extends BrainTemplate {
 	@Override
 	public MobBrain createBrain(Mob mob, SpawnArea spawnArea, BrainParameterProvider brainParameterProvider) {
 		String scriptPath = brainParameterProvider.getScriptPath();
-		Supplier<? extends InputStream> supplier = locator.getInputStreamSupplier(scriptPath);
+		ByteSource supplier = locator.getByteSource(scriptPath);
 		try {
-			LuaClosure closure = LuaCompiler.loadis(supplier.get(), scriptPath, scriptEnv.getVm().getEnvironment());
+			LuaClosure closure = LuaCompiler.loadis(supplier.openBufferedStream(), scriptPath, scriptEnv.getVm().getEnvironment());
 			return new ScriptedMobBrain(mob, orderExecutor, scriptEnv, closure);
 		} catch (IOException e) {
 			log.error("Failed to load script for brain @ " + scriptPath);

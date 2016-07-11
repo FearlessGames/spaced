@@ -2,7 +2,7 @@ package se.spaced.shared.model.xmo;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.FileLocator;
 import se.spaced.shared.xml.SharedXStreamRegistry;
 import se.spaced.shared.xml.XStreamIO;
 import se.spaced.shared.xml.XmlIO;
@@ -26,7 +26,7 @@ public class XmoFileValidator {
 		SharedXStreamRegistry sharedXStreamRegistry = new SharedXStreamRegistry();
 		sharedXStreamRegistry.registerDefaultsOn(xStream);
 
-		XmlIO io = new XStreamIO(xStream, new FileStreamLocator(new File(args[0])));
+		XmlIO io = new XStreamIO(xStream, new FileLocator(new File(args[0])));
 
 		XmoFileValidator xmoFileValidator = new XmoFileValidator(args[0], io);
 		String scanDir = args[1];

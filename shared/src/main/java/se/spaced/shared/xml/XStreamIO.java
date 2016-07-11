@@ -1,35 +1,37 @@
 package se.spaced.shared.xml;
 
-import com.google.common.base.Charsets;
+import com.google.common.io.ByteSink;
+import com.google.common.io.ByteSource;
+import com.google.common.io.CharSink;
+import com.google.common.io.CharSource;
 import com.google.inject.Inject;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.ConversionException;
-import se.fearless.common.io.InputReaderSupplier;
-import se.fearless.common.io.OutputStreamWriterSupplier;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
 import java.nio.charset.StandardCharsets;
-import java.util.function.Supplier;
 
 public class XStreamIO implements XmlIO {
 	private final XStream xStream;
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 
 	@Inject
-	public XStreamIO(final XStream xStream, final StreamLocator streamLocator) {
+	public XStreamIO(final XStream xStream, final IOLocator ioLocator) {
 		this.xStream = xStream;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 
 	}
 
 	@Override
 	public <T> T load(final Class<T> classToLoad, final String path) throws XmlIOException {
 
-		Supplier<InputStream> inputSupplier = streamLocator.getInputStreamSupplier(path);
-		Supplier<InputStreamReader> is = InputReaderSupplier.asInputReaderSupplier(inputSupplier, StandardCharsets.UTF_8);
+		ByteSource byteSource = ioLocator.getByteSource(path);
+		CharSource charSource = byteSource.asCharSource(StandardCharsets.UTF_8);
 
-		try (Reader reader = is.get()) {
+		try (Reader reader = charSource.openBufferedStream()) {
 			return classToLoad.cast(xStream.fromXML(reader));
 		} catch (ConversionException | IOException e) {
 			throw new XmlIOException(e);
@@ -40,10 +42,10 @@ public class XStreamIO implements XmlIO {
 
 	@Override
 	public void save(final Object o, final String path) throws XmlIOException {
-		Supplier<? extends OutputStream> outputStreamSupplier = streamLocator.getOutputStreamSupplier(path);
-		Supplier<OutputStreamWriter> os = OutputStreamWriterSupplier.asOutputStreamWriter(outputStreamSupplier.get(), Charsets.UTF_8);
+		ByteSink byteSink = ioLocator.getByteSink(path);
+		CharSink charSink = byteSink.asCharSink(StandardCharsets.UTF_8);
 
-		try (Writer writer = os.get()) {
+		try (Writer writer = charSink.openBufferedStream()) {
 			xStream.toXML(o, writer);
 		} catch (IOException e) {
 			throw new XmlIOException(e);

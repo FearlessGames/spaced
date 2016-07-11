@@ -1,18 +1,21 @@
 package se.spaced.client.resources.zone;
 
 import com.google.common.collect.Iterators;
+import com.google.common.io.ByteSink;
+import com.google.common.io.ByteSource;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Sphere;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.mockachino.annotations.Mock;
 import se.spaced.client.model.Prop;
 import se.spaced.shared.resources.zone.Zone;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
-import java.util.function.Supplier;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -27,7 +30,7 @@ public class ZoneValidatorImplTest {
 	@Mock
 	File file2;
 	@Mock
-	private Supplier<InputStream> inputSupplier;
+	private ByteSource byteSource;
 	@Mock
 	private ByteArrayInputStream bais;
 
@@ -40,14 +43,14 @@ public class ZoneValidatorImplTest {
 	@Test
 	public void testValidatingPropOk() throws IOException {
 		Prop p = new Prop("brajja.xmo", null, null, null);
-		stubReturn(bais).on(inputSupplier).get();
+		stubReturn(bais).on(byteSource).openStream();
 		assertTrue(test.validateProp(p));
 	}
 
 	@Test
 	public void testValidatingPropNotFound() throws IOException {
 		Prop p = new Prop("p1.xmo", null, null, null);
-		stubThrow(new RuntimeException("CANNOT FIND YOUWWWW")).on(inputSupplier).get();
+		stubThrow(new IOException("CANNOT FIND YOUWWWW")).on(byteSource).openStream();
 		assertFalse(test.validateProp(p));
 	}
 
@@ -58,7 +61,7 @@ public class ZoneValidatorImplTest {
 		Prop p2 = new Prop("p2.xmo", null, null, null);
 		z.addProp(p1);
 		z.addProp(p2);
-		stubReturn(bais).on(inputSupplier).get();
+		stubReturn(bais).on(byteSource).openStream();
 		assertTrue(test.validateZone(z));
 	}
 
@@ -69,21 +72,22 @@ public class ZoneValidatorImplTest {
 		Prop p2 = new Prop("p2.xmo", null, null, null);
 		z.addProp(p1);
 		z.addProp(p2);
-		stubThrow(new RuntimeException("CANNOT FIND YOUWWWW")).on(inputSupplier).get();
+		stubThrow(new IOException("CANNOT FIND YOUWWWW")).on(byteSource).openStream();
 		assertFalse(test.validateZone(z));
 	}
 
 
-	StreamLocator streamLocator = new StreamLocator() {
+	IOLocator streamLocator = new IOLocator() {
 		@Override
-		public Supplier<InputStream> getInputStreamSupplier(String key) {
-			return inputSupplier;
+		public ByteSink getByteSink(String s) {
+			return null;
 		}
 
 		@Override
-		public Supplier<OutputStream> getOutputStreamSupplier(String key) {
-			return null;
+		public ByteSource getByteSource(String key) {
+			return byteSource;
 		}
+
 
 		@Override
 		public Iterator<String> listKeys() {

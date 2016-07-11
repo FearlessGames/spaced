@@ -4,18 +4,19 @@ import com.ardor3d.renderer.state.TextureState;
 import com.ardor3d.scenegraph.Spatial;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.io.StreamLocator;
-import se.mockachino.annotations.*;
+import se.fearless.common.io.IOLocator;
+import se.mockachino.annotations.Mock;
 
 import java.util.concurrent.ExecutorService;
 
-import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.Mockachino.setupMocks;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.matchers.Matchers.any;
 
 public class XmoTextureManagerImplTest {
 	private TextureManagerImpl xmoTextureManagerImpl;
 	@Mock
-	private StreamLocator streamLocator;
+	private IOLocator streamLocator;
 	@Mock
 	private Spatial node;
 	@Mock

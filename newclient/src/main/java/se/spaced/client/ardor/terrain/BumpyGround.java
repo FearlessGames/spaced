@@ -8,18 +8,15 @@ import com.ardor3d.math.Vector4;
 import com.ardor3d.renderer.Camera;
 import com.ardor3d.renderer.queue.RenderBucketType;
 import com.ardor3d.util.TextureManager;
-import com.google.common.io.InputSupplier;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.world.terrain.HeightMap;
 import se.spaced.shared.world.terrain.WorldGround;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Singleton
@@ -32,7 +29,7 @@ public class BumpyGround {
 	private int clipLevelCount = 5;
 
 	private final HeightMap heightMap;
-	private StreamLocator streamLocator;
+	private IOLocator ioLocator;
 	private final int size;
 
 	private final String texturePath = "terrains/landsend/terrain/txlandsend4096.jpg";
@@ -50,9 +47,9 @@ public class BumpyGround {
 
 
 	@Inject
-	public BumpyGround(HeightMap heightMap, StreamLocator streamLocator, ThreadPoolExecutor executor) {
+	public BumpyGround(HeightMap heightMap, IOLocator ioLocator, ThreadPoolExecutor executor) {
 		this.heightMap = heightMap;
-		this.streamLocator = streamLocator;
+		this.ioLocator = ioLocator;
 		this.executor = executor;
 		this.size = heightMap.getSize();
 	}
@@ -82,20 +79,8 @@ public class BumpyGround {
 			terrain = new TerrainWithLightsOnGroundBuilder(terrainDataProvider, terrainCamera, executor).build();
 
 
-			terrain.setVertexShader(new InputSupplier<InputStream>() {
-				@Override
-				public InputStream getInput() throws IOException {
-					return streamLocator.getInputStreamSupplier(vertexShaderPath).get();
-				}
-
-				;
-			});
-			terrain.setPixelShader(new InputSupplier<InputStream>() {
-				@Override
-				public InputStream getInput() throws IOException {
-					return streamLocator.getInputStreamSupplier(fragmentShaderPath).get();
-				}
-			});
+			terrain.setVertexShader(() -> ioLocator.getByteSource(vertexShaderPath).openBufferedStream());
+			terrain.setPixelShader(() -> ioLocator.getByteSource(fragmentShaderPath).openBufferedStream());
 
 			// Uncomment for debugging
 			//terrain.getTextureClipmap().setShowDebug(true);

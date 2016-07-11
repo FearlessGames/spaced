@@ -5,10 +5,10 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import com.thoughtworks.xstream.XStream;
-import se.fearless.common.io.ClasspathStreamLocator;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.ClasspathIOLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.io.MultiStreamLocator;
-import se.fearless.common.io.StreamLocator;
 import se.spaced.client.resources.dae.CachingColladaContentLoader;
 import se.spaced.shared.model.xmo.ColladaContentLoader;
 import se.spaced.shared.xml.XStreamIO;
@@ -44,18 +44,18 @@ public class DevResourceModule extends AbstractModule implements ResourceModule 
 	@Override
 	@Provides
 	@Singleton
-	public StreamLocator getStreamLocator(
+	public IOLocator getStreamLocator(
 			@Named("resourceRootDir") File resourceRootDir,
 			@Named("luaVarsDir") File luaVarsDir) {
 
 		return new MultiStreamLocator(
-				new FileStreamLocator(luaVarsDir),
-				new FileStreamLocator(new File(System.getProperty("user.dir") + "/resources")),
-				new FileStreamLocator(resourceRootDir),
-				new FileStreamLocator(new File(resourceRootDir, "/textures")),
-				new FileStreamLocator(new File("../shared/src/main/resources")),
-				new FileStreamLocator(new File("../ArdorGui/src/main/resources")),
-				new ClasspathStreamLocator());
+				new FileLocator(luaVarsDir),
+				new FileLocator(new File(System.getProperty("user.dir") + "/resources")),
+				new FileLocator(resourceRootDir),
+				new FileLocator(new File(resourceRootDir, "/textures")),
+				new FileLocator(new File("../shared/src/main/resources")),
+				new FileLocator(new File("../ArdorGui/src/main/resources")),
+				new ClasspathIOLocator());
 
 	}
 
@@ -64,7 +64,7 @@ public class DevResourceModule extends AbstractModule implements ResourceModule 
 	@Singleton
 	@Named("settings")
 	public XmlIO getSettingsXStreamIO(XStream xStream) {
-		return new XStreamIO(xStream, new FileStreamLocator(new File(System.getProperty("user.dir"))));
+		return new XStreamIO(xStream, new FileLocator(new File(System.getProperty("user.dir"))));
 	}
 
 	@Override

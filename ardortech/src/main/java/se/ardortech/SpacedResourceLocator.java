@@ -4,15 +4,15 @@ import com.ardor3d.util.resource.ResourceLocator;
 import com.ardor3d.util.resource.ResourceSource;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 
 @Singleton
 public class SpacedResourceLocator implements ResourceLocator {
-	private final StreamLocator streamLocator;
+	private final IOLocator ioLocator;
 
 	@Inject
-	public SpacedResourceLocator(StreamLocator streamLocator) {
-		this.streamLocator = streamLocator;
+	public SpacedResourceLocator(IOLocator ioLocator) {
+		this.ioLocator = ioLocator;
 	}
 
 	@Override
@@ -24,6 +24,6 @@ public class SpacedResourceLocator implements ResourceLocator {
 				type = resourceName.substring(dot);
 			}
 		}
-		return new SpacedResource(resourceName, streamLocator.getInputStreamSupplier(resourceName), type);
+		return new SpacedResource(resourceName, ioLocator.getByteSource(resourceName), type);
 	}
 }

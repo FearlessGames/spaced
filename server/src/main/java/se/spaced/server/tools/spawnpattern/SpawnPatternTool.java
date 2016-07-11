@@ -2,7 +2,7 @@ package se.spaced.server.tools.spawnpattern;
 
 import com.google.inject.*;
 import com.thoughtworks.xstream.XStream;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.server.GuiceFactory;
 import se.spaced.server.tools.spawnpattern.presenter.*;
 import se.spaced.server.tools.spawnpattern.view.*;
@@ -65,7 +65,7 @@ public class SpawnPatternTool {
 
 			@Provides
 			@Singleton
-			XStreamIO xStreamProvider(XStream xStream, StreamLocator streamLocator) {
+			XStreamIO xStreamProvider(XStream xStream, IOLocator streamLocator) {
 				return new XStreamIO(xStream, streamLocator);
 			}
 

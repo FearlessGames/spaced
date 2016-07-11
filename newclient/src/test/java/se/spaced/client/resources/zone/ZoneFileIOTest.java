@@ -7,7 +7,8 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import se.ardortech.math.SpacedVector3;
 import se.ardortech.math.Sphere;
-import se.fearless.common.io.FileStreamLocator;
+import se.fearless.common.io.FileLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.resources.zone.Zone;
 import se.spaced.shared.xml.XStreamIO;
 import se.spaced.shared.xml.XmlIO;
@@ -31,7 +32,7 @@ public class ZoneFileIOTest {
 		File zoneFile = tempFolder.newFile(key);
 
 		Zone z = new Zone("Mighty one of deadly destruction", new Sphere(new SpacedVector3(100, 200, 300), 1000));
-		FileStreamLocator fileStreamLocator = new FileStreamLocator(zoneFile);
+		IOLocator fileStreamLocator = new FileLocator(zoneFile);
 
 		XmlIO io = new XStreamIO(new XStream(new DomDriver()), fileStreamLocator);
 

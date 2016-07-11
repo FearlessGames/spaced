@@ -34,7 +34,7 @@ import se.ardortech.SpacedResourceLocator;
 import se.ardortech.TextureManager;
 import se.ardortech.pick.Picker;
 import se.ardortech.render.module.RendererSettings;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.fearless.common.lifetime.ExecutorServiceLifetimeAdapter;
 import se.fearless.common.lifetime.LifetimeManager;
 import se.fearless.common.time.TimeProvider;
@@ -210,13 +210,13 @@ public final class SpacedArdorModule extends AbstractModule {
 	@Provides
 	@Singleton
 	public TextureManager getTextureManager(
-			StreamLocator streamLocator,
+			IOLocator ioLocator,
 			LifetimeManager lifetimeManager,
 			@Named("xmoCachedManager") CacheManager xmoCacheManager) {
 		ExecutorService executorService = Executors.newFixedThreadPool(2,
 				SimpleThreadFactory.withPrefix("textureLoader-"));
 		lifetimeManager.addListener(new ExecutorServiceLifetimeAdapter(executorService));
-		return new XmoTextureManager(streamLocator, executorService, xmoCacheManager);
+		return new XmoTextureManager(ioLocator, executorService, xmoCacheManager);
 
 	}
 

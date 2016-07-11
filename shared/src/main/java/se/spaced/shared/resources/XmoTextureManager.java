@@ -6,7 +6,7 @@ import com.ardor3d.util.TextureManager;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import se.ardortech.TextureManagerImpl;
-import se.fearless.common.io.StreamLocator;
+import se.fearless.common.io.IOLocator;
 import se.spaced.shared.util.cache.Cache;
 import se.spaced.shared.util.cache.CacheLoader;
 import se.spaced.shared.util.cache.CacheManager;
@@ -18,7 +18,7 @@ public class XmoTextureManager extends TextureManagerImpl {
 	private final Cache<TextureKey, Void> textureKeyCache;
 
 	@Inject
-	public XmoTextureManager(StreamLocator streamLocator, ExecutorService executorService, @Named("xmoCachedManager") CacheManager xmoCacheManager) {
+	public XmoTextureManager(IOLocator streamLocator, ExecutorService executorService, @Named("xmoCachedManager") CacheManager xmoCacheManager) {
 		super(streamLocator, executorService);
 
 		textureKeyCache = new TextureCache(new CacheLoader<TextureKey, Void>() {

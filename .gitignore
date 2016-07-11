@@ -93,9 +93,5 @@ graphicsSettings.xml
 rendererSettings.xml
 
 *.jfr
-ardorgui/src/main/resources/lua/
-client/
-newclient/src/main/resources/se/
-newclient/vars/
 *.log
 .attach_pid*

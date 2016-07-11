@@ -1,6 +1,6 @@
 package se.spaced.client.model.item;
 
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import se.fearless.common.uuid.UUID;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.spaced.client.model.ClientSpell;
@@ -138,6 +138,6 @@ public class ClientItem implements SpacedItem {
 
 	@Override
 	public String toString() {
-		return Objects.toStringHelper(getClass()).add("pk", getPk()).add("name", getName()).toString();
+		return MoreObjects.toStringHelper(getClass()).add("pk", getPk()).add("name", getName()).toString();
 	}
 }

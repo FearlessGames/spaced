@@ -231,7 +231,7 @@ public class SpatialAnimator extends ComplexSpatialController<Spatial> {
 		setActive(true);
 		if (newBeginTime <= newEndTime) { // Moving forward
 			curTime = newBeginTime;
-			if (MathUtils.equals(newBeginTime, newEndTime)) {
+			if (MathUtils.equals(newBeginTime, newEndTime, 1)) {
 				update(0, toChange);
 				setActive(false);
 			}

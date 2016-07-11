@@ -1,6 +1,5 @@
 package se.spaced.client.resources.zone;
 
-import com.google.common.collect.Iterators;
 import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
 import org.junit.Before;
@@ -15,6 +14,7 @@ import se.spaced.shared.resources.zone.Zone;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
 
 import static org.junit.Assert.assertFalse;
@@ -91,7 +91,7 @@ public class ZoneValidatorImplTest {
 
 		@Override
 		public Iterator<String> listKeys() {
-			return Iterators.emptyIterator();
+			return Collections.emptyIterator();
 		}
 	};
 }

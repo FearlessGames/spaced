@@ -7,7 +7,6 @@ import com.ardor3d.math.Vector3;
 import com.ardor3d.scenegraph.Spatial;
 import com.ardor3d.scenegraph.controller.ComplexSpatialController;
 import com.ardor3d.scenegraph.controller.SpatialController;
-import org.apache.commons.math.util.MathUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -231,7 +230,7 @@ public class SpatialAnimator extends ComplexSpatialController<Spatial> {
 		setActive(true);
 		if (newBeginTime <= newEndTime) { // Moving forward
 			curTime = newBeginTime;
-			if (MathUtils.equals(newBeginTime, newEndTime, 1)) {
+			if (Double.compare(newBeginTime, newEndTime) == 0) {
 				update(0, toChange);
 				setActive(false);
 			}

@@ -2,8 +2,6 @@ package se.ardortech.math;
 
 import com.ardor3d.math.Quaternion;
 import com.ardor3d.math.type.ReadOnlyVector3;
-import org.apache.commons.math.geometry.CardanEulerSingularityException;
-import org.apache.commons.math.geometry.NotARotationMatrixException;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 import se.krka.kahlua.integration.expose.ReturnValues;
 
@@ -203,13 +201,8 @@ public class SpacedRotation implements Serializable {
 	 *                  orthogonality correction (convergence is reached when the
 	 *                  difference between two steps of the Frobenius norm of the
 	 *                  correction is below this threshold)
-	 * @throws NotARotationMatrixException if the matrix is not a 3X3
-	 *                                     matrix, or if it cannot be transformed into an orthogonal matrix
-	 *                                     with the given threshold, or if the determinant of the resulting
-	 *                                     orthogonal matrix is negative
 	 */
-	public SpacedRotation(double[][] m, double threshold)
-			throws NotARotationMatrixException {
+	public SpacedRotation(double[][] m, double threshold) {
 
 		// dimension check
 		if ((m.length != 3) || (m[0].length != 3) ||
@@ -663,12 +656,8 @@ public class SpacedRotation implements Serializable {
 	 *
 	 * @param order rotation order to use
 	 * @return an array of three angles, in the order specified by the set
-	 * @throws CardanEulerSingularityException
-	 *          if the rotation is
-	 *          singular with respect to the angles set specified
 	 */
-	public double[] getAngles(SpacedRotationOrder order)
-			throws CardanEulerSingularityException {
+	public double[] getAngles(SpacedRotationOrder order) {
 
 		if (order == SpacedRotationOrder.XYZ) {
 
@@ -680,7 +669,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_K);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_I);
 			if ((v2.getZ() < -0.9999999999) || (v2.getZ() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(-(v1.getY()), v1.getZ()),
@@ -698,7 +687,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_J);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_I);
 			if ((v2.getY() < -0.9999999999) || (v2.getY() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getZ(), v1.getY()),
@@ -716,7 +705,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_K);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_J);
 			if ((v2.getZ() < -0.9999999999) || (v2.getZ() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getX(), v1.getZ()),
@@ -734,7 +723,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_I);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_J);
 			if ((v2.getX() < -0.9999999999) || (v2.getX() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(-(v1.getZ()), v1.getX()),
@@ -752,7 +741,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_J);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_K);
 			if ((v2.getY() < -0.9999999999) || (v2.getY() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(-(v1.getX()), v1.getY()),
@@ -770,7 +759,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_I);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_K);
 			if ((v2.getX() < -0.9999999999) || (v2.getX() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(true);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getY(), v1.getX()),
@@ -788,7 +777,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_I);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_I);
 			if ((v2.getX() < -0.9999999999) || (v2.getX() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getY(), -v1.getZ()),
@@ -806,7 +795,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_I);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_I);
 			if ((v2.getX() < -0.9999999999) || (v2.getX() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getZ(), v1.getY()),
@@ -824,7 +813,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_J);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_J);
 			if ((v2.getY() < -0.9999999999) || (v2.getY() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getX(), v1.getZ()),
@@ -842,7 +831,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_J);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_J);
 			if ((v2.getY() < -0.9999999999) || (v2.getY() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getZ(), -v1.getX()),
@@ -860,7 +849,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_K);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_K);
 			if ((v2.getZ() < -0.9999999999) || (v2.getZ() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getX(), -v1.getY()),
@@ -878,7 +867,7 @@ public class SpacedRotation implements Serializable {
 			SpacedVector3 v1 = applyTo(SpacedVector3.PLUS_K);
 			SpacedVector3 v2 = applyInverseTo(SpacedVector3.PLUS_K);
 			if ((v2.getZ() < -0.9999999999) || (v2.getZ() > 0.9999999999)) {
-				throw new CardanEulerSingularityException(false);
+				throw new RuntimeException("CardanEulerSingularityException");
 			}
 			return new double[]{
 					Math.atan2(v1.getY(), v1.getX()),
@@ -1014,11 +1003,8 @@ public class SpacedRotation implements Serializable {
 	 *                  difference between two steps of the Frobenius norm of the
 	 *                  correction is below this threshold)
 	 * @return an orthogonal matrix close to m
-	 * @throws NotARotationMatrixException if the matrix cannot be
-	 *                                     orthogonalized with the given threshold after 10 iterations
 	 */
-	private double[][] orthogonalizeMatrix(double[][] m, double threshold)
-			throws NotARotationMatrixException {
+	private double[][] orthogonalizeMatrix(double[][] m, double threshold) {
 		double[] m0 = m[0];
 		double[] m1 = m[1];
 		double[] m2 = m[2];

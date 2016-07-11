@@ -32,7 +32,7 @@ dependencies {
 	compile 'se.fearless.fearless-common:core:1.3'
 	compile 'se.fearless.fearless-common:locators:1.3'
 	compile 'org.slf4j:slf4j-api:1.7.12'
-	compile 'org.apache.commons:commons-math:2.2'
+	//compile 'org.apache.commons:commons-math:2.2'
 
 	compile 'se.krka.kahlua:kahlua-j2se_5.1:2.1.0'
 	compile 'com.thoughtworks.xstream:xstream:1.4.8'

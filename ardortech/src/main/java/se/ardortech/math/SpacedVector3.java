@@ -2,7 +2,6 @@ package se.ardortech.math;
 
 import com.ardor3d.math.Vector3;
 import com.ardor3d.math.type.ReadOnlyVector3;
-import org.apache.commons.math.util.MathUtils;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 
 import java.io.Serializable;
@@ -477,9 +476,13 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 				return this.isNaN();
 			}
 
-			return (MathUtils.equals(x,rhs.x) && MathUtils.equals(y,rhs.y) && MathUtils.equals(z, rhs.z));
+			return (doubleEquals(x, rhs.x) && doubleEquals(y, rhs.y) && doubleEquals(z, rhs.z));
 		}
 		return false;
+	}
+
+	private boolean doubleEquals(double a, double b) {
+		return Double.compare(a, b) == 0;
 	}
 
 	/**
@@ -495,7 +498,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 			return 8;
 		}
 		// TODO: remove dependency?
-		return 31 * (23 * MathUtils.hash(x) + 19 * MathUtils.hash(y) + MathUtils.hash(z));
+		return 31 * (23 * Double.hashCode(x) + 19 * Double.hashCode(y) + Double.hashCode(z));
 	}
 
 	/**

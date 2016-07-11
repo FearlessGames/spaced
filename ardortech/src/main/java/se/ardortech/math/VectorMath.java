@@ -65,7 +65,7 @@ public class VectorMath {
 		// check for weighting at either extreme
 		if (amount == 0.0) {
 			return from;
-		} else if (org.apache.commons.math.util.MathUtils.equals(amount, 1.0)) {
+		} else if (Double.compare(amount, 1.0) == 0) {
 			return to;
 		}
 

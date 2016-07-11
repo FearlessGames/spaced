@@ -6,7 +6,6 @@ import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
-import se.spaced.messages.protocol.AuraTemplate;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.shared.model.AppearanceData;
 import se.spaced.shared.model.Money;
@@ -16,7 +15,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import static junit.framework.Assert.*;
+import static org.junit.Assert.*;
 
 
 public class ClientItemTest {
@@ -30,7 +29,7 @@ public class ClientItemTest {
 	@Test
 	public void testGetItemTypes() {
 		UUID itemId = uuidFactory.randomUUID();
-		Set<ItemType> itemTypes = new HashSet<ItemType>();
+		Set<ItemType> itemTypes = new HashSet<>();
 		itemTypes.add(ItemType.CONSUMABLE);
 		itemTypes.add(ItemType.TROUSERS);
 
@@ -39,7 +38,7 @@ public class ClientItemTest {
 						"item",
 						new AppearanceData("model", ""),
 						itemTypes,
-						new HashSet<AuraTemplate>(),
+						new HashSet<>(),
 						Money.ZERO, null));
 		Set<ItemType> clientItemTypes = clientItem.getItemTypes();
 		assertEquals(clientItemTypes.size(), itemTypes.size());
@@ -59,7 +58,7 @@ public class ClientItemTest {
 						"item",
 						new AppearanceData("model", ""),
 						itemTypes,
-						new HashSet<AuraTemplate>(),
+						new HashSet<>(),
 						Money.ZERO, null));
 		assertTrue(clientItem.isOfType(ItemType.CONSUMABLE));
 		assertTrue(clientItem.isOfType(ItemType.TROUSERS));

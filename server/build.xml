@@ -89,7 +89,7 @@
 
 
 	<target name="run-alpha" description="run the alpha server">
-		<copy file="${baseDir}/src/logback-alpha.xml" tofile="${build.dir.classes}/logback.xml"/>
+        <copy file="/logback-alpha.xml" tofile="${build.dir.classes}/logback.xml"/>
 		<java classname="se.spaced.server.Starter" fork="true" spawn="false"
 				args="--auth=FAME --gameServerPort=9433 --webServicePort=9001 --dbMYSQL --dbUser=spaced_alpha --dbPassword=we6eqaCr8puh --dbJdbcUrl=jdbc:mysql://localhost/spaced_alpha_db?autoReconnect=true">
 			<jvmarg value="-server"/>

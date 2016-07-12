@@ -87,7 +87,7 @@
 
 
 	<target name="run-ardor" description="Start the ardor client">
-		<copy toDir="${build.dir.classes}" file="${baseDir}/src/logback.xml"/>
+		<copy toDir="${build.dir.classes}" file="/logback.xml"/>
 		<java classname="se.spaced.client.launcher.ArdorRealGame" fork="true" maxmemory="1024m">
 			<jvmarg value="-splash:resources/splash.png"/>
 			<jvmarg value="-Djava.library.path=${ardor.path}"/>
@@ -105,7 +105,7 @@
 	</target>
 
 	<target name="run-bots" description="Start the bot client">
-		<copy toDir="${baseDir}/build/main" file="${baseDir}/src/logback.xml"/>
+		<copy toDir="${baseDir}/build/main" file="/logback.xml"/>
 		<property name="host" value="localhost"/>
 		<java classname="se.spaced.client.launcher.MultiBotLauncher" fork="true">
 			<classpath>

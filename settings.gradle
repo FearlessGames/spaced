@@ -1,4 +1,4 @@
-include ':messages', ':smrt', ':shared', ':ardortech', ':server', ':newclient', ':ardorgui', ':lua'
+include ':messages', ':smrt', ':shared', ':ardortech', ':server', ':newclient', ':ardorgui', ':lua', ':clientdeployer'
 
 rootProject.name = 'spaced'
 
@@ -11,6 +11,7 @@ project(":server").buildFileName = "server.gradle"
 project(":newclient").buildFileName = "client.gradle"
 project(":ardorgui").buildFileName = "ardorgui.gradle"
 project(":lua").buildFileName = "lua.gradle"
+project(":clientdeployer").buildFileName = "deployer.gradle"
 
 
 

@@ -6,16 +6,11 @@ import se.spaced.shared.util.QueueRunner;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ResourceUpdater {
 	private static final String BASE_PATH = System.getProperty("user.home") + File.separator + ".spaced" + File.separator;
 	private static final String RESOURCE_PATH = BASE_PATH + "resources" + File.separator;
-	private static final String WEB_BASE = "http://flexo.fearlessgames.se/client/resources/";
 
 	private static final String CRC32_FILE = "index.crc";
 	private static final String INDEX_FILE = "index.txt";
@@ -25,14 +20,16 @@ public class ResourceUpdater {
 	private final MultiThreadedQueueRunner<Action, Void> queueRunner;
 	private final List<Action> actionList;
 	private long totalDownloadSize;
+	private final String webBase;
 
 
-	public ResourceUpdater(Getter getter, LocalFileUtil fileUtil) {
+	public ResourceUpdater(Getter getter, LocalFileUtil fileUtil, String contentServer) {
 		this.getter = getter;
 		this.fileUtil = fileUtil;
 		totalDownloadSize = 0;
 		queueRunner = new MultiThreadedQueueRunner<Action, Void>(4, new ResourceFetcher());
 		actionList = new ArrayList<Action>();
+		webBase = contentServer;
 	}
 
 
@@ -40,7 +37,7 @@ public class ResourceUpdater {
 		if (!fileUtil.exists(RESOURCE_PATH + CRC32_FILE)) {
 			return IndexCRC32.FILE_NOT_FOUND;
 		}
-		String remoteCRC32 = getter.getContent(new URL(WEB_BASE + CRC32_FILE));
+		String remoteCRC32 = getter.getContent(new URL(webBase + CRC32_FILE));
 		String localCRC32 = getter.getContent(new File(RESOURCE_PATH + CRC32_FILE));
 
 		return remoteCRC32.equals(localCRC32) ? IndexCRC32.VALID : IndexCRC32.INVALID;
@@ -93,7 +90,7 @@ public class ResourceUpdater {
 
 	private Map<String, Entry> indexRemoteEntries() throws IOException {
 		Map<String, Entry> remoteEntries = new HashMap<String, Entry>();
-		for (Entry entry : parseIndex(getter.getContent(new URL(WEB_BASE + INDEX_FILE)))) {
+		for (Entry entry : parseIndex(getter.getContent(new URL(webBase + INDEX_FILE)))) {
 			remoteEntries.put(entry.path, entry);
 		}
 		return remoteEntries;
@@ -165,7 +162,7 @@ public class ResourceUpdater {
 		@Override
 		protected void execute() {
 			try {
-				URL url = new URL(WEB_BASE + partialPath.replaceAll(" ", "%20"));
+				URL url = new URL(webBase + partialPath.replaceAll(" ", "%20"));
 				File file = new File(RESOURCE_PATH + partialPath);
 				fileUtil.makeParentPath(file);
 				getter.copyContent(url, file, copyCallback);

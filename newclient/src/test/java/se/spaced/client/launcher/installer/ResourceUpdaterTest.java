@@ -2,16 +2,18 @@ package se.spaced.client.launcher.installer;
 
 import org.junit.Before;
 import org.junit.Test;
-import se.mockachino.matchers.*;
+import se.mockachino.matchers.Matchers;
 
 import java.io.File;
 import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 public class ResourceUpdaterTest {
+	public static final String CONTENT_SERVER = "http://flexo.fearlessgames.se/client/resources/";
 	private LocalFileUtil fileUtil;
 	private Getter getter;
 	private ResourceUpdater resourceUpdater;
@@ -21,7 +23,7 @@ public class ResourceUpdaterTest {
 		getter = mock(Getter.class);
 		fileUtil = mock(LocalFileUtil.class);
 
-		resourceUpdater = new ResourceUpdater(getter, fileUtil);
+		resourceUpdater = new ResourceUpdater(getter, fileUtil, CONTENT_SERVER);
 	}
 
 	@Test
@@ -31,20 +33,20 @@ public class ResourceUpdaterTest {
 
 		when(fileUtil.exists(Matchers.any(String.class))).thenReturn(true);
 		when(getter.getContent(Matchers.any(File.class))).thenReturn("0x0000");
-		when(getter.getContent(new URL("http://flexo.fearlessgames.se/client/resources/index.crc"))).thenReturn("0x0010");
+		when(getter.getContent(new URL(CONTENT_SERVER + "index.crc"))).thenReturn("0x0010");
 		assertEquals(ResourceUpdater.IndexCRC32.INVALID, resourceUpdater.validateCRC32());
 
 
 		when(fileUtil.exists(Matchers.any(String.class))).thenReturn(true);
 		when(getter.getContent(Matchers.any(File.class))).thenReturn("0x0011");
-		when(getter.getContent(new URL("http://flexo.fearlessgames.se/client/resources/index.crc"))).thenReturn("0x0011");
+		when(getter.getContent(new URL(CONTENT_SERVER + "index.crc"))).thenReturn("0x0011");
 		assertEquals(ResourceUpdater.IndexCRC32.VALID, resourceUpdater.validateCRC32());
 
 	}
 
 	@Test
 	public void testPrepareFullDownload() throws Exception {
-		when(getter.getContent(new URL("http://flexo.fearlessgames.se/client/resources/index.txt"))).thenReturn(join(
+		when(getter.getContent(new URL(CONTENT_SERVER + "index.txt"))).thenReturn(join(
 				REMOTE_INDEX));
 		resourceUpdater.prepareDownload();
 		assertEquals(REMOTE_INDEX.length + 2, resourceUpdater.getActionList().size());
@@ -56,7 +58,7 @@ public class ResourceUpdaterTest {
 
 	@Test
 	public void testPrepareDiffDownload() throws Exception {
-		when(getter.getContent(new URL("http://flexo.fearlessgames.se/client/resources/index.txt"))).thenReturn(join(
+		when(getter.getContent(new URL(CONTENT_SERVER + "index.txt"))).thenReturn(join(
 				REMOTE_INDEX));
 		when(getter.getContent(Matchers.any(File.class))).thenReturn(join(LOCAL_INDEX));
 		resourceUpdater.prepareDownload();

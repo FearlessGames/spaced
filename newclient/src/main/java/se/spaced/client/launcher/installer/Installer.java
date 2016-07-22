@@ -29,6 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Installer implements InstallerView.Presenter {
+	private final String contentServer;
 	private InstallerView installerView;
 	private final ResourceUpdater resourceUpdater;
 	private int nrOfActions;
@@ -37,10 +38,11 @@ public class Installer implements InstallerView.Presenter {
 	private final IOLocator ioLocator;
 	private static final WebstartResourceModule RESOURCE_MODULE = new WebstartResourceModule(System.getProperty("user.home") + File.separator + ".spaced" + File.separator);
 
-	public Installer(List<GameServer> gameServers, IOLocator ioLocator) {
+	public Installer(List<GameServer> gameServers, IOLocator ioLocator, String contentServer) {
 		this.gameServers = gameServers;
 		this.ioLocator = ioLocator;
-		resourceUpdater = new ResourceUpdater(new Getter(), new LocalFileUtil());
+		this.contentServer = contentServer;
+		resourceUpdater = new ResourceUpdater(new Getter(), new LocalFileUtil(), this.contentServer);
 		startSemaphore = new Semaphore(0);
 	}
 
@@ -51,7 +53,7 @@ public class Installer implements InstallerView.Presenter {
 			public void run() {
 				installerView = new InstallerViewImpl(Installer.this,
 						ioLocator.getByteSource("installer/noNews.html"));
-				installerView.setNewsPage("http://flexo.fearlessgames.se/client/resources/news/news.html");
+				installerView.setNewsPage(contentServer + "news/news.html");
 				installerView.createAndShowUI();
 			}
 		});
@@ -210,7 +212,7 @@ public class Installer implements InstallerView.Presenter {
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		List<GameServer> gameServers = parseGameServers(args);
 		IOLocator streamLocator = RESOURCE_MODULE.getStreamLocator(RESOURCE_MODULE.getResourceRootDir(), RESOURCE_MODULE.getLuaVarsDir());
-		Installer installer = new Installer(gameServers, streamLocator);
+		Installer installer = new Installer(gameServers, streamLocator, "http://localhost:9090/");
 		installer.start();
 	}
 

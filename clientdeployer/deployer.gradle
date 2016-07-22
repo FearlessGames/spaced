@@ -1,3 +1,50 @@
 apply plugin: 'java'
-apply plugin: 'application'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+	mavenCentral()
+	maven {
+		url 'http://flexo.fearlessgames.se/artifactory/libs-local'
+		credentials {
+			username = "reader"
+			password = "f3ArlessGamesR0X!"
+		}
+	}
+}
+
+dependencies {
+	compile project(':ardortech')
+	compile project(':shared')
+	compile group: 'org.jdom', name: 'jdom2', version: '2.0.6'
+	compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '8.1.15.v20140411'
+
+	//compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.0.M0'
+	//compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.4.0.M0'
+	//compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	runtime 'ch.qos.logback:logback-classic:1.0.13'
+}
+
+
+
+task runContentServer(type: JavaExec) {
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'se.spaced.contentserver.ContentServer'
+	args = ['build/webroot']
+}
+
+task deployResroucesLocally(type: JavaExec) {
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'se.spaced.client.deployer.ResourceDeployer'
+	args = ['build/webroot', '../newclient/src/main/resources', '../ardorgui/src/main/resources']
+}
+
+/*task copyResources(type: ResourceDeployerTask) {
+	into 'build/deployedResources'
+	from '../newclient/src/main/resources'
+	from '../shared/src/main/resources'
+	from '../ardortech/src/main/resources'
+	from '../ardorgui/src/main/resources'
+}*/

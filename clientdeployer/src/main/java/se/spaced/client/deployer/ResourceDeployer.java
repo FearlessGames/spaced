@@ -1,25 +1,37 @@
 package se.spaced.client.deployer;
 
+import org.slf4j.Logger;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
 public class ResourceDeployer {
+	private final Logger logger = getLogger(getClass());
 	private final String targetBasePath;
 	private final List<String> resourceBases;
-	private final ResourceDeployTask.AntLogger antLogger;
 	private final List<IndexedResource> indexedResources = new ArrayList<IndexedResource>();
 	private final FileUtil fileUtil = new FileUtil();
 	private final DaeDeployer daeDeployer;
 
-	public ResourceDeployer(String targetBasePath, List<String> resourceBases, ResourceDeployTask.AntLogger antLogger) {
+	public static void main(String[] args) throws ResourceException {
+		String targetBasePath = args[0];
+		List<String> resourceBases = Arrays.asList(args).subList(1, args.length);
+
+		ResourceDeployer resourceDeployer = new ResourceDeployer(targetBasePath, resourceBases);
+		resourceDeployer.indexAndCopyResources();
+	}
+
+	public ResourceDeployer(String targetBasePath, List<String> resourceBases) {
 		this.targetBasePath = targetBasePath;
 		this.resourceBases = resourceBases;
-		this.antLogger = antLogger;
-		daeDeployer = new DaeDeployer(antLogger);
+		daeDeployer = new DaeDeployer();
 	}
 
 	public void indexAndCopyResources() throws ResourceException {
@@ -63,11 +75,15 @@ public class ResourceDeployer {
 	private void index(String resourceBase, File directory) throws ResourceException {
 		File[] files = directory.listFiles(new IgnoreSvnFileFilter());
 
-		for (File file : files) {
-			if (file.isDirectory()) {
-				index(resourceBase, file);
-			} else {
-				indexFile(resourceBase, file);
+		if (files == null) {
+			logger.info("No files in directory {}", directory.getAbsolutePath());
+		} else {
+			for (File file : files) {
+				if (file.isDirectory()) {
+					index(resourceBase, file);
+				} else {
+					indexFile(resourceBase, file);
+				}
 			}
 		}
 	}
@@ -86,7 +102,7 @@ public class ResourceDeployer {
 				long crc32 = fileUtil.copyAndCalcChecksum(file, targetFile);
 				IndexedResource indexResource = new IndexedResource(relativeFile, crc32, file.length());
 				if (indexedResources.contains(indexResource)) {
-					antLogger.log("WARNING - COLLISION IN RESOURCES - " + indexResource.getPath());
+					logger.warn("WARNING - COLLISION IN RESOURCES - " + indexResource.getPath());
 				}
 				indexedResources.add(indexResource);
 			}

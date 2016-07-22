@@ -5,25 +5,26 @@ import com.ardor3d.extension.model.collada.jdom.data.ColladaStorage;
 import com.ardor3d.util.export.Savable;
 import com.ardor3d.util.export.binary.BinaryExporter;
 import com.ardor3d.util.resource.ResourceLocator;
+import org.slf4j.Logger;
 import se.ardortech.SpacedResourceLocator;
-import se.fearlessgames.common.log.Slf4jJulBridge;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+
 public class DaeDeployer {
+	private final Logger logger = getLogger(getClass());
 	private static final String POSTFIX = ".bin";
 
 	private final ColladaImporter colladaImporter;
 	private final FileUtil fileUtil;
-	private final ResourceDeployTask.AntLogger antLogger;
 
-	public DaeDeployer(ResourceDeployTask.AntLogger antLogger) {
-		this.antLogger = antLogger;
-		Slf4jJulBridge.init();
 
+	public DaeDeployer() {
 		fileUtil = new FileUtil();
 		ResourceLocator spacedResourceLocator = new SpacedResourceLocator(new AbsolutFileStreamLocator());
 		colladaImporter = new ColladaImporter().
@@ -51,7 +52,7 @@ public class DaeDeployer {
 		long nodeCrc32 = fileUtil.writeCalcChecksum(nodeContent, nodeTargetFile);
 		IndexedResource nodeResource = new IndexedResource(relativeFile, nodeCrc32, nodeTargetFile.length());
 		if (indexedResources.contains(nodeResource)) {
-			antLogger.log("WARNING - COLLISION IN RESOURCES - " + nodeResource.getPath());
+			logger.warn("WARNING - COLLISION IN RESOURCES - " + nodeResource.getPath());
 		}
 		indexedResources.add(nodeResource);
 	}

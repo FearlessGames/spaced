@@ -41,7 +41,7 @@
 		<taskdef name="deployer" classname="se.spaced.client.deployer.ResourceDeployTask" classpathref="run.classpath"/>
 	</target>
 
-	<property name="target.dir" location="/spaced/www-root/client/resources"/>
+    <property name="target.dir" location="/build/www-root/client/resources"/>
 
 	<property name="spaced" location="${baseDir}/../"/>
 

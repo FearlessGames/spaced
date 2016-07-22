@@ -60,7 +60,14 @@ task explodeLua(type: Copy) {
 }
 
 run {
-	args '--server=localhost:9000'
+	args['--server=localhost:http://localhost:9000']
+}
+
+task runInstaller(type: JavaExec) {
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'se.spaced.client.launcher.installer.Installer'
+	args = ['--server=localhost:http://localhost:9000']
+	jvmArgs = applicationDefaultJvmArgs
 }
 
 test {

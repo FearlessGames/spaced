@@ -95,3 +95,4 @@ rendererSettings.xml
 *.jfr
 *.log
 .attach_pid*
+system.info

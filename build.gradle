@@ -2,6 +2,12 @@ plugins {
 	id "cz.malohlava" version "1.0.1"
 }
 
+visteg {
+	destination = 'build/reports/spaced-tasks.dot'
+	// Use dot -Tpng ./spaced-tasks.dot -o spaced-tasks.png to create an image
+
+}
+
 subprojects {
 
 }

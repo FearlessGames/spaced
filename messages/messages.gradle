@@ -44,7 +44,7 @@ dependencies {
 	compile project(':ardortech')
 }
 
-task explodeTemplates(type: Copy) {
+task explodeTemplates(dependsOn: configurations.smrtTemplates, type: Copy) {
 	from zipTree(configurations.smrtTemplates.singleFile)
 	ext.explodedDir = file("$buildDir/templates")
 	into explodedDir

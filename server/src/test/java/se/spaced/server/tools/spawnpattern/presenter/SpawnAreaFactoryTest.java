@@ -90,7 +90,7 @@ public class SpawnAreaFactoryTest {
 			SpawnArea area = spawnAreaFactory.createArea(SinglePointSpawnArea.class, xml);
 			fail();
 		} catch (SpawnAreaFactoryException e) {
-			assertEquals("Wrong xml for the area type", e.getMessage());
+			assertTrue(e.getMessage().contains("Wrong type of Geometry XML"));
 		}
 	}
 

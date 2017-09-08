@@ -49,6 +49,7 @@ public class BaseArdorMain implements Main {
 		frameHandler.updateFrame();
 	}
 
+	@Override
 	public void exit() {
 		logger.info("Exit flag set");
 		exit = true;

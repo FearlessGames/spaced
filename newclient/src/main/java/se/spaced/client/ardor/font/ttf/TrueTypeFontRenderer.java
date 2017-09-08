@@ -4,10 +4,7 @@ import com.ardor3d.extension.ui.text.CharacterDescriptor;
 import com.google.common.collect.Maps;
 import se.spaced.client.ardor.font.ttf.effects.Effect;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.util.List;
@@ -59,7 +56,7 @@ public class TrueTypeFontRenderer {
 				continue;
 			}
 
-			totalWidth += Math.sqrt(Math.pow(width, 2) * Math.pow(height, 2));
+			totalWidth = (int) (totalWidth + Math.sqrt(Math.pow(width, 2) * Math.pow(height, 2)));
 		}
 
 		this.imageWidth = nextPow2((int) Math.sqrt(totalWidth));

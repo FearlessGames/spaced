@@ -53,7 +53,7 @@ public class InMemoryImageTextureSource implements TextureSource {
 			int numTilesY) throws Exception {
 		Set<Tile> validTiles = Sets.newHashSet();
 
-		int levelSize = 1 << availableClipmapLevels - clipmapLevel - 1;
+		int levelSize = 1 << (availableClipmapLevels - clipmapLevel - 1);
 		for (int y = 0; y < numTilesY; y++) {
 			for (int x = 0; x < numTilesX; x++) {
 				final int xx = tileX + x;

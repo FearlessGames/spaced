@@ -16,12 +16,21 @@ import se.mockachino.matchers.matcher.ArgumentCatcher;
 import se.spaced.client.ardor.ui.events.ItemEvents;
 import se.spaced.client.model.ClientEntity;
 import se.spaced.client.model.InventoryProvider;
-import se.spaced.client.model.item.*;
+import se.spaced.client.model.item.ClientItem;
+import se.spaced.client.model.item.ClientItemProxy;
+import se.spaced.client.model.item.ItemLookup;
+import se.spaced.client.model.item.ItemTemplateProxy;
+import se.spaced.client.model.item.ItemTemplateServiceImpl;
 import se.spaced.client.model.listener.EquipmentListener;
 import se.spaced.client.model.player.PlayerEntityProvider;
 import se.spaced.client.model.player.PlayerEquipment;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.messages.protocol.*;
+import se.spaced.messages.protocol.AuraTemplate;
+import se.spaced.messages.protocol.ClientAuraInstance;
+import se.spaced.messages.protocol.Entity;
+import se.spaced.messages.protocol.ItemTemplate;
+import se.spaced.messages.protocol.ItemTemplateData;
+import se.spaced.messages.protocol.SpacedItem;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.events.EventHandler;
 import se.spaced.shared.model.AppearanceData;
@@ -35,7 +44,9 @@ import java.util.HashSet;
 
 import static org.junit.Assert.assertEquals;
 import static se.mockachino.Mockachino.*;
-import static se.mockachino.matchers.Matchers.*;
+import static se.mockachino.matchers.Matchers.any;
+import static se.mockachino.matchers.Matchers.mAny;
+import static se.mockachino.matchers.Matchers.match;
 
 public class ServerEquipmentMessagesImplTest {
 	ServerEquipmentMessagesImpl serverEquipmentMessages;
@@ -87,7 +98,7 @@ public class ServerEquipmentMessagesImplTest {
 		final ItemTemplateData itemTemplateData = new ItemTemplateData(uuid,
 				"Foo",
 				null,
-				Collections.<ItemType>emptySet(), new HashSet<AuraTemplate>(), Money.ZERO, null);
+				Collections.emptySet(), new HashSet<AuraTemplate>(), Money.ZERO, null);
 
 		stubAnswer(new CallHandler() {
 			@Override
@@ -113,7 +124,7 @@ public class ServerEquipmentMessagesImplTest {
 		final ItemTemplateData itemTemplateData = new ItemTemplateData(templateId,
 				"Foo",
 				null,
-				Collections.<ItemType>emptySet(), new HashSet<AuraTemplate>(), Money.ZERO, null);
+				Collections.emptySet(), new HashSet<AuraTemplate>(), Money.ZERO, null);
 
 		stubAnswer(new CallHandler() {
 			@Override

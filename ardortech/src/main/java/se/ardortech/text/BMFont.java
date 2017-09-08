@@ -415,9 +415,8 @@ public class BMFont {
 
             db.reset();
         } catch (final Throwable t) {
-            final IOException ex = new IOException("Error loading font file " + source.toString());
-            ex.initCause(t);
-            throw ex;
+            final IOException ex = new IOException("Error loading font file " + source.toString(), t);
+	        throw ex;
         }
     }
 

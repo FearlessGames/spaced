@@ -10,6 +10,7 @@ import se.spaced.shared.model.EntityInteractionCapability;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 public class CompositeMobBrain implements MobBrain {
 
@@ -24,7 +25,7 @@ public class CompositeMobBrain implements MobBrain {
 		}
 		mob = brainIterator.next().getMob();
 		while (brainIterator.hasNext()) {
-			if (brainIterator.next().getMob() != mob) {
+			if (!Objects.equals(brainIterator.next().getMob(), mob)) {
 				throw new IllegalArgumentException("All brains need to reference the same mob");
 			}
 		}

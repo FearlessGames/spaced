@@ -18,7 +18,7 @@ public class DependencySorterTest {
 	@Test
 	public void testSimple() {
 		Map<Integer, Collection<Integer>> dependencyMap = new HashMap<Integer, Collection<Integer>>();
-		dependencyMap.put(1, Collections.<Integer>emptyList());
+		dependencyMap.put(1, Collections.emptyList());
 		dependencyMap.put(2, Arrays.asList(1));
 		dependencyMap.put(3, Arrays.asList(1));
 		dependencyMap.put(4, Arrays.asList(1, 2));

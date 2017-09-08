@@ -4,13 +4,14 @@ import com.google.common.collect.Lists;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.time.SystemTimeProvider;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
-import se.spaced.server.model.*;
+import se.spaced.server.model.PersistedCreatureType;
+import se.spaced.server.model.PersistedFaction;
+import se.spaced.server.model.Player;
+import se.spaced.server.model.PlayerType;
+import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.action.ActionScheduler;
 import se.spaced.server.model.combat.CombatRepository;
 import se.spaced.server.model.combat.CombatRepositoryImpl;
@@ -36,17 +37,16 @@ import se.spaced.shared.model.Gender;
 import se.spaced.shared.util.ListenerDispatcher;
 import se.spaced.shared.util.random.RandomProvider;
 
-import java.security.SecureRandom;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.mock;
 import static se.mockachino.Mockachino.setupMocks;
 
 
 public class SpellServiceImplTest extends PersistentTestBase {
-	private final MockTimeProvider timeProvider = new MockTimeProvider();
-	private final UUIDFactory uuidFactory = new UUIDFactoryImpl(timeProvider, new SecureRandom());
 
 	private SpellService spellService;
 	private PlayerService playerService;

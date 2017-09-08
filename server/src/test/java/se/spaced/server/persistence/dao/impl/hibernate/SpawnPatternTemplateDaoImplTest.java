@@ -7,12 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedRotation;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.time.MockTimeProvider;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.mockachino.annotations.Mock;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
-import se.spaced.server.loot.LootTemplateProbability;
 import se.spaced.server.loot.MultiLootTemplate;
 import se.spaced.server.mob.brains.templates.AttackingBrainTemplate;
 import se.spaced.server.mob.brains.templates.BrainTemplate;
@@ -32,10 +28,13 @@ import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
 import se.spaced.server.net.broadcast.SmrtBroadcasterImpl;
 import se.spaced.server.persistence.dao.interfaces.LootTemplateDao;
-import se.spaced.server.persistence.migrator.*;
+import se.spaced.server.persistence.migrator.DefaultMobTemplatePopulator;
+import se.spaced.server.persistence.migrator.Migrator;
+import se.spaced.server.persistence.migrator.MockCreatureTypePopulator;
+import se.spaced.server.persistence.migrator.MockFactionPopulator;
+import se.spaced.server.persistence.migrator.MockSpellPopulator;
 import se.spaced.shared.util.random.RealRandomProvider;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -47,8 +46,6 @@ import static se.mockachino.Mockachino.setupMocks;
 
 
 public class SpawnPatternTemplateDaoImplTest extends PersistentTestBase {
-	private final MockTimeProvider timeProvider = new MockTimeProvider();
-	private final UUIDFactory uuidFactory = new UUIDFactoryImpl(timeProvider, new SecureRandom());
 	private SpellCombatService spellCombatService;
 
 	@Mock
@@ -88,7 +85,7 @@ public class SpawnPatternTemplateDaoImplTest extends PersistentTestBase {
 		Transaction transaction = transactionManager.beginTransaction();
 		LootTemplateDao lootTemplateDao = daoFactory.getLootTemplateDao();
 		lootTemplateDao.persist(new MultiLootTemplate(uuidFactory.combUUID(),
-				Sets.<LootTemplateProbability>newHashSet()));
+				Sets.newHashSet()));
 		transaction.commit();
 	}
 

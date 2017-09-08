@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class VisitResult<T> {
-	public static enum State {
+	public enum State {
 		OPEN, CLOSED, INVALID
 	}
 
@@ -57,11 +57,7 @@ public class VisitResult<T> {
 
 		VisitResult that = (VisitResult) o;
 
-		if (!elements.equals(that.elements)) {
-			return false;
-		}
-
-		return true;
+		return elements.equals(that.elements);
 	}
 
 	@Override

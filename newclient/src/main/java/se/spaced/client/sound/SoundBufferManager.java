@@ -48,7 +48,8 @@ public class SoundBufferManager {
 	}
 
 	public boolean updateSoundBuffer(SoundBuffer soundBuffer, OggInputStream ogg) {
-		checkNotNull(soundBuffer == null || ogg == null, "soundBuffer or ogg can't be null");
+		checkNotNull(soundBuffer, "soundBuffer can't be null");
+		checkNotNull(ogg, "ogg can't be null");
 
 		final ByteBuffer decodeBuffer = decodeBufferHolder.get();
 		decodeBuffer.clear();

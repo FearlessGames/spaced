@@ -57,7 +57,7 @@ public class SteppedQueueRunner<Key, Data> implements QueueRunner<Key, Data> {
 		log.info("Shutdown");
 	}
 
-	private class QueueData<Key, Data> {
+	private static class QueueData<Key, Data> {
 		final Key key;
 		final Callback<Key, Data> callback;
 		final ExceptionCallback<Key, Data> exceptionCallback;

@@ -53,16 +53,16 @@ public enum AnimationState {
 	private final AnimationState superType;
 	private final boolean moving;
 
-	private AnimationState() {
+	AnimationState() {
 		this(false);
 	}
 
-	private AnimationState(boolean moving) {
+	AnimationState(boolean moving) {
 		this.moving = moving;
 		this.superType = this;
 	}
 
-	private AnimationState(AnimationState superType, boolean moving) {
+	AnimationState(AnimationState superType, boolean moving) {
 		this.superType = superType;
 		this.moving = moving;
 	}

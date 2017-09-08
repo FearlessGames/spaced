@@ -45,11 +45,7 @@ public class AggroStats implements Comparable<AggroStats> {
 
 		AggroStats that = (AggroStats) o;
 
-		if (serverEntity != null ? !serverEntity.equals(that.serverEntity) : that.serverEntity != null) {
-			return false;
-		}
-
-		return true;
+		return serverEntity != null ? serverEntity.equals(that.serverEntity) : that.serverEntity == null;
 	}
 
 	@Override

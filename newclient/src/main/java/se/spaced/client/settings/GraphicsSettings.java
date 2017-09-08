@@ -24,7 +24,7 @@ public class GraphicsSettings implements ValidatedSettings {
 		return waterProvider != null;
 	}
 
-	private static enum WaterProvider {
+	private enum WaterProvider {
 		SIMPLE {
 			@Override
 			public AbstractModule getModule() {

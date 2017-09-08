@@ -53,7 +53,7 @@ public class DependencySorter<T> {
 			for (T dependency : dependencies.get(key)) {
 				//System.out.println("DEP: " + key + " depends on " + dependency);
 				VisitResult visitResult = visit(dependency, visited);
-				if (visitResult == result) {
+				if (visitResult.equals(result)) {
 					if (visitResult.getState() != VisitResult.State.OPEN) {
 						throw new RuntimeException("Invalid state, expected open but was: " + visitResult.getState());
 					}

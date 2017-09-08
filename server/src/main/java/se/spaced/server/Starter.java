@@ -4,10 +4,18 @@ import com.google.common.collect.Lists;
 import com.google.inject.Injector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.spaced.server.guice.modules.*;
+import se.spaced.server.guice.modules.AppearanceListenerDispatcherConnector;
+import se.spaced.server.guice.modules.AuraUpdateListenerDispatcherConnector;
+import se.spaced.server.guice.modules.EntityListenerDispatcherConnector;
+import se.spaced.server.guice.modules.SpawnListenerDispatcherConnector;
+import se.spaced.server.guice.modules.TargetUpdateListenerDispatcherConnector;
 import se.spaced.server.mob.MobController;
 import se.spaced.server.net.RemoteServer;
-import se.spaced.server.persistence.migrator.*;
+import se.spaced.server.persistence.migrator.BotAccountPopulator;
+import se.spaced.server.persistence.migrator.DevAccountPopulator;
+import se.spaced.server.persistence.migrator.Migrator;
+import se.spaced.server.persistence.migrator.MigratorService;
+import se.spaced.server.persistence.migrator.ServerContentPopulator;
 import se.spaced.server.services.webservices.WebServicePublisher;
 import se.spaced.server.services.webservices.external.BroadcastWebService;
 import se.spaced.server.services.webservices.external.EntityWebService;
@@ -18,10 +26,13 @@ import se.spaced.shared.network.webservices.informationservice.InformationWebSer
 import se.spaced.shared.util.Slf4jJulBridge;
 import se.spaced.shared.util.guice.dependencytool.DependencyTool;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Starter {
 	private static final int REMOTE_SERVER_TIMEOUT = 200;
@@ -104,7 +115,7 @@ public class Starter {
 	}
 
 	private static PrintWriter getWriter(String name) throws IOException {
-		return new PrintWriter(new FileWriter(name));
+		return new PrintWriter(Files.newBufferedWriter(Paths.get(name), UTF_8));
 	}
 
 	private static void startWebServices(Injector injector) {

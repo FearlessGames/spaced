@@ -16,11 +16,14 @@ import se.spaced.client.settings.SettingsHandler;
 import se.spaced.shared.util.guice.dependencytool.DependencyTool;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class DocumentationGenerator {
 	public static void main(String[] args) throws IOException {
@@ -34,7 +37,7 @@ public class DocumentationGenerator {
 		}
 		String filename = args[0];
 		File file = new File(filename);
-		Writer writer = new FileWriter(file);
+		Writer writer = Files.newBufferedWriter(file.toPath(), UTF_8);
 
 		runGenerator(writer);
 		System.out.println("Saved documentation as " + file.getAbsolutePath());
@@ -67,6 +70,6 @@ public class DocumentationGenerator {
 	}
 
 	private PrintWriter getWriter(String suffix) throws IOException {
-		return new PrintWriter(new FileWriter(this.getClass().getSimpleName() + suffix));
+		return new PrintWriter(Files.newBufferedWriter(Paths.get(this.getClass().getSimpleName() + suffix), UTF_8));
 	}
 }

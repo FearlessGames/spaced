@@ -53,11 +53,7 @@ public class Sphere implements Shape3D {
 		if (Double.compare(sphere.radius, radius) != 0) {
 			return false;
 		}
-		if (!center.equals(sphere.center)) {
-			return false;
-		}
-
-		return true;
+		return center.equals(sphere.center);
 	}
 
 	@Override

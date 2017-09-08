@@ -1,7 +1,7 @@
 package se.spaced.client.statistics;
 
 public class Trackables {
-	public static enum VendorEvents implements Trackable {
+	public enum VendorEvents implements Trackable {
 		INIT("VENDOR_INIT"),
 		BUY("VENDOR_BUY"),
 		CLOSE("VENDOR_CLOSE"),
@@ -21,7 +21,7 @@ public class Trackables {
 		}
 	}
 
-	public static enum PlayerActionsEvents implements Trackable {
+	public enum PlayerActionsEvents implements Trackable {
 		UNSTUCK("PLAYER_ACTIONS_UNSTUCK"),
 		DANCE("PLAYER_DANCE");
 
@@ -37,7 +37,7 @@ public class Trackables {
 		}
 	}
 
-	public static enum TradeEvents implements Trackable {
+	public enum TradeEvents implements Trackable {
 		INIT("TRADE_INIT"),
 		GET_CURRENT_OFFER("TRADE_GET_OFFER"),
 		GET_MONEY("TRADE_GET_MONEY");

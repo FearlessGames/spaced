@@ -14,10 +14,15 @@ import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.aura.AuraService;
-import se.spaced.server.model.aura.ServerAuraInstance;
 import se.spaced.server.model.combat.EntityCombatService;
 import se.spaced.server.model.combat.EntityTargetService;
-import se.spaced.server.model.entity.*;
+import se.spaced.server.model.entity.AppearanceService;
+import se.spaced.server.model.entity.AppearanceServiceImpl;
+import se.spaced.server.model.entity.EntityService;
+import se.spaced.server.model.entity.EntityServiceImpl;
+import se.spaced.server.model.entity.EntityServiceListener;
+import se.spaced.server.model.entity.VisibilityService;
+import se.spaced.server.model.entity.VisibilityServiceImpl;
 import se.spaced.server.model.movement.UnstuckServiceImpl;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.net.ClientConnection;
@@ -52,7 +57,7 @@ public class ClientEntityDataMessageAuthTest {
 		entityTargetService = mock(EntityTargetService.class);
 		appearanceListeners = ListenerDispatcher.create(AppearanceService.class);
 		AuraService auraService = mock(AuraService.class);
-		when(auraService.getAllAuras(any(ServerEntity.class))).thenReturn(ImmutableSet.<ServerAuraInstance>of());
+		when(auraService.getAllAuras(any(ServerEntity.class))).thenReturn(ImmutableSet.of());
 		appearanceService = new AppearanceServiceImpl(entityService, new InMemoryEquipmentDao(), entityTargetService,
 				auraService, entityCombatService);
 		visibilityService = new VisibilityServiceImpl(entityService, appearanceListeners);

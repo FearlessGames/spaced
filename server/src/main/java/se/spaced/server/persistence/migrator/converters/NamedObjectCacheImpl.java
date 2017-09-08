@@ -11,20 +11,20 @@ public class NamedObjectCacheImpl<K> implements NamedObjectCache<K> {
 	private final Map<K, Map<String, Object>> cacheMap = new HashMap<K, Map<String, Object>>();
 
 	@Override
-	public <T> T getCachedReference(K keySpace, String name) {
+	public Object getCachedReference(K keySpace, String name) {
 		Map<String, Object> stringObjectMap = cacheMap.get(keySpace);
 
 		if (stringObjectMap != null) {
 			Object o = stringObjectMap.get(name);
 			if (o != null) {
-				return (T) o;
+				return o;
 			}
 		}
 		throw new RuntimeException("Failed to find " + keySpace + ":" + name + " in cache");
 	}
 
 	@Override
-	public <T> void addCacheReference(K keySpace, String name, T t) {
+	public void addCacheReference(K keySpace, String name, Object t) {
 		if (!cacheMap.containsKey(keySpace)) {
 			cacheMap.put(keySpace, new HashMap<String, Object>());
 		}

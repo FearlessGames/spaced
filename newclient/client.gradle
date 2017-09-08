@@ -1,5 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'net.ltgt.errorprone'
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -68,6 +70,15 @@ task runInstaller(type: JavaExec) {
 	main = 'se.spaced.client.launcher.installer.Installer'
 	args = ['--server=localhost:http://localhost:9000/InformationService']
 	jvmArgs = applicationDefaultJvmArgs
+}
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs += [
+			'-Xep:FutureReturnValueIgnored:OFF',
+			//'-Xep:TypeParameterUnusedInFormals:OFF',
+			//'-Xep:ClassNewInstance:OFF',
+			//'-Xep:FunctionalInterfaceClash:OFF'
+	]
 }
 
 test {

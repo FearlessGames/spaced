@@ -6,8 +6,6 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.time.SystemTimeProvider;
-import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
@@ -40,7 +38,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.mock;
 import static se.mockachino.Mockachino.setupMocks;
 
@@ -48,7 +48,6 @@ import static se.mockachino.Mockachino.setupMocks;
 public class BrainTemplateHibernateTest extends PersistentTestBase {
 	CreatureTypeDao creatureTypeDao;
 	private BrainTemplateDao brainTemplateDao;
-	private TimeProvider timeProvider = new SystemTimeProvider();
 	private SpellCombatService spellCombatService;
 
 	@Mock

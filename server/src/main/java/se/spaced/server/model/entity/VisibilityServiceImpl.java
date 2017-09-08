@@ -130,16 +130,16 @@ public class VisibilityServiceImpl implements VisibilityService {
 	}
 
 	@Override
-	public void entityRemoved(final ServerEntity entity) {
+	public void entityRemoved(final ServerEntity removedEntity) {
 		lock.lock();
 		try {
-			Collection<ServerEntity> entityCollection = canSee.get(entity);
+			Collection<ServerEntity> entityCollection = canSee.get(removedEntity);
 			if (entityCollection != null) {
-				for (ServerEntity other : entityCollection) {
-					entityCantSee(other, entity);
+				for (ServerEntity entity : entityCollection) {
+					entityCantSee(entity, removedEntity);
 				}
 			}
-			canSee.removeAll(entity);
+			canSee.removeAll(removedEntity);
 		} finally {
 			lock.unlock();
 		}

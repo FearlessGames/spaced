@@ -12,9 +12,9 @@ public class GeometryFactory {
 	}
 
 	@SuppressWarnings("unchecked")
-	<T extends Geometry> T getGeometryFromContent(String content) throws GeometryException {
+	<T extends Geometry> T getGeometryFromContent(String content, Class<T> tClass) throws GeometryException {
 		try {
-			return (T) xstream.fromXML(content);
+			return tClass.cast(xstream.fromXML(content));
 		} catch (StreamException se) {
 			throw new GeometryException("Faulty Geometry XML");
 		} catch (ClassCastException cce) {

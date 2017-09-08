@@ -33,7 +33,10 @@ import se.spaced.shared.util.ListenerDispatcher;
 
 import java.util.List;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyNever;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.Mockachino.when;
 import static se.mockachino.matchers.Matchers.any;
 import static se.mockachino.matchers.Matchers.notSame;
 
@@ -133,7 +136,7 @@ public class ClientVendorMessagesAuthTest {
 		PersistedMoney money = new PersistedMoney(new PersistedCurrency("Dollar"), 1000L);
 		when(item.getSellsFor()).thenReturn(money);
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerSellsItemsToVendor(watto, Lists.newArrayList(item));
 
@@ -150,7 +153,7 @@ public class ClientVendorMessagesAuthTest {
 
 		ServerItem item = null;
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerSellsItemsToVendor(watto, Lists.newArrayList(item));
 
@@ -167,7 +170,7 @@ public class ClientVendorMessagesAuthTest {
 
 		ServerItem item = mock(ServerItem.class);
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerSellsItemsToVendor(watto, Lists.newArrayList(item));
 
@@ -185,7 +188,7 @@ public class ClientVendorMessagesAuthTest {
 		PersistedMoney money = new PersistedMoney(new PersistedCurrency("Dollar"), 1000L);
 		when(item.getSellsFor()).thenReturn(money);
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerBuysItemFromVendor(watto, item);
 
@@ -201,7 +204,7 @@ public class ClientVendorMessagesAuthTest {
 		PersistedMoney money = new PersistedMoney(new PersistedCurrency("Dollar"), 1000L);
 		when(item.getSellsFor()).thenReturn(money);
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerBuysItemFromVendor(watto, item);
 	}
@@ -213,7 +216,7 @@ public class ClientVendorMessagesAuthTest {
 		when(vendorService.isVendor(watto)).thenReturn(true);
 
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerBuysItemFromVendor(watto, null);
 
@@ -258,7 +261,7 @@ public class ClientVendorMessagesAuthTest {
 		when(item.getSellsFor()).thenReturn(money);
 		moveOutOfRange();
 
-		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.<ServerEntity>newHashSet(player));
+		when(vendorService.getCurrentPeopleVendoring(watto)).thenReturn(Sets.newHashSet(player));
 
 		clientVendorMessagesAuth.playerBuysItemFromVendor(watto, item);
 

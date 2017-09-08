@@ -2,7 +2,11 @@ package se.spaced.shared.model.stats;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Maps;
-import se.fearless.common.stats.*;
+import se.fearless.common.stats.AbstractStat;
+import se.fearless.common.stats.AuraStats;
+import se.fearless.common.stats.MutableStat;
+import se.fearless.common.stats.SimpleStat;
+import se.fearless.common.stats.Stat;
 import se.fearless.common.time.TimeProvider;
 
 import java.util.Map;
@@ -263,10 +267,7 @@ public class EntityStats {
 		if (!shieldRecovery.equals(stats.shieldRecovery)) {
 			return false;
 		}
-		if (!shieldStrength.equals(stats.shieldStrength)) {
-			return false;
-		}
-		return true;
+		return shieldStrength.equals(stats.shieldStrength);
 	}
 
 	@Override

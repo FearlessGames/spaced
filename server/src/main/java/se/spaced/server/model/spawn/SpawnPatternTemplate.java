@@ -2,20 +2,30 @@ package se.spaced.server.model.spawn;
 
 import com.google.common.collect.Lists;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import org.hibernate.annotations.*;
+import org.hibernate.annotations.Any;
+import org.hibernate.annotations.AnyMetaDef;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.MetaValue;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.action.ActionScheduler;
 import se.spaced.server.model.entity.EntityService;
-import se.spaced.server.model.spawn.area.*;
+import se.spaced.server.model.spawn.area.CompositeSpawnArea;
+import se.spaced.server.model.spawn.area.PolygonSpaceSpawnArea;
+import se.spaced.server.model.spawn.area.RandomSpaceSpawnArea;
+import se.spaced.server.model.spawn.area.SinglePointSpawnArea;
+import se.spaced.server.model.spawn.area.SpawnArea;
 import se.spaced.server.net.broadcast.SmrtBroadcaster;
 import se.spaced.server.persistence.dao.impl.ExternalPersistableBase;
 import se.spaced.shared.util.random.RandomProvider;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -44,7 +54,7 @@ public class SpawnPatternTemplate extends ExternalPersistableBase {
 
 
 	protected SpawnPatternTemplate() {
-		this(null, null, Collections.<MobSpawnTemplate>emptyList(), null);
+		this(null, null, Collections.emptyList(), null);
 	}
 
 	public SpawnPatternTemplate(UUID uuid, SpawnArea area, Collection<MobSpawnTemplate> mobSpawnTemplates, String name) {

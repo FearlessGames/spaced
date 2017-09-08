@@ -106,8 +106,8 @@ public enum SpacedRotationOrder {
      * @param a2 axis of the second rotation
      * @param a3 axis of the third rotation
      */
-    private SpacedRotationOrder(final String name,
-                          final SpacedVector3 a1, final SpacedVector3 a2, final SpacedVector3 a3) {
+    SpacedRotationOrder(final String name,
+                        final SpacedVector3 a1, final SpacedVector3 a2, final SpacedVector3 a3) {
         this.name = name;
         this.a1   = a1;
         this.a2   = a2;

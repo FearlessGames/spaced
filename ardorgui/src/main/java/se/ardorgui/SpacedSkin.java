@@ -1,29 +1,6 @@
 package se.ardorgui;
 
-import com.ardor3d.extension.ui.LabelState;
-import com.ardor3d.extension.ui.Orientation;
-import com.ardor3d.extension.ui.UIButton;
-import com.ardor3d.extension.ui.UICheckBox;
-import com.ardor3d.extension.ui.UIComboBox;
-import com.ardor3d.extension.ui.UIComponent;
-import com.ardor3d.extension.ui.UIFrame;
-import com.ardor3d.extension.ui.UIFrameBar;
-import com.ardor3d.extension.ui.UIFrameStatusBar;
-import com.ardor3d.extension.ui.UILabel;
-import com.ardor3d.extension.ui.UIPanel;
-import com.ardor3d.extension.ui.UIPasswordField;
-import com.ardor3d.extension.ui.UIPopupMenu;
-import com.ardor3d.extension.ui.UIProgressBar;
-import com.ardor3d.extension.ui.UIRadioButton;
-import com.ardor3d.extension.ui.UIScrollBar;
-import com.ardor3d.extension.ui.UISlider;
-import com.ardor3d.extension.ui.UISliderKnob;
-import com.ardor3d.extension.ui.UIState;
-import com.ardor3d.extension.ui.UITab;
-import com.ardor3d.extension.ui.UITabbedPane;
-import com.ardor3d.extension.ui.UITextArea;
-import com.ardor3d.extension.ui.UITextField;
-import com.ardor3d.extension.ui.UITooltip;
+import com.ardor3d.extension.ui.*;
 import com.ardor3d.extension.ui.backdrop.EmptyBackdrop;
 import com.ardor3d.extension.ui.backdrop.GradientBackdrop;
 import com.ardor3d.extension.ui.backdrop.ImageBackdrop;
@@ -642,7 +619,7 @@ public class SpacedSkin extends Skin {
 
 	@Override
 	protected void applyToPanel(final UIPanel component) {
-		; // nothing to do
+		// nothing to do
 	}
 
 	@Override

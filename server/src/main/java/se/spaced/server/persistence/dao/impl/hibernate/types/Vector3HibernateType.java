@@ -54,7 +54,7 @@ public class Vector3HibernateType implements CompositeUserType {
 
 	@Override
 	public boolean equals(Object x, Object y) throws HibernateException {
-		return x == null && y == null || x != null && x.equals(y);
+		return ((x == null) && (y == null)) || ((x != null) && x.equals(y));
 	}
 
 	@Override
@@ -68,9 +68,9 @@ public class Vector3HibernateType implements CompositeUserType {
 			String[] names,
 			SessionImplementor session,
 			Object owner) throws HibernateException, SQLException {
-		Double x = (Double) StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[0], session);
-		Double y = (Double) StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[1], session);
-		Double z = (Double) StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[2], session);
+		Double x = StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[0], session);
+		Double y = StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[1], session);
+		Double z = StandardBasicTypes.DOUBLE.nullSafeGet(rs, names[2], session);
 		if (x == null || y == null || z == null) {
 			return null;
 		}
@@ -128,6 +128,6 @@ public class Vector3HibernateType implements CompositeUserType {
 			SessionImplementor session,
 			Object owner) throws HibernateException {
 		// TODO: is this correct?
-		return (SpacedVector3) target;
+		return target;
 	}
 }

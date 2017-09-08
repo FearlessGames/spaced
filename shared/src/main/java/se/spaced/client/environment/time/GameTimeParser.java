@@ -21,8 +21,8 @@ public class GameTimeParser {
 			if (minutes >= timeInfo.getMinutesPerHour()) {
 				throw new IllegalArgumentException("Out of range: " + s);
 			}
-			long millisFromMinutes = 1000 * timeInfo.getSecondsPerMinute() * minutes;
-			long millisFromHours = 1000 * timeInfo.getSecondsPerMinute() * timeInfo.getMinutesPerHour() * hours;
+			long millisFromMinutes = 1000L * timeInfo.getSecondsPerMinute() * minutes;
+			long millisFromHours = 1000L * timeInfo.getSecondsPerMinute() * timeInfo.getMinutesPerHour() * hours;
 			return new GameTime((long) ((millisFromHours + millisFromMinutes) * timeInfo.getSpeedFactor()));
 		}
 		throw new IllegalArgumentException("Could not parse: " + s);

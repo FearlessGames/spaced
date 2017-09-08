@@ -36,11 +36,7 @@ public class ZoneInterpolator {
 
 			Pair pair = (Pair) o;
 
-			if (!zone.equals(pair.zone)) {
-				return false;
-			}
-
-			return true;
+			return zone.equals(pair.zone);
 		}
 
 		@Override

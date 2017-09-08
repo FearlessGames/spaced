@@ -13,13 +13,10 @@ public class BasicComponentArea implements ComponentArea {
 
 	@Override
 	public boolean isInside(final int x, final int y) {
-		if (x > - halfWidth &&
-			x < + halfWidth &&
-			y > - halfHeight &&
-			y < + halfHeight) {
-			return true;
-		}
-		return false;
+		return x > -halfWidth &&
+				x < +halfWidth &&
+				y > -halfHeight &&
+				y < +halfHeight;
 	}
 
 	@Override

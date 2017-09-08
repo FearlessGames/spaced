@@ -6,7 +6,11 @@ import se.spaced.shared.util.QueueRunner;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ResourceUpdater {
 	private static final String BASE_PATH = System.getProperty("user.home") + File.separator + ".spaced" + File.separator;
@@ -127,7 +131,7 @@ public class ResourceUpdater {
 		return totalDownloadSize;
 	}
 
-	private class Entry {
+	private static class Entry {
 		private final String path;
 		private final String crc32;
 		private final long size;

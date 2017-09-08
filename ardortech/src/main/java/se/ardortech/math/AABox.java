@@ -154,11 +154,7 @@ public class AABox implements Box {
 		if (!max.equals(aaBox.max)) {
 			return false;
 		}
-		if (!min.equals(aaBox.min)) {
-			return false;
-		}
-
-		return true;
+		return min.equals(aaBox.min);
 	}
 
 	@Override

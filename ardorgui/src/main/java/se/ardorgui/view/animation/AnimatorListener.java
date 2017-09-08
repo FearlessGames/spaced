@@ -1,6 +1,6 @@
 package se.ardorgui.view.animation;
 
 public interface AnimatorListener {
-	public void animationFinished(SpatialAnimator animator);
-	public void animationAborted(SpatialAnimator animator);
+	void animationFinished(SpatialAnimator animator);
+	void animationAborted(SpatialAnimator animator);
 }

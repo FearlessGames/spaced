@@ -232,7 +232,7 @@ public class OggInputStream extends FilterInputStream {
 	 * OggInputStream does not support mark and reset. This function does nothing.
 	 */
 	@Override
-	public void reset() throws IOException {
+	public synchronized void reset() throws IOException {
 	}
 
 
@@ -542,6 +542,7 @@ public class OggInputStream extends FilterInputStream {
 	/**
 	 * Gets information on the ogg.
 	 */
+	@Override
 	public String toString() {
 		String s = "";
 		s = s + "version         " + info.version + "\n";

@@ -19,7 +19,11 @@ import se.spaced.client.model.cooldown.ClientCooldownServiceImpl;
 import se.spaced.client.model.spelleffects.ClientGrantSpellEffect;
 import se.spaced.client.model.spelleffects.ClientSpellEffect;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.messages.protocol.*;
+import se.spaced.messages.protocol.AuraTemplate;
+import se.spaced.messages.protocol.Cooldown;
+import se.spaced.messages.protocol.CooldownData;
+import se.spaced.messages.protocol.CooldownProxy;
+import se.spaced.messages.protocol.Spell;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.model.MagicSchool;
 import se.spaced.shared.network.protocol.codec.datatype.SpellData;
@@ -33,7 +37,9 @@ import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubAnswer;
+import static se.mockachino.Mockachino.verifyOnce;
 import static se.mockachino.matchers.Matchers.any;
 
 public class SpellListenerTest {
@@ -129,9 +135,9 @@ public class SpellListenerTest {
 				new IntervalInt(20, 30),
 				"somepath2",
 				4,
-				Collections.<Cooldown>emptyList(),
+				Collections.emptyList(),
 				false,
-				Collections.<AuraTemplate>emptySet(), Collections.<SpellEffect>emptyList());
+				Collections.emptySet(), Collections.emptyList());
 		stubAnswer(new CallHandler() {
 			@Override
 			public Object invoke(Object obj, MethodCall call) throws Throwable {

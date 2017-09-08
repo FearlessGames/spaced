@@ -4,19 +4,10 @@ import com.google.inject.Inject;
 import se.spaced.server.model.spawn.SpawnPatternTemplate;
 import se.spaced.shared.tools.ui.FilteredJList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GraphicsEnvironment;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -192,11 +183,7 @@ public class SpawnPatternToolViewImpl extends JFrame implements SpawnPatternTool
 
 			SpawnPatternTemplateListItem that = (SpawnPatternTemplateListItem) o;
 
-			if (spawnPatternTemplate != null ? !spawnPatternTemplate.equals(that.spawnPatternTemplate) : that.spawnPatternTemplate != null) {
-				return false;
-			}
-
-			return true;
+			return spawnPatternTemplate != null ? spawnPatternTemplate.equals(that.spawnPatternTemplate) : that.spawnPatternTemplate == null;
 		}
 
 		@Override

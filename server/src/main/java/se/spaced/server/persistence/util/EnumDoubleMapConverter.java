@@ -42,7 +42,7 @@ public class EnumDoubleMapConverter<K extends Enum<K>> implements Converter {
 		while (reader.hasMoreChildren()) {
 			reader.moveDown();
 			String nodeName = reader.getNodeName();
-			K key = K.valueOf(enumClass, nodeName);
+			K key = Enum.valueOf(enumClass, nodeName);
 
 			String value = reader.getValue();
 			Double doubleValue = Double.valueOf(value);

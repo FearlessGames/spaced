@@ -32,7 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static se.mockachino.Mockachino.*;
 import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
@@ -45,7 +47,6 @@ public class VendorServiceImplTest extends ScenarioTestBase {
 	@Mock
 	private Mob vendor;
 
-	private VendorServiceImpl vendorService;
 	private S2CProtocol playerReciever;
 	private Player player;
 	private ServerItemTemplate fooTemplate;
@@ -75,13 +76,6 @@ public class VendorServiceImplTest extends ScenarioTestBase {
 		playerReciever = MockUtil.deepMock(S2CProtocol.class);
 		player = playerFactory.createPlayer("Alice");
 		entityService.addEntity(player, playerReciever);
-
-		vendorService = new VendorServiceImpl(
-				itemService,
-				inventoryService,
-				moneyService,
-				smrtBroadcaster
-		);
 	}
 
 	@Test

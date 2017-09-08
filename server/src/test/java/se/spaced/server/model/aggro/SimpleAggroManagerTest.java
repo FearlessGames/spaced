@@ -11,7 +11,7 @@ import java.util.Random;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
 
 public class SimpleAggroManagerTest {
 	@Test
@@ -113,7 +113,7 @@ public class SimpleAggroManagerTest {
 		aggro.addHate(mob1, 2);
 		aggro.addHate(mob2, 3);
 		aggro.addHate(mob3, 4);
-		ArrayList<ServerEntity> mobs = Lists.<ServerEntity>newArrayList(mob1, mob2, mob3);
+		ArrayList<ServerEntity> mobs = Lists.newArrayList(mob1, mob2, mob3);
 		for (int i = 0; i < 1000; i++) {
 			ServerEntity randomHated = aggro.getRandomHated();
 			assertTrue(mobs.contains(randomHated));
@@ -132,7 +132,7 @@ public class SimpleAggroManagerTest {
 		aggro.addHate(mob2, 3);
 		aggro.addHate(mob3, 4);
 		aggro.addHate(mob4, 5);
-		ArrayList<ServerEntity> mobs = Lists.<ServerEntity>newArrayList(mob1, mob2, mob3);
+		ArrayList<ServerEntity> mobs = Lists.newArrayList(mob1, mob2, mob3);
 		for (int i = 0; i < 1000; i++) {
 			ServerEntity randomHated = aggro.getRandomHated(mob4);
 			assertTrue(mobs.contains(randomHated));

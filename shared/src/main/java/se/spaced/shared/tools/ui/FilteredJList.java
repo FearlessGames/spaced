@@ -1,19 +1,16 @@
 package se.spaced.shared.tools.ui;
 
-import javax.swing.AbstractListModel;
-import javax.swing.JList;
-import javax.swing.JTextField;
-import javax.swing.ListModel;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilteredJList<T> extends JList {
+public class FilteredJList<T> extends JList<T> {
 	private final TextField filterField;
-	private final FilterModel<T> filterModel;
+	private final FilterModel filterModel;
 
 	public FilteredJList() {
 		super();
-		filterModel = new FilterModel<T>();
+		filterModel = new FilterModel();
 		super.setModel(filterModel);
 		filterField = new TextField();
 
@@ -29,7 +26,7 @@ public class FilteredJList<T> extends JList {
 	@Override
 	@SuppressWarnings("unchecked")
 	public T getSelectedValue() {
-		return (T) super.getSelectedValue();
+		return super.getSelectedValue();
 	}
 
 
@@ -58,7 +55,7 @@ public class FilteredJList<T> extends JList {
 		filterModel.removeElement(selectedValue);
 	}
 
-	private class FilterModel<T> extends AbstractListModel {
+	private class FilterModel extends AbstractListModel<T> {
 		List<T> items;
 		List<T> filterItems;
 
@@ -74,7 +71,7 @@ public class FilteredJList<T> extends JList {
 		}
 
 		@Override
-		public Object getElementAt(int index) {
+		public T getElementAt(int index) {
 			if (filterItems.isEmpty()) {
 				return null;
 			}

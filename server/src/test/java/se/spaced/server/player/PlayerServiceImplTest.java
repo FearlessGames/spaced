@@ -6,8 +6,6 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 import se.ardortech.math.SpacedVector3;
-import se.fearless.common.time.MockTimeProvider;
-import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.messages.protocol.s2c.S2CProtocol;
@@ -35,7 +33,10 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.util.Collection;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static se.mockachino.Mockachino.mock;
 import static se.mockachino.Mockachino.setupMocks;
 
@@ -46,7 +47,6 @@ public class PlayerServiceImplTest extends PersistentTestBase {
 	private PersistedCreatureType creatureType;
 	private PersistedFaction faction;
 	private Player player;
-	private TimeProvider timeProvider;
 	private SpellCombatService spellCombatService;
 
 	private VisibilityService visibilityService;
@@ -56,7 +56,6 @@ public class PlayerServiceImplTest extends PersistentTestBase {
 		setupMocks(this);
 
 		spellCombatService = mock(SpellCombatService.class);
-		timeProvider = new MockTimeProvider();
 		SmrtBroadcaster<S2CProtocol> smrtBroadcaster = mock(SmrtBroadcasterImpl.class);
 		visibilityService = new VisibilityServiceImpl(mock(EntityService.class), ListenerDispatcher.create(AppearanceService.class));
 		ActionScheduler actionScheduler = mock(ActionScheduler.class);

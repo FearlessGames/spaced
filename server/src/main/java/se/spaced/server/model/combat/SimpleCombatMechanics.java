@@ -108,10 +108,7 @@ public class SimpleCombatMechanics implements CombatMechanics {
 		double currentHeat = heat.getValue();
 		log.debug("Heat is {}", currentHeat);
 		double maxHeat = performer.getBaseStats().getMaxHeat().getValue();
-		if (currentHeat >= (maxHeat - spell.getHeatContribution())) {
-			return true;
-		}
-		return false;
+		return currentHeat >= (maxHeat - spell.getHeatContribution());
 	}
 
 	@Override

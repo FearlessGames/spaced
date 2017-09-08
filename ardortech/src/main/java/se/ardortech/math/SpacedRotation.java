@@ -1169,11 +1169,7 @@ public class SpacedRotation implements Serializable {
 		if (Double.compare(that.y, y) != 0) {
 			return false;
 		}
-		if (Double.compare(that.z, z) != 0) {
-			return false;
-		}
-
-		return true;
+		return Double.compare(that.z, z) == 0;
 	}
 
 	@Override

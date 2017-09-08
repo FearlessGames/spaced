@@ -9,7 +9,7 @@ public class AsynchEffect {
 	private volatile State state = State.INIT;
 	private volatile boolean running;
 
-	private static enum State {
+	private enum State {
 		INIT, WAITING, NOT_STARTED, STARTED
 	}
 
@@ -24,9 +24,13 @@ public class AsynchEffect {
 			case INIT:
 				requestEffect();
 				break;
+			case WAITING:
+				break;
 			case NOT_STARTED:
 				effectSystem.startEffect(effect);
 				state = State.STARTED;
+				break;
+			case STARTED:
 				break;
 		}
 		running = true;

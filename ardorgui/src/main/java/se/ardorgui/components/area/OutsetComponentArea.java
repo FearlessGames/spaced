@@ -1,6 +1,6 @@
 package se.ardorgui.components.area;
 
-import java.awt.Insets;
+import java.awt.*;
 
 // TODO: What should this class be used for?
 public class OutsetComponentArea extends BasicComponentArea {
@@ -23,13 +23,10 @@ public class OutsetComponentArea extends BasicComponentArea {
 			outsetBottom = outsets.bottom;
 		}
 
-		if (x > - super.getWidth()  / 2 + outsetLeft &&
-			x < + super.getWidth()  / 2 - outsetRight &&
-			y > - super.getHeight() / 2 + outsetBottom	&&
-			y < + super.getHeight() / 2 - outsetTop) {
-			return true;
-		}
-		return false;
+		return x > -super.getWidth() / 2 + outsetLeft &&
+				x < +super.getWidth() / 2 - outsetRight &&
+				y > -super.getHeight() / 2 + outsetBottom &&
+				y < +super.getHeight() / 2 - outsetTop;
 	}
 
 	@Override

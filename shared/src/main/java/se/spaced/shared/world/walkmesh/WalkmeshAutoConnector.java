@@ -13,7 +13,7 @@ import se.ardortech.math.SpacedVector3;
 import se.spaced.shared.world.area.Polygon;
 import se.spaced.shared.xml.SharedXStreamRegistry;
 
-import javax.swing.JFileChooser;
+import javax.swing.*;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -88,7 +88,7 @@ public class WalkmeshAutoConnector {
 		if (size == 2) {
 			return true;
 		} else if (size > 2) {
-			log.warn("{} points in common {} and {}", new Object[]{size, walkmeshPolygon1, walkmeshPolygon2});
+			log.warn("{} points in common {} and {}", size, walkmeshPolygon1, walkmeshPolygon2);
 		}
 		return false;
 	}
@@ -124,6 +124,7 @@ public class WalkmeshAutoConnector {
 			return second;
 		}
 
+		@Override
 		public boolean equals(Object o) {
 			if (this == o) {
 				return true;
@@ -139,6 +140,7 @@ public class WalkmeshAutoConnector {
 					pair.second)) && (second == null ? pair.first == null : second.equals(pair.first))));
 		}
 
+		@Override
 		public int hashCode() {
 			int firstHashCode = (first == null ? 0 : first.hashCode());
 			int secondHashCode = (second == null ? 0 : second.hashCode());
@@ -149,6 +151,7 @@ public class WalkmeshAutoConnector {
 			}
 		}
 
+		@Override
 		public String toString() {
 			String firstString = getFirst().toString();
 			String secondString = getSecond().toString();

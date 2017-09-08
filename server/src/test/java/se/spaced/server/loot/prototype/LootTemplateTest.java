@@ -9,14 +9,25 @@ import org.junit.Test;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
 import se.fearless.common.uuid.UUIDMockFactory;
-import se.spaced.server.loot.*;
+import se.spaced.server.loot.KofNLootTemplate;
+import se.spaced.server.loot.Loot;
+import se.spaced.server.loot.LootTemplateProbability;
+import se.spaced.server.loot.MultiLootTemplate;
+import se.spaced.server.loot.SingleItemLootTemplate;
 import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.shared.util.random.RandomProvider;
 import se.spaced.shared.util.random.RealRandomProvider;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 import static se.mockachino.Mockachino.mock;
 
 
@@ -30,15 +41,6 @@ public class LootTemplateTest {
 		uuidFactory = new UUIDMockFactory();
 	}
 
-	//@Test invalid
-	public void testSimpleCaseNoLootForYou() {
-		ServerItemTemplate itemTemplate = mock(ServerItemTemplate.class);
-		SingleItemLootTemplate loot = new SingleItemLootTemplate(uuidFactory.combUUID(), "templateName", itemTemplate);
-
-		Collection<Loot> list = loot.generateLoot(randomProvider);
-
-		assertTrue(list.isEmpty());
-	}
 
 	@Test
 	public void testSimpleCaseAlwaysGetLoot() {
@@ -49,21 +51,6 @@ public class LootTemplateTest {
 
 		assertFalse(list.isEmpty());
 		assertEquals(itemTemplate, list.iterator().next().getItemTemplate());
-	}
-
-	//@Test invalid
-	public void testSimpleCaseSometimesGetLoot() {
-		ServerItemTemplate itemTemplate = mock(ServerItemTemplate.class);
-		SingleItemLootTemplate loot = new SingleItemLootTemplate(uuidFactory.combUUID(), "templateName", itemTemplate);
-
-		int count = 0;
-		for (int i = 0; i < 100; i++) {
-			Collection<Loot> list = loot.generateLoot(randomProvider);
-			assertTrue(1 >= list.size());
-			count += list.size();
-		}
-
-		assertEquals(49, count);
 	}
 
 	@Test
@@ -97,7 +84,7 @@ public class LootTemplateTest {
 
 		KofNLootTemplate lootTemplate = new KofNLootTemplate(uuidFactory.combUUID(),
 				"templateName",
-				1, Sets.<LootTemplateProbability>newHashSet(loot1, loot2, loot3, loot4)
+				1, Sets.newHashSet(loot1, loot2, loot3, loot4)
 		);
 
 		Multiset<ServerItemTemplate> freq = ConcurrentHashMultiset.create();
@@ -130,7 +117,7 @@ public class LootTemplateTest {
 
 		KofNLootTemplate lootTemplate = new KofNLootTemplate(uuidFactory.combUUID(),
 				"templateName",
-				1, Sets.<LootTemplateProbability>newHashSet(loot1, loot2, loot3, loot4)
+				1, Sets.newHashSet(loot1, loot2, loot3, loot4)
 		);
 
 		Multiset<ServerItemTemplate> freq = ConcurrentHashMultiset.create();
@@ -163,7 +150,7 @@ public class LootTemplateTest {
 
 		KofNLootTemplate lootTemplate = new KofNLootTemplate(uuidFactory.combUUID(),
 				"templateName",
-				2, Sets.<LootTemplateProbability>newHashSet(loot1, loot2, loot3, loot4)
+				2, Sets.newHashSet(loot1, loot2, loot3, loot4)
 		);
 
 		Multiset<ServerItemTemplate> freq = ConcurrentHashMultiset.create();

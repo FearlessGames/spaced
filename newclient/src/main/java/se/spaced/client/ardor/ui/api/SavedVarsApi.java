@@ -9,6 +9,9 @@ import se.krka.kahlua.integration.annotations.LuaMethod;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class SavedVarsApi {
 	private final Logger log = LoggerFactory.getLogger(getClass());
@@ -28,12 +31,14 @@ public class SavedVarsApi {
 		File file = new File(rootDirectory, path);
 		new File(file.getParent()).mkdirs();
 		try {
-			PrintWriter writer = new PrintWriter(file);
+			PrintWriter writer = new PrintWriter(file, UTF_8.name());
 			writer.print(data);
 			writer.flush();
 			writer.close();
 		} catch (FileNotFoundException e) {
 			log.error("Failed to open file: " + file, e);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
 		}
 	}
 }

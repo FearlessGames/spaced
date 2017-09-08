@@ -49,11 +49,7 @@ public class CreatureType {
 		if (name != null ? !name.equals(that.name) : that.name != null) {
 			return false;
 		}
-		if (pk != null ? !pk.equals(that.pk) : that.pk != null) {
-			return false;
-		}
-
-		return true;
+		return pk != null ? pk.equals(that.pk) : that.pk == null;
 	}
 
 	@Override

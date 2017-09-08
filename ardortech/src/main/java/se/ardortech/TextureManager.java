@@ -12,5 +12,5 @@ public interface TextureManager {
 	Future<Texture> loadTexture(String textureFile, TextureLoadCallback callback);
 	Future<Texture> loadTexture(String textureFile, TextureLoadCallback callback, boolean flip);
 
-	public void onAfterTextureLoad(TextureKey source, Texture texture);
+	void onAfterTextureLoad(TextureKey source, Texture texture);
 }

@@ -1,6 +1,6 @@
 package se.ardorgui.components.editbox;
 
 public interface EditBoxListener {
-	public void textChanged(EditBox editBox);
-	public void returnPressed(EditBox editBox);
+	void textChanged(EditBox editBox);
+	void returnPressed(EditBox editBox);
 }

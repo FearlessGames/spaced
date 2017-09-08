@@ -18,15 +18,15 @@ public class ActionSchedulerTest {
 		ArrayList<String> list = Lists.newArrayList();
 
 		for (int i = 0; i < 10; i++) {
-			scheduler.add(new DummyAction(1 << 36, "middle" + i, list));
+			scheduler.add(new DummyAction(1L << 36, "middle" + i, list));
 		}
 
-		scheduler.add(new DummyAction(1 << 50, "last", list));
-		scheduler.add(new DummyAction(1 << 40, "secondToLast", list));
+		scheduler.add(new DummyAction(1L << 50, "last", list));
+		scheduler.add(new DummyAction(1L << 40, "secondToLast", list));
 		scheduler.add(new DummyAction(10, "second", list));
 		scheduler.add(new DummyAction(0, "first", list));
 
-		long now = 1l << 52;
+		long now = 1L << 52;
 		scheduler.tick(now);
 		assertTrue(scheduler.isEmpty());
 		assertEquals(14, list.size());

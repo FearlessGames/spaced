@@ -1,15 +1,6 @@
 package se.spaced.client.ardor.terrain;
 
-import com.ardor3d.extension.terrain.client.TerrainCache;
-import com.ardor3d.extension.terrain.client.TerrainConfiguration;
-import com.ardor3d.extension.terrain.client.TerrainDataProvider;
-import com.ardor3d.extension.terrain.client.TerrainGridCache;
-import com.ardor3d.extension.terrain.client.TerrainSource;
-import com.ardor3d.extension.terrain.client.TextureCache;
-import com.ardor3d.extension.terrain.client.TextureClipmap;
-import com.ardor3d.extension.terrain.client.TextureConfiguration;
-import com.ardor3d.extension.terrain.client.TextureGridCache;
-import com.ardor3d.extension.terrain.client.TextureSource;
+import com.ardor3d.extension.terrain.client.*;
 import com.ardor3d.extension.terrain.util.BresenhamYUpGridTracer;
 import com.ardor3d.extension.terrain.util.TerrainGridCachePanel;
 import com.ardor3d.extension.terrain.util.TextureGridCachePanel;
@@ -17,7 +8,7 @@ import com.ardor3d.math.Vector3;
 import com.ardor3d.renderer.Camera;
 import com.google.common.collect.Lists;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +72,7 @@ public class TerrainWithLightsOnGroundBuilder {
 		final int tileSize = terrainConfiguration.getCacheGridSize();
 
 		int cacheSize = (clipmapTerrainSize + 1) / tileSize + 4;
-		cacheSize += cacheSize & 1 ^ 1;
+		cacheSize += (cacheSize & 1) ^ 1;
 
 		final List<TerrainCache> cacheList = Lists.newArrayList();
 		TerrainCache parentCache = null;
@@ -126,7 +117,7 @@ public class TerrainWithLightsOnGroundBuilder {
 		final int tileSize = textureConfiguration.getCacheGridSize();
 
 		int cacheSize = (clipmapTextureSize + 1) / tileSize + 4;
-		cacheSize += cacheSize & 1 ^ 1;
+		cacheSize += (cacheSize & 1) ^ 1;
 
 		final List<TextureCache> cacheList = Lists.newArrayList();
 		TextureCache parentCache = null;

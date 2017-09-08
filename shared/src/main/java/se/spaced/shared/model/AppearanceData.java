@@ -83,11 +83,7 @@ public class AppearanceData {
 			return false;
 		}
 
-		if (!scale.equals(equippedSlot.scale)) {
-			return false;
-		}
-
-		return true;
+		return scale.equals(equippedSlot.scale);
 
 	}
 }

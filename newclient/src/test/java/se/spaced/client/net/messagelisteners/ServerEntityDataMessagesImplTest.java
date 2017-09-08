@@ -19,8 +19,13 @@ import se.spaced.messages.protocol.ItemTemplate;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.shared.activecache.ActiveCache;
 import se.spaced.shared.events.EventHandler;
-import se.spaced.shared.model.*;
-import se.spaced.shared.model.items.ContainerType;
+import se.spaced.shared.model.AnimationState;
+import se.spaced.shared.model.AppearanceData;
+import se.spaced.shared.model.CreatureType;
+import se.spaced.shared.model.EntityInteractionCapability;
+import se.spaced.shared.model.EntityState;
+import se.spaced.shared.model.Faction;
+import se.spaced.shared.model.PositionalData;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.network.protocol.codec.datatype.EntityData;
 import se.spaced.shared.util.ListenerDispatcher;
@@ -28,8 +33,12 @@ import se.spaced.shared.util.ListenerDispatcher;
 import java.util.Collections;
 import java.util.EnumSet;
 
-import static org.junit.Assert.*;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.spy;
+import static se.mockachino.Mockachino.verifyOnce;
 import static se.mockachino.matchers.Matchers.match;
 import static se.mockachino.matchers.MatchersBase.mAny;
 
@@ -78,7 +87,7 @@ public class ServerEntityDataMessagesImplTest {
 				EnumSet.noneOf(EntityInteractionCapability.class));
 		ClientEntityProxy entity = new ClientEntityProxy(id);
 		assertFalse(entityCache.isKnown(entity));
-		messages.entityAppeared(entity, data, Collections.<ContainerType, ItemTemplate>emptyMap());
+		messages.entityAppeared(entity, data, Collections.emptyMap());
 
 		ArgumentCatcher<ClientEntity> argumentCatcher = ArgumentCatcher.create(mAny(ClientEntity.class));
 		verifyOnce().on(playbackService).add(match(argumentCatcher));
@@ -101,10 +110,10 @@ public class ServerEntityDataMessagesImplTest {
 				UUID.ZERO,
 				EnumSet.noneOf(EntityInteractionCapability.class));
 		ClientEntityProxy entity = new ClientEntityProxy(id);
-		messages.entityAppeared(entity, data, Collections.<ContainerType, ItemTemplate>emptyMap());
+		messages.entityAppeared(entity, data, Collections.emptyMap());
 		ClientEntityProxy entity2 = new ClientEntityProxy(id);
 
-		messages.entityAppeared(entity2, data, Collections.<ContainerType, ItemTemplate>emptyMap());
+		messages.entityAppeared(entity2, data, Collections.emptyMap());
 
 		ArgumentCatcher<ClientEntity> argumentCatcher = ArgumentCatcher.create(mAny(ClientEntity.class));
 		verifyOnce().on(playbackService).add(match(argumentCatcher));

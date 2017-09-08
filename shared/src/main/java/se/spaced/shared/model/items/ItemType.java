@@ -1,5 +1,6 @@
 package se.spaced.shared.model.items;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import se.krka.kahlua.integration.annotations.LuaMethod;
 
@@ -31,7 +32,7 @@ public enum ItemType {
 	CONSUMABLE(Usage.CONSUME, ContainerType.BAG_SLOT);
 
 	private final ContainerType mainSlot;
-	private final Set<ContainerType> occupiedSlots;
+	private final ImmutableSet<ContainerType> occupiedSlots;
 	private final Usage usage;
 
 	ItemType(Usage usage, ContainerType mainSlot, ContainerType... occupiedSlots) {

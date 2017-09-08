@@ -34,11 +34,7 @@ public class ClientItemProxy implements SpacedItem {
 
 		SpacedItem that = (SpacedItem) o;
 
-		if (!pk.equals(that.getPk())) {
-			return false;
-		}
-
-		return true;
+		return pk.equals(that.getPk());
 	}
 
 	@Override

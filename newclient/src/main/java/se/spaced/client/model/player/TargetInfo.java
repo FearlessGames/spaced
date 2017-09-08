@@ -70,11 +70,7 @@ public class TargetInfo {
 			return false;
 		}
 
-		if (uuid != null ? !uuid.equals(that.uuid) : that.uuid != null) {
-			return false;
-		}
-
-		return true;
+		return uuid != null ? uuid.equals(that.uuid) : that.uuid == null;
 	}
 
 	@Override

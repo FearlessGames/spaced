@@ -12,6 +12,7 @@ import se.mockachino.Mockachino;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 public class MockResourcesModule implements Module {
 
@@ -105,7 +106,7 @@ public class MockResourcesModule implements Module {
 				"\t<walkmeshFile>mobs/navmesh/fearless.xml</walkmeshFile>\n" +
 				"</se.spaced.shared.model.xmo.XmoRoot>\n" +
 				"\n";
-		return data.getBytes();
+		return data.getBytes(StandardCharsets.UTF_8);
 	}
 
 	private byte[] getOuterZoneWithNoChildren() {
@@ -128,7 +129,7 @@ public class MockResourcesModule implements Module {
 				"  <envInnerFadeDistance>15.0</envInnerFadeDistance>\n" +
 				"  <subzoneFiles/>\n" +
 				"</se.spaced.shared.resources.zone.Zone>";
-		return data.getBytes();
+		return data.getBytes(StandardCharsets.UTF_8);
 	}
 
 	private byte[] getPolyGraphData() {
@@ -473,7 +474,7 @@ public class MockResourcesModule implements Module {
 				"\t</connections>\n" +
 				"</walkmesh>";
 
-		return data.getBytes();
+		return data.getBytes(StandardCharsets.UTF_8);
 	}
 
 }

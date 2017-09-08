@@ -53,6 +53,7 @@ public class JinnginePhysics implements PhysicsWorld<Object> {
 	SpacedVector3 heightFieldP1;
 	SpacedVector3 heightFieldP2;
 
+	@Override
 	public void setManBodyVelocity(SpacedVector3 desiredVelocity) {
 		throw new UnsupportedOperationException();
 	}

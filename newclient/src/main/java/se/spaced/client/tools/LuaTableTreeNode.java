@@ -30,10 +30,12 @@ public class LuaTableTreeNode extends DefaultMutableTreeNode {
 		}
 	}
 
+	@Override
 	public boolean isLeaf() {
 		return objects.isEmpty();
 	}
 
+	@Override
 	public int getChildCount() {
 		if (!areChildrenDefined) {
 			defineChildNodes();

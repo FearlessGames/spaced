@@ -39,11 +39,7 @@ public class SoundSetting implements Interpolable<SoundSetting> {
 		if (soundChannel != that.soundChannel) {
 			return false;
 		}
-		if (soundFile != null ? !soundFile.equals(that.soundFile) : that.soundFile != null) {
-			return false;
-		}
-
-		return true;
+		return soundFile != null ? soundFile.equals(that.soundFile) : that.soundFile == null;
 	}
 
 	@Override

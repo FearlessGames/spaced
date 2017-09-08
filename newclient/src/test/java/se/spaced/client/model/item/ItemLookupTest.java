@@ -7,7 +7,6 @@ import org.junit.Test;
 import se.fearless.common.mock.MockUtil;
 import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.client.net.smrt.ServerConnection;
-import se.spaced.messages.protocol.AuraTemplate;
 import se.spaced.messages.protocol.ItemTemplate;
 import se.spaced.messages.protocol.ItemTemplateData;
 import se.spaced.messages.protocol.SpacedItem;
@@ -49,7 +48,7 @@ public class ItemLookupTest {
 			}
 		});
 		itemTemplateCache.setValue(itemTemplate, new ItemTemplateData(uuidMockFactory.combUUID(), "Foo template",
-				new AppearanceData("Model name", "portrait"), Lists.newArrayList(ItemType.GLOVES), Sets.<AuraTemplate>newHashSet(),
+				new AppearanceData("Model name", "portrait"), Lists.newArrayList(ItemType.GLOVES), Sets.newHashSet(),
 				Money.ZERO, null));
 		done.await();
 	}

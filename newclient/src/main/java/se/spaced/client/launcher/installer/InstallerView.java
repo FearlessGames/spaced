@@ -21,7 +21,7 @@ public interface InstallerView {
 
 	void setDone();
 
-	public interface Presenter {
+	interface Presenter {
 
 		void onStartButton();
 

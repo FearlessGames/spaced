@@ -26,11 +26,7 @@ public class ItemTemplateProxy implements ItemTemplate {
 
 		ItemTemplate that = (ItemTemplate) o;
 
-		if (!pk.equals(that.getPk())) {
-			return false;
-		}
-
-		return true;
+		return pk.equals(that.getPk());
 	}
 
 	@Override

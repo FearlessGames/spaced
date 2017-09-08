@@ -3,7 +3,7 @@ package se.ardortech.properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.net.URL;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
@@ -36,6 +36,7 @@ public class PropertiesDialogHelper {
                 dialogRef.set(new PropertiesDialog(settings, dialogImageRef, mainThreadTasks));
             } else {
                 EventQueue.invokeLater(new Runnable() {
+                    @Override
                     public void run() {
                         dialogRef.set(new PropertiesDialog(settings, dialogImageRef, mainThreadTasks));
                     }

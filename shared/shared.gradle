@@ -1,4 +1,6 @@
 apply plugin: 'java'
+apply plugin: 'net.ltgt.errorprone'
+
 
 project.ext.libDir = new File("lib")
 
@@ -41,4 +43,10 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 	testCompile 'se.fearless.fearless-common:test:1.0.2'
 	testCompile group: 'uk.org.lidalia', name: 'slf4j-test', version: '1.2.0'
+}
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs += [
+			'-Xep:FutureReturnValueIgnored:OFF'
+	]
 }

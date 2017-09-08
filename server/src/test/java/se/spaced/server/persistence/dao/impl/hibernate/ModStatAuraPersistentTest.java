@@ -5,21 +5,13 @@ import org.hibernate.Transaction;
 import org.junit.Test;
 import se.fearless.common.stats.ModStat;
 import se.fearless.common.stats.Operator;
-import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.aura.ModStatAura;
 import se.spaced.shared.model.stats.SpacedStatType;
-
-import java.security.SecureRandom;
 
 import static org.junit.Assert.assertEquals;
 
 public class ModStatAuraPersistentTest extends PersistentTestBase {
-	private final MockTimeProvider timeProvider = new MockTimeProvider();
-	private final UUIDFactory uuidFactory = new UUIDFactoryImpl(timeProvider, new SecureRandom());
-
 
 	@Test
 	public void testPersist() {

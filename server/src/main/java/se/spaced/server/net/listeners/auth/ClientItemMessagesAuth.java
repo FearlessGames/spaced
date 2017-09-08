@@ -11,7 +11,12 @@ import se.spaced.server.model.Player;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.combat.EntityTargetService;
 import se.spaced.server.model.crafting.SalvageService;
-import se.spaced.server.model.items.*;
+import se.spaced.server.model.items.Inventory;
+import se.spaced.server.model.items.InventoryService;
+import se.spaced.server.model.items.ItemService;
+import se.spaced.server.model.items.ItemTemplateDataFactory;
+import se.spaced.server.model.items.ServerItem;
+import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.server.net.ClientConnection;
 
 import java.util.ArrayList;
@@ -82,7 +87,7 @@ public class ClientItemMessagesAuth implements ClientItemMessages {
 		Player player = clientConnection.getPlayer();
 		Inventory serverInventory1 = (Inventory) inventory1;
 		Inventory serverInventory2 = (Inventory) inventory2;
-		if (!isOwner(player, serverInventory1) || !isOwner(player, serverInventory1)) {
+		if (!isOwner(player, serverInventory1) || !isOwner(player, serverInventory2)) {
 			throw new IllegalStateException(String.format(
 					"%s trying to access inventories not under that players control. %s %s",
 					player.toString(),

@@ -11,7 +11,6 @@ import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.ScenarioTestBase;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.ServerEntity;
-import se.spaced.server.model.crafting.SalvageService;
 import se.spaced.server.model.items.ItemTemplateDataFactory;
 import se.spaced.server.model.items.ServerItem;
 import se.spaced.server.model.items.ServerItemTemplate;
@@ -28,14 +27,12 @@ public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 	private ClientConnection clientConnection;
 	private Player player;
 	private ClientItemMessagesAuth itemMessagesAuth;
-	private SalvageService salvageService;
 
 	@Before
 	public void setUp() throws Exception {
 		clientConnection = mock(ClientConnection.class);
 		player = mock(Player.class);
 		when(player.getPk()).thenReturn(new UUID(0, 1));
-		salvageService = mock(SalvageService.class);
 
 		itemMessagesAuth = new ClientItemMessagesAuth(clientConnection,
 				itemService,
@@ -170,7 +167,7 @@ public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 		stubReturn(true).on(itemService).isOwner(player, item);
 
 		itemMessagesAuth.salvageItem(Lists.<SpacedItem>newArrayList(item));
-		verifyOnce().on(salvageService).salvage(player, Lists.<ServerItem>newArrayList(item));
+		verifyOnce().on(salvageService).salvage(player, Lists.newArrayList(item));
 	}
 
 	@Test
@@ -191,14 +188,14 @@ public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 		} catch (IllegalStateException e) {
 
 		}
-		verifyNever().on(salvageService).salvage(player, Lists.<ServerItem>newArrayList(item));
+		verifyNever().on(salvageService).salvage(player, Lists.newArrayList(item));
 	}
 
 	@Test
 	public void salvageNoItems() throws Exception {
 		stubReturn(player).on(clientConnection).getPlayer();
 		try {
-			itemMessagesAuth.salvageItem(Lists.<SpacedItem>newArrayList());
+			itemMessagesAuth.salvageItem(Lists.newArrayList());
 			fail("Should throw exception");
 		} catch (IllegalStateException e) {
 		}
@@ -222,7 +219,7 @@ public class ClientItemMessagesAuthTest extends ScenarioTestBase {
 			fail("Should throw exception");
 		} catch (IllegalStateException e) {
 		}
-		verifyNever().on(salvageService).salvage(player, Lists.<ServerItem>newArrayList(item));
+		verifyNever().on(salvageService).salvage(player, Lists.newArrayList(item));
 	}
 
 

@@ -2,7 +2,8 @@ package se.spaced.shared.util;
 
 import org.junit.Test;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
 
 
 public class ListenerDispatcherTest {
@@ -26,7 +27,7 @@ public class ListenerDispatcherTest {
 
 	}
 
-	private static interface TestInterface {
+	private interface TestInterface {
 		void method(String arg1);
 	}
 }

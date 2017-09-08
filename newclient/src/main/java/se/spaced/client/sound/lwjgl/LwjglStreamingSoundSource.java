@@ -212,11 +212,7 @@ public class LwjglStreamingSoundSource implements SoundSource {
 
 		LwjglStreamingSoundSource that = (LwjglStreamingSoundSource) o;
 
-		if (soundSource != null ? !soundSource.equals(that.soundSource) : that.soundSource != null) {
-			return false;
-		}
-
-		return true;
+		return soundSource != null ? soundSource.equals(that.soundSource) : that.soundSource == null;
 	}
 
 	@Override

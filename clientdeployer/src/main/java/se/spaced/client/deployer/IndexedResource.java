@@ -34,11 +34,7 @@ public class IndexedResource {
 
 		IndexedResource that = (IndexedResource) o;
 
-		if (path != null ? !path.equals(that.path) : that.path != null) {
-			return false;
-		}
-
-		return true;
+		return path != null ? path.equals(that.path) : that.path == null;
 	}
 
 	@Override

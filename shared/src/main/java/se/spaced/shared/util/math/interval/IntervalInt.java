@@ -93,10 +93,7 @@ public class IntervalInt {
 		if (end != other.end) {
 			return false;
 		}
-		if (start != other.start) {
-			return false;
-		}
-		return true;
+		return start == other.start;
 	}
 
 	public IntervalInt merge(IntervalInt other) {

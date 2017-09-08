@@ -27,11 +27,7 @@ class SampleValue {
 
 		SampleValue that = (SampleValue) o;
 
-		if (samples != that.samples) {
-			return false;
-		}
-
-		return true;
+		return samples == that.samples;
 	}
 
 	@Override

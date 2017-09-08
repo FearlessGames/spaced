@@ -56,7 +56,7 @@ public class OrderedActionTest extends ScenarioTestBase {
 		assertSame(player, action.getPerformer());
 	}
 
-	private class TestOrderedAction extends OrderedAction {
+	private static class TestOrderedAction extends OrderedAction {
 		public TestOrderedAction(long executionTime, ServerEntity performer) {
 			super(executionTime, performer);
 		}

@@ -16,6 +16,7 @@ public class PathPlanner3dTest {
 		PolygonGraph graph = new PolygonGraph();
 
 		Polygon floor1 = new Polygon() {
+			@Override
 			public String toString() {
 				return "floor1";
 			}
@@ -29,6 +30,7 @@ public class PathPlanner3dTest {
 		graph.addPolygon(floor1);
 
 		Polygon ramp = new Polygon() {
+			@Override
 			public String toString() {
 				return "ramp";
 			}
@@ -42,6 +44,7 @@ public class PathPlanner3dTest {
 		graph.addPolygon(ramp);
 
 		Polygon floor2a = new Polygon() {
+			@Override
 			public String toString() {
 				return "floor2a";
 			}
@@ -55,6 +58,7 @@ public class PathPlanner3dTest {
 		graph.addPolygon(floor2a);
 
 		Polygon floor2b = new Polygon() {
+			@Override
 			public String toString() {
 				return "floor2b";
 			}

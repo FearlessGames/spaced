@@ -5,7 +5,6 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.fearless.common.uuid.UUIDFactory;
 import se.spaced.client.model.item.ClientInventory;
-import se.spaced.client.model.item.ClientItem;
 
 @Singleton
 public class InventoryProvider {
@@ -13,7 +12,7 @@ public class InventoryProvider {
 
 	@Inject
 	public InventoryProvider(UUIDFactory uuidFactory) {
-		playerInventory = new ClientInventory(uuidFactory.randomUUID(), HashMultimap.<Integer, ClientItem>create());
+		playerInventory = new ClientInventory(uuidFactory.randomUUID(), HashMultimap.create());
 	}
 
 	public ClientInventory getPlayerInventory() {

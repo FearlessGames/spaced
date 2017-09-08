@@ -9,13 +9,15 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class Getter {
 	public String getContent(URL url, CopyCallback... callbacks) throws IOException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		InputStream is = url.openStream();
 		copyContent(is, baos, callbacks);
 		is.close();
-		return new String(baos.toByteArray());
+		return new String(baos.toByteArray(), UTF_8);
 	}
 
 	public String getContent(File file, CopyCallback... callbacks) throws IOException {
@@ -23,7 +25,7 @@ public class Getter {
 		FileInputStream fis = new FileInputStream(file);
 		copyContent(fis, baos, callbacks);
 		fis.close();
-		return new String(baos.toByteArray());
+		return new String(baos.toByteArray(), UTF_8);
 	}
 
 

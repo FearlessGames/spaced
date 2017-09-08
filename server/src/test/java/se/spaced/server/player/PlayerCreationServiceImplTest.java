@@ -11,7 +11,11 @@ import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.PlayerType;
-import se.spaced.server.model.items.*;
+import se.spaced.server.model.items.EquippedItems;
+import se.spaced.server.model.items.Inventory;
+import se.spaced.server.model.items.InventoryType;
+import se.spaced.server.model.items.ServerItem;
+import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.shared.model.Gender;
 import se.spaced.shared.model.items.ContainerType;
@@ -21,8 +25,12 @@ import se.spaced.shared.model.stats.EntityStats;
 import java.util.Collection;
 import java.util.Collections;
 
-import static org.junit.Assert.*;
-import static se.mockachino.Mockachino.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.verifyOnce;
+import static se.mockachino.Mockachino.when;
 import static se.spaced.server.model.items.InventoryAssertUtils.assertItemCountInInventory;
 
 public class PlayerCreationServiceImplTest extends ScenarioTestBase {
@@ -96,7 +104,7 @@ public class PlayerCreationServiceImplTest extends ScenarioTestBase {
 				cyborg,
 				network,
 				35,
-				Collections.<ServerSpell>emptyList(),
+				Collections.emptyList(),
 				PlayerType.REGULAR);
 
 		verifyOnce().on(accountService).bindCharacterToAccount(account, alice);
@@ -136,7 +144,7 @@ public class PlayerCreationServiceImplTest extends ScenarioTestBase {
 				cyborg,
 				network,
 				35,
-				Collections.<ServerSpell>emptyList(),
+				Collections.emptyList(),
 				PlayerType.GM);
 
 		EquippedItems equippedItems = equipmentService.getEquippedItems(alice);

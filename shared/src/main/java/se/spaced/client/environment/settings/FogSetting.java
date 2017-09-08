@@ -77,11 +77,7 @@ public class FogSetting implements Interpolable<FogSetting> {
 		if (Float.compare(that.start, start) != 0) {
 			return false;
 		}
-		if (!color.equals(that.color)) {
-			return false;
-		}
-
-		return true;
+		return color.equals(that.color);
 	}
 
 	@Override

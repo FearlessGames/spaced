@@ -5,12 +5,18 @@ import se.ardortech.math.SpacedVector3;
 import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.fearless.common.uuid.UUIDFactory;
-import se.spaced.server.model.*;
+import se.spaced.server.model.PersistedAppearanceData;
+import se.spaced.server.model.PersistedCreatureType;
+import se.spaced.server.model.PersistedFaction;
+import se.spaced.server.model.PersistedPositionalData;
+import se.spaced.server.model.Player;
+import se.spaced.server.model.PlayerType;
 import se.spaced.shared.model.Gender;
 import se.spaced.shared.model.stats.EntityStats;
 import se.spaced.shared.model.stats.StatData;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class PlayerMockFactory {
 	private final UUIDFactory UUID_FACTORY;
@@ -34,7 +40,7 @@ public class PlayerMockFactory {
 
 
 	public Player createPlayer(String name) {
-		Player player = new Player(UUID_FACTORY.combUUID(), name, genderGenerator.getGender(), creatureType,
+		Player player = new Player(UUID_FACTORY.combUUID(), name, genderGenerator.get(), creatureType,
 				new PersistedPositionalData(startingPosition.getPosition(), startingPosition.getRotation()),
 				appearanceData, new EntityStats(timeProvider, new StatData(12, 10, 0, 1.0, EntityStats.IN_COMBAT_COOLRATE, 0.0)), faction, PlayerType.REGULAR);
 		return player;
@@ -89,29 +95,13 @@ public class PlayerMockFactory {
 		}
 	}
 
-	public enum GenderGenerator {
-		MALE_ONLY {
-			@Override
-			Gender getGender() {
-				return Gender.MALE;
-			}
-		},
-		FEMALE_ONLY {
-			@Override
-			Gender getGender() {
-				return Gender.FEMALE;
-			}
-		},
-		RANDOM {
-			private final Random random = new Random(1337);
-
-			@Override
-			Gender getGender() {
-				return random.nextBoolean() ? Gender.MALE : Gender.FEMALE;
-			}
+	public interface GenderGenerator extends Supplier<Gender> {
+		GenderGenerator MALE_ONLY = () -> Gender.MALE;
+		GenderGenerator FEMALE_ONLY = () -> Gender.FEMALE;
+		GenderGenerator RANDOM = () -> {
+			Random random = new Random(1337);
+			return random.nextBoolean() ? Gender.MALE : Gender.FEMALE;
 		};
-
-		abstract Gender getGender();
 	}
 
 	public static UUIDFactory NULL_UUID_FACTORY = new UUIDFactory() {

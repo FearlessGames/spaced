@@ -25,6 +25,7 @@ public class LabelView extends ComponentLeafView<TextQuad> implements LabelViewI
 		text.setTranslation(component.getPosition().getX(), component.getPosition().getY(), 0);
 	}
 
+	@Override
 	public void setAlign(BMText.Align align) {
   		getSpatial().setAlign(align);
 	}

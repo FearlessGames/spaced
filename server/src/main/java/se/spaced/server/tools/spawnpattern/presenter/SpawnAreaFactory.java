@@ -43,8 +43,6 @@ public class SpawnAreaFactory {
 				throw new SpawnAreaFactoryException("Unknown area type");
 			}
 			return factory.create(areaContent);
-		} catch (ClassCastException cce) {
-			throw new SpawnAreaFactoryException("Wrong xml for the area type", cce);
 		} catch (GeometryException e) {
 			throw new SpawnAreaFactoryException(e);
 		}
@@ -57,7 +55,7 @@ public class SpawnAreaFactory {
 	private class RandomSpaceSpawnAreaFactory implements Factory {
 		@Override
 		public SpawnArea create(String areaContent) throws GeometryException {
-			Cube cube = geometryFactory.getGeometryFromContent(areaContent);
+			Cube cube = geometryFactory.getGeometryFromContent(areaContent, Cube.class);
 			return new RandomSpaceSpawnArea(uuidFactory.combUUID(), cube);
 		}
 	}
@@ -66,7 +64,7 @@ public class SpawnAreaFactory {
 
 		@Override
 		public SpawnArea create(String areaContent) throws GeometryException {
-			SinglePoint singlePoint = geometryFactory.getGeometryFromContent(areaContent);
+			SinglePoint singlePoint = geometryFactory.getGeometryFromContent(areaContent, SinglePoint.class);
 			return new SinglePointSpawnArea(uuidFactory.combUUID(), singlePoint);
 		}
 	}
@@ -75,7 +73,7 @@ public class SpawnAreaFactory {
 
 		@Override
 		public SpawnArea create(String areaContent) throws GeometryException {
-			Polygon polygon = geometryFactory.getGeometryFromContent(areaContent);
+			Polygon polygon = geometryFactory.getGeometryFromContent(areaContent, Polygon.class);
 			return new PolygonSpaceSpawnArea(uuidFactory.combUUID(),
 					polygon,
 					new SpacedRotation(1, 2, 3, 4),

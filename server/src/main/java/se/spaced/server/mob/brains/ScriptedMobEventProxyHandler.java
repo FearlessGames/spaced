@@ -6,10 +6,11 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
 
 class ScriptedMobEventProxyHandler implements InvocationHandler {
 	private final KahluaTable eventMap;
-	private volatile List<Event> events = new ArrayList<Event>();
+	private final LinkedBlockingQueue<Event> events = new LinkedBlockingQueue<>();
 
 	ScriptedMobEventProxyHandler(KahluaTable eventMap) {
 		this.eventMap = eventMap;
@@ -21,9 +22,7 @@ class ScriptedMobEventProxyHandler implements InvocationHandler {
 			String eventName = method.getName();
 			Object handler = eventMap.rawget(eventName);
 			if (handler != null) {
-				synchronized (events) {
-					events.add(new Event(handler, args));
-				}
+				events.add(new Event(handler, args));
 			}
 
 		}
@@ -31,9 +30,9 @@ class ScriptedMobEventProxyHandler implements InvocationHandler {
 	}
 
 	public void executeEvents(MobScriptEnvironment scriptEnv) {
-		if (events.isEmpty()) {
-			List<Event> localEvents = events;
-			events = new ArrayList<Event>();
+		if (!events.isEmpty()) {
+			List<Event> localEvents = new ArrayList<>();
+			events.drainTo(localEvents);
 			for (Event event : localEvents) {
 				scriptEnv.getVm().luaCall(event.handler, event.args);
 			}

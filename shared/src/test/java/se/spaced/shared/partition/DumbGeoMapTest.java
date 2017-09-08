@@ -14,21 +14,25 @@ public class DumbGeoMapTest extends BaseGeoMap {
 		geomap.clear();
 	}
 
+	@Override
 	@Test
 	public void testEmpty() {
 		super.testEmpty();
 	}
 
+	@Override
 	@Test
 	public void testClear() {
 		super.testClear();
 	}
 
+	@Override
 	@Test
 	public void testFinder() {
 		super.testFinder();
 	}
 
+	@Override
 	@Test
 	public void testMultiThread() throws InterruptedException {
 		super.testMultiThread();

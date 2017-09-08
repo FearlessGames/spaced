@@ -93,6 +93,7 @@ public class BulletPhysics implements PhysicsWorld<CollisionObject> {
 	// Normal stuff
 	SpacedVector3 groundNormal = SpacedVector3.PLUS_J;
 
+	@Override
 	public void setManBodyVelocity(SpacedVector3 desiredVelocity) {
 		manBody.setLinearVelocity(fromApacheV(desiredVelocity));
 	}

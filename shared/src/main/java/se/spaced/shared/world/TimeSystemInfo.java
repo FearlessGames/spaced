@@ -58,11 +58,7 @@ public class TimeSystemInfo {
 		if (secondsPerMinute != that.secondsPerMinute) {
 			return false;
 		}
-		if (Double.compare(that.speedFactor, speedFactor) != 0) {
-			return false;
-		}
-
-		return true;
+		return Double.compare(that.speedFactor, speedFactor) == 0;
 	}
 
 	@Override

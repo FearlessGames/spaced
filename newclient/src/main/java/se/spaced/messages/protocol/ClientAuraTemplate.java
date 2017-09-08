@@ -79,11 +79,7 @@ public class ClientAuraTemplate implements AuraTemplate {
 
 		ClientAuraTemplate aura = (ClientAuraTemplate) o;
 
-		if (!pk.equals(aura.pk)) {
-			return false;
-		}
-
-		return true;
+		return pk.equals(aura.pk);
 	}
 
 	@Override

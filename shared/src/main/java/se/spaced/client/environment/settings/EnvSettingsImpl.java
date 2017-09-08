@@ -54,11 +54,7 @@ public class EnvSettingsImpl implements EnvSettings {
 		if (soundSetting != null ? !soundSetting.equals(envSettings.soundSetting) : envSettings.soundSetting != null) {
 			return false;
 		}
-		if (sunSetting != null ? !sunSetting.equals(envSettings.sunSetting) : envSettings.sunSetting != null) {
-			return false;
-		}
-
-		return true;
+		return sunSetting != null ? sunSetting.equals(envSettings.sunSetting) : envSettings.sunSetting == null;
 	}
 
 	@Override

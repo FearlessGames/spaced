@@ -195,6 +195,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 	 * @return abscissa of the vector
 	 * @see #SpacedVector3(double, double, double)
 	 */
+	@Override
 	@LuaMethod(name = "GetX")
 	public double getX() {
 		return x;
@@ -206,6 +207,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 	 * @return ordinate of the vector
 	 * @see #SpacedVector3(double, double, double)
 	 */
+	@Override
 	@LuaMethod(name = "GetY")
 	public double getY() {
 		return y;
@@ -217,6 +219,7 @@ public class SpacedVector3 implements ReadOnlyVector3, Serializable {
 	 * @return height of the vector
 	 * @see #SpacedVector3(double, double, double)
 	 */
+	@Override
 	@LuaMethod(name = "GetZ")
 	public double getZ() {
 		return z;

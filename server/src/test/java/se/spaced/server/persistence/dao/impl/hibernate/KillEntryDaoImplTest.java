@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDMockFactory;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
 import se.spaced.server.model.Player;
@@ -22,11 +20,11 @@ import se.spaced.server.stats.KillStat;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class KillEntryDaoImplTest extends PersistentTestBase {
-
-	private UUIDFactory uuidFactory;
 
 	private KillEntryDao killEntryDao;
 	private PlayerDao playerDao;
@@ -41,7 +39,6 @@ public class KillEntryDaoImplTest extends PersistentTestBase {
 
 	@Before
 	public void setUp() throws Exception {
-		uuidFactory = new UUIDMockFactory();
 
 		killEntryDao = new KillEntryDaoImpl(sessionFactory);
 		playerDao = new PlayerDaoImpl(sessionFactory);

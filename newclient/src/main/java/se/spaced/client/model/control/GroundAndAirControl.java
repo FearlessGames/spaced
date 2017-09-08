@@ -4,7 +4,6 @@ import com.ardor3d.renderer.Camera;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import se.ardortech.input.ClientMouseButton;
-import se.fearless.common.stats.ModStat;
 import se.fearless.common.time.SystemTimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.client.model.CharacterPhysics;
@@ -31,7 +30,7 @@ public class GroundAndAirControl extends CharacterControl {
 					null,
 					0,
 					null,
-					false, Collections.<ModStat>emptySet(), true), 0, new SystemTimeProvider());
+					false, Collections.emptySet(), true), 0, new SystemTimeProvider());
 
 	@Inject
 	public GroundAndAirControl(

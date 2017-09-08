@@ -21,7 +21,7 @@ public class KofNLootTemplate extends PersistableLootTemplate {
 	private final Set<LootTemplateProbability> templates;
 
 	protected KofNLootTemplate() {
-		this(null, null, 1, Sets.<LootTemplateProbability>newHashSet());
+		this(null, null, 1, Sets.newHashSet());
 	}
 
 	public KofNLootTemplate(UUID uuid, String templateName, int k, Set<LootTemplateProbability> templates) {

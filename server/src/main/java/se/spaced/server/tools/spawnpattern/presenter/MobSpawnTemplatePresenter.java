@@ -65,7 +65,7 @@ public class MobSpawnTemplatePresenter implements MobSpawnTemplateView.Presenter
 		}
 
 		try {
-			Geometry geometry = geometryFactory.getGeometryFromContent(clipBoard);
+			Geometry geometry = geometryFactory.getGeometryFromContent(clipBoard, Geometry.class);
 			currentMobSpawnTemplate.setGeometryData(geometry);
 
 			// TODO: we want to update the geometry in some way

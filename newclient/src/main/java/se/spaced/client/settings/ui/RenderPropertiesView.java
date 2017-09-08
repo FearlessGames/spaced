@@ -37,7 +37,7 @@ public interface RenderPropertiesView {
 
 	void setLockedResolutions(boolean b);
 
-	public interface Presenter {
+	interface Presenter {
 
 		void onModeChanged();
 

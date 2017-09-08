@@ -38,7 +38,7 @@ public class ContributionServiceImpl implements ContributionService, EntityServi
 
 	@Override
 	public void entityAdded(ServerEntity entity) {
-		contributions.put(entity, HashMultiset.<ServerEntity>create());
+		contributions.put(entity, HashMultiset.create());
 	}
 
 	@Override

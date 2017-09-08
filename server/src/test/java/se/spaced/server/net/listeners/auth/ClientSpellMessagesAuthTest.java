@@ -9,11 +9,12 @@ import se.spaced.messages.protocol.s2c.S2CProtocol;
 import se.spaced.server.model.spell.ServerSpell;
 import se.spaced.server.net.ClientConnection;
 import se.spaced.server.spell.SpellService;
-import se.spaced.shared.network.protocol.codec.datatype.SpellData;
 
 import java.util.List;
 
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.stubReturn;
+import static se.mockachino.Mockachino.verifyOnce;
 
 public class ClientSpellMessagesAuthTest {
 	@Test
@@ -27,6 +28,6 @@ public class ClientSpellMessagesAuthTest {
 		Spell serverSpell = new ServerSpell.Builder("Foo").uuid(new UUID(123456, 98765)).build();
 		List<? extends Spell> spellList = Lists.newArrayList(serverSpell);
 		spellMessagesAuth.requestSpellInfo(spellList);
-		verifyOnce().on(receiver.spell()).spellData(Lists.<SpellData>newArrayList());
+		verifyOnce().on(receiver.spell()).spellData(Lists.newArrayList());
 	}
 }

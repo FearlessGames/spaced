@@ -1,9 +1,17 @@
 package se.ardorgui.lua;
 
 import com.ardor3d.extension.ui.*;
-import com.ardor3d.extension.ui.backdrop.*;
+import com.ardor3d.extension.ui.backdrop.GradientBackdrop;
+import com.ardor3d.extension.ui.backdrop.ImageBackdrop;
+import com.ardor3d.extension.ui.backdrop.MultiImageBackdrop;
+import com.ardor3d.extension.ui.backdrop.SolidBackdrop;
+import com.ardor3d.extension.ui.backdrop.UIBackdrop;
 import com.ardor3d.extension.ui.border.ImageBorder;
-import com.ardor3d.extension.ui.event.*;
+import com.ardor3d.extension.ui.event.ActionEvent;
+import com.ardor3d.extension.ui.event.ActionListener;
+import com.ardor3d.extension.ui.event.DragListener;
+import com.ardor3d.extension.ui.event.FrameDragListener;
+import com.ardor3d.extension.ui.event.FrameResizeListener;
 import com.ardor3d.extension.ui.layout.AnchorLayoutData;
 import com.ardor3d.extension.ui.layout.BorderLayout;
 import com.ardor3d.extension.ui.layout.BorderLayoutData;
@@ -31,7 +39,15 @@ import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.ardorgui.FixedAnchorLayout;
-import se.ardorgui.components.ardoreventwrapper.*;
+import se.ardorgui.components.ardoreventwrapper.UIEButton;
+import se.ardorgui.components.ardoreventwrapper.UIEContainer;
+import se.ardorgui.components.ardoreventwrapper.UIEFrame;
+import se.ardorgui.components.ardoreventwrapper.UIEPanel;
+import se.ardorgui.components.ardoreventwrapper.UIEPasswordField;
+import se.ardorgui.components.ardoreventwrapper.UIETextArea;
+import se.ardorgui.components.ardoreventwrapper.UIETextField;
+import se.ardorgui.components.ardoreventwrapper.UIParentPanel;
+import se.ardorgui.components.ardoreventwrapper.UIProgressCircle;
 import se.ardorgui.components.area.AnchorPoint;
 import se.ardorgui.components.area.BasicComponentArea;
 import se.ardorgui.components.area.ComponentArea;
@@ -44,7 +60,11 @@ import se.spaced.client.ardor.font.ttf.FontFamily;
 import se.spaced.shared.events.EventHandler;
 import se.spaced.shared.events.LuaEventHandler;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Future;
 
@@ -431,7 +451,7 @@ public class ArdorUIPrimitives {
 			final AnchorPoint relativeAnchor,
 			final double dx,
 			final double dy) {
-		log.debug("SetPoint {} - {} {}  {},{}", new Object[]{component, anchor, frame, relativeAnchor, dx, dy});
+		log.debug("SetPoint {} - {} {}  {},{}", component, anchor, frame, relativeAnchor, dx, dy);
 		component.setLayoutData(new AnchorLayoutData(anchor.getArdorAlignment(),
 				frame,
 				relativeAnchor.getArdorAlignment(),

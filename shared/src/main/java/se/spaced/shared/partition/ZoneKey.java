@@ -40,11 +40,7 @@ public class ZoneKey {
 		if (y != zone.y) {
 			return false;
 		}
-		if (z != zone.z) {
-			return false;
-		}
-
-		return true;
+		return z == zone.z;
 	}
 
 	@Override

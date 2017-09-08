@@ -34,10 +34,7 @@ public class MovementPoint<T> {
 		if (!position.equals(other.position)) {
 			return false;
 		}
-		if (!rotation.equals(other.rotation)) {
-			return false;
-		}
-		return true;
+		return rotation.equals(other.rotation);
 	}
 
 	private static <T> double getFactor(long t, MovementPoint<T> from, MovementPoint<T> to) {
@@ -82,11 +79,7 @@ public class MovementPoint<T> {
 		if (!rotation.equals(that.rotation)) {
 			return false;
 		}
-		if (!state.equals(that.state)) {
-			return false;
-		}
-
-		return true;
+		return state.equals(that.state);
 	}
 
 	@Override

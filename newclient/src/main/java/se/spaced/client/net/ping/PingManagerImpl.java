@@ -10,6 +10,8 @@ import se.fearless.common.time.TimeProvider;
 import se.spaced.client.net.smrt.ServerConnection;
 import se.spaced.client.net.smrt.ServerConnectionListener;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Singleton
 public class PingManagerImpl implements PingManager, ServerConnectionListener {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -20,8 +22,8 @@ public class PingManagerImpl implements PingManager, ServerConnectionListener {
 	private volatile boolean run;
 	private long lastPing;
 	private long lastPingTime = -1;
-	private volatile int messageId;
-	private PingManagerImpl.Pinger pinger;
+	private final AtomicInteger messageId = new AtomicInteger();
+	private Pinger pinger;
 	private boolean waitingForReply;
 
 	@Inject
@@ -43,8 +45,8 @@ public class PingManagerImpl implements PingManager, ServerConnectionListener {
 
 	@Override
 	public void pong(final long receivedTimestamp, final int pingId) {
-		if (pingId != messageId) {
-			throw new IllegalStateException("Got pong with pingId: " + pingId + " but last sent messageId was: " + messageId);
+		if (pingId != messageId.get()) {
+			throw new IllegalStateException("Got pong with pingId: " + pingId + " but last sent messageId was: " + messageId.get());
 		}
 		lastPingTime = receivedTimestamp - lastPing;
 		logger.debug("Received pong with latency:" + getLatency());
@@ -60,7 +62,7 @@ public class PingManagerImpl implements PingManager, ServerConnectionListener {
 	public synchronized void disconnected(final String message) {
 		logger.debug("stopping ping thread");
 		stopPinger();
-		messageId = 0;
+		messageId.set(0);
 	}
 
 	private void stopPinger() {
@@ -92,8 +94,8 @@ public class PingManagerImpl implements PingManager, ServerConnectionListener {
 	@Override
 	public void sendPingRequest() {
 		if (!waitingForReply) {
-			++messageId;
-			serverConnection.getReceiver().ping().ping(messageId);
+			int id = messageId.incrementAndGet();
+			serverConnection.getReceiver().ping().ping(id);
 			lastPing = timeProvider.now();
 			waitingForReply = true;
 		}

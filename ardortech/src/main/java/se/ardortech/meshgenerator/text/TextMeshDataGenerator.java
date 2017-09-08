@@ -13,7 +13,7 @@ public class TextMeshDataGenerator {
 	 * Justification within a text block
 	 */
 	public enum Justify {
-		Left, Center, Right;
+		Left, Center, Right
 	}
 
 	/**
@@ -24,7 +24,7 @@ public class TextMeshDataGenerator {
 		public final float horizontal;
 		public final float vertical;
 
-		private Align(final float h, final float v) {
+		Align(final float h, final float v) {
 			horizontal = h;
 			vertical = v;
 		}

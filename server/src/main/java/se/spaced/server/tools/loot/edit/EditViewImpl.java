@@ -2,16 +2,7 @@ package se.spaced.server.tools.loot.edit;
 
 import se.spaced.server.loot.PersistableLootTemplate;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -19,9 +10,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -184,7 +173,7 @@ public class EditViewImpl extends JPanel implements EditView, TreeSelectionListe
 		presenter.onNodeSelected(tree.getLastSelectedPathComponent());
 	}
 
-	private class TreeMouseAdapter extends MouseAdapter {
+	private static class TreeMouseAdapter extends MouseAdapter {
 		private void myPopupEvent(MouseEvent e) {
 			int x = e.getX();
 			int y = e.getY();
@@ -203,12 +192,14 @@ public class EditViewImpl extends JPanel implements EditView, TreeSelectionListe
 			}
 		}
 
+		@Override
 		public void mousePressed(MouseEvent e) {
 			if (e.isPopupTrigger()) {
 				myPopupEvent(e);
 			}
 		}
 
+		@Override
 		public void mouseReleased(MouseEvent e) {
 			if (e.isPopupTrigger()) {
 				myPopupEvent(e);

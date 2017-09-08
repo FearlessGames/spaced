@@ -3,15 +3,16 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.time.MockTimeProvider;
 import se.fearless.common.uuid.UUID;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.mockachino.annotations.Mock;
 import se.spaced.server.model.Mob;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.currency.PersistedCurrency;
-import se.spaced.server.model.items.*;
+import se.spaced.server.model.items.Inventory;
+import se.spaced.server.model.items.InventoryType;
+import se.spaced.server.model.items.PersistedInventory;
+import se.spaced.server.model.items.ServerItem;
+import se.spaced.server.model.items.ServerItemTemplate;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.model.spawn.MobTemplate;
 import se.spaced.server.persistence.dao.interfaces.InventoryDao;
@@ -20,18 +21,17 @@ import se.spaced.server.persistence.dao.interfaces.PlayerDao;
 import se.spaced.shared.model.items.ItemType;
 import se.spaced.shared.util.random.RandomProvider;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static se.mockachino.Mockachino.setupMocks;
 import static se.spaced.server.model.items.InventoryAssertUtils.assertItemCountInInventory;
 
 public class InventoryDaoImplTest extends PersistentTestBase {
 
-	private final MockTimeProvider timeProvider = new MockTimeProvider();
-	private final UUIDFactory uuidFactory = new UUIDFactoryImpl(timeProvider, new SecureRandom());
 	private InventoryDao inventoryDao;
 	private ItemDao itemDao;
 	private PlayerDao playerDao;

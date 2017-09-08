@@ -25,6 +25,7 @@ public class ClientInventory implements SpacedInventory, InventoryData {
 	}
 
 
+	@Override
 	public ImmutableMultimap<Integer, ? extends SpacedItem> getItemMap() {
 		return ImmutableMultimap.copyOf(items);
 	}

@@ -11,6 +11,7 @@ import se.spaced.server.persistence.dao.interfaces.Persistable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryDao<T extends Persistable> implements Dao<T> {
@@ -52,7 +53,12 @@ public class InMemoryDao<T extends Persistable> implements Dao<T> {
 	@Override
 	public void delete(T obj) {
 		if (obj != null) {
-			data.remove(obj);
+			for (Map.Entry<UUID, T> uuidtEntry : data.entrySet()) {
+				if (uuidtEntry.getValue() == obj) {
+					data.remove(uuidtEntry.getKey());
+					return;
+				}
+			}
 		}
 	}
 

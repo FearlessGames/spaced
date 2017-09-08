@@ -34,11 +34,7 @@ public class SinglePoint implements Geometry {
 		if (point != null ? !point.equals(that.point) : that.point != null) {
 			return false;
 		}
-		if (rotation != null ? !rotation.equals(that.rotation) : that.rotation != null) {
-			return false;
-		}
-
-		return true;
+		return rotation != null ? rotation.equals(that.rotation) : that.rotation == null;
 	}
 
 	@Override

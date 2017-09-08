@@ -75,11 +75,7 @@ public class SpacedResource implements ResourceSource {
 		if (key != null ? !key.equals(that.key) : that.key != null) {
 			return false;
 		}
-		if (type != null ? !type.equals(that.type) : that.type != null) {
-			return false;
-		}
-
-		return true;
+		return type != null ? type.equals(that.type) : that.type == null;
 	}
 
 	@Override

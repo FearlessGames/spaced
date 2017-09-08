@@ -14,7 +14,10 @@ import se.krka.kahlua.profiler.StacktraceNode;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Singleton
 public class PerformanceApi {
@@ -73,11 +76,11 @@ public class PerformanceApi {
 			profiler.sendTo(aggregatedProfiler);
 			StacktraceNode stacktraceNode = aggregatedProfiler.toTree(100, 0.0, 10);
 			try {
-				PrintWriter writer = new PrintWriter(f);
+				PrintWriter writer = new PrintWriter(f, UTF_8.name());
 				stacktraceNode.output(writer);
 				writer.flush();
 				writer.close();
-			} catch (FileNotFoundException e) {
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
 		}

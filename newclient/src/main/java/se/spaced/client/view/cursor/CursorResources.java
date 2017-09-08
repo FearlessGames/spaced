@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class CursorResources {
-	private static final Map<Cursor, String> CURSORS = ImmutableMap.of(
+	private static final ImmutableMap<Cursor, String> CURSORS = ImmutableMap.of(
 			Cursor.ATTACK, "textures/gui/cursors/cursor_select_hostile.png",
 			Cursor.DEFAULT, "textures/gui/cursors/cursor.png",
 			Cursor.HOVER, "textures/gui/cursors/cursor_select_friendly.png"

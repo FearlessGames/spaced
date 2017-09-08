@@ -15,7 +15,7 @@ public class RandomSelectionTest {
 
 	@Test
 	public void testSimpleWithReplacement() throws Exception {
-		RandomWithReplacement<Integer, Integer> random = new RandomWithReplacement<Integer, Integer>(Functions.<Integer>identity(), new Random(4711));
+		RandomWithReplacement<Integer, Integer> random = new RandomWithReplacement<Integer, Integer>(Functions.identity(), new Random(4711));
 		List<Integer> numbers = Lists.newArrayList(1, 2, 3, 4, 5);
 		List<Integer> picks = random.select(numbers, 5);
 		assertEquals(5, picks.size());
@@ -26,7 +26,7 @@ public class RandomSelectionTest {
 
 	@Test
 	public void testSimpleWithoutReplacement() throws Exception {
-		RandomWithoutReplacement<Integer, Integer> random = new RandomWithoutReplacement<Integer, Integer>(Functions.<Integer>identity(), new Random(4711));
+		RandomWithoutReplacement<Integer, Integer> random = new RandomWithoutReplacement<Integer, Integer>(Functions.identity(), new Random(4711));
 		List<Integer> numbers = Lists.newArrayList(1, 2, 3, 4, 5);
 		List<Integer> picks = random.select(numbers, 5);
 		assertEquals(5, picks.size());

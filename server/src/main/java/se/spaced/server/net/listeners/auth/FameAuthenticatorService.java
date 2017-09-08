@@ -1,17 +1,19 @@
 package se.spaced.server.net.listeners.auth;
 
 import com.google.inject.Inject;
-import org.apache.http.*;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.utils.URIUtils;
-import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +23,7 @@ import se.spaced.messages.protocol.Salts;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class FameAuthenticatorService implements AuthenticatorService {
@@ -46,18 +46,17 @@ public class FameAuthenticatorService implements AuthenticatorService {
 	@Override
 	public void requestAuthSalts(String userName, final AuthSaltsCallback callback) {
 		try {
-			List<NameValuePair> params = new ArrayList<NameValuePair>();
-			params.add(new BasicNameValuePair("userName", userName));
-			String encodedParameters = URLEncodedUtils.format(params, "UTF-8");
-			URI uri = URIUtils.createURI("http", HOST, -1, REQUEST_SALT_PATH, encodedParameters, null);
+			URIBuilder uriBuilder = new URIBuilder();
+			uriBuilder
+					.setHost(HOST)
+					.setPort(-1)
+					.setScheme("http")
+					.setPath(REQUEST_SALT_PATH)
+					.addParameter("userName", userName);
+			URI uri = uriBuilder.build();
 			Map<Integer, FameHttpResponseHandler> responseMapper = new HashMap<Integer, FameHttpResponseHandler>();
 
-			responseMapper.put(200, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					callback.receievedSalts(Salts.fromString(body));
-				}
-			});
+			responseMapper.put(200, body -> callback.receievedSalts(Salts.fromString(body)));
 
 			get(uri, responseMapper);
 
@@ -77,69 +76,48 @@ public class FameAuthenticatorService implements AuthenticatorService {
 		sendAuthentication(accountName, hash, address, callback, null, AUTH_PATH);
 	}
 
-	private void sendAuthentication(
-			final String accountName,
-			String hash,
-			String address,
-			final AuthCallback callback,
-			String authenticatorKey,
-			String authPath) {
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair("userName", accountName));
-		params.add(new BasicNameValuePair("hash", hash));
-		params.add(new BasicNameValuePair("serviceKey", SERVICE_KEY_SPACED));
-		params.add(new BasicNameValuePair("ip", address));
-		if (authenticatorKey != null) {
-			params.add(new BasicNameValuePair("authenticatorHash", authenticatorKey));
-		}
-		String encodedParameters = URLEncodedUtils.format(params, "UTF-8");
+	private void sendAuthentication(String accountName, String hash, String address, AuthCallback callback,
+	                                String authenticatorKey, String authPath) {
+
 		try {
-			URI uri = URIUtils.createURI("http", HOST, -1, authPath, encodedParameters, null);
+			URIBuilder uriBuilder = new URIBuilder();
+			uriBuilder
+					.setScheme("http")
+					.setHost(HOST)
+					.setPort(-1)
+					.setPath(authPath)
+					.addParameter("userName", accountName)
+					.addParameter("hash", hash)
+					.addParameter("serviceKey", SERVICE_KEY_SPACED)
+					.addParameter("ip", address);
+			if (authenticatorKey != null) {
+				uriBuilder.addParameter("authenticatorHash", authenticatorKey);
+			}
+			URI uri = uriBuilder.build();
 			log.info("Auth using {}", uri);
 
 			Map<Integer, FameHttpResponseHandler> responseMapper = new HashMap<Integer, FameHttpResponseHandler>();
 
-			responseMapper.put(200, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					if (body.contains("/")) {
-						String[] split = body.split("/");
-						UUID uuid = UUID.fromString(split[0]);
-						int type = Integer.parseInt(split[1]);
-						callback.successfullyLoggedIn(accountName, new ExternalAccount(uuid, type));
-					} else {
-						callback.successfullyLoggedIn(accountName, new ExternalAccount(UUID.fromString(body), 0));
-					}
+			responseMapper.put(200, body -> {
+				if (body.contains("/")) {
+					String[] split = body.split("/");
+					UUID uuid = UUID.fromString(split[0]);
+					int type = Integer.parseInt(split[1]);
+					callback.successfullyLoggedIn(accountName, new ExternalAccount(uuid, type));
+				} else {
+					callback.successfullyLoggedIn(accountName, new ExternalAccount(UUID.fromString(body), 0));
 				}
 			});
 
-			responseMapper.put(401, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					callback.authenticationFailed(accountName);
-				}
-			});
+			responseMapper.put(401, body -> callback.authenticationFailed(accountName));
 
 
-			responseMapper.put(403, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					callback.basicAuthFailed(accountName);
-				}
-			});
+			responseMapper.put(403, body -> callback.basicAuthFailed(accountName));
 
-			responseMapper.put(100, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					callback.needsAuthenticator();
-				}
-			});
+			responseMapper.put(100, body -> callback.needsAuthenticator());
 
-			responseMapper.put(500, new FameHttpResponseHandler() {
-				@Override
-				public void handleResponse(String body) {
-					throw new RuntimeException(body);
-				}
+			responseMapper.put(500, body -> {
+				throw new RuntimeException(body);
 			});
 
 
@@ -181,7 +159,7 @@ public class FameAuthenticatorService implements AuthenticatorService {
 
 	private void doBasicAuth(HttpRequest httpRequest) throws AuthenticationException {
 		BasicScheme scheme = new BasicScheme();
-		Header authHeader = scheme.authenticate(new UsernamePasswordCredentials(BASIC_UNAME, BASIC_PWD), httpRequest);
+		Header authHeader = scheme.authenticate(new UsernamePasswordCredentials(BASIC_UNAME, BASIC_PWD), httpRequest, new BasicHttpContext());
 		httpRequest.setHeader(authHeader);
 	}
 

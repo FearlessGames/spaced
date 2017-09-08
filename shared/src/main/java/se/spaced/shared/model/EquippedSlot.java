@@ -60,11 +60,7 @@ public class EquippedSlot {
 			return false;
 		}
 
-		if (!slot.equals(equippedSlot.slot)) {
-			return false;
-		}
-
-		return true;
+		return slot.equals(equippedSlot.slot);
 
 	}
 }

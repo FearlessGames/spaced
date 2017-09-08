@@ -18,7 +18,8 @@ import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static se.mockachino.Mockachino.*;
+import static se.mockachino.Mockachino.mock;
+import static se.mockachino.Mockachino.when;
 
 public class ZoneEnvironmentProviderTest {
 	@Test
@@ -28,7 +29,7 @@ public class ZoneEnvironmentProviderTest {
 		when(zone.getEnvironmentDayCycleSettingsFile()).thenReturn(envSettingsFileName);
 		XmlIO xmlIO = mock(XmlIO.class);
 		EnvironmentSettings environmentSettings = mock(EnvironmentSettings.class);
-		Map<GameTime, EnvSettings> settingsMap = ImmutableMap.of(new GameTime(100), (EnvSettings) EmptyEnvSettings.INSTANCE);
+		Map<GameTime, EnvSettings> settingsMap = ImmutableMap.of(new GameTime(100), EmptyEnvSettings.INSTANCE);
 		when(environmentSettings.getSettingsByGameTime()).thenReturn(settingsMap);
 		when(xmlIO.load(EnvironmentSettings.class, envSettingsFileName)).thenReturn(environmentSettings);
 
@@ -53,7 +54,7 @@ public class ZoneEnvironmentProviderTest {
 
 		XmlIO xmlIO = mock(XmlIO.class);
 		EnvironmentSettings environmentSettings = mock(EnvironmentSettings.class);
-		Map<GameTime, EnvSettings> settingsMap = ImmutableMap.of(new GameTime(100), (EnvSettings) EmptyEnvSettings.INSTANCE);
+		Map<GameTime, EnvSettings> settingsMap = ImmutableMap.of(new GameTime(100), EmptyEnvSettings.INSTANCE);
 		when(environmentSettings.getSettingsByGameTime()).thenReturn(settingsMap);
 		when(xmlIO.load(EnvironmentSettings.class, envSettingsFileName)).thenReturn(environmentSettings);
 

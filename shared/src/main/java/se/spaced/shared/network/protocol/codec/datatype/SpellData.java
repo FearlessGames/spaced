@@ -70,13 +70,13 @@ public class SpellData {
 	public SpellData(
 			UUID id, String name, int castTime, MagicSchool school, boolean requiresHostileTarget,
 			IntervalInt ranges, String effectResource, int heat, boolean cancelOnMove) {
-		this(id, name, castTime, school, requiresHostileTarget, ranges, effectResource, heat, Collections.<Cooldown>emptyList(),
-				cancelOnMove, Collections.<AuraTemplate>emptySet(), Collections.<SpellEffect>emptyList());
+		this(id, name, castTime, school, requiresHostileTarget, ranges, effectResource, heat, Collections.emptyList(),
+				cancelOnMove, Collections.emptySet(), Collections.emptyList());
 	}
 
 	public SpellData(UUID id) {
 		this(id, "", 0, MagicSchool.PHYSICAL, false, new IntervalInt(0, Integer.MAX_VALUE), "NotSpecified", 1,
-				Collections.<Cooldown>emptyList(), false, Collections.<AuraTemplate>emptySet(), Collections.<SpellEffect>emptyList());
+				Collections.emptyList(), false, Collections.emptySet(), Collections.emptyList());
 	}
 
 	public UUID getId() {
@@ -140,11 +140,7 @@ public class SpellData {
 
 		SpellData spellData = (SpellData) o;
 
-		if (!id.equals(spellData.id)) {
-			return false;
-		}
-
-		return true;
+		return id.equals(spellData.id);
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class EntityStatsUserType implements UserType {
 
 	@Override
 	public boolean equals(Object x, Object y) throws HibernateException {
-		return x == y || !(x == null || y == null) && x.equals(y);
+		return (x == y) || (!(x == null || y == null) && x.equals(y));
 	}
 
 	@Override

@@ -54,11 +54,7 @@ public class SunSetting implements Interpolable<SunSetting> {
 		if (!diffuseColor.equals(that.diffuseColor)) {
 			return false;
 		}
-		if (!emissiveColor.equals(that.emissiveColor)) {
-			return false;
-		}
-
-		return true;
+		return emissiveColor.equals(that.emissiveColor);
 	}
 
 	@Override

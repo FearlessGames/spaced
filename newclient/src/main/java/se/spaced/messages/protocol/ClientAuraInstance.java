@@ -80,11 +80,7 @@ public class ClientAuraInstance implements AuraInstance {
 
 		ClientAuraInstance aura = (ClientAuraInstance) o;
 
-		if (!getPk().equals(aura.getPk())) {
-			return false;
-		}
-
-		return true;
+		return getPk().equals(aura.getPk());
 	}
 
 	@Override

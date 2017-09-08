@@ -83,6 +83,7 @@ public class ServerSpell extends ExternalPersistableBase implements Spell, Compa
 		requiredAuras.addAll(builder.requiredAuras);
 	}
 
+	@Override
 	@LuaMethod(name = "GetName")
 	public String getName() {
 		return name;

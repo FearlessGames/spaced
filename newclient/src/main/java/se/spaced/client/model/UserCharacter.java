@@ -118,11 +118,7 @@ public class UserCharacter {
 
 		UserCharacter that = (UserCharacter) o;
 
-		if (self != null ? !self.equals(that.self) : that.self != null) {
-			return false;
-		}
-
-		return true;
+		return self != null ? self.equals(that.self) : that.self == null;
 	}
 
 	@Override

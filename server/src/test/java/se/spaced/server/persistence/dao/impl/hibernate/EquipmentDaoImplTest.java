@@ -3,24 +3,16 @@ package se.spaced.server.persistence.dao.impl.hibernate;
 import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.time.MockTimeProvider;
-import se.fearless.common.uuid.UUIDFactory;
-import se.fearless.common.uuid.UUIDFactoryImpl;
 import se.spaced.server.model.Player;
 import se.spaced.server.model.items.EquippedItems;
 import se.spaced.server.model.player.PlayerMockFactory;
 import se.spaced.server.persistence.dao.interfaces.EquipmentDao;
 import se.spaced.server.persistence.dao.interfaces.PlayerDao;
 
-import java.security.SecureRandom;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class EquipmentDaoImplTest extends PersistentTestBase {
-
-	private final MockTimeProvider timeProvider = new MockTimeProvider();
-	private final UUIDFactory uuidFactory = new UUIDFactoryImpl(timeProvider, new SecureRandom());
 
 	private EquipmentDao equipmentDao;
 	private PlayerDao playerDao;

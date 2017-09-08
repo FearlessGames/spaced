@@ -5,8 +5,6 @@ import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import se.fearless.common.time.MockTimeProvider;
-import se.fearless.common.time.TimeProvider;
 import se.fearless.common.uuid.UUID;
 import se.spaced.server.model.PersistedCreatureType;
 import se.spaced.server.model.PersistedFaction;
@@ -24,7 +22,10 @@ import se.spaced.shared.model.Gender;
 
 import java.util.Collection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class AccountServiceTest extends PersistentTestBase {
 	private AccountService accountService;
@@ -32,12 +33,10 @@ public class AccountServiceTest extends PersistentTestBase {
 	private static final String pwd = "foobar22";
 	private static final String charName = "Charname";
 	private PlayerService playerService;
-	private TimeProvider timeProvider;
 	private PersistedFaction faction;
 
 	@Before
 	public void setUp() throws Exception {
-		timeProvider = new MockTimeProvider();
 		Collection<Migrator> migs = Lists.newArrayList();
 		migs.add(new MockCreatureTypePopulator(transactionManager, daoFactory.getCreatureTypeDao()));
 		migs.add(new MockFactionPopulator(transactionManager, daoFactory.getFactionDao()));

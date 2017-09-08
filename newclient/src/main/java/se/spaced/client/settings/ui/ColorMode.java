@@ -27,11 +27,7 @@ class ColorMode implements Comparable<ColorMode> {
 
 		ColorMode colorMode = (ColorMode) o;
 
-		if (colors != colorMode.colors) {
-			return false;
-		}
-
-		return true;
+		return colors == colorMode.colors;
 	}
 
 	@Override

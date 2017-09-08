@@ -18,11 +18,7 @@ public class Password {
 
 		Password password1 = (Password) o;
 
-		if (!password.equals(password1.password)) {
-			return false;
-		}
-
-		return true;
+		return password.equals(password1.password);
 	}
 
 	@Override

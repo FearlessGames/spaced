@@ -38,7 +38,7 @@ public class VendorApi {
 	@LuaMethod(name = "GetVendorStock", global = true)
 	public void requestListOfItemsForSale(ClientEntity vendor) {
 		analytics.track(Trackables.VendorEvents.GET_STOCK);
-		if (getActiveVendor() == null || getActiveVendor() != vendor) {
+		if (getActiveVendor() == null || !getActiveVendor().equals(vendor)) {
 			serverConnection.getReceiver().vendor().requestVendorStock(vendor);
 		}
 	}

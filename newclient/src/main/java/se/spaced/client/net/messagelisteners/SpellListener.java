@@ -59,7 +59,7 @@ public class SpellListener implements ServerSpellMessages {
 		final Collection<? extends Cooldown> cooldowns = data.getCooldowns();
 		final int numCooldowns = cooldowns.size();
 		if (numCooldowns == 0) {
-			addSpellToCache(data, Collections.<ClientCooldown>emptyList());
+			addSpellToCache(data, Collections.emptyList());
 		} else {
 			final List<ClientCooldown> clientCooldowns = Lists.newArrayListWithCapacity(numCooldowns);
 

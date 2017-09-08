@@ -2,7 +2,12 @@ package se.spaced.server.trade;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import se.fearless.fettle.*;
+import se.fearless.fettle.Action;
+import se.fearless.fettle.Arguments;
+import se.fearless.fettle.Condition;
+import se.fearless.fettle.Fettle;
+import se.fearless.fettle.StateMachine;
+import se.fearless.fettle.StateMachineTemplate;
 import se.fearless.fettle.builder.StateMachineBuilder;
 import se.spaced.server.model.ServerEntity;
 import se.spaced.server.model.items.ServerItem;
@@ -202,7 +207,7 @@ public class TradeTransitionModelProvider implements Provider<StateMachineTempla
 			ServerItem item = (ServerItem) args.getArgument(1);
 			ServerEntity by = (ServerEntity) args.getArgument(2);
 			ServerEntity other = (ServerEntity) args.getArgument(3);
-			Collection<ServerItem> items = by == initiator ? trade.getItemsFromInitiator() : trade.getItemsFromCollaborator();
+			Collection<ServerItem> items = by.equals(initiator) ? trade.getItemsFromInitiator() : trade.getItemsFromCollaborator();
 			items.add(item);
 			tradeCallback.itemAdded(by, other, item, trade.getChecksum());
 		}

@@ -23,7 +23,7 @@ public interface AreaCreatorView {
 
 	void setActiveXmo(String xmoFile);
 
-	public interface Presenter {
+	interface Presenter {
 
 		void addAreaPointHere();
 
@@ -50,7 +50,7 @@ public interface AreaCreatorView {
 		void copyAreaPointToClipBoard();
 	}
 
-	public interface SelectionCallback {
+	interface SelectionCallback {
 		void onSelection();
 	}
 

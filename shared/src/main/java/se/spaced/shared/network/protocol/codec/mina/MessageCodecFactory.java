@@ -22,10 +22,12 @@ public class MessageCodecFactory implements ProtocolCodecFactory {
 
 	}
 
+	@Override
 	public ProtocolEncoder getEncoder(IoSession ioSession) throws Exception {
 		return messageEncoder;
 	}
 
+	@Override
 	public ProtocolDecoder getDecoder(IoSession ioSession) throws Exception {
 		return messageDecoder;
 	}

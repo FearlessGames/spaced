@@ -62,7 +62,7 @@ public class SimpleAggroManager implements AggroManager {
 		if (aggroStats != null) {
 			map.put(entity, new AggroStats(aggroStats, 0));
 		}
-		if (entity == focus) {
+		if (entity.equals(focus)) {
 			focus = null;
 			updateFocus();
 		}

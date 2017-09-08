@@ -1,6 +1,6 @@
 package se.spaced.client.tools.spd;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 
 public interface SpdView {
 	void display();
@@ -19,7 +19,7 @@ public interface SpdView {
 
 	void updateActiveProp();
 
-	public interface Presenter {
+	interface Presenter {
 		void placePropHere();
 
 		void removeProp();
